@@ -1,0 +1,66 @@
+{
+  "vet": [
+    {
+      "id": 1,
+      "address": "Gul ST.3",
+      "contacts": "+380-99-999-9999",
+      "services":{
+          "service-one":"clean",
+          "service-two":"Eat",
+          "servect-three":"Drink"
+      }
+    },
+        {
+      "id": 2,
+      "address": "Gul ST.3",
+      "Contacts": "+380-99-999-9999",
+      "services":{
+          "service-one":"clean",
+          "service-two":"Eat",
+          "servect-three":"Drink"
+      }
+    },
+        {
+      "id": 3,
+      "address": "Gul ST.3",
+      "contacts": "+380-99-999-9999",
+      "services":{
+          "service-one":"clean",
+          "service-two":"Eat",
+          "servect-three":"Drink"
+      }
+    },
+        {
+      "id": 4,
+      "address": "Gul ST.3",
+      "contacts": "+380-99-999-9999",
+      "services":{
+          "service-one":"clean",
+          "service-two":"Eat",
+          "servect-three":"Drink"
+      }
+    },
+        {
+      "id": 5,
+      "address": "Gul ST.3",
+      "contacts": "+380-99-999-9999",
+      "services":{
+          "service-one":"clean",
+          "service-two":"Eat",
+          "servect-three":"Drink"
+      }
+    },
+        {
+      "id": 6,
+      "address": "Gul ST.3",
+      "contacts": "+380-99-999-9999",
+      "services":{
+          "service-one":"clean",
+          "service-two":"Eat",
+          "servect-three":"Drink"
+      }
+    }
+
+]
+
+}
