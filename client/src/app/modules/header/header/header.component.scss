@@ -1,0 +1,39 @@
+.header {
+	display: flex;
+	align-items: center;
+	height: 90px;
+	font-size: 20px;
+	position: fixed;
+	top: 0px;	
+	min-width: 1200px;
+	left: 120px;
+	background-color: rgb(177, 247, 120);
+	z-index: 5;
+}
+
+.header__menu {
+	display: flex;
+	align-items: center;
+	width: 100%;
+    justify-content: space-around;
+	padding: 10px;
+}
+.header__nav {
+	margin-right: 200px;
+	display: flex;
+	flex-direction: row;
+	
+}
+.header__phone {
+	margin-right: 50px;
+	
+}
+
+.header__logo {
+	padding: 10px;
+}
+
+.mat-button {
+	font-size: 20px;
+	margin-right: 20px;
+}
