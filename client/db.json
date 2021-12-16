@@ -2,65 +2,76 @@
   "vet": [
     {
       "id": 1,
+      "title":"name",
       "address": "Gul ST.3",
       "contacts": "+380-99-999-9999",
       "services":{
           "service-one":"clean",
           "service-two":"Eat",
           "servect-three":"Drink"
-      }
+      },
+      "picture":"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.reidmiddleton.com%2Fwp-content%2Fuploads%2F2016%2F09%2FProject-HeroImage01-DoctorsClinic1.jpg&f=1&nofb=1"
     },
-        {
-      "id": 2,
-      "address": "Gul ST.3",
-      "Contacts": "+380-99-999-9999",
-      "services":{
-          "service-one":"clean",
-          "service-two":"Eat",
-          "servect-three":"Drink"
-      }
-    },
-        {
-      "id": 3,
+       {
+      "id": 1,
+      "title":"name",
       "address": "Gul ST.3",
       "contacts": "+380-99-999-9999",
       "services":{
           "service-one":"clean",
           "service-two":"Eat",
           "servect-three":"Drink"
-      }
+      },
+      "picture":"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.reidmiddleton.com%2Fwp-content%2Fuploads%2F2016%2F09%2FProject-HeroImage01-DoctorsClinic1.jpg&f=1&nofb=1"
     },
-        {
-      "id": 4,
+       {
+      "id": 1,
+      "title":"name",
       "address": "Gul ST.3",
       "contacts": "+380-99-999-9999",
       "services":{
           "service-one":"clean",
           "service-two":"Eat",
           "servect-three":"Drink"
-      }
+      },
+      "picture":"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.reidmiddleton.com%2Fwp-content%2Fuploads%2F2016%2F09%2FProject-HeroImage01-DoctorsClinic1.jpg&f=1&nofb=1"
     },
-        {
-      "id": 5,
+     {
+      "id": 1,
+      "title":"name",
       "address": "Gul ST.3",
       "contacts": "+380-99-999-9999",
       "services":{
           "service-one":"clean",
           "service-two":"Eat",
           "servect-three":"Drink"
-      }
+      },
+      "picture":"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.reidmiddleton.com%2Fwp-content%2Fuploads%2F2016%2F09%2FProject-HeroImage01-DoctorsClinic1.jpg&f=1&nofb=1"
     },
-        {
-      "id": 6,
+       {
+      "id": 1,
+      "title":"name",
       "address": "Gul ST.3",
       "contacts": "+380-99-999-9999",
       "services":{
           "service-one":"clean",
           "service-two":"Eat",
           "servect-three":"Drink"
-      }
+      },
+      "picture":"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.reidmiddleton.com%2Fwp-content%2Fuploads%2F2016%2F09%2FProject-HeroImage01-DoctorsClinic1.jpg&f=1&nofb=1"
+    },
+    {
+      "id": 1,
+      "title":"name",
+      "address": "Gul ST.3",
+      "contacts": "+380-99-999-9999",
+      "services":{
+          "service-one":"clean",
+          "service-two":"Eat",
+          "servect-three":"Drink"
+      },
+      "picture":"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.reidmiddleton.com%2Fwp-content%2Fuploads%2F2016%2F09%2FProject-HeroImage01-DoctorsClinic1.jpg&f=1&nofb=1"
     }
 
 ]
-
 }
