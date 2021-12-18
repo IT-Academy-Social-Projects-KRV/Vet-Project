@@ -1,0 +1,27 @@
+.vet_list_main {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+mat-card-title {
+  font-weight: bold;
+}
+
+
+.vet_cards {
+  flex-basis: calc(100% / 4 - 30px);
+  margin: 10px;
+  background-color: rgb(255, 244, 234);
+  // flex:  250px
+}
+
+.vet_cards:hover {
+  transform: translateY(5px);
+  box-shadow: 2px 2px 26px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.main_info {
+  font-weight: bold;
+  color: black;
+}
