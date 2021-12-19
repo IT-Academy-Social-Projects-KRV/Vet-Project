@@ -6,9 +6,8 @@ import routes from './routes'
 const port = 3200
 const app = express()
 
-// app.use(cors())
+app.use(cors())
 app.use(express.json())
-
 
 app.use('/api', routes)
 
