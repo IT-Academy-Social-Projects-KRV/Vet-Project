@@ -1,0 +1,8 @@
+<section class="news__main">
+  <h1 class="news__titel">Our news</h1>
+  <ul class="news__cards">
+    <li *ngFor="let article of newsItems">
+      <app-news-card [item]=article></app-news-card>
+    </li>
+  </ul>
+</section>
