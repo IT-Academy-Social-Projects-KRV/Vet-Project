@@ -1,0 +1,35 @@
+.main__donate {
+	margin-top: 40px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-image: url('https://c4.wallpaperflare.com/wallpaper/24/683/587/panorama-a-lot-of-dogs-a-different-breed-wallpaper-thumb.jpg');
+	background-position: center;
+	background-size: cover;
+	
+}
+
+.example-full-width {
+	background-color: #ffff;
+	input {
+		font-size: 30px;
+	}
+}
+
+mat-card {
+	width: 30%;
+	height: 90%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	opacity: 0.9;
+	background-color: #3f51b5;
+		h1 {
+		font-size: 40px;
+		color: #ffff;
+		}
+		button {
+			color: #ffff;
+		}
+}

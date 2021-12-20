@@ -13,8 +13,10 @@
   "version": "1.0.0",
   "main": "server.ts",
   "devDependencies": {
-    "@types/node": "^16.11.12",
-    "@types/pg": "^8.6.2"
+
+    "@types/pg": "^8.6.2",
+    "@types/node": "^16.11.13"
+
   },
   "scripts": {
     "serve": "ts-node-dev server.ts",

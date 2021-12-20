@@ -1,0 +1,8 @@
+<section class="stat__main">
+  <h1 class="stat__title">Statistic</h1>
+  <ul class="stat__content">
+    <li *ngFor="let image of statisticItem">
+      <app-statistic-images [item]=image></app-statistic-images>
+    </li>
+  </ul>
+</section>
