@@ -4,6 +4,10 @@
 	flex-direction: column;
 	align-items: center;
 	margin: 40px;
+	 h1{
+		 font-size: 60px;
+		 font-style: bold;
+	 }
 	
 
 }
@@ -12,12 +16,16 @@
 	align-items: center;
 	width: 100%;
 	justify-content: space-evenly;
-
-	
 }
-.stat__content_img {
-	width: 100px;
-	height: 100px;
-	background-color: rgb(172, 172, 26);;
-	margin: 10px;
+
+.content__img {
+	max-width: 150px;
+	max-height: 150px
+}
+
+.stat__content{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+
 }

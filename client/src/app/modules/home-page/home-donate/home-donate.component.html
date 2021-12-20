@@ -1,12 +1,20 @@
 <section class="main__donate">
-  <h1>We need your help!</h1>
-  <input type="text" placeholder="1000">
-  <button mat-raised-button>Submit</button>
-
-  <ul class="donate__buttons">
-    <li><button mat-raised-button color="accent">50 uah</button></li>
-    <li><button mat-raised-button color="accent">100 uah</button></li>
-    <li><button mat-raised-button color="accent">200 uah</button></li>
-    <li><button mat-raised-button color="accent">500 uah</button></li>
-  </ul>
+  <mat-card>
+    <mat-card-title>
+      <h1>We need your help</h1>
+    </mat-card-title>
+    <form class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <input type="tel" matInput placeholder="1000 uah">
+      </mat-form-field>
+    </form>
+    <li><button mat-raised-button color="accent">Donate</button></li>
+    <mat-card-actions>
+      <button mat-button>50 uah</button>
+      <button mat-button>100 uah</button>
+      <button mat-button>200 uah</button>
+      <button mat-button>500 uah</button>
+    </mat-card-actions>
+  </mat-card>
+  <br>
 </section>
