@@ -5,7 +5,7 @@ import { } from '@angular/material/slider';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './modules/header/header/header.component';
+import { HeaderComponent } from './modules/header/header.component';
 import { MatButtonModule } from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { HomeMainComponent } from './modules/home-page/home-main/home-main.component';
