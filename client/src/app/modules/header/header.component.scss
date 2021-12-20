@@ -27,8 +27,7 @@
 	display: flex;
 	flex-direction: row;
 	margin: 0px;
-
-	
+		
 }
 .header__phone {
 	margin-right: 50px;
@@ -39,4 +38,10 @@
 .mat-button {
 	font-size: 20px;
 	margin-right: 20px;
+}
+
+@media ( max-width: 768px) {
+	.example-button-container {
+		display: none;
+	}
 }
