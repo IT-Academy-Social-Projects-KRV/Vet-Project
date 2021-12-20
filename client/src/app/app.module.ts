@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +28,7 @@ import { FooterComponent } from './modules/footer/footer.component';
 import { MatInputModule } from '@angular/material/input';
 import { NewsCardComponent } from './components/news-card/news-card.component';
 import { StatisticImagesComponent } from './components/statistic-images/statistic-images.component';
+import { VetInfoPageComponent } from './components/vet-info-page/vet-info-page.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,7 @@ import { StatisticImagesComponent } from './components/statistic-images/statisti
     FooterComponent,
     NewsCardComponent,
     StatisticImagesComponent,
+    VetInfoPageComponent,
     
   ],
   imports: [
@@ -57,7 +60,8 @@ import { StatisticImagesComponent } from './components/statistic-images/statisti
     MatButtonModule,
     MatIconModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

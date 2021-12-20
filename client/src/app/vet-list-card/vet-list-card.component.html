@@ -1,26 +1,42 @@
 <section class="vet_list_main">
-
-  <mat-card *ngFor="let cards of [1,2,3,4,5,6,7,8]" class="vet_cards">
-    <img mat-card-image
+  <!-- <mat-card *ngFor="let cards of [1,2,3,4,5,6,7,8]" class="vet_cards" > -->
+  <mat-card *ngFor="let vetInfo of vetDetailInfo" class="vet_cards">
+    <img
+      mat-card-image
       src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.reidmiddleton.com%2Fwp-content%2Fuploads%2F2016%2F09%2FProject-HeroImage01-DoctorsClinic1.jpg&f=1&nofb=1"
-      alt="image of vet">
+      alt="image of vet"
+    />
     <div class="vet_list_title">
       <mat-card-header>
-        <mat-card-title>Name of the clinic</mat-card-title>
+        <mat-card-title>Name of the clinic {{ vetInfo.title }}</mat-card-title>
       </mat-card-header>
     </div>
     <mat-card-content>
-      <mat-card-subtitle>Adress: <span class="main_info">Some street 42</span></mat-card-subtitle>
-      <mat-card-subtitle>Contacts: <span class="main_info">+380999999999</span></mat-card-subtitle>
+      <mat-card-subtitle
+        >Adress:
+        <span class="main_info">{{ vetInfo.adress }}</span></mat-card-subtitle
+      >
+      <mat-card-subtitle
+        >Contacts:
+        <span class="main_info">{{ vetInfo.contacts }}</span></mat-card-subtitle
+      >
       <mat-divider></mat-divider>
       <h3>List of provided services</h3>
-      <mat-list >
-        <mat-list-item >Service 1</mat-list-item>
-        <mat-list-item >Service 2</mat-list-item>
-        <mat-list-item >Service 3</mat-list-item>
-      </mat-list>
+      <div>
+        <ul>
+          <li *ngFor="let vetService of vetServices">
+            {{ vetService.title }} {{ vetService.description }}
+          </li>
+        </ul>
+      </div>
+      <!-- <mat-list *ngFor="let vetService of vetServices">
+        <mat-list-item
+          >{{ vetService.title }}
+          <p>{{ vetService.description }}</p></mat-list-item
+        > -->
+      <!-- <mat-list-item>Service 2</mat-list-item>
+        <mat-list-item>Service 3</mat-list-item> -->
+      <!-- </mat-list> -->
     </mat-card-content>
   </mat-card>
-
-
 </section>

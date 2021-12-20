@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { VetsInfo, VetServices } from '../interfaces/vetInfo';
+import { VetsInfo } from 'src/app/interfaces/vetInfo';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-vet-list-card',
-  templateUrl: './vet-list-card.component.html',
-  styleUrls: ['./vet-list-card.component.scss'],
+  selector: 'app-vet-info-page',
+  templateUrl: './vet-info-page.component.html',
+  styleUrls: ['./vet-info-page.component.scss'],
 })
-export class VetListCardComponent implements OnInit {
+export class VetInfoPageComponent implements OnInit {
   vetDetailInfo: VetsInfo[];
-  vetServices: VetServices[];
+  vetServices: any[];
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
