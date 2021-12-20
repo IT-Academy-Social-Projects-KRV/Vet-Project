@@ -1,26 +1,14 @@
-const express = require("express");
+import express from 'express'
+import cors from 'cors'
+import routes from './routes'
 
-const app = express();
 
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  res.header("Access-Control-Allow-Methods", "OPTIONS, GET, POST, PUT, DELETE");
-  if ("OPTIONS" === req.method) {
-    res.sendStatus(200);
-  } else {
-    console.log(`${req.ip} ${req.method} ${req.url}`);
-    next();
-  }
-});
+const port = 3200
+const app = express()
 
-app.get("/", (req, res) => {
-  res.send([{ message: "hello world" }]);
-});
+app.use(cors())
+app.use(express.json())
 
-app.listen(3200, "127.0.0.1", function () {
-  console.log("Server now listen on 3200");
-});
+app.use('/api', routes)
+
+app.listen(port, () => console.log(`Server started on port ${port}`))
