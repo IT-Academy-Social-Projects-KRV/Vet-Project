@@ -7,7 +7,7 @@ export interface IBareAnimalItem {
     name: string
     gender: string
     breed: string
-    years:string
+    age:string
 }
 
 export interface IAnimalItem extends IBareAnimalItem {
@@ -17,16 +17,16 @@ export interface IAnimalItem extends IBareAnimalItem {
 
 router.post('/', async function addAnimal(req: Request<{}, {}, IBareAnimalItem>, res) {
     try {
-        const { name,gender,breed,years } = req.body
+        const { name,gender,breed,age } = req.body
 
-        const newService = await db.query<IAnimalItem>(`
-                INSERT INTO animals (name,gender,breed,years) 
+        const newAnimal = await db.query<IAnimalItem>(`
+                INSERT INTO animals (name,gender,breed,age) 
                 VALUES ($1, $2,$3,$4) 
                 RETURNING *`,
-            [name,gender,breed,years]
+            [name,gender,breed,age]
         );
 
-        res.send(newService.rows[0])
+        res.send(newAnimal.rows[0])
     } catch (err) {
         res.status(500).send(err)
         console.error(err);
@@ -63,13 +63,13 @@ router.get('/:id', async function getAnimalById(req, res) {
 
 router.put('/:id', async function updateAnimalInfoById(req: Request<{id: string}, {}, IAnimalItem>, res) {
     try {
-        const { name,gender,breed,years, id} = req.body
+        const { name,gender,breed,age, id} = req.body
 
         const updateAnimal = await db.query(`
                 UPDATE animals 
-                SET name = $1, gender = $2, breed = $3, years = $4 
+                SET name = $1, gender = $2, breed = $3, age = $4 
                 WHERE id = $5
-                RETURNING *`, [ name,gender,breed,years, id]
+                RETURNING *`, [ name,gender,breed,age, id]
         )
         res.json(updateAnimal.rows[0])
     } catch (err) {
