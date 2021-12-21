@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { VetListPageComponent } from './vet-list-page/vet-list-page.component';
-import { HomeMainComponent } from './modules/home-page/home-main/home-main.component';
+import { VetListPageComponent } from './components/vet-list-page/vet-list-page.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
 
 const routes: Routes = [
   { path: 'detailInfo', component: VetListPageComponent },
-  { path: '', component: HomeMainComponent },
+  { path: '', component: HomePageComponent },
 ];
 
 @NgModule({
