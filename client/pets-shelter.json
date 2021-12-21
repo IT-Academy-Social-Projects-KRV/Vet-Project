@@ -3,64 +3,58 @@
 		{
 		"id": 1,
 		"name":"Dog",
-		"breed": "Bul-Dog",
+
+		"breed": "Bull-Dog",
 		"age": "2 years",
 		"sex": "male",
-		"color": "grey",
-      	"picture":"https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg"
+     "picture":"https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg"
 		},
 		{
 		"id": 2,
 		"name":"Dog",
-		"breed": "Bul-Dog",
+		"breed": "Bull-Dog",
 		"age": "2 years",
 		"sex": "male",
-		"color": "grey",
 		"picture":"https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg"
 		},
 		{
 		"id": 3,
 		"name":"Dog",
-		"breed": "Bul-Dog",
+		"breed": "Bull-Dog",
 		"age": "2 years",
 		"sex": "male",
-		"color": "grey",
 		"picture":"https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg"
 		},
 		{
 		"id": 4,
 		"name":"Dog",
-		"breed": "Bul-Dog",
+		"breed": "Bull-Dog",
 		"age": "2 years",
 		"sex": "male",
-		"color": "grey",
 		"picture":"https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg"
 		},
 		{
 		"id": 5,
 		"name":"Dog",
-		"breed": "Bul-Dog",
+		"breed": "Bull-Dog",
 		"age": "2 years",
 		"sex": "male",
-		"color": "grey",
 		"picture":"https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg"
 		},
 		{
 		"id": 6,
 		"name":"Dog",
-		"breed": "Bul-Dog",
+		"breed": "Bull-Dog",
 		"age": "2 years",
 		"sex": "male",
-		"color": "grey",
 		"picture":"https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg"
 		},
 		{
 		"id": 7,
 		"name":"Dog",
-		"breed": "Bul-Dog",
+		"breed": "Bull-Dog",
 		"age": "2 years",
 		"sex": "male",
-		"color": "grey",
 		"picture":"https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg"
 		}
 	]
