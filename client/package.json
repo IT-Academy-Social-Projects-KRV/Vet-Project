@@ -8,8 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve": "concurrently \"ng serve --open\" \"cd ../server && yarn serve\"",
-    "testserver": "json-server --watch db.json --port 3004",
-    "postinstall": "ngcc"
+    "testserver": "json-server --watch db.json --port 3004"
   },
   "private": true,
   "dependencies": {
