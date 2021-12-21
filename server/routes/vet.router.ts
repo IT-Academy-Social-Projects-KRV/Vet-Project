@@ -26,6 +26,7 @@ router.post('/', async function addVetClinic(req: Request<{}, {}, IBareVetItem>,
 
         res.send(newVetclinic.rows[0])
     } catch (err) {
+
         res.status(500).send(err)
         console.error(err)
     }
@@ -36,6 +37,7 @@ router.get('/', async function getVetlist(req, res) {
         const vetList = await db.query(`SELECT * FROM vetlist`)
         res.json(vetList.rows)
     } catch (err) {
+
         console.error(err)
         res.status(500).send(err)
     }
@@ -55,6 +57,7 @@ router.get('/:id(\\d+)', async function getVetClinicById(req, res) {
         } = await db.query(`SELECT * FROM vetlist WHERE id = $1`, [id]);
         res.send(rows);
     } catch (err) {
+
         res.status(500).send(err)
         console.error(err)
     }
@@ -91,10 +94,12 @@ router.delete('/:id(\\d+)', async function deleteVetClinicById(req, res) {
         const deleteClinic = await db.query(`
                 DELETE FROM vetlist  
                 WHERE id = $1`, [id])
+
         res.json(deleteClinic.rows)
     } catch (err) {
         res.status(500).send(err)
         console.error(err)
+
     }
 })
 
