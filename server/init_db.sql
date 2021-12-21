@@ -41,12 +41,21 @@ INSERT INTO vetlist (id, title, adress, contacts)
 		values(11, 'Columbia College Hollywood', '070 Buena Vista Center', '438-463-5198');
 INSERT INTO vetlist (id, title, adress, contacts)
 		values(12, 'Universidad Metropolitana de Honduras', '3723 Rigney Center', '362-917-1444');
+
+    
 INSERT INTO vetlist (title, adress, contacts)
 		values('Politeknik Negeri Padang', '3 Killdeer Road', '974-815-0655');
 INSERT INTO services
 		VALUES(1, 'Кастрація', 'Невеликий опис цього сервісу'), (2, 'Лікування', 'Невеликий опис цього сервісу'), (3, 'Щеплення', 'Невеликий опис цього сервісу'), (4, 'Купування', 'Невеликий опис цього сервісу');
 INSERT INTO vetlist_services
 		VALUES(1, 1), (1, 3), (2, 1), (2, 2), (2, 4), (3, 1), (3, 3), (3, 4), (4, 2), (4, 4);
+
+
+SELECT
+	pg_catalog.setval(pg_get_serial_sequence('animals', 'id'), MAX(id))
+FROM
+	animals;	
+
 SELECT
 	pg_catalog.setval(pg_get_serial_sequence('vetlist', 'id'), MAX(id))
 FROM
@@ -56,3 +65,4 @@ SELECT
 	pg_catalog.setval(pg_get_serial_sequence('services', 'id'), MAX(id))
 FROM
 	services;
+
