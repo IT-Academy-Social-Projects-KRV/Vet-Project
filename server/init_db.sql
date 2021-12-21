@@ -17,6 +17,36 @@ CREATE TABLE vetlist_services (
 	CONSTRAINT vetlist_services_pkey PRIMARY KEY (vet_id, service_id)
 );
 
+create table animals (
+	id INT,
+	name VARCHAR(50),
+	gender VARCHAR(50),
+	breed VARCHAR(50),
+	years INT
+);
+insert into animals (id, name, gender, breed, years) values (1, 'Colobus, magistrate black', 'F', 'Colobus guerza', 1);
+insert into animals (id, name, gender, breed, years) values (2, 'Buffalo, asian water', 'F', 'Bubalus arnee', 2);
+insert into animals (id, name, gender, breed, years) values (3, 'Hanuman langur', 'M', 'Semnopithecus entellus', 3);
+insert into animals (id, name, gender, breed, years) values (4, 'Dusky rattlesnake', 'M', 'Crotalus triseriatus', 4);
+insert into animals (id, name, gender, breed, years) values (5, 'Otter, giant', 'F', 'Pteronura brasiliensis', 5);
+insert into animals (id, name, gender, breed, years) values (6, 'Dik, kirk''s dik', 'M', 'Madoqua kirkii', 6);
+insert into animals (id, name, gender, breed, years) values (7, 'Pine squirrel', 'F', 'Tamiasciurus hudsonicus', 7);
+insert into animals (id, name, gender, breed, years) values (8, 'Long-billed corella', 'M', 'Cacatua tenuirostris', 8);
+insert into animals (id, name, gender, breed, years) values (9, 'Crow, american', 'M', 'Corvus brachyrhynchos', 9);
+insert into animals (id, name, gender, breed, years) values (10, 'Fox, grey', 'M', 'Vulpes cinereoargenteus', 10);
+insert into animals (id, name, gender, breed, years) values (11, 'Blue peacock', 'M', 'Pavo cristatus', 11);
+insert into animals (id, name, gender, breed, years) values (12, 'Booby, blue-footed', 'M', 'Sula nebouxii', 12);
+insert into animals (id, name, gender, breed, years) values (13, 'Partridge, coqui', 'F', 'Francolinus coqui', 13);
+insert into animals (id, name, gender, breed, years) values (14, 'Indian leopard', 'F', 'Panthera pardus', 14);
+insert into animals (id, name, gender, breed, years) values (15, 'Goose, greylag', 'F', 'Anser anser', 15);
+insert into animals (id, name, gender, breed, years) values (16, 'Deer, barasingha', 'M', 'Cervus duvauceli', 16);
+insert into animals (id, name, gender, breed, years) values (17, 'Bontebok', 'F', 'Damaliscus dorcas', 17);
+insert into animals (id, name, gender, breed, years) values (18, 'Steenbok', 'M', 'Raphicerus campestris', 18);
+
+
+
+
+
 INSERT INTO vetlist (id, title, adress, contacts)
 		values(1, 'The Juilliard School', '098 Londonderry Alley', '205-216-8574');
 INSERT INTO vetlist (id, title, adress, contacts)
@@ -47,6 +77,13 @@ INSERT INTO services
 		VALUES(1, 'Кастрація', 'Невеликий опис цього сервісу'), (2, 'Лікування', 'Невеликий опис цього сервісу'), (3, 'Щеплення', 'Невеликий опис цього сервісу'), (4, 'Купування', 'Невеликий опис цього сервісу');
 INSERT INTO vetlist_services
 		VALUES(1, 1), (1, 3), (2, 1), (2, 2), (2, 4), (3, 1), (3, 3), (3, 4), (4, 2), (4, 4);
+
+
+SELECT
+	pg_catalog.setval(pg_get_serial_sequence('animals', 'id'), MAX(id))
+FROM
+	animals;	
+
 SELECT
 	pg_catalog.setval(pg_get_serial_sequence('vetlist', 'id'), MAX(id))
 FROM
