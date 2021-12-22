@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +11,6 @@ import { VetListCardComponent } from './components/vet-list-card/vet-list-card.c
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
-
 
 import { HeaderComponent } from './components/header/header.component';
 import { MatButtonModule } from '@angular/material/button';
@@ -47,7 +47,6 @@ import { HomePageComponent } from './components/home-page/home-page.component';
     NewsCardComponent,
     StatisticImagesComponent,
     HomePageComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -59,9 +58,10 @@ import { HomePageComponent } from './components/home-page/home-page.component';
     MatButtonModule,
     MatIconModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
