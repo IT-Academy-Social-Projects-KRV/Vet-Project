@@ -28,6 +28,9 @@ import { MatInputModule } from '@angular/material/input';
 import { NewsCardComponent } from './components/news-card/news-card.component';
 import { StatisticImagesComponent } from './components/statistic-images/statistic-images.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
+import { AnimalListPageComponent } from './components/animal-list-page/animal-list-page.component';
+import { AnimalListCardComponent } from './components/animal-list-card/animal-list-card.component';
+import { VetInfoPageComponent } from './components/vet-info-page/vet-info-page.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +50,9 @@ import { HomePageComponent } from './components/home-page/home-page.component';
     NewsCardComponent,
     StatisticImagesComponent,
     HomePageComponent,
+    AnimalListPageComponent,
+    AnimalListCardComponent,
+    VetInfoPageComponent
   ],
   imports: [
     BrowserModule,
