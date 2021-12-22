@@ -7,7 +7,7 @@ import { map } from 'rxjs';
   providedIn: 'root',
 })
 export class AnimalInfoService {
-  private animalsUrl = 'http://localhost:3200/api/services';
+  private animalsUrl = 'http://localhost:3200/api/animals';
   constructor(private http: HttpClient) {}
 
   getAnimalsInfo() {

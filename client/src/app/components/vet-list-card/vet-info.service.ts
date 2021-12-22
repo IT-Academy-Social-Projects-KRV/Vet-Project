@@ -7,10 +7,6 @@ import { map } from 'rxjs';
   providedIn: 'root',
 })
 export class VetInfoService {
-  // httpOptions = {
-  //   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-  // };
-
   private vetDetailsUrl = 'http://localhost:3200/api/vet';
   private vetServicesUrl = 'http://localhost:3200/api/services';
 

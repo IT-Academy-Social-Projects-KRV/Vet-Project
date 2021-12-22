@@ -12,13 +12,18 @@
         </mat-card-header>
         <mat-card-content>
           <mat-card-subtitle
-            >Age: <span class="main_info">4 months </span></mat-card-subtitle
+            >Age:
+            <span class="main_info">{{ animal.age }} </span></mat-card-subtitle
           >
           <mat-card-subtitle
-            >Breed: <span class="main_info">Stray</span></mat-card-subtitle
+            >Breed:
+            <span class="main_info">{{ animal.breed }}</span></mat-card-subtitle
           >
           <mat-card-subtitle
-            >Sex: <span class="main_info">Male</span></mat-card-subtitle
+            >Sex:
+            <span class="main_info">{{
+              animal.gender
+            }}</span></mat-card-subtitle
           >
         </mat-card-content>
       </mat-card>
