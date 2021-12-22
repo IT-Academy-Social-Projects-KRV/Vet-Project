@@ -10,9 +10,8 @@
 }
 
 .vet__card {
-  flex-basis: calc(100%/3 - 3%);
+  flex-basis: calc(100% / 3 - 3%);
   margin: 1.5%;
- 
 }
 
 .vet__card:hover {
@@ -27,29 +26,25 @@
   margin-left: 5px;
 }
 
-mat-card-header{
+mat-card-header {
   justify-content: center;
 }
-h3{
+h3 {
   text-align: center;
 }
 
 mat-card-title {
-  font-weight: bold;
+  font-weight: bold; //need to be checked because of weird behavior if there is only one row of text
 }
 
-mat-list{
+mat-list {
   padding: 0;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
- 
 }
 
-mat-list-item{
-  flex-basis: calc(100%/3 - 3%);
+mat-list-item {
+  flex-basis: calc(100% / 3 - 3%);
   margin: 1.5%;
-
 }
-
-

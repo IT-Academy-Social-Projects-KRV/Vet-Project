@@ -9,9 +9,7 @@
         />
         <div class="vet_list_title">
           <mat-card-header>
-            <mat-card-title
-              >Name of the clinic: {{ vets.title }}</mat-card-title
-            >
+            <mat-card-title>{{ vets.title }}</mat-card-title>
           </mat-card-header>
         </div>
         <mat-card-content>
@@ -27,10 +25,8 @@
           >
           <mat-divider></mat-divider>
           <h3>List of provided services</h3>
-          <mat-list>
-            <mat-list-item *ngFor="let service of vetsServices">{{
-              service.title
-            }}</mat-list-item>
+          <mat-list *ngFor="let service of vetsServices">
+            <mat-list-item>{{ service.title }}</mat-list-item>
           </mat-list>
         </mat-card-content>
       </mat-card>

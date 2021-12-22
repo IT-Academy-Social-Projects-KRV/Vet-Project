@@ -1,11 +1,11 @@
-export interface VetsInfo {
+export interface IVetsInfo {
   id: Number;
   title: string;
   adress: string;
   contacts: string;
 }
 
-export interface VetServices {
+export interface IVetServices {
   description: string;
   id: number;
   title: string;

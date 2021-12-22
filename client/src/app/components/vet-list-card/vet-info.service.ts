@@ -1,30 +1,30 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { VetsInfo, VetServices } from './interfaces/vetInfo';
+import { HttpClient } from '@angular/common/http';
+import { IVetsInfo, IVetServices } from '../../interfaces/vetInfo';
 import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class VetInfoService {
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-  };
+  // httpOptions = {
+  //   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+  // };
 
   private vetDetailsUrl = 'http://localhost:3200/api/vet';
-  private veServicesUrl = 'http://localhost:3200/api/services';
+  private vetServicesUrl = 'http://localhost:3200/api/services';
 
   constructor(private http: HttpClient) {}
 
   getVetDetails() {
-    return this.http.get<VetsInfo>(this.vetDetailsUrl).pipe(
+    return this.http.get<IVetsInfo>(this.vetDetailsUrl).pipe(
       map((vetDetails) => {
         return vetDetails;
       })
     );
   }
   getVetServices() {
-    return this.http.get<VetServices>(this.veServicesUrl).pipe(
+    return this.http.get<IVetServices>(this.vetServicesUrl).pipe(
       map((vetServices) => {
         return vetServices;
       })

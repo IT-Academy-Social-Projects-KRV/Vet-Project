@@ -30,7 +30,6 @@ import { StatisticImagesComponent } from './components/statistic-images/statisti
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { AnimalListPageComponent } from './components/animal-list-page/animal-list-page.component';
 import { AnimalListCardComponent } from './components/animal-list-card/animal-list-card.component';
-import { VetInfoPageComponent } from './components/vet-info-page/vet-info-page.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +51,6 @@ import { VetInfoPageComponent } from './components/vet-info-page/vet-info-page.c
     HomePageComponent,
     AnimalListPageComponent,
     AnimalListCardComponent,
-    VetInfoPageComponent
   ],
   imports: [
     BrowserModule,
