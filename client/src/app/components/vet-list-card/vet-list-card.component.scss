@@ -34,7 +34,8 @@ h3 {
 }
 
 mat-card-title {
-  font-weight: bold; //need to be checked because of weird behavior if there is only one row of text
+  font-weight: bold;
+  height: 50px;
 }
 
 mat-list {

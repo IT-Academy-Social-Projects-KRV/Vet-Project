@@ -14,11 +14,9 @@ export class VetListCardComponent implements OnInit {
     private vetServices: VetInfoService
   ) {
     this.vetDetailInfo.getVetDetails().subscribe((item) => {
-      console.log(item);
       this.vetsDetailInfo = item;
     });
     this.vetServices.getVetServices().subscribe((item) => {
-      console.log(item);
       this.vetsServices = item;
     });
   }

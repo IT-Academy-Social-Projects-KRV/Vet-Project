@@ -1,29 +1,31 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IVetsInfo, IVetServices } from '../../interfaces/vetInfo';
+import { ApiPaths, environment } from 'src/environments/environment';
 import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class VetInfoService {
-  private vetDetailsUrl = 'http://localhost:3200/api/vet';
-  private vetServicesUrl = 'http://localhost:3200/api/services';
+  baseUrl = environment.baseUrl;
 
   constructor(private http: HttpClient) {}
 
   getVetDetails() {
-    return this.http.get<IVetsInfo>(this.vetDetailsUrl).pipe(
+    return this.http.get<IVetsInfo>(`${this.baseUrl}/${ApiPaths.vets}`).pipe(
       map((vetDetails) => {
         return vetDetails;
       })
     );
   }
   getVetServices() {
-    return this.http.get<IVetServices>(this.vetServicesUrl).pipe(
-      map((vetServices) => {
-        return vetServices;
-      })
-    );
+    return this.http
+      .get<IVetServices>(`${this.baseUrl}/${ApiPaths.services}`)
+      .pipe(
+        map((vetServices) => {
+          return vetServices;
+        })
+      );
   }
 }

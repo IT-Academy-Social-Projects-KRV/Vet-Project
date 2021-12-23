@@ -1,5 +1,5 @@
 export interface IVetsInfo {
-  id: Number;
+  id: number;
   title: string;
   adress: string;
   contacts: string;

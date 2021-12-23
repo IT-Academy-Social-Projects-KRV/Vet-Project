@@ -1,5 +1,5 @@
 export interface IAnimalsInfo {
-  id: Number;
+  id: number;
   name: string;
   gender: string;
   breed: string;

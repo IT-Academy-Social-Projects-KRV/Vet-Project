@@ -11,7 +11,6 @@ export class AnimalListCardComponent implements OnInit {
 
   constructor(private animalInfo: AnimalInfoService) {
     this.animalInfo.getAnimalsInfo().subscribe((item) => {
-      console.log(item);
       this.animalsInfo = item;
     });
   }
