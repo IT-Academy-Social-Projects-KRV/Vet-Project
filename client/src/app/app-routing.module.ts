@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { VetListPageComponent } from './components/vet-list-page/vet-list-page.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
+import { VetListPageComponent } from './components/vet-list-page/vet-list-page.component';
 import { AnimalListPageComponent } from './components/animal-list-page/animal-list-page.component';
 
 const routes: Routes = [

@@ -5,13 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { VetListPageComponent } from './components/vet-list-page/vet-list-page.component';
-import { VetListCardComponent } from './components/vet-list-card/vet-list-card.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 
+import { VetListPageComponent } from './components/vet-list-page/vet-list-page.component';
+import { VetListCardComponent } from './components/vet-list-card/vet-list-card.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
