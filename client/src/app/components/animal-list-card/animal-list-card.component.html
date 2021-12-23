@@ -1,19 +1,25 @@
 <section class="animal_list_main">
-    <ul  class="animal__container">
-      <li class="animal__card" *ngFor="let test of [1,2,3,4,5,6,7]">
-         <mat-card>
-          <img mat-card-image
-            src='https:post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg'
-            alt="image of pet">
-            <mat-card-header>
-              <mat-card-title>Name of the pet</mat-card-title>
-            </mat-card-header>
-          <mat-card-content>
-            <mat-card-subtitle>Age: <span class="main_info">4 months </span></mat-card-subtitle>
-            <mat-card-subtitle>Breed: <span class="main_info">Stray</span></mat-card-subtitle>
-            <mat-card-subtitle>Sex: <span class="main_info">Male</span></mat-card-subtitle>
-          </mat-card-content>
-        </mat-card> 
-      </li>
-    </ul>
-  </section>
+  <ul class="animal__container">
+    <li class="animal__card" *ngFor="let animal of animalsInfo">
+      <mat-card>
+        <img
+          mat-card-image
+          src="../../../assets/animalsPictures/animal_0{{ animal.id }}.jpg"
+          alt="image of pet"/>
+        <mat-card-header>
+          <mat-card-title>{{ animal.name }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-card-subtitle>Age:
+            <span class="main_info">{{ animal.age }} </span></mat-card-subtitle>
+          <mat-card-subtitle>
+            Breed:<span class="main_info">{{ animal.breed }}</span></mat-card-subtitle>
+          <mat-card-subtitle>
+            Sex:
+            <span class="main_info">{{animal.gender}}</span>
+          </mat-card-subtitle>
+        </mat-card-content>
+      </mat-card>
+    </li>
+  </ul>
+</section>

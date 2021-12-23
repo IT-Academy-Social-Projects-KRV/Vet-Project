@@ -4,14 +4,12 @@ import { INewsCardInput } from 'src/app/interfaces/common';
 @Component({
   selector: 'app-news-card',
   templateUrl: './news-card.component.html',
-  styleUrls: ['./news-card.component.scss']
+  styleUrls: ['./news-card.component.scss'],
 })
 export class NewsCardComponent implements OnInit {
   @Input() item: INewsCardInput;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-    console.log(this.item);
-  }
+  ngOnInit(): void {}
 }

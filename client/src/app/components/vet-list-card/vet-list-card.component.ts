@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { VetInfoService } from 'src/app/vet-info.service';
+import { VetInfoService } from 'src/app/components/vet-list-card/vet-info.service';
 
 @Component({
   selector: 'app-vet-list-card',
@@ -14,11 +14,9 @@ export class VetListCardComponent implements OnInit {
     private vetServices: VetInfoService
   ) {
     this.vetDetailInfo.getVetDetails().subscribe((item) => {
-      console.log(item);
       this.vetsDetailInfo = item;
     });
     this.vetServices.getVetServices().subscribe((item) => {
-      console.log(item);
       this.vetsServices = item;
     });
   }
