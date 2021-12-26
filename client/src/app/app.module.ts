@@ -9,8 +9,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 
-import { VetListPageComponent } from './vets/pages/vet-list-page/vet-list-page.component';
-import { VetListCardComponent } from './vets/components/vet-list-card/vet-list-card.component';
+
 import { HeaderComponent } from './page-layout/header/header.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -30,8 +29,6 @@ import { HomePageComponent } from './page-layout/home-page/home-page.component';
 @NgModule({
   declarations: [
     AppComponent,
-    VetListPageComponent,
-    VetListCardComponent,
     HeaderComponent,
     HomeMainComponent,
     PetSliderComponent,

@@ -6,9 +6,6 @@ import { AnimalListPageComponent } from './pages/animal-list-page/animal-list-pa
 import { AnimalListCardComponent } from './components/animal-list-card/animal-list-card.component';
 import { AnimalInfoService } from './shared/animal-info.service';
 
-
-
-
 @NgModule({
   declarations: [
     AnimalListPageComponent,
