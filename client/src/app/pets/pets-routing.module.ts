@@ -1,12 +1,21 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
 
+import { AnimalListPageComponent } from './pages/animal-list-page/animal-list-page.component';
 
+const routes: Routes = [
+  { 
+    path: 'animalsList', 
+    component: AnimalListPageComponent 
+  },
+];
 
 @NgModule({
-  declarations: [],
   imports: [
-    CommonModule
+    RouterModule.forChild(routes)
+  ],
+  exports: [
+    RouterModule
   ]
 })
 export class PetsRoutingModule { }

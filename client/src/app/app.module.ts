@@ -25,8 +25,7 @@ import { FooterComponent } from './page-layout/footer/footer.component';
 import { MatInputModule } from '@angular/material/input';
 import { NewsCardComponent } from './page-layout/home-page/news-card/news-card.component';
 import { HomePageComponent } from './page-layout/home-page/home-page.component';
-import { AnimalListPageComponent } from './pets/animal-list-page/animal-list-page.component';
-import { AnimalListCardComponent } from './pets/animal-list-card/animal-list-card.component';
+
 
 @NgModule({
   declarations: [
@@ -43,15 +42,12 @@ import { AnimalListCardComponent } from './pets/animal-list-card/animal-list-car
     HomeNewsComponent,
     FooterComponent,
     NewsCardComponent,
-    HomePageComponent,
-    AnimalListPageComponent,
-    AnimalListCardComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatCardModule,
     MatDividerModule,
     MatListModule,
     MatButtonModule,
