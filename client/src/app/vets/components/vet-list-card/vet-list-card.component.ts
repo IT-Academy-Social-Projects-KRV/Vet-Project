@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { VetInfoService } from 'src/app/vets/vet-list-card/vet-info.service';
+import { VetInfoService } from '../../shared/vet-info.service';
 
 @Component({
   selector: 'app-vet-list-card',
