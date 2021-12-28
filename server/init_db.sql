@@ -17,32 +17,57 @@ CREATE TABLE vetlist_services (
 	CONSTRAINT vetlist_services_pkey PRIMARY KEY (vet_id, service_id)
 );
 
-create table animals (
+CREATE TABLE animals (
 	id INT,
 	name VARCHAR(50),
 	gender VARCHAR(50),
 	breed VARCHAR(50),
-	age INT
-);
+	age INT,
+	shelter_name VARCHAR(30) NOT NULL,
+    curator VARCHAR(30) NOT NULL,
+  	short_info TEXT,
+	behavioral_features TEXT,
+	wishes_for_shelter TEXT	
+)
 
-insert into animals (id, name, gender, breed, age) values (1, 'Colobus, magistrate black', 'F', 'Colobus guerza', 1);
-insert into animals (id, name, gender, breed, age) values (2, 'Buffalo, asian water', 'F', 'Bubalus arnee', 2);
-insert into animals (id, name, gender, breed, age) values (3, 'Hanuman langur', 'M', 'Semnopithecus entellus', 3);
-insert into animals (id, name, gender, breed, age) values (4, 'Dusky rattlesnake', 'M', 'Crotalus triseriatus', 4);
-insert into animals (id, name, gender, breed, age) values (5, 'Otter, giant', 'F', 'Pteronura brasiliensis', 5);
-insert into animals (id, name, gender, breed, age) values (6, 'Dik, kirk''s dik', 'M', 'Madoqua kirkii', 6);
-insert into animals (id, name, gender, breed, age) values (7, 'Pine squirrel', 'F', 'Tamiasciurus hudsonicus', 7);
-insert into animals (id, name, gender, breed, age) values (8, 'Long-billed corella', 'M', 'Cacatua tenuirostris', 8);
-insert into animals (id, name, gender, breed, age) values (9, 'Crow, american', 'M', 'Corvus brachyrhynchos', 9);
-insert into animals (id, name, gender, breed, age) values (10, 'Fox, grey', 'M', 'Vulpes cinereoargenteus', 10);
-insert into animals (id, name, gender, breed, age) values (11, 'Blue peacock', 'M', 'Pavo cristatus', 11);
-insert into animals (id, name, gender, breed, age) values (12, 'Booby, blue-footed', 'M', 'Sula nebouxii', 12);
-insert into animals (id, name, gender, breed, age) values (13, 'Partridge, coqui', 'F', 'Francolinus coqui', 13);
-insert into animals (id, name, gender, breed, age) values (14, 'Indian leopard', 'F', 'Panthera pardus', 14);
-insert into animals (id, name, gender, breed, age) values (15, 'Goose, greylag', 'F', 'Anser anser', 15);
-insert into animals (id, name, gender, breed, age) values (16, 'Deer, barasingha', 'M', 'Cervus duvauceli', 16);
-insert into animals (id, name, gender, breed, age) values (17, 'Bontebok', 'F', 'Damaliscus dorcas', 17);
-insert into animals (id, name, gender, breed, age) values (18, 'Steenbok', 'M', 'Raphicerus campestris', 18);
+INSERT INTO animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+VALUES (1, 'Colobus, magistrate black', 'F', 'Colobus guerza', 1, 'Приватний притулок для собак', 'Мамчур Аліса Бекішівна', 'Маленьку дівчинку підібрали та принесли до притулку', 'Міка дуже ніжна кішечка, любить ласку і увагу, обожнює гратися.', 'Подарує своєму господареві радість і всю свою неосяжну любов!');
+INSERT INTO  animals (id, name, gender, breed, age, shelter_name, curator,  short_info, behavioral_features, wishes_for_shelter) 
+VALUES (2, 'Buffalo, asian water', 'F', 'Bubalus arnee', 2, 'Надія', 'Мамчур Аліса Бекішівна', 'Чарівне кошеня, малюк Міккі - в терміновому пошуку найкращої родини!', 'Кошеня знає горщик, щеплене та оброблене від паразитів, по досягненню віку – допоможемо зі стерилізацією.', 'В квартиру або дім без самовигулу.');
+INSERT INTO  animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+VALUES (3, 'Hanuman langur', 'M', 'Semnopithecus entellus', 3, 'Затишна домівка', 'Наталія Канюк', 'Білочка - сніжна, розкішна красуня. Її доля була складною. Білочка довго жила на вулиці і ледь виживала..', 'Стерилізована, щеплена, оброблена. Готова до домашнього життя', 'Шукаємо для киці родину, де буде спокійно і де будуть чекати, коли киця звикне і довіриться, так як довірилася спочатку своєму опікуну, а потім лікарям');
+INSERT INTO  animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+VALUES (4, 'Dusky rattlesnake', 'M', 'Crotalus triseriatus', 4, 'Приватний притулок для собак', 'Мамчур Аліса Бекішівна', 'Маленьку дівчинку підібрали та принесли до притулку', 'Міка дуже ніжна кішечка, любить ласку і увагу, обожнює гратися.', 'Подарує своєму господареві радість і всю свою неосяжну любов!');
+INSERT INTO  animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+VALUES (5, 'Otter, giant', 'F', 'Pteronura brasiliensis', 5, 'Надія', 'Мамчур Аліса Бекішівна', 'Чарівне кошеня, малюк Міккі - в терміновому пошуку найкращої родини!', 'Кошеня знає горщик, щеплене та оброблене від паразитів, по досягненню віку – допоможемо зі стерилізацією.', 'В квартиру або дім без самовигулу.');
+INSERT INTO animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+VALUES (6, 'Dik, kirk''s dik', 'M', 'Madoqua kirkii', 6, 'Затишна домівка', 'Наталія Канюк', 'Білочка - сніжна, розкішна красуня. Її доля була складною. Білочка довго жила на вулиці і ледь виживала..', 'Стерилізована, щеплена, оброблена. Готова до домашнього життя', 'Шукаємо для киці родину, де буде спокійно і де будуть чекати, коли киця звикне і довіриться, так як довірилася спочатку своєму опікуну, а потім лікарям');
+INSERT INTO  animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+VALUES (7, 'Pine squirrel', 'F', 'Tamiasciurus hudsonicus', 7, 'Приватний притулок для собак', 'Мамчур Аліса Бекішівна', 'Маленьку дівчинку підібрали та принесли до притулку', 'Міка дуже ніжна кішечка, любить ласку і увагу, обожнює гратися.', 'Подарує своєму господареві радість і всю свою неосяжну любов!');
+INSERT INTO  animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+VALUES (8, 'Long-billed corella', 'M', 'Cacatua tenuirostris', 8, 'Надія', 'Мамчур Аліса Бекішівна', 'Чарівне кошеня, малюк Міккі - в терміновому пошуку найкращої родини!', 'Кошеня знає горщик, щеплене та оброблене від паразитів, по досягненню віку – допоможемо зі стерилізацією.', 'В квартиру або дім без самовигулу.');
+INSERT INTO  animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+VALUES (9, 'Crow, american', 'M', 'Corvus brachyrhynchos', 9, 'Затишна домівка', 'Наталія Канюк', 'Білочка - сніжна, розкішна красуня. Її доля була складною. Білочка довго жила на вулиці і ледь виживала..', 'Стерилізована, щеплена, оброблена. Готова до домашнього життя', 'Шукаємо для киці родину, де буде спокійно і де будуть чекати, коли киця звикне і довіриться, так як довірилася спочатку своєму опікуну, а потім лікарям');
+INSERT INTO  animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+VALUES (10, 'Fox, grey', 'M', 'Vulpes cinereoargenteus', 10, 'Приватний притулок для собак', 'Мамчур Аліса Бекішівна', 'Маленьку дівчинку підібрали та принесли до притулку', 'Міка дуже ніжна кішечка, любить ласку і увагу, обожнює гратися.', 'Подарує своєму господареві радість і всю свою неосяжну любов!');
+INSERT INTO  animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+VALUES (11, 'Blue peacock', 'M', 'Pavo cristatus', 11, 'Надія', 'Мамчур Аліса Бекішівна', 'Чарівне кошеня, малюк Міккі - в терміновому пошуку найкращої родини!', 'Кошеня знає горщик, щеплене та оброблене від паразитів, по досягненню віку – допоможемо зі стерилізацією.', 'В квартиру або дім без самовигулу.');
+INSERT INTO  animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+VALUES (12, 'Booby, blue-footed', 'M', 'Sula nebouxii', 12, 'Затишна домівка', 'Наталія Канюк', 'Білочка - сніжна, розкішна красуня. Її доля була складною. Білочка довго жила на вулиці і ледь виживала..', 'Стерилізована, щеплена, оброблена. Готова до домашнього життя', 'Шукаємо для киці родину, де буде спокійно і де будуть чекати, коли киця звикне і довіриться, так як довірилася спочатку своєму опікуну, а потім лікарям');
+INSERT INTO  animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+VALUES (13, 'Partridge, coqui', 'F', 'Francolinus coqui', 13, 'Приватний притулок для собак', 'Мамчур Аліса Бекішівна', 'Маленьку дівчинку підібрали та принесли до притулку', 'Міка дуже ніжна кішечка, любить ласку і увагу, обожнює гратися.', 'Подарує своєму господареві радість і всю свою неосяжну любов!');
+INSERT INTO animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+VALUES (14, 'Indian leopard', 'F', 'Panthera pardus', 14, 'Надія', 'Мамчур Аліса Бекішівна', 'Чарівне кошеня, малюк Міккі - в терміновому пошуку найкращої родини!', 'Кошеня знає горщик, щеплене та оброблене від паразитів, по досягненню віку – допоможемо зі стерилізацією.', 'В квартиру або дім без самовигулу.');
+INSERT INTO  animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+VALUES (15, 'Goose, greylag', 'F', 'Anser anser', 15, 'Затишна домівка', 'Наталія Канюк', 'Білочка - сніжна, розкішна красуня. Її доля була складною. Білочка довго жила на вулиці і ледь виживала..', 'Стерилізована, щеплена, оброблена. Готова до домашнього життя', 'Шукаємо для киці родину, де буде спокійно і де будуть чекати, коли киця звикне і довіриться, так як довірилася спочатку своєму опікуну, а потім лікарям');
+INSERT INTO  animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+VALUES (16, 'Deer, barasingha', 'M', 'Cervus duvauceli', 16, 'Приватний притулок для собак', 'Мамчур Аліса Бекішівна', 'Маленьку дівчинку підібрали та принесли до притулку', 'Міка дуже ніжна кішечка, любить ласку і увагу, обожнює гратися.', 'Подарує своєму господареві радість і всю свою неосяжну любов!');
+INSERT INTO  animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+VALUES(17, 'Bontebok', 'F', 'Damaliscus dorcas', 17, 'Надія', 'Мамчур Аліса Бекішівна', 'Чарівне кошеня, малюк Міккі - в терміновому пошуку найкращої родини!', 'Кошеня знає горщик, щеплене та оброблене від паразитів, по досягненню віку – допоможемо зі стерилізацією.', 'В квартиру або дім без самовигулу.');
+INSERT INTO  animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+VALUES (18, 'Steenbok', 'M', 'Raphicerus campestris', 18, 'Затишна домівка', 'Наталія Канюк', 'Білочка - сніжна, розкішна красуня. Її доля була складною. Білочка довго жила на вулиці і ледь виживала..', 'Стерилізована, щеплена, оброблена. Готова до домашнього життя', 'Шукаємо для киці родину, де буде спокійно і де будуть чекати, коли киця звикне і довіриться, так як довірилася спочатку своєму опікуну, а потім лікарям');
+
+
 
 
 INSERT INTO vetlist (id, title, adress, contacts)
@@ -91,6 +116,47 @@ FROM
 
 SELECT
 	pg_catalog.setval(pg_get_serial_sequence('services', 'id'), MAX(id))
+
 FROM
 	services;
 
+
+
+
+
+insert into animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+values (1, 'Colobus, magistrate black', 'F', 'Colobus guerza', 1, 'Приватний притулок для собак', 'Мамчур Аліса Бекішівна', 'Маленьку дівчинку підібрали та принесли до притулку', 'Міка дуже ніжна кішечка, любить ласку і увагу, обожнює гратися.', 'Подарує своєму господареві радість і всю свою неосяжну любов!');
+insert into animals (id, name, gender, breed, age, shelter_name, curator,  short_info, behavioral_features, wishes_for_shelter) 
+values (2, 'Buffalo, asian water', 'F', 'Bubalus arnee', 2, 'Надія', 'Мамчур Аліса Бекішівна', 'Чарівне кошеня, малюк Міккі - в терміновому пошуку найкращої родини!', 'Кошеня знає горщик, щеплене та оброблене від паразитів, по досягненню віку – допоможемо зі стерилізацією.', 'В квартиру або дім без самовигулу.');
+insert into animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+values (3, 'Hanuman langur', 'M', 'Semnopithecus entellus', 3, 'Затишна домівка', 'Наталія Канюк', 'Білочка - сніжна, розкішна красуня. Її доля була складною. Білочка довго жила на вулиці і ледь виживала..', 'Стерилізована, щеплена, оброблена. Готова до домашнього життя', 'Шукаємо для киці родину, де буде спокійно і де будуть чекати, коли киця звикне і довіриться, так як довірилася спочатку своєму опікуну, а потім лікарям');
+insert into animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+values (4, 'Dusky rattlesnake', 'M', 'Crotalus triseriatus', 4, 'Приватний притулок для собак', 'Мамчур Аліса Бекішівна', 'Маленьку дівчинку підібрали та принесли до притулку', 'Міка дуже ніжна кішечка, любить ласку і увагу, обожнює гратися.', 'Подарує своєму господареві радість і всю свою неосяжну любов!');
+insert into animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+values (5, 'Otter, giant', 'F', 'Pteronura brasiliensis', 5, 'Надія', 'Мамчур Аліса Бекішівна', 'Чарівне кошеня, малюк Міккі - в терміновому пошуку найкращої родини!', 'Кошеня знає горщик, щеплене та оброблене від паразитів, по досягненню віку – допоможемо зі стерилізацією.', 'В квартиру або дім без самовигулу.');
+insert into animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+values (6, 'Dik, kirk''s dik', 'M', 'Madoqua kirkii', 6, 'Затишна домівка', 'Наталія Канюк', 'Білочка - сніжна, розкішна красуня. Її доля була складною. Білочка довго жила на вулиці і ледь виживала..', 'Стерилізована, щеплена, оброблена. Готова до домашнього життя', 'Шукаємо для киці родину, де буде спокійно і де будуть чекати, коли киця звикне і довіриться, так як довірилася спочатку своєму опікуну, а потім лікарям');
+insert into animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+values (7, 'Pine squirrel', 'F', 'Tamiasciurus hudsonicus', 7, 'Приватний притулок для собак', 'Мамчур Аліса Бекішівна', 'Маленьку дівчинку підібрали та принесли до притулку', 'Міка дуже ніжна кішечка, любить ласку і увагу, обожнює гратися.', 'Подарує своєму господареві радість і всю свою неосяжну любов!');
+insert into animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+values (8, 'Long-billed corella', 'M', 'Cacatua tenuirostris', 8, 'Надія', 'Мамчур Аліса Бекішівна', 'Чарівне кошеня, малюк Міккі - в терміновому пошуку найкращої родини!', 'Кошеня знає горщик, щеплене та оброблене від паразитів, по досягненню віку – допоможемо зі стерилізацією.', 'В квартиру або дім без самовигулу.');
+insert into animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+values (9, 'Crow, american', 'M', 'Corvus brachyrhynchos', 9, 'Затишна домівка', 'Наталія Канюк', 'Білочка - сніжна, розкішна красуня. Її доля була складною. Білочка довго жила на вулиці і ледь виживала..', 'Стерилізована, щеплена, оброблена. Готова до домашнього життя', 'Шукаємо для киці родину, де буде спокійно і де будуть чекати, коли киця звикне і довіриться, так як довірилася спочатку своєму опікуну, а потім лікарям');
+insert into animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+values (10, 'Fox, grey', 'M', 'Vulpes cinereoargenteus', 10, 'Приватний притулок для собак', 'Мамчур Аліса Бекішівна', 'Маленьку дівчинку підібрали та принесли до притулку', 'Міка дуже ніжна кішечка, любить ласку і увагу, обожнює гратися.', 'Подарує своєму господареві радість і всю свою неосяжну любов!');
+insert into animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+values (11, 'Blue peacock', 'M', 'Pavo cristatus', 11, 'Надія', 'Мамчур Аліса Бекішівна', 'Чарівне кошеня, малюк Міккі - в терміновому пошуку найкращої родини!', 'Кошеня знає горщик, щеплене та оброблене від паразитів, по досягненню віку – допоможемо зі стерилізацією.', 'В квартиру або дім без самовигулу.');
+insert into animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+values (12, 'Booby, blue-footed', 'M', 'Sula nebouxii', 12, 'Затишна домівка', 'Наталія Канюк', 'Білочка - сніжна, розкішна красуня. Її доля була складною. Білочка довго жила на вулиці і ледь виживала..', 'Стерилізована, щеплена, оброблена. Готова до домашнього життя', 'Шукаємо для киці родину, де буде спокійно і де будуть чекати, коли киця звикне і довіриться, так як довірилася спочатку своєму опікуну, а потім лікарям');
+insert into animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+values (13, 'Partridge, coqui', 'F', 'Francolinus coqui', 13, 'Приватний притулок для собак', 'Мамчур Аліса Бекішівна', 'Маленьку дівчинку підібрали та принесли до притулку', 'Міка дуже ніжна кішечка, любить ласку і увагу, обожнює гратися.', 'Подарує своєму господареві радість і всю свою неосяжну любов!');
+insert into animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+values (14, 'Indian leopard', 'F', 'Panthera pardus', 14, 'Надія', 'Мамчур Аліса Бекішівна', 'Чарівне кошеня, малюк Міккі - в терміновому пошуку найкращої родини!', 'Кошеня знає горщик, щеплене та оброблене від паразитів, по досягненню віку – допоможемо зі стерилізацією.', 'В квартиру або дім без самовигулу.');
+insert into animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+values (15, 'Goose, greylag', 'F', 'Anser anser', 15, 'Затишна домівка', 'Наталія Канюк', 'Білочка - сніжна, розкішна красуня. Її доля була складною. Білочка довго жила на вулиці і ледь виживала..', 'Стерилізована, щеплена, оброблена. Готова до домашнього життя', 'Шукаємо для киці родину, де буде спокійно і де будуть чекати, коли киця звикне і довіриться, так як довірилася спочатку своєму опікуну, а потім лікарям');
+insert into animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+values (16, 'Deer, barasingha', 'M', 'Cervus duvauceli', 16, 'Приватний притулок для собак', 'Мамчур Аліса Бекішівна', 'Маленьку дівчинку підібрали та принесли до притулку', 'Міка дуже ніжна кішечка, любить ласку і увагу, обожнює гратися.', 'Подарує своєму господареві радість і всю свою неосяжну любов!');
+insert into animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+values (17, 'Bontebok', 'F', 'Damaliscus dorcas', 17, 'Надія', 'Мамчур Аліса Бекішівна', 'Чарівне кошеня, малюк Міккі - в терміновому пошуку найкращої родини!', 'Кошеня знає горщик, щеплене та оброблене від паразитів, по досягненню віку – допоможемо зі стерилізацією.', 'В квартиру або дім без самовигулу.');
+insert into animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
+values (18, 'Steenbok', 'M', 'Raphicerus campestris', 18, 'Затишна домівка', 'Наталія Канюк', 'Білочка - сніжна, розкішна красуня. Її доля була складною. Білочка довго жила на вулиці і ледь виживала..', 'Стерилізована, щеплена, оброблена. Готова до домашнього життя', 'Шукаємо для киці родину, де буде спокійно і де будуть чекати, коли киця звикне і довіриться, так як довірилася спочатку своєму опікуну, а потім лікарям');
