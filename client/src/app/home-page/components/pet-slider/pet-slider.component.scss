@@ -1,0 +1,28 @@
+.main__pet_slider {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 60px;
+	 h1{
+		margin-bottom: 40px;
+		margin-top: 60px;
+		font-size: 60px;
+		font-style: bold;
+	 }
+	
+}
+
+.pet__slider_cards {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 40px;
+}
+
+.example-card {
+	margin: 0 10px;
+	z-index: -3;
+
+}

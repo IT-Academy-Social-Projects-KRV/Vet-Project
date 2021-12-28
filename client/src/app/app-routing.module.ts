@@ -1,13 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePageComponent } from './components/home-page/home-page.component';
-import { VetListPageComponent } from './components/vet-list-page/vet-list-page.component';
-import { AnimalListPageComponent } from './components/animal-list-page/animal-list-page.component';
 
 const routes: Routes = [
-  { path: 'vetsList', component: VetListPageComponent },
-  { path: 'animalsList', component: AnimalListPageComponent },
-  { path: '', component: HomePageComponent },
+  { 
+    path: 'animalsList', 
+    loadChildren: () => import('./pets/pets.module').then(m => m.PetsModule)
+  },
+  { 
+    path: 'vetsList', 
+    loadChildren: () => import('./vets/vets.module').then(m => m.VetsModule)
+  },
+  { 
+    path: '', 
+    loadChildren: () => import('./home-page/home-page.module').then(m => m.HomePageModule)
+}
 ];
 
 @NgModule({

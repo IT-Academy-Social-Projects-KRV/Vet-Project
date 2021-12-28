@@ -18,7 +18,7 @@ router.post('/', async function addService(req: Request<{}, {}, IBareServiceItem
 
         const newService = await db.query<IServiceItem>(`
                 INSERT INTO services (title, description) 
-                VALUES ($1, $2,) 
+                VALUES ($1, $2) 
                 RETURNING *`,
             [title, description]
         );
@@ -82,7 +82,7 @@ router.put('/:id(\\d+)', async function updateServiceById(req: Request<{id: stri
 })
 
 router.delete('/:id(\\d+)', async function deleteServiceById(req, res) {
-    const id = parseInt(req.body.id)
+    const id = parseInt(req.params.id)
 
     if (!(id >= 1)) {
         res.status(400).send(new Error('Invalid id'))
