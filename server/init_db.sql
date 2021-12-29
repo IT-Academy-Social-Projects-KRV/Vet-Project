@@ -1,14 +1,20 @@
 CREATE TABLE services (
 	id SERIAL PRIMARY KEY,
-	title TEXT NOT NULL,
-	description TEXT
+	title TEXT NOT NULL
+);
+
+CREATE TABLE  animal_types(
+	id SERIAL PRIMARY KEY,
+	title TEXT NOT NULL
 );
 
 CREATE TABLE vetlist (
 	id SERIAL PRIMARY KEY,
 	title VARCHAR(240) NOT NULL,
 	adress VARCHAR(240) NOT NULL,
-	contacts VARCHAR(240) NOT NULL
+	phone VARCHAR(240) NOT NULL,
+	email VARCHAR(240) NOT NULL,
+	map_link VARCHAR(240) NOT NULL
 );
 
 CREATE TABLE vetlist_services (
@@ -28,7 +34,7 @@ CREATE TABLE animals (
   	short_info TEXT,
 	behavioral_features TEXT,
 	wishes_for_shelter TEXT	
-)
+);
 
 INSERT INTO animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
 VALUES (1, 'Colobus, magistrate black', 'F', 'Colobus guerza', 1, 'Приватний притулок для собак', 'Мамчур Аліса Бекішівна', 'Маленьку дівчинку підібрали та принесли до притулку', 'Міка дуже ніжна кішечка, любить ласку і увагу, обожнює гратися.', 'Подарує своєму господареві радість і всю свою неосяжну любов!');
@@ -68,40 +74,41 @@ INSERT INTO  animals (id, name, gender, breed, age, shelter_name, curator, short
 VALUES (18, 'Steenbok', 'M', 'Raphicerus campestris', 18, 'Затишна домівка', 'Наталія Канюк', 'Білочка - сніжна, розкішна красуня. Її доля була складною. Білочка довго жила на вулиці і ледь виживала..', 'Стерилізована, щеплена, оброблена. Готова до домашнього життя', 'Шукаємо для киці родину, де буде спокійно і де будуть чекати, коли киця звикне і довіриться, так як довірилася спочатку своєму опікуну, а потім лікарям');
 
 
-
-
-INSERT INTO vetlist (id, title, adress, contacts)
-		values(1, 'The Juilliard School', '098 Londonderry Alley', '205-216-8574');
-INSERT INTO vetlist (id, title, adress, contacts)
-		values(2, 'National Academy for Physical Education and Sports Bucharest', '62 Barnett Trail', '225-325-8184');
-INSERT INTO vetlist (id, title, adress, contacts)
-		values(3, 'Universidad del Istmo', '42513 Cottonwood Terrace', '756-327-5234');
-INSERT INTO vetlist (id, title, adress, contacts)
-		values(4, 'American International University - Bangladesh', '55424 Macpherson Way', '163-294-1722');
-INSERT INTO vetlist (id, title, adress, contacts)
-		values(5, 'Kiev Slavonic University', '0992 Stang Crossing', '103-743-3473');
-INSERT INTO vetlist (id, title, adress, contacts)
-		values(6, 'Hanshin University', '3024 Glacier Hill Road', '275-298-7621');
-INSERT INTO vetlist (id, title, adress, contacts)
-		values(7, 'Pázmány Péter Catholic University', '69 Melody Point', '203-923-4416');
-INSERT INTO vetlist (id, title, adress, contacts)
-		values(8, 'Sahmyook University', '572 Lyons Crossing', '542-834-4677');
-INSERT INTO vetlist (id, title, adress, contacts)
-		values(9, 'University of Piraeus', '1 Browning Drive', '895-838-8187');
-INSERT INTO vetlist (id, title, adress, contacts)
-		values(10, 'Islamic University of Rotterdam', '228 Eggendart Junction', '912-785-8001');
-INSERT INTO vetlist (id, title, adress, contacts)
-		values(11, 'Columbia College Hollywood', '070 Buena Vista Center', '438-463-5198');
-INSERT INTO vetlist (id, title, adress, contacts)
-		values(12, 'Universidad Metropolitana de Honduras', '3723 Rigney Center', '362-917-1444');
+INSERT INTO vetlist (id, title, adress, phone, email, map_link)
+		VALUES(1, 'The Juilliard School', '098 Londonderry Alley', '205-216-8574', 'example@gmail.com', 'https://www.google.com/maps/search/%D0%92%D0%B5%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D1%80%D0%BD%D1%96+%D0%BA%D0%BB%D1%96%D0%BD%D1%96%D0%BA%D0%B8/@50.6246365,26.2239432,14z/data=!3m1!4b1');
+INSERT INTO vetlist (id, title, adress, phone, email, map_link)
+		VALUES(2, 'National Academy for Physical Education and Sports Bucharest', '62 Barnett Trail', '225-325-8184', 'example@gmail.com', 'https://www.google.com/maps/search/%D0%92%D0%B5%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D1%80%D0%BD%D1%96+%D0%BA%D0%BB%D1%96%D0%BD%D1%96%D0%BA%D0%B8/@50.6246365,26.2239432,14z/data=!3m1!4b1');
+INSERT INTO vetlist (id, title, adress, phone, email, map_link)
+		VALUES(3, 'Universidad del Istmo', '42513 Cottonwood Terrace', '756-327-5234', 'example@gmail.com', 'https://www.google.com/maps/search/%D0%92%D0%B5%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D1%80%D0%BD%D1%96+%D0%BA%D0%BB%D1%96%D0%BD%D1%96%D0%BA%D0%B8/@50.6246365,26.2239432,14z/data=!3m1!4b1');
+INSERT INTO vetlist (id, title, adress, phone, email, map_link)
+		VALUES(4, 'American International University - Bangladesh', '55424 Macpherson Way', '163-294-1722', 'example@gmail.com', 'https://www.google.com/maps/search/%D0%92%D0%B5%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D1%80%D0%BD%D1%96+%D0%BA%D0%BB%D1%96%D0%BD%D1%96%D0%BA%D0%B8/@50.6246365,26.2239432,14z/data=!3m1!4b1');
+INSERT INTO vetlist (id, title, adress, phone, email, map_link)
+		VALUES(5, 'Kiev Slavonic University', '0992 Stang Crossing', '103-743-3473', 'example@gmail.com', 'https://www.google.com/maps/search/%D0%92%D0%B5%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D1%80%D0%BD%D1%96+%D0%BA%D0%BB%D1%96%D0%BD%D1%96%D0%BA%D0%B8/@50.6246365,26.2239432,14z/data=!3m1!4b1');
+INSERT INTO vetlist (id, title, adress, phone, email, map_link)
+		VALUES(6, 'Hanshin University', '3024 Glacier Hill Road', '275-298-7621', 'example@gmail.com', 'https://www.google.com/maps/search/%D0%92%D0%B5%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D1%80%D0%BD%D1%96+%D0%BA%D0%BB%D1%96%D0%BD%D1%96%D0%BA%D0%B8/@50.6246365,26.2239432,14z/data=!3m1!4b1');
+INSERT INTO vetlist (id, title, adress, phone, email, map_link)
+		VALUES(7, 'Pázmány Péter Catholic University', '69 Melody Point', '203-923-4416', 'example@gmail.com', 'https://www.google.com/maps/search/%D0%92%D0%B5%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D1%80%D0%BD%D1%96+%D0%BA%D0%BB%D1%96%D0%BD%D1%96%D0%BA%D0%B8/@50.6246365,26.2239432,14z/data=!3m1!4b1');
+INSERT INTO vetlist (id, title, adress, phone, email, map_link)
+		VALUES(8, 'Sahmyook University', '572 Lyons Crossing', '542-834-4677', 'example@gmail.com', 'https://www.google.com/maps/search/%D0%92%D0%B5%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D1%80%D0%BD%D1%96+%D0%BA%D0%BB%D1%96%D0%BD%D1%96%D0%BA%D0%B8/@50.6246365,26.2239432,14z/data=!3m1!4b1');
+INSERT INTO vetlist (id, title, adress, phone, email, map_link)
+		VALUES(9, 'University of Piraeus', '1 Browning Drive', '895-838-8187', 'example@gmail.com', 'https://www.google.com/maps/search/%D0%92%D0%B5%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D1%80%D0%BD%D1%96+%D0%BA%D0%BB%D1%96%D0%BD%D1%96%D0%BA%D0%B8/@50.6246365,26.2239432,14z/data=!3m1!4b1');
+INSERT INTO vetlist (id, title, adress, phone, email, map_link)
+		VALUES(10, 'Islamic University of Rotterdam', '228 Eggendart Junction', '912-785-8001', 'example@gmail.com', 'https://www.google.com/maps/search/%D0%92%D0%B5%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D1%80%D0%BD%D1%96+%D0%BA%D0%BB%D1%96%D0%BD%D1%96%D0%BA%D0%B8/@50.6246365,26.2239432,14z/data=!3m1!4b1');
+INSERT INTO vetlist (id, title, adress, phone, email, map_link)
+		VALUES(11, 'Columbia College Hollywood', '070 Buena Vista Center', '438-463-5198', 'example@gmail.com', 'https://www.google.com/maps/search/%D0%92%D0%B5%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D1%80%D0%BD%D1%96+%D0%BA%D0%BB%D1%96%D0%BD%D1%96%D0%BA%D0%B8/@50.6246365,26.2239432,14z/data=!3m1!4b1');
+INSERT INTO vetlist (id, title, adress, phone, email, map_link)
+		VALUES(12, 'Universidad Metropolitana de Honduras', '3723 Rigney Center', '362-917-1444', 'example@gmail.com', 'https://www.google.com/maps/search/%D0%92%D0%B5%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D1%80%D0%BD%D1%96+%D0%BA%D0%BB%D1%96%D0%BD%D1%96%D0%BA%D0%B8/@50.6246365,26.2239432,14z/data=!3m1!4b1');
 
     
-INSERT INTO vetlist (title, adress, contacts)
-		values('Politeknik Negeri Padang', '3 Killdeer Road', '974-815-0655');
+INSERT INTO vetlist (title, adress, phone, email, map_link)
+		VALUES('Politeknik Negeri Padang', '3 Killdeer Road', '974-815-0655', 'example@gmail.com', 'https://www.google.com/maps/search/%D0%92%D0%B5%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D1%80%D0%BD%D1%96+%D0%BA%D0%BB%D1%96%D0%BD%D1%96%D0%BA%D0%B8/@50.6246365,26.2239432,14z/data=!3m1!4b1');
 INSERT INTO services
-		VALUES(1, 'Кастрація', 'Невеликий опис цього сервісу'), (2, 'Лікування', 'Невеликий опис цього сервісу'), (3, 'Щеплення', 'Невеликий опис цього сервісу'), (4, 'Купування', 'Невеликий опис цього сервісу');
+		VALUES(1, 'Хірургія'), (2, 'Травматолог'), (3, 'Стоматологія'), (4, 'Консультація'), (5, 'Чіпування'), (6, 'Оформлення документів'), (7, 'Вакцинація(Щеплення)'), (8, 'Стаціонар'), (9, 'Акушерство'), (10, 'УЗД'), (11, 'Терапія'), (12, 'Лаболаторна діагностика'), (13, 'Офтальмологія'), (14, 'Дерматологія'), (15, 'Стерилізація'), (16, 'Нефрологія'), (17, 'Інфекційні захворювання'), (18, 'Онкологія'), (19, 'Неврологія'), (20, 'Профілактичні заходи');
 INSERT INTO vetlist_services
 		VALUES(1, 1), (1, 3), (2, 1), (2, 2), (2, 4), (3, 1), (3, 3), (3, 4), (4, 2), (4, 4);
+
+INSERT INTO animal_types
+		VALUES(1, 'Птахи'),(2, 'Гризуни'),(3, 'Рептилії'),(4, 'Дикі тварини'),(5, 'Домашні тварини');
 
 
 SELECT
