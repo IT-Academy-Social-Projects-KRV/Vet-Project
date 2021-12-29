@@ -17,7 +17,7 @@ import { HomeAboutComponent } from './components/home-about/home-about.component
 import { HomeNewsComponent } from './components/home-news/home-news.component';
 import { NewsCardComponent } from './components/news-card/news-card.component'; 
 
-import { HomePageComponent } from './home-page.component'; 
+import { HomePageComponent } from './pages/home-page.component'; 
 
 
 @NgModule({

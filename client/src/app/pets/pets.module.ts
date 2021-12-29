@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { PetsRoutingModule } from './pets-routing.module';
 import { AnimalListPageComponent } from './pages/animal-list-page/animal-list-page.component';
-import { AnimalListCardComponent } from './components/animal-list-card/animal-list-card.component';
-import { AnimalInfoService } from './shared/animal-info.service';
+import { AnimalListCardComponent } from '../shared/components/animal-list-card/animal-list-card.component';
+import { AnimalInfoService } from '../shared/services/animal-info.service';
 
 @NgModule({
   declarations: [
