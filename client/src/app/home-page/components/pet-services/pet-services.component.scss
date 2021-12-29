@@ -1,0 +1,62 @@
+.pet-services-section {
+  display: flex;
+  flex-direction: column;
+  background-color: #4788b60c;
+  padding: 20px 0;
+  margin-bottom: 40px;
+}
+.pet-services-section__title {
+  text-align: center;
+  color: #4788b6;
+  font-weight: 700;
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+.pet-services-section__list {
+  display: flex;
+  margin: 0 auto;
+}
+.pet-services-section__list-item {
+  position: relative;
+  padding: 15px;
+  border: 2px solid #4788b6;
+  border-radius: 3px;
+  overflow: hidden;
+  background-color: white;
+
+  &:not(:last-child) {
+    margin-right: 50px;
+  }
+  &:hover {
+    border-color: #d68427;
+    cursor: pointer;
+    background-color: #4788b615;
+  }
+  &:hover .pet-services-section__item-text {
+    color: #d68427;
+  }
+  &:hover .back {
+    transform: translate(-10%, -10%);
+  }
+}
+
+img {
+  width: 200px;
+}
+.pet-services-section__item-text {
+  display: block;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  color: #4788b6;
+}
+.back {
+  z-index: -2;
+  position: absolute;
+  width: 105%;
+  height: 105%;
+  background-color: #4788b616;
+  transform: translate(-120%, -10%);
+
+  transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}

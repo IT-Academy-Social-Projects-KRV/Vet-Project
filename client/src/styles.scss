@@ -1,15 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; }
-li, a { list-style: none;
-		text-decoration: none;
-		color: black;
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+li,
+a {
+  list-style: none;
+  text-decoration: none;
+  color: black;
 }
 
 h1 {
-	font-size: 30px;
+  font-size: 30px;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.mat-card:not([class*="mat-elevation-z"]) {
+  box-shadow: none;
+}

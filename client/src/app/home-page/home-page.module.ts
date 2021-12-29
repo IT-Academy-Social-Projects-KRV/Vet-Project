@@ -17,7 +17,8 @@ import { HomeAboutComponent } from './components/home-about/home-about.component
 import { HomeNewsComponent } from './components/home-news/home-news.component';
 import { NewsCardComponent } from './components/news-card/news-card.component'; 
 
-import { HomePageComponent } from './home-page.component'; 
+import { HomePageComponent } from './home-page.component';
+import { PetServicesComponent } from './components/pet-services/pet-services.component'; 
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { HomePageComponent } from './home-page.component';
     HomeAboutComponent,
     HomeNewsComponent,
     NewsCardComponent,
-    HomePageComponent
+    HomePageComponent,
+    PetServicesComponent
   ],
   imports: [
     CommonModule,

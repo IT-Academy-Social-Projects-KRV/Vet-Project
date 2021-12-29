@@ -1,35 +1,65 @@
-.main__donate {
-	margin-top: 40px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	background-image: url('https://c4.wallpaperflare.com/wallpaper/24/683/587/panorama-a-lot-of-dogs-a-different-breed-wallpaper-thumb.jpg');
-	background-position: center;
-	background-size: cover;
-	
+.donate-section {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+
+  border-radius: 3px;
+  padding: 20px 0;
 }
 
-.example-full-width {
-	background-color: #ffff;
-	input {
-		font-size: 30px;
-	}
+.donate-section__card-input {
+  font-size: 20px;
+  width: 400px;
+  height: 50px;
+  margin-bottom: 20px;
+  padding: 0 10px;
+  border: 2px solid #4788b6;
+  border-radius: 3px;
+  outline: none;
+  &:hover,
+  :focus {
+    border-color: #d68427;
+    // outline: none;
+  }
 }
 
 mat-card {
-	width: 30%;
-	height: 90%;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	opacity: 0.9;
-	background-color: #3f51b5;
-		h1 {
-		font-size: 40px;
-		color: #ffff;
-		}
-		button {
-			color: #ffff;
-		}
+  width: 100%;
+  background-color: inherit;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0.9;
+
+  h1 {
+    font-size: 40px;
+  }
+}
+.donate-section__card-title {
+  text-align: center;
+  color: #4788b6;
+  font-weight: 700;
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+.donate-section__card-btn {
+  width: 150px;
+  height: 50px;
+
+  border: 1px solid #4788b6;
+  border-radius: 3px;
+  color: #4788b6;
+  background-color: inherit;
+  font-size: 20px;
+
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+  &:hover {
+    color: #d68427;
+    border-color: #d68427;
+    cursor: pointer;
+    background-color: #60b4f034;
+  }
 }
