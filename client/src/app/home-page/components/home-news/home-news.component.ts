@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { INewsCardInput } from 'src/app/interfaces/common';
+import { INewsCardInput } from 'src/app/shared/interfaces/common';
 
 @Component({
   selector: 'app-home-news',
