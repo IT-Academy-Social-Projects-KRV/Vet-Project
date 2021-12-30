@@ -24,7 +24,7 @@ CREATE TABLE vetlist_services (
 );
 
 CREATE TABLE animals (
-	id INT,
+	id SERIAL PRIMARY KEY,
 	name VARCHAR(50),
 	gender VARCHAR(50),
 	breed VARCHAR(50),
