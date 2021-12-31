@@ -8,18 +8,34 @@
 }
 
 .animal__photo {
-  padding: 10px 80px;
-  width: fit-content;
+  padding: 10px 30px;
+  width: 600px;
   flex-direction: column;
 
-  .check_btn {
+  .animal__btn1 {
     font-size: 24px;
-    margin-top: 75px;
-    margin-left: 75px;
+    margin-top: 50px;
     color: #4788b6;
     background-color: white;
-    height: 60px;
-    width: 300px;
+    height: 50px;
+    width: 250px;
+    border: 1px solid;
+
+    &:hover {
+      color: #d68427;
+      border-color: #d68427;
+      cursor: pointer;
+    }
+  }
+
+  .animal__btn2 {
+    font-size: 24px;
+    margin-top: 50px;
+    margin-left: 12px;
+    color: #4788b6;
+    background-color: white;
+    height: 50px;
+    width: 250px;
     border: 1px solid;
 
     &:hover {
@@ -32,7 +48,7 @@
   img {
     border: 2px solid #4788b6;;
     border-radius: 4px;
-    width: 450px;
+    width: 510px;
 
 
     &:hover {
@@ -43,27 +59,27 @@
 }
 
 .animal__info {
-  padding: 10px 80px;
-  width: fit-content;
+  padding: 10px 0px 10px 100px;
+  width: 600px;
 
-  h1 {
+  h2 {
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 34px;
-    padding-bottom: 12px;
-    line-height: 1.2em;
+    font-size: 24px;
+    padding-bottom: 8px;
+    line-height: 1.1em;
   }
 
   h3 {
-    font-weight: 400;
-    font-size: 24px;
-    padding-bottom: 5px;
+    font-weight: 500;
+    font-size: 18px;
+    padding-bottom: 4px;
 
   }
 
-  p {
+  span {
     font-weight: 300;
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 
