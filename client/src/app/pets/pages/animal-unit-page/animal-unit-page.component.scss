@@ -1,0 +1,69 @@
+.animal__main {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 70px auto 0px auto;
+  padding: 40px 60px;
+  width: 1200px;
+}
+
+.animal__photo {
+  padding: 10px 80px;
+  width: fit-content;
+  flex-direction: column;
+
+  .check_btn {
+    font-size: 24px;
+    margin-top: 75px;
+    margin-left: 75px;
+    color: #4788b6;
+    background-color: white;
+    height: 60px;
+    width: 300px;
+    border: 1px solid;
+
+    &:hover {
+      color: #d68427;
+      border-color: #d68427;
+      cursor: pointer;
+    }
+  }
+
+  img {
+    border: 2px solid #4788b6;;
+    border-radius: 4px;
+    width: 450px;
+
+
+    &:hover {
+      border-color: #d68427;
+      cursor: pointer;
+    }
+  }
+}
+
+.animal__info {
+  padding: 10px 80px;
+  width: fit-content;
+
+  h1 {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 34px;
+    padding-bottom: 12px;
+    line-height: 1.2em;
+  }
+
+  h3 {
+    font-weight: 400;
+    font-size: 24px;
+    padding-bottom: 5px;
+
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 20px;
+  }
+}
+
