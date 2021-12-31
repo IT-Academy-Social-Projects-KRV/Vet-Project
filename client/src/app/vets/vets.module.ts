@@ -4,25 +4,20 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 
-import { VetsRoutingModule } from './vets-routing.module'; 
-import { VetListPageComponent } from './pages/vet-list-page/vet-list-page.component'; 
-import { VetListCardComponent } from '../shared/components/vet-list-card/vet-list-card.component'; 
-import { VetInfoService } from '../shared/services/vet-info.service'; 
+import { VetsRoutingModule } from './vets-routing.module';
+import { VetListPageComponent } from './pages/vet-list-page/vet-list-page.component';
+import { VetListCardComponent } from '../shared/components/vet-list-card/vet-list-card.component';
+import { VetInfoService } from '../shared/services/vet-info.service';
 
 @NgModule({
-  declarations: [
-    VetListPageComponent,
-    VetListCardComponent
-  ],
+  declarations: [VetListPageComponent, VetListCardComponent],
   imports: [
     CommonModule,
     MatCardModule,
     MatDividerModule,
     MatListModule,
-    VetsRoutingModule
+    VetsRoutingModule,
   ],
-  providers: [
-    VetInfoService
-  ]
+  providers: [VetInfoService],
 })
-export class VetsModule { }
+export class VetsModule {}

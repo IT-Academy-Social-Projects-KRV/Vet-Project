@@ -19,14 +19,16 @@
           >
           <mat-card-subtitle
             >Contacts:
-            <span class="main_info">{{
-              vets.contacts
-            }}</span></mat-card-subtitle
+            <span class="main_info">{{ vets.phone }}</span></mat-card-subtitle
+          >
+          <mat-card-subtitle
+            >Email:
+            <span class="main_info">{{ vets.email }}</span></mat-card-subtitle
           >
           <mat-divider></mat-divider>
           <h3>List of provided services</h3>
-          <mat-list *ngFor="let service of vetsServices">
-            <mat-list-item>{{ service.title }}</mat-list-item>
+          <mat-list *ngFor="let service of vetsServices; let i = index">
+            <mat-list-item *ngIf="i < 5">{{ service.title }}</mat-list-item>
           </mat-list>
         </mat-card-content>
       </mat-card>
