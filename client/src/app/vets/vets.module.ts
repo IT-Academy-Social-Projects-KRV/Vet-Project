@@ -8,9 +8,14 @@ import { VetsRoutingModule } from './vets-routing.module';
 import { VetListPageComponent } from './pages/vet-list-page/vet-list-page.component';
 import { VetListCardComponent } from '../shared/components/vet-list-card/vet-list-card.component';
 import { VetInfoService } from '../shared/services/vet-info.service';
+import { VetUnitPageComponent } from './pages/vet-unit-page/vet-unit-page.component';
 
 @NgModule({
-  declarations: [VetListPageComponent, VetListCardComponent],
+  declarations: [
+    VetListPageComponent,
+    VetListCardComponent,
+    VetUnitPageComponent,
+  ],
   imports: [
     CommonModule,
     MatCardModule,
