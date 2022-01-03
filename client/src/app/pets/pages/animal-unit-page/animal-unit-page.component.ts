@@ -24,7 +24,6 @@ export class AnimalUnitPageComponent implements OnInit {
      });
      this.animalInfo.getAnimalsUnitInfo(this.id).subscribe((item) => {
       this.petsInfo = item;
-       console.log(this.petsInfo);
       });
     }
   ngOnInit(): void {
