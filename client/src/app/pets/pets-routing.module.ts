@@ -7,10 +7,10 @@ import { AnimalUnitPageComponent } from './pages/animal-unit-page/animal-unit-pa
 const routes: Routes = [
   {
     path: '',
-    component: AnimalListPageComponent
+    component: AnimalListPageComponent,
   },
   {
-    path: 'id',
+    path: ':id',
     component: AnimalUnitPageComponent
   }
 ];

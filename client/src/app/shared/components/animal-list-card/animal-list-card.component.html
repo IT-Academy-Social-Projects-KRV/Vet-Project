@@ -1,7 +1,7 @@
 <section class="animal_list_main">
   <ul class="animal__container">
     <li class="animal__card" *ngFor="let animal of animalsInfo">
-      <mat-card routerLink="id">
+      <mat-card [routerLink]="['/animalsList', animal.id]">
         <img
           mat-card-image
           src="../../../assets/animalsPictures/animal_0{{ animal.id }}.jpg"
