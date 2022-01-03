@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
 @Component({
-  selector: 'app-home-donate',
-  templateUrl: './home-donate.component.html',
-  styleUrls: ['./home-donate.component.scss']
+	selector: 'app-home-donate',
+	templateUrl: './home-donate.component.html',
+	styleUrls: ['./home-donate.component.scss']
 })
 export class HomeDonateComponent implements OnInit {
+	constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+	ngOnInit(): void {}
 }

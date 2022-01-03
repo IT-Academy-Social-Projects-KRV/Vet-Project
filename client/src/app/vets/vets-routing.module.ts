@@ -1,21 +1,17 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core'
+import { RouterModule, Routes } from '@angular/router'
 
-import { VetListPageComponent } from './pages/vet-list-page/vet-list-page.component';
+import { VetListPageComponent } from './pages/vet-list-page/vet-list-page.component'
 
 const routes: Routes = [
-  { 
-    path: '', 
-    component: VetListPageComponent 
-  },
-];
+	{
+		path: '',
+		component: VetListPageComponent
+	}
+]
 
 @NgModule({
-  imports: [
-    RouterModule.forChild(routes)
-  ],
-  exports: [
-    RouterModule
-  ]
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule]
 })
-export class VetsRoutingModule { }
+export class VetsRoutingModule {}

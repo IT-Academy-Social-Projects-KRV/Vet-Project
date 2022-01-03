@@ -12,28 +12,27 @@
 .about__text {
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start	;
+	align-items: flex-start;
 	width: 100%;
-	 h1 {
-		 margin:40px 0  100px 0;
-		 font-size: 80px;
-		 font-style: bold;
-	 }
-	 p{
-		 font-size: 25px;
-		 line-height: 1.5;
-	 }
-	 
+	h1 {
+		margin: 40px 0 100px 0;
+		font-size: 80px;
+		font-style: bold;
+	}
+	p {
+		font-size: 25px;
+		line-height: 1.5;
+	}
 }
 
 .about__img {
-	width: 100%;	
-		img {
-			border-radius: 30px;
-		}
+	width: 100%;
+	img {
+		border-radius: 30px;
+	}
 }
 
-@media ( max-width: 768px) {
+@media (max-width: 768px) {
 	.about__text p {
 		font-size: 20px;
 	}
