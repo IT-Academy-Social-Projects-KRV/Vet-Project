@@ -2,7 +2,7 @@
 
   <div class="animal__photo">
     <img
-      src="../../../../assets//animalsPictures/animal_01.jpg"
+      src="../../../../assets//animalsPictures/animal_0{{ petsInfo.id }}.jpg"
       alt="image of pet"
     />
 
@@ -15,30 +15,30 @@
   </div>
 
   <div class="animal__info">
-    <h2> Colobus, magistrate black </h2>
+    <h2> {{ petsInfo.name }} </h2>
     <h3 class="main_info"> Порода:
-      <span> Colobus guerza </span>
+      <span> {{ petsInfo.breed }} </span>
     </h3>
     <h3 class="main_info"> Стать:
-      <span> F </span>
+      <span> {{ petsInfo.gender }} </span>
     </h3>
     <h3 class="main_info"> Вік:
-      <span> 2 роки </span>
+      <span> {{ petsInfo.age }} </span>
     </h3>
     <h3 class="main_info"> Притулок:
-      <span> Приватний притулок для собак </span>
+      <span> {{ petsInfo.shelter_name }} </span>
     </h3>
     <h3 class="main_info"> Куратор:
-      <span> Мамчур Аліса Бекішівна </span>
+      <span> {{ petsInfo.curator }} </span>
     </h3>
     <h3 class="main_info"> Історія:
-      <span> Маленьку дівчинку підібрали та принесли до притулку </span>
+      <span> {{ petsInfo.short_info }} </span>
     </h3>
     <h3 class="main_info"> Повадки:
-      <span> Міка дуже ніжна кішечка, любить ласку і увагу, обожнює гратися </span>
+      <span> {{ petsInfo.behavioral_features }} </span>
     </h3>
     <h3 class="main_info"> Побажання при адопції:
-      <span> Подарує своєму господареві радість і всю свою неосяжну любов! </span>
+      <span> {{ petsInfo.wishes_for_shelter }} </span>
     </h3>
   </div>
 
