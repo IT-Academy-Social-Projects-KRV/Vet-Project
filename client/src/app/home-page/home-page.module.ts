@@ -1,12 +1,12 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core'
+import { CommonModule } from '@angular/common'
 
-import { MatCardModule } from '@angular/material/card';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatListModule } from '@angular/material/list';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card'
+import { MatDividerModule } from '@angular/material/divider'
+import { MatListModule } from '@angular/material/list'
+import { MatInputModule } from '@angular/material/input'
+import { MatButtonModule } from '@angular/material/button'
+import { MatIconModule } from '@angular/material/icon'
 
 import { HomePageRoutingModule } from './home-page-routing.module';
 import { HomeMainComponent } from './components/home-main/home-main.component'; 
@@ -21,6 +21,8 @@ import { FormsModule } from '@angular/forms';
 import { HomePageComponent } from './pages/home-page.component';
 import { PetServicesComponent } from './components/pet-services/pet-services.component'; 
 
+import { HomePageComponent } from './pages/home-page.component'
+import { PetServicesComponent } from './components/pet-services/pet-services.component'
 
 @NgModule({
   declarations: [
@@ -46,5 +48,4 @@ import { PetServicesComponent } from './components/pet-services/pet-services.com
     FormsModule
   ],
 })
-
-export class HomePageModule { }
+export class HomePageModule {}

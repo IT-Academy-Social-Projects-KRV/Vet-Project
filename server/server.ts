@@ -1,10 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 
-
 import routes from './routes/index'
-
-
 
 const port = 3200
 const app = express()

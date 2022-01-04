@@ -1,17 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-
-
-
+import { Component, OnInit } from '@angular/core'
 
 @Component({
-  selector: 'app-home-donate',
-  templateUrl: './home-donate.component.html',
-  styleUrls: ['./home-donate.component.scss']
+	selector: 'app-home-donate',
+	templateUrl: './home-donate.component.html',
+	styleUrls: ['./home-donate.component.scss']
 })
 export class HomeDonateComponent implements OnInit {
+
   amount: any;
 
- 
   constructor() { }
   ngOnInit(): void {
   }
@@ -23,4 +20,5 @@ export class HomeDonateComponent implements OnInit {
     alert(`Thank you for the Donate in ${this.amount} points`)
     this.amount = '';
   }
+
 }

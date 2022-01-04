@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MatCardModule } from '@angular/material/card';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatListModule } from '@angular/material/list';
+import { NgModule } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import { MatCardModule } from '@angular/material/card'
+import { MatDividerModule } from '@angular/material/divider'
+import { MatListModule } from '@angular/material/list'
 
 import { VetsRoutingModule } from './vets-routing.module';
 import { VetListPageComponent } from './pages/vet-list-page/vet-list-page.component';

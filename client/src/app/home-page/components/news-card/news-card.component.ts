@@ -1,15 +1,15 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { INewsCardInput } from 'src/app/shared/interfaces/common';
+import { Component, Input, OnInit } from '@angular/core'
+import { INewsCardInput } from 'src/app/shared/interfaces/common'
 
 @Component({
-  selector: 'app-news-card',
-  templateUrl: './news-card.component.html',
-  styleUrls: ['./news-card.component.scss'],
+	selector: 'app-news-card',
+	templateUrl: './news-card.component.html',
+	styleUrls: ['./news-card.component.scss']
 })
 export class NewsCardComponent implements OnInit {
-  @Input() item: INewsCardInput;
+	@Input() item: INewsCardInput
 
-  constructor() {}
+	constructor() {}
 
-  ngOnInit(): void {}
+	ngOnInit(): void {}
 }
