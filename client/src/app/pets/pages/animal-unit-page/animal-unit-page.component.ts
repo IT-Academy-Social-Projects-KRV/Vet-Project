@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AnimalInfoService } from '../../../shared/services/animal-info.service';
+import { AnimalUnitInfoService } from 'src/app/shared/services/animal-unit-info.service';
+import { ActivatedRoute } from '@angular/router';
+ 
+
 
 @Component({
   selector: 'app-animal-unit-page',
@@ -7,14 +10,22 @@ import { AnimalInfoService } from '../../../shared/services/animal-info.service'
   styleUrls: ['./animal-unit-page.component.scss']
 })
 export class AnimalUnitPageComponent implements OnInit {
-  animalsInfo: any = [];
+  petsInfo: any = [];
+  id:string;
+ 
 
-  constructor(private animalInfo: AnimalInfoService) {
-    this.animalInfo.getAnimalsInfo().subscribe((item) => {
-      console.log(item);
-      this.animalsInfo = item;
-    });
-  }
+  constructor(
+    private animalInfo: AnimalUnitInfoService,
+    private _Activatedroute:ActivatedRoute
+    ) 
+    {
+      this._Activatedroute.paramMap.subscribe(params => { 
+        this.id = params.get('id');
+     });
+     this.animalInfo.getAnimalsUnitInfo(this.id).subscribe((item) => {
+      this.petsInfo = item;
+      });
+    }
   ngOnInit(): void {
   }
 

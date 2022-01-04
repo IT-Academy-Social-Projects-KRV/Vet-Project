@@ -13,6 +13,7 @@
   width: 400px;
   height: 50px;
   margin-bottom: 20px;
+  margin-right: 20px;
   padding: 0 10px;
   border: 2px solid #4788b6;
   border-radius: 3px;
@@ -61,5 +62,21 @@ mat-card {
     border-color: #d68427;
     cursor: pointer;
     background-color: #60b4f034;
+  }
+}
+.donate-section__card-pay-btn {
+  width: 150px;
+  height: 53px;
+
+  border: 2px solid #4788b6;
+  border-radius: 3px;
+  color: #4788b6;
+  background-color: inherit;
+  font-size: 20px;
+  &:hover {
+    color: #ff9e2e;
+    border-color: #d68427;
+    cursor: pointer;
+    background-color: #b6e1ffc2;
   }
 }

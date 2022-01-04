@@ -29,8 +29,10 @@ body {
 .mat-card:not([class*="mat-elevation-z"]) {
   box-shadow: none;
 }
-
 button {
-  border: none;
   outline: none;
+  border: none;
+}
+html {
+  scroll-behavior: smooth;
 }
