@@ -1,0 +1,75 @@
+.main-container-wrapper {
+  max-width: 1200px;
+  margin: 100px auto 0;
+}
+
+.main__flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.vet-title {
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 36px;
+  color: #4788b6;
+  font-weight: 600;
+  padding-top: 25px;
+}
+
+.vet__box_container-img {
+  flex: 1;
+}
+.vet__box_container-info {
+  flex: 1;
+}
+vet__box_container-map {
+  flex: 1;
+}
+
+span {
+  font-weight: bold;
+}
+
+.main-vet-banner {
+  width: auto;
+  height: 300px;
+}
+
+.main_veterenarians {
+  text-align: center;
+  padding: 75px 0 65px 0;
+  color: #4788b6;
+}
+.main_veterenarians h2 {
+  font-size: 30px;
+  padding-bottom: 30px;
+  font-weight: 600;
+}
+
+.photo {
+  background: gray;
+  height: 125px;
+  width: 125px;
+  border-radius: 50%;
+  margin: 20px auto;
+}
+.veterenarians_cards {
+  display: flex;
+}
+.cards {
+  margin: 0 20px;
+}
+.name {
+  font-size: 20px;
+  margin-bottom: 7px;
+}
+.position {
+  font-size: 16px;
+  font-weight: 200;
+}
+.about_position {
+  font-size: 14px;
+  padding-top: 10px;
+}
