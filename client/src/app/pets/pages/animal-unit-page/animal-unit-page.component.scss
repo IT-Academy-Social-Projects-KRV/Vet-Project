@@ -1,4 +1,4 @@
-.animal__main {
+.animal-main {
 	display: flex;
 	justify-content: space-between;
 	flex-direction: row;
@@ -7,12 +7,12 @@
 	width: 1200px;
 }
 
-.animal__photo {
+.animal-main__photo {
 	padding: 10px 30px;
 	width: 600px;
 	flex-direction: column;
 
-	.animal__btn1 {
+	.animal-main__photo__btn1 {
 		font-size: 24px;
 		margin-top: 50px;
 		color: #4788b6;
@@ -28,7 +28,7 @@
 		}
 	}
 
-	.animal__btn2 {
+	.animal-main__photo__btn2 {
 		font-size: 24px;
 		margin-top: 50px;
 		margin-left: 12px;
@@ -45,7 +45,7 @@
 		}
 	}
 
-	img {
+	.animal-main__photo__img {
 		border: 2px solid #4788b6;
 		border-radius: 4px;
 		width: 510px;
@@ -57,11 +57,11 @@
 	}
 }
 
-.animal__info {
+.animal-main__info {
 	padding: 10px 0px 10px 100px;
 	width: 600px;
 
-	h2 {
+	.animal-main__info__title {
 		text-transform: uppercase;
 		font-weight: 700;
 		font-size: 24px;
@@ -69,7 +69,7 @@
 		line-height: 1.1em;
 	}
 
-	h3 {
+	.animal-main__info__elem {
 		font-weight: 500;
 		font-size: 18px;
 		padding-bottom: 4px;
