@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { FormsModule } from '@angular/forms'
@@ -12,6 +11,7 @@ import { FooterComponent } from './shared/components/page-layout/footer/footer.c
 
 import { MatButtonModule } from '@angular/material/button'
 import { MatIconModule } from '@angular/material/icon'
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
 	declarations: [AppComponent, HeaderComponent, FooterComponent],
@@ -22,7 +22,7 @@ import { MatIconModule } from '@angular/material/icon'
 		AppRoutingModule,
 		BrowserAnimationsModule,
 		HttpClientModule,
-    FormsModule
+		FormsModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]
