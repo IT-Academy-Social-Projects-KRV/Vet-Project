@@ -92,3 +92,10 @@
     font-family: Pushster;
   }
 }
+.mat-button {
+  min-width: 64px;
+  line-height: 36px;
+  &:hover {
+    cursor: pointer;
+  }
+}
