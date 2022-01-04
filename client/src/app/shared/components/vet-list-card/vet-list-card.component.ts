@@ -2,9 +2,12 @@ import { Component, OnInit } from '@angular/core'
 import { VetInfoService } from '../../services/vet-info.service'
 
 @Component({
-	selector: 'app-vet-list-card',
-	templateUrl: './vet-list-card.component.html',
-	styleUrls: ['./vet-list-card.component.scss']
+  selector: 'app-vet-list-card',
+  templateUrl: './vet-list-card.component.html',
+  styleUrls: [
+    './vet-list-card.component.scss',
+    '../page-layout/header/header.component.scss',
+  ],
 })
 export class VetListCardComponent implements OnInit {
 	vetsDetailInfo: any = []
