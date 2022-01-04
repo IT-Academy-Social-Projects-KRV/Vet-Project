@@ -6,7 +6,19 @@ import { Component, OnInit } from '@angular/core'
 	styleUrls: ['./home-donate.component.scss']
 })
 export class HomeDonateComponent implements OnInit {
-	constructor() {}
 
-	ngOnInit(): void {}
+  amount: any;
+
+  constructor() { }
+  ngOnInit(): void {
+  }
+  addValue(value:number) {
+    this.amount = value;
+  }
+ 
+  onClickSubmit() {
+    alert(`Thank you for the Donate in ${this.amount} points`)
+    this.amount = '';
+  }
+
 }
