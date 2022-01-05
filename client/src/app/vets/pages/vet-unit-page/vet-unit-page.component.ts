@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vet-unit-page.component.scss'],
 })
 export class VetUnitPageComponent implements OnInit {
+
   constructor() {}
 
   ngOnInit(): void {}

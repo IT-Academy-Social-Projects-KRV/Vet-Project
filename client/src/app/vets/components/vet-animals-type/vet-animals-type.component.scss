@@ -1,3 +1,23 @@
+@media(max-width: 770px){
+  
+  .animals-types__cards-set .item{
+  // flex-basis: calc(100% / 3);
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  // flex-basis: 0;
+  // flex-direction: column;
+}
+.animals-types__cards-set_img {
+  //   background: #4788b6;
+  height: 60px;
+  width: 60px;
+  //   border-radius: 50%;
+  //   margin: 20px auto;
+}
+}
+
+
 .main_animals-types {
   text-align: center;
   padding: 75px 0 65px 0;
