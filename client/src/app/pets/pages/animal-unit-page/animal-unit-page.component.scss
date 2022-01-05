@@ -1,20 +1,21 @@
-.animal__main {
+.animal-main {
 	display: flex;
 	justify-content: space-between;
 	flex-direction: row;
-	margin: 70px auto 0px auto;
-	padding: 40px 60px;
-	width: 1200px;
+	margin: 80px auto 0px auto;
+	max-width: 1200px;
 }
 
-.animal__photo {
-	padding: 10px 30px;
-	width: 600px;
+.animal-main__photo {
+	display: flex;
+	align-items: center;
+	padding: 20px 10px 10px 30px;
+	max-width: 50%;
 	flex-direction: column;
 
-	.animal__btn1 {
+	.animal-main__photo__btn1 {
+		margin-top: 30px;
 		font-size: 24px;
-		margin-top: 50px;
 		color: #4788b6;
 		background-color: white;
 		height: 50px;
@@ -28,10 +29,9 @@
 		}
 	}
 
-	.animal__btn2 {
+	.animal-main__photo__btn2 {
+		margin-top: 15px;
 		font-size: 24px;
-		margin-top: 50px;
-		margin-left: 12px;
 		color: #4788b6;
 		background-color: white;
 		height: 50px;
@@ -45,10 +45,10 @@
 		}
 	}
 
-	img {
+	.animal-main__photo__img {
 		border: 2px solid #4788b6;
 		border-radius: 4px;
-		width: 510px;
+		max-width: 99%;
 
 		&:hover {
 			border-color: #d68427;
@@ -57,26 +57,64 @@
 	}
 }
 
-.animal__info {
-	padding: 10px 0px 10px 100px;
-	width: 600px;
+.animal-main__info {
+	padding: 20px 10px;
+	max-width: 50%;
 
-	h2 {
+	.animal-main__info__title {
 		text-transform: uppercase;
+		color: #4788b6;
 		font-weight: 700;
 		font-size: 24px;
 		padding-bottom: 8px;
 		line-height: 1.1em;
 	}
 
-	h3 {
+	.animal-main__info__elem {
+		color: #4788b6;
 		font-weight: 500;
 		font-size: 18px;
 		padding-bottom: 4px;
 	}
 
 	span {
+		color: black;
 		font-weight: 300;
 		font-size: 16px;
+	}
+}
+
+@media (max-width: 500px) {
+	.animal-main {
+		flex-direction: column;
+	}
+
+	.animal-main__info {
+		max-width: 100%;
+	}
+
+	.animal-main__photo {
+		max-width: 100%;
+	}
+
+	.animal-main__info__title {
+		text-align: center;
+	}
+
+	.animal-main__photo {
+		padding: 20px 10px;
+		.animal-main__photo__btn1 {
+			margin-top: 20px;
+			font-size: 18px;
+			height: 42px;
+			width: 180px;
+		}
+
+		.animal-main__photo__btn2 {
+			margin-top: 10px;
+			font-size: 18px;
+			height: 42px;
+			width: 180px;
+		}
 	}
 }
