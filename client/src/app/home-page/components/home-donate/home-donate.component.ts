@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { Notify } from 'notiflix/build/notiflix-notify-aio'
 
 @Component({
 	selector: 'app-home-donate',
@@ -6,19 +7,20 @@ import { Component, OnInit } from '@angular/core'
 	styleUrls: ['./home-donate.component.scss']
 })
 export class HomeDonateComponent implements OnInit {
+	amount: any
 
-  amount: any;
+	constructor() {}
+	ngOnInit(): void {}
+	addValue(value: number) {
+		this.amount = value
+	}
 
-  constructor() { }
-  ngOnInit(): void {
-  }
-  addValue(value:number) {
-    this.amount = value;
-  }
- 
-  onClickSubmit() {
-    alert(`Thank you for the Donate in ${this.amount} points`)
-    this.amount = '';
-  }
-
+	onClickSubmit() {
+		if (this.amount == '') {
+			Notify.failure('You have to choose something, please =)')
+			return
+		}
+		Notify.success(`Thank you for the Donate in ${this.amount} points`)
+		this.amount = ''
+	}
 }
