@@ -16,11 +16,13 @@ export class HomeDonateComponent implements OnInit {
 	}
 
 	onClickSubmit() {
+
 		if (this.amount == '') {
 			Notify.failure('You have to choose something, please =)')
 			return
 		}
 		Notify.success(`Thank you for the Donate in ${this.amount} points`)
+
 		this.amount = ''
 	}
 }
