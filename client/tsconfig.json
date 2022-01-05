@@ -3,6 +3,10 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "paths": {
+      "@shared/*": ["src/app/shared/*"],
+      "@assets/*": ["src/app/assets/*"]
+    },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": false,
@@ -20,6 +24,10 @@
     "module": "es2020",
     "lib": ["es2020", "dom"]
   },
+  // "paths": {
+  //   "@shared/*": ["app/shared/*"],
+  //   "@assets/*": ["src/app/assets/*"]
+  // },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
