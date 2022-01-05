@@ -9,7 +9,7 @@
 .animal-main__photo {
 	display: flex;
 	align-items: center;
-	padding: 20px 10px;
+	padding: 20px 10px 10px 30px;
 	max-width: 50%;
 	flex-direction: column;
 
@@ -63,6 +63,7 @@
 
 	.animal-main__info__title {
 		text-transform: uppercase;
+		color: #4788b6;
 		font-weight: 700;
 		font-size: 24px;
 		padding-bottom: 8px;
@@ -70,12 +71,14 @@
 	}
 
 	.animal-main__info__elem {
+		color: #4788b6;
 		font-weight: 500;
 		font-size: 18px;
 		padding-bottom: 4px;
 	}
 
 	span {
+		color: black;
 		font-weight: 300;
 		font-size: 16px;
 	}
@@ -99,6 +102,7 @@
 	}
 
 	.animal-main__photo {
+		padding: 20px 10px;
 		.animal-main__photo__btn1 {
 			margin-top: 20px;
 			font-size: 18px;
