@@ -1,46 +1,49 @@
-<section class="animal__main">
-	<div class="animal__photo">
+<section class="animal-main">
+	<div class="animal-main__photo">
 		<img
+			class="animal-main__photo__img"
 			src="../../../../assets//animalsPictures/animal_0{{ petsInfo.id }}.jpg"
 			alt="image of pet" />
 
-		<button class="animal__btn1" mat-raised-button>Забрати додому</button>
-		<button class="animal__btn2" mat-raised-button>Надати допомогу</button>
+		<button class="animal-main__photo__btn1" mat-raised-button>Забрати додому</button>
+		<button class="animal-main__photo__btn2" mat-raised-button>Надати допомогу</button>
 	</div>
 
-	<div class="animal__info">
-		<h2>{{ petsInfo.name }}</h2>
-		<h3 class="main_info">
+	<div class="animal-main__info">
+		<h2 class="animal-main__info__title">{{ petsInfo.name }}</h2>
+		<h3 class="animal-main__info__elem">
 			Порода:
 			<span> {{ petsInfo.breed }} </span>
 		</h3>
-		<h3 class="main_info">
+		<h3 class="animal-main__info__elem">
 			Стать:
 			<span> {{ petsInfo.gender }} </span>
 		</h3>
-		<h3 class="main_info">
+		<h3 class="animal-main__info__elem">
 			Вік:
 			<span> {{ petsInfo.age }} </span>
 		</h3>
-		<h3 class="main_info">
+		<h3 class="animal-main__info__elem">
 			Притулок:
 			<span> {{ petsInfo.shelter_name }} </span>
 		</h3>
-		<h3 class="main_info">
+		<h3 class="animal-main__info__elem">
 			Куратор:
 			<span> {{ petsInfo.curator }} </span>
 		</h3>
-		<h3 class="main_info">
+		<h3 class="animal-main__info__elem">
 			Історія:
 			<span> {{ petsInfo.short_info }} </span>
 		</h3>
-		<h3 class="main_info">
+		<h3 class="animal-main__info__elem">
 			Повадки:
 			<span> {{ petsInfo.behavioral_features }} </span>
 		</h3>
-		<h3 class="main_info">
+		<h3 class="animal-main__info__elem">
 			Побажання при адопції:
 			<span> {{ petsInfo.wishes_for_shelter }} </span>
 		</h3>
 	</div>
 </section>
+
+<app-pets-gethome></app-pets-gethome>
