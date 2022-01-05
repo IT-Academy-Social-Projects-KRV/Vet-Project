@@ -1,15 +1,9 @@
-.main-container-wrapper {
+.wrapper {
   max-width: 1200px;
   margin: 100px auto 0;
 }
 
-.main__flex-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-.vet-title {
+.vets-info-section__title {
   margin-bottom: 50px;
   text-align: center;
   font-size: 36px;
@@ -18,58 +12,44 @@
   padding-top: 25px;
 }
 
-.vet__box_container-img {
-  flex: 1;
+.vets-info-section__container {
+  // border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  // flex-basis: calc(100% / 3 - 20px);
 }
-.vet__box_container-info {
+
+.vets-info-section__img-wrapper {
   flex: 1;
+  // display: block;
+  // border: 1px solid rgb(82, 28, 28);
+  // width: 30%;
 }
-vet__box_container-map {
+.vets-info-section__info-wrapper {
+  // display: block;
+  // border: 1px solid rgb(30, 185, 103);
   flex: 1;
+  // width: 30%;
+}
+.vet__box_container-map {
+  // display: block;
+  // border: 1px solid rgb(202, 186, 38);
+  flex: 1;
+  // width: 30%;
 }
 
 span {
   font-weight: bold;
 }
-
-.main-vet-banner {
-  width: auto;
-  height: 300px;
-}
-
-.main_veterenarians {
-  text-align: center;
-  padding: 75px 0 65px 0;
-  color: #4788b6;
-}
-.main_veterenarians h2 {
-  font-size: 30px;
-  padding-bottom: 30px;
-  font-weight: 600;
-}
-
-.photo {
-  background: gray;
-  height: 125px;
-  width: 125px;
-  border-radius: 50%;
-  margin: 20px auto;
-}
-.veterenarians_cards {
-  display: flex;
-}
-.cards {
-  margin: 0 20px;
-}
-.name {
-  font-size: 20px;
-  margin-bottom: 7px;
-}
-.position {
-  font-size: 16px;
-  font-weight: 200;
-}
-.about_position {
-  font-size: 14px;
-  padding-top: 10px;
+// iframe {
+//   width: 100%;
+// }
+.vets-info-section__img {
+  object-fit: cover;
+  display: block;
+  width: 100%;
+  height: 100%;
+  // height: 300px;
 }
