@@ -1,16 +1,16 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing'
 
-import { AnimalInfoService } from './animal-info.service';
+import { AnimalInfoService } from './animal-info.service'
 
 describe('AnimalInfoService', () => {
-  let service: AnimalInfoService;
+	let service: AnimalInfoService
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(AnimalInfoService);
-  });
+	beforeEach(() => {
+		TestBed.configureTestingModule({})
+		service = TestBed.inject(AnimalInfoService)
+	})
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
-});
+	it('should be created', () => {
+		expect(service).toBeTruthy()
+	})
+})

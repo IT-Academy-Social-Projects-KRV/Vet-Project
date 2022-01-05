@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { VetInfoService } from '../../services/vet-info.service';
+import { Component, OnInit } from '@angular/core'
+import { VetInfoService } from '../../services/vet-info.service'
 
 @Component({
   selector: 'app-vet-list-card',
@@ -10,18 +10,15 @@ import { VetInfoService } from '../../services/vet-info.service';
   ],
 })
 export class VetListCardComponent implements OnInit {
-  vetsDetailInfo: any = [];
-  vetsServices: any = [];
-  constructor(
-    private vetDetailInfo: VetInfoService,
-    private vetServices: VetInfoService
-  ) {
-    this.vetDetailInfo.getVetDetails().subscribe((item) => {
-      this.vetsDetailInfo = item;
-    });
-    this.vetServices.getVetServices().subscribe((item) => {
-      this.vetsServices = item;
-    });
-  }
-  ngOnInit(): void {}
+	vetsDetailInfo: any = []
+	vetsServices: any = []
+	constructor(private vetDetailInfo: VetInfoService, private vetServices: VetInfoService) {
+		this.vetDetailInfo.getVetDetails().subscribe(item => {
+			this.vetsDetailInfo = item
+		})
+		this.vetServices.getVetServices().subscribe(item => {
+			this.vetsServices = item
+		})
+	}
+	ngOnInit(): void {}
 }

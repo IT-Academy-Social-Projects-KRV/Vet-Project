@@ -1,26 +1,22 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes, ActivatedRoute } from '@angular/router';
+import { NgModule } from '@angular/core'
+import { RouterModule, Routes, ActivatedRoute } from '@angular/router'
 
-import { AnimalListPageComponent } from './pages/animal-list-page/animal-list-page.component';
-import { AnimalUnitPageComponent } from './pages/animal-unit-page/animal-unit-page.component';
+import { AnimalListPageComponent } from './pages/animal-list-page/animal-list-page.component'
+import { AnimalUnitPageComponent } from './pages/animal-unit-page/animal-unit-page.component'
 
 const routes: Routes = [
-  {
-    path: '',
-    component: AnimalListPageComponent
-  },
-  {
-    path: 'id',
-    component: AnimalUnitPageComponent
-  }
-];
+	{
+		path: '',
+		component: AnimalListPageComponent
+	},
+	{
+		path: ':id',
+		component: AnimalUnitPageComponent
+	}
+]
 
 @NgModule({
-  imports: [
-    RouterModule.forChild(routes)
-  ],
-  exports: [
-    RouterModule
-  ]
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule]
 })
-export class PetsRoutingModule { }
+export class PetsRoutingModule {}

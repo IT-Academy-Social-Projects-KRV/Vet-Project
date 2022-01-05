@@ -1,6 +1,6 @@
 export interface INewsCardInput {
-	title: string,
-	imageUrl: string,
+	title: string
+	imageUrl: string
 	description: string
 }
 
