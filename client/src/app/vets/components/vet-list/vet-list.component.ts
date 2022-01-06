@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { VetInfoService } from '@shared/services/vet-info.service';
 
 
@@ -8,16 +8,13 @@ import { VetInfoService } from '@shared/services/vet-info.service';
   styleUrls: ['./vet-list.component.scss']
 })
 export class VetListComponent implements OnInit {
-@Input()
 vetsDetailInfo:any  = []
-vetsServices:any = []
-  constructor(private vetDetailInfo: VetInfoService, private vetServices: VetInfoService) { 
+
+  constructor(private vetDetailInfo: VetInfoService) { 
     this.vetDetailInfo.getVetDetails().subscribe(item => {
 			this.vetsDetailInfo = item
 		})
-		this.vetServices.getVetServices().subscribe(item => {
-			this.vetsServices = item
-		})
+	
   }
 
   ngOnInit(): void {
