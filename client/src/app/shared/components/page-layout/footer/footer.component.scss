@@ -55,6 +55,12 @@ section {
 .footer-links {
 	display: flex;
 	align-items: center;
+
+	@media screen and (max-width: 880px) {
+		display: flex;
+		justify-content: center;
+	}
+
 }
 .footer-distributed .footer-links {
 	color: #ffffff;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { Notify } from 'notiflix/build/notiflix-notify-aio'
 
 @Component({
 	selector: 'app-home-donate',
@@ -15,7 +16,13 @@ export class HomeDonateComponent implements OnInit {
 	}
 
 	onClickSubmit() {
-		alert(`Thank you for the Donate in ${this.amount} points`)
+
+		if (this.amount == '') {
+			Notify.failure('You have to choose something, please =)')
+			return
+		}
+		Notify.success(`Thank you for the Donate in ${this.amount} points`)
+
 		this.amount = ''
 	}
 }
