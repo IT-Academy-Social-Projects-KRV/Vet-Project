@@ -20,8 +20,13 @@
 		>
 		<mat-divider></mat-divider>
 		<h3>List of provided services</h3>
-		<mat-list >
-			<mat-list-item></mat-list-item> 
+		<mat-list>
+			<ul>
+				<li  *ngFor="let service of vetsServices; let i = index">
+					<app-vet-card-services *ngIf="i < 6" [vetCardServices]="service"></app-vet-card-services>
+				</li>
+			</ul>
+		
 		</mat-list>
 	</mat-card-content>
 </mat-card>

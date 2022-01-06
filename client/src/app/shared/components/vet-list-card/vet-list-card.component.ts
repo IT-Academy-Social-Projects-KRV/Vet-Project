@@ -1,4 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core'
+import { VetInfoService } from '@shared/services/vet-info.service';
 import { IVetsInfo } from '@shared/interfaces/vetInfo'
 
 @Component({
@@ -16,9 +17,11 @@ export class VetListCardComponent implements OnInit {
 		email:'',
 		map_link:''
 	}
-	
-	constructor() {
-		
+	vetsServices:any = []
+	constructor( private vetServices: VetInfoService) {
+		this.vetServices.getVetServices().subscribe(item => {
+			this.vetsServices = item
+		})
 	}
 	ngOnInit(): void {}
 }
