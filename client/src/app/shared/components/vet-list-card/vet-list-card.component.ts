@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core'
-import { VetInfoService } from '../../services/vet-info.service'
+import { Component, OnInit,Input } from '@angular/core'
+import { IVetsInfo } from '@shared/interfaces/vetInfo'
 
 @Component({
 	selector: 'app-vet-list-card',
@@ -7,15 +7,18 @@ import { VetInfoService } from '../../services/vet-info.service'
 	styleUrls: ['./vet-list-card.component.scss', '../page-layout/header/header.component.scss']
 })
 export class VetListCardComponent implements OnInit {
-	vetsDetailInfo: any = []
-	vetsServices: any = []
-	constructor(private vetDetailInfo: VetInfoService, private vetServices: VetInfoService) {
-		this.vetDetailInfo.getVetDetails().subscribe(item => {
-			this.vetsDetailInfo = item
-		})
-		this.vetServices.getVetServices().subscribe(item => {
-			this.vetsServices = item
-		})
+	@Input()
+	vetsInfo:IVetsInfo = {
+		id:1,
+		title:'',
+		adress:'',
+		phone:'',
+		email:'',
+		map_link:''
+	}
+	
+	constructor() {
+		
 	}
 	ngOnInit(): void {}
 }

@@ -1,0 +1,22 @@
+.vet_list_main {
+	margin-top: 90px;
+    display: flex;
+    flex-wrap: wrap;
+  
+}
+
+.vet__container {
+	padding: 0;
+	margin: auto;
+    flex-basis: calc(100% / 3 - 3%);
+    margin: 1.5%;
+}
+
+// .vet__card {
+// }
+
+.vet__card:hover {
+	transform: translateY(5px);
+	box-shadow: 2px 2px 26px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+}

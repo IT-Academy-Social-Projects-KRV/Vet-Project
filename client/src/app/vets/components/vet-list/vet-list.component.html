@@ -1,0 +1,7 @@
+<section class="vet_list_main">
+	<ul class="vet__container" *ngFor="let vet of vetsDetailInfo">
+		<li class="vet__card">
+			<app-vet-list-card [vetsInfo]="vet"></app-vet-list-card>
+		</li>
+	</ul>
+</section>
