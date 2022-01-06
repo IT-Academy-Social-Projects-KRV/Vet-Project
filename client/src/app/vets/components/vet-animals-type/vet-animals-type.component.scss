@@ -1,0 +1,45 @@
+@media (max-width: 770px) {
+  .animals-types__cards-set .item {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  .animals-types__cards-set_img {
+    height: 60px;
+    width: 60px;
+  }
+}
+
+.main_animals-types {
+  text-align: center;
+  padding: 75px 0 65px 0;
+  color: #4788b6;
+}
+
+.main_animals-types h2 {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.animals-types__cards-set {
+  padding: 10px;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.animals-types__cards-set > .item {
+  flex-basis: calc(100% / 5);
+  text-align: center;
+}
+
+.animals-types__cards-set_img {
+  height: 100px;
+  width: 100px;
+}
+.animals-types__cards-set_title {
+  font-size: 20px;
+  margin-bottom: 7px;
+  color: #f5962a;
+}
