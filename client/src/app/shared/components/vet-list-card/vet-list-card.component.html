@@ -1,32 +1,29 @@
-<mat-card routerLink="id">
+<mat-card routerLink="id" class="vet-card">
 	<img
 		mat-card-image
 		src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.reidmiddleton.com%2Fwp-content%2Fuploads%2F2016%2F09%2FProject-HeroImage01-DoctorsClinic1.jpg&f=1&nofb=1"
 		alt="image of vet" />
-	<div class="vet_list_title">
-		<mat-card-header>
-			<mat-card-title>{{vetsInfo.title}}</mat-card-title>
+		<mat-card-header class="vet-card__card-header">
+			<mat-card-title class="vet-card__card-title">{{vetsInfo.title}}</mat-card-title>
 		</mat-card-header>
-	</div>
-	<mat-card-content>
+		<mat-card-content class="vet-card__vet-info-container">
 		<mat-card-subtitle
-			>Adress: <span class="main_info">{{vetsInfo.adress}}</span></mat-card-subtitle
+			>Adress: <span class="vet-card__vet-info-item">{{vetsInfo.adress}}</span></mat-card-subtitle
 		>
 		<mat-card-subtitle
-			>Contacts: <span class="main_info">{{vetsInfo.phone}}</span></mat-card-subtitle
+			>Contacts: <span class="vet-card__vet-info-item">{{vetsInfo.phone}}</span></mat-card-subtitle
 		>
 		<mat-card-subtitle
-			>Email: <span class="main_info">{{vetsInfo.email}}</span></mat-card-subtitle
+			>Email: <span class="vet-card__vet-info-item">{{vetsInfo.email}}</span></mat-card-subtitle
 		>
 		<mat-divider></mat-divider>
-		<h3>List of provided services</h3>
-		<mat-list>
-			<ul>
-				<li  *ngFor="let service of vetsServices; let i = index">
-					<app-vet-card-services *ngIf="i < 6" [vetCardServices]="service"></app-vet-card-services>
+		<div class="vet-card__vet-services-wrapper">
+		<h3 class="vet-card__vet-services-title">List of provided services</h3>
+			<ul class="vet-card__vet-services-list">
+				<li class="vet-card__vet-services-list-item" *ngFor="let service of vetsServices; let i = index">
+					<app-vet-card-services *ngIf="i < 5" [vetCardServices]="service"></app-vet-card-services>
 				</li>
 			</ul>
-		
-		</mat-list>
+		</div>
 	</mat-card-content>
 </mat-card>

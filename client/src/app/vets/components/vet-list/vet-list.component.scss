@@ -1,20 +1,20 @@
-.vet_list_main {
+.vet-list-section{
 	margin-top: 90px;
 }
 
-.vet__container {
+.vet-list-section__container {
 	display: flex;
     flex-wrap: wrap;
 	padding: 0;
 	margin: auto;
 }
 
-.vet__card {
+.vet-list-section__card {
 	flex-basis: calc(100% / 3 - 3%);
     margin: 1.5%;
 }
 
-.vet__card:hover {
+.vet-list-section__card:hover {
 	transform: translateY(5px);
 	box-shadow: 2px 2px 26px rgba(0, 0, 0, 0.3);
 	cursor: pointer;

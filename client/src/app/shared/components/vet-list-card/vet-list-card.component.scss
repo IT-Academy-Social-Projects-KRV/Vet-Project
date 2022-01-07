@@ -1,19 +1,39 @@
+.vet-card{
+	background-color: #f0f5f958;
+}
+.vet-card__card-header {
+	justify-content: center;
+}
 
+.vet-card__card-title {
+	font-weight: bold;
+	height: 50px;
+}
 
-.main_info {
+.vet-card__vet-info-item {
 	font-weight: bold;
 	color: black;
 	margin-left: 5px;
 }
 
-mat-card-header {
-	justify-content: center;
-}
-h3 {
+
+.vet-card__vet-services-title {
 	text-align: center;
 }
 
-mat-card-title {
-	font-weight: bold;
-	height: 50px;
+.vet-card__vet-services-list{
+	padding: 0;	
+	word-spacing: 5px;
+	text-align: justify;
+	
+	
 }
+
+.vet-card__vet-services-list-item{	
+	display: inline-block;
+	font-size: 18px;
+	margin: 0px 5px 10px 0px
+ }
+
+
+
