@@ -1,39 +1,39 @@
-.vet_list_main {
-	margin-top: 90px;
+.vet-card{
+	background-color: #f0f5f958;
+}
+.vet-card__card-header {
+	justify-content: center;
 }
 
-.vet__container {
-	padding: 0;
-	margin: auto;
-	display: flex;
-	flex-wrap: wrap;
+.vet-card__card-title {
+	font-weight: bold;
+	height: 50px;
 }
 
-.vet__card {
-	flex-basis: calc(100% / 3 - 3%);
-	margin: 1.5%;
-}
-
-.vet__card:hover {
-	transform: translateY(5px);
-	box-shadow: 2px 2px 26px rgba(0, 0, 0, 0.3);
-	cursor: pointer;
-}
-
-.main_info {
+.vet-card__vet-info-item {
 	font-weight: bold;
 	color: black;
 	margin-left: 5px;
 }
 
-mat-card-header {
-	justify-content: center;
-}
-h3 {
+
+.vet-card__vet-services-title {
 	text-align: center;
 }
 
-mat-card-title {
-	font-weight: bold;
-	height: 50px;
+.vet-card__vet-services-list{
+	padding: 0;	
+	word-spacing: 5px;
+	text-align: justify;
+	
+	
 }
+
+.vet-card__vet-services-list-item{	
+	display: inline-block;
+	font-size: 18px;
+	margin: 0px 5px 10px 0px
+ }
+
+
+
