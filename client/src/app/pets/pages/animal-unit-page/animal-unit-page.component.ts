@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router'
 	styleUrls: ['./animal-unit-page.component.scss']
 })
 export class AnimalUnitPageComponent implements OnInit {
-	petsInfo: any = []
+	petsInfo: any = {}
 	id: string
 
 	constructor(private animalInfo: AnimalUnitInfoService, private _Activatedroute: ActivatedRoute) {

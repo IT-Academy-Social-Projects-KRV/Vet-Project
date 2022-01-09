@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 import { VetUnitPageComponent } from './pages/vet-unit-page/vet-unit-page.component'
-
 import { VetListPageComponent } from './pages/vet-list-page/vet-list-page.component'
 
 const routes: Routes = [
@@ -10,7 +9,7 @@ const routes: Routes = [
 		component: VetListPageComponent
 	},
 	{
-		path: 'id',
+		path: ':id',
 		component: VetUnitPageComponent
 	}
 ]

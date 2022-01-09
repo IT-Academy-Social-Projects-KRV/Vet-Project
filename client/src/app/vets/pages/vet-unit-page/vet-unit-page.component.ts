@@ -1,13 +1,31 @@
 import { Component, OnInit } from '@angular/core'
-
+import { ActivatedRoute } from '@angular/router';
+import { VetUnitInfoService } from '@shared/services/vet-unit-info.service';
 @Component({
 	selector: 'app-vet-unit-page',
 	templateUrl: './vet-unit-page.component.html',
 	styleUrls: ['./vet-unit-page.component.scss']
 })
 export class VetUnitPageComponent implements OnInit {
+	vetsInfo: any = []
+	id: string
 
-  constructor() {}
+  constructor( private vetInfo: VetUnitInfoService, private _Activatedroute: ActivatedRoute ) {
+		this._Activatedroute.paramMap.subscribe(params => {
+			this.id = params.get('id')
+		})
+		this.vetInfo.getVetsUnitInfo(this.id).subscribe(item => {
+			this.vetsInfo = item
+			console.log(this.vetsInfo)
+		})
+		
+	}
 
 	ngOnInit(): void {}
 }
+
+
+
+
+
+
