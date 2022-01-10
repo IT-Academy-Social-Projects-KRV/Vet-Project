@@ -179,6 +179,11 @@ a {
 		height: 100%;
 		transition: all 0.4s ease 0s;
 		background-color: #68a7d4;
+		// background-image: url('https://t3.ftcdn.net/jpg/03/06/37/22/360_F_306372291_8RtHL5R9ETkZadUdpp6PYrXSsmqRwqhv.jpg');
+		background: linear-gradient(to left, #81bfeb74, #064572c2),
+			url(https://t3.ftcdn.net/jpg/03/06/37/22/360_F_306372291_8RtHL5R9ETkZadUdpp6PYrXSsmqRwqhv.jpg);
+		background-position: center;
+		background-size: cover;
 		display: flex;
 		justify-content: flex-start;
 		padding: 0 0 0 20px;
