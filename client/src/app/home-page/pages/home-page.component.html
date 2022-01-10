@@ -3,11 +3,7 @@
 	<app-pet-services></app-pet-services>
 	<app-pet-slider></app-pet-slider>
 	<app-pet-wanted-slider></app-pet-wanted-slider>
-	<carousel [height]="500" [cellsToShow]="4">
-		<div class="carousel-cell" *ngFor="let vet of vetsDetailInfo">
-			<app-vet-list-card [vetsInfo]="vet"></app-vet-list-card>
-		</div>
-	</carousel>
+
 	<app-home-donate></app-home-donate>
 	<app-home-about></app-home-about>
 	<app-home-news></app-home-news>

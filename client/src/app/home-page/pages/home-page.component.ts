@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core'
-import { VetInfoService } from '@shared/services/vet-info.service'
+import { Component, OnInit, Input } from '@angular/core'
 
 @Component({
 	selector: 'app-home-page',
@@ -7,13 +6,5 @@ import { VetInfoService } from '@shared/services/vet-info.service'
 	styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
-	vetsDetailInfo: any = []
-
-	constructor(private vetDetailInfo: VetInfoService) {
-		this.vetDetailInfo.getVetDetails().subscribe(item => {
-			this.vetsDetailInfo = item
-		})
-	}
-
 	ngOnInit(): void {}
 }
