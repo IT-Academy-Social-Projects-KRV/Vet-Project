@@ -1,27 +1,21 @@
-<section class="animal_list_main">
-	<ul class="animal__container">
-		<li class="animal__card" *ngFor="let animal of animalsInfo">
-			<mat-card [routerLink]="['/animalsList', animal.id]">
-				<img
-					mat-card-image
-					src="../../../assets/animalsPictures/animal_0{{ animal.id }}.jpg"
-					alt="image of pet" />
-				<mat-card-header>
-					<mat-card-title>{{ animal.name }}</mat-card-title>
-				</mat-card-header>
-				<mat-card-content>
-					<mat-card-subtitle
-						>Age: <span class="main_info">{{ animal.age }} </span></mat-card-subtitle
-					>
-					<mat-card-subtitle>
-						Breed:<span class="main_info">{{ animal.breed }}</span></mat-card-subtitle
-					>
-					<mat-card-subtitle>
-						Sex:
-						<span class="main_info">{{ animal.gender }}</span>
-					</mat-card-subtitle>
-				</mat-card-content>
-			</mat-card>
-		</li>
-	</ul>
-</section>
+<mat-card class="animal-card" [routerLink]="['/animalsList', animalsInfo.id]">
+	<img
+		mat-card-image
+		src="../../../assets/animalsPictures/animal_0{{ animalsInfo.id }}.jpg"
+		alt="image of pet" />
+	<mat-card-header class="animal-card__card-header">
+		<mat-card-title class="animal-card__card-title">{{ animalsInfo.name }}</mat-card-title>
+	</mat-card-header>
+	<mat-card-content class="animal-card__animal-info-container">
+		<mat-card-subtitle
+			>Age: <span class="animal-card__animal-info-item">{{ animalsInfo.age }} </span></mat-card-subtitle
+		>
+		<mat-card-subtitle>
+			Breed:<span class="animal-card__animal-info-item">{{ animalsInfo.breed }}</span></mat-card-subtitle
+		>
+		<mat-card-subtitle>
+			Sex:
+			<span class="animal-card__animal-info-item">{{ animalsInfo.gender }}</span>
+		</mat-card-subtitle>
+	</mat-card-content>
+</mat-card>
