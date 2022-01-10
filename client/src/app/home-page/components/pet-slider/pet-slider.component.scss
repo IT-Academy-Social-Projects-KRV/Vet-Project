@@ -1,9 +1,12 @@
 .main__pet_slider {
-	width: 100%;
+	width: 1200px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	// justify-content: center;
+	// margin: 0 auto;
 	margin-bottom: 40px;
+	padding: 20px;
 
 	.main__pet_slider__title {
 		margin-bottom: 40px;
@@ -14,40 +17,52 @@
 	}
 }
 
-.pet__slider_cards {
+// .pet__slider_cards {
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: space-between;
+
+// 	width: 100%;
+
+// 	margin-bottom: 40px;
+// }
+
+// .example-card {
+// 	margin: 0 10px;
+// 	padding: 20px 10px;
+// 	background-color: #f0f5f958;
+// 	border: 2px solid #4788b6;
+
+// 	&:hover {
+// 		cursor: pointer;
+// 		border: 2px solid #d68427;
+// 	}
+// }
+
+// .pet__slider_cards__img {
+// 	display: block;
+// 	max-width: 100%;
+// 	margin: 0;
+// }
+// .img_wrraper {
+// 	width: 100%;
+
+// 	border-radius: 3px;
+// 	margin-bottom: 10px;
+// 	overflow: hidden;
+// }
+// .pet__slider_cards_title {
+// 	margin-bottom: 10px;
+// }
+
+// style for carousel
+.zIndex {
+	z-index: 4;
+	// justify-content: center;
+}
+.wrapper {
 	display: flex;
-	align-items: center;
-	justify-content: space-between;
-
-	width: 100%;
-
-	margin-bottom: 40px;
-}
-
-.example-card {
-	margin: 0 10px;
-	padding: 20px 10px;
-	background-color: #f0f5f958;
-	border: 2px solid #4788b6;
-
-	&:hover {
-		cursor: pointer;
-		border: 2px solid #d68427;
-	}
-}
-
-.pet__slider_cards__img {
-	display: block;
-	max-width: 100%;
-	margin: 0;
-}
-.img_wrraper {
-	width: 100%;
-
-	border-radius: 3px;
-	margin-bottom: 10px;
-	overflow: hidden;
-}
-.pet__slider_cards_title {
-	margin-bottom: 10px;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 90%;
 }

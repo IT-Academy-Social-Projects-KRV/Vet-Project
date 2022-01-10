@@ -11,6 +11,7 @@ export class AnimalListComponent implements OnInit {
 	constructor(private animalInfo: AnimalInfoService) {
 		this.animalInfo.getAnimalsInfo().subscribe(item => {
 			this.animalsInfo = item
+			console.log(item)
 		})
 	}
 

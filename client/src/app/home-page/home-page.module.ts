@@ -20,8 +20,8 @@ import { FormsModule } from '@angular/forms'
 
 import { HomePageComponent } from './pages/home-page.component'
 import { PetServicesComponent } from './components/pet-services/pet-services.component'
-import { VetsModule } from '../vets/vets.module'
 import { IvyCarouselModule } from 'angular-responsive-carousel'
+import { PetsModule } from '../pets/pets.module'
 
 @NgModule({
 	declarations: [
@@ -46,7 +46,8 @@ import { IvyCarouselModule } from 'angular-responsive-carousel'
 		MatInputModule,
 		FormsModule,
 		IvyCarouselModule,
-		VetsModule
+		PetsModule
+
 	]
 })
 export class HomePageModule {}
