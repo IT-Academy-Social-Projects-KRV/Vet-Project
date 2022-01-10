@@ -1,5 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core'
-import { VetInfoService } from '@shared/services/vet-info.service';
+import { Component, OnInit, Input } from '@angular/core'
 import { IVetsInfo } from '@shared/interfaces/vetInfo'
 
 @Component({
@@ -9,19 +8,8 @@ import { IVetsInfo } from '@shared/interfaces/vetInfo'
 })
 export class VetListCardComponent implements OnInit {
 	@Input()
-	vetsInfo:IVetsInfo = {
-		id:1,
-		title:'',
-		adress:'',
-		phone:'',
-		email:'',
-		map_link:''
-	}
-	vetsServices:any = []
-	constructor( private vetServices: VetInfoService) {
-		this.vetServices.getVetServices().subscribe(item => {
-			this.vetsServices = item
-		})
-	}
+	vetsInfo: IVetsInfo = { title: '', adress: '', phone: '', email: '' }
+
+	constructor() {}
 	ngOnInit(): void {}
 }
