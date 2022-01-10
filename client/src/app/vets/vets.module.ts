@@ -13,7 +13,6 @@ import { VeterinariansComponent } from './components/veterinarians/veterinarians
 import { VetServicesComponent } from './components/vet-services/vet-services.component'
 import { VetAnimalsTypeComponent } from './components/vet-animals-type/vet-animals-type.component'
 import { VetListComponent } from './components/vet-list/vet-list.component'
-import { VetCardServicesComponent } from './components/vet-card-services/vet-card-services.component'
 
 @NgModule({
 	declarations: [
@@ -23,11 +22,9 @@ import { VetCardServicesComponent } from './components/vet-card-services/vet-car
 		VeterinariansComponent,
 		VetServicesComponent,
 		VetAnimalsTypeComponent,
-		VetListComponent,
-		VetCardServicesComponent
+		VetListComponent
 	],
 	imports: [CommonModule, MatCardModule, MatDividerModule, MatListModule, VetsRoutingModule],
-	exports: [VetListCardComponent, VetListComponent],
 	providers: [VetInfoService]
 })
 export class VetsModule {}

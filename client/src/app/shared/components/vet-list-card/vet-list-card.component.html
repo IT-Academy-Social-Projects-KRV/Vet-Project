@@ -17,16 +17,5 @@
 		<mat-card-subtitle
 			>Email: <span class="vet-card__vet-info-item">{{ vetsInfo.email }}</span></mat-card-subtitle
 		>
-		<mat-divider></mat-divider>
-		<div class="vet-card__vet-services-wrapper">
-			<h3 class="vet-card__vet-services-title">List of provided services</h3>
-			<ul class="vet-card__vet-services-list">
-				<li
-					class="vet-card__vet-services-list-item"
-					*ngFor="let service of vetsServices; let i = index">
-					<app-vet-card-services *ngIf="i < 5" [vetCardServices]="service"></app-vet-card-services>
-				</li>
-			</ul>
-		</div>
 	</mat-card-content>
 </mat-card>
