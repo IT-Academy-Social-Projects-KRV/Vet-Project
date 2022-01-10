@@ -9,9 +9,10 @@ export class HeaderComponent implements OnInit {
 	constructor() {}
 	active: boolean = false;
 	hide: boolean = false;
+	
 	clickEvent(){
     this.active = !this.active;
-		this.hide = !this.hide
+		this.hide = !this.hide;
      
 	}
 	ngOnInit(): void {}
