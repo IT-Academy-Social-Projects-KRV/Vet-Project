@@ -1,75 +1,61 @@
-.main-container-wrapper {
-	max-width: 1200px;
-	margin: 100px auto 0;
+@media (max-width: 800px) {
+  .wrapper {
+    max-width: none;
+  }
+  .vets-info-section__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-basis: calc(100% / 2);
+  }
+}
+.wrapper {
+  max-width: 1200px;
+  margin: 100px auto 0;
 }
 
-.main__flex-container {
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	gap: 20px;
-}
-.vet-title {
-	margin-bottom: 50px;
-	text-align: center;
-	font-size: 36px;
-	color: #4788b6;
-	font-weight: 600;
-	padding-top: 25px;
+.vets-info-section__title {
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 36px;
+  color: #4788b6;
+  font-weight: 600;
+  padding-top: 25px;
 }
 
-.vet__box_container-img {
-	flex: 1;
-}
-.vet__box_container-info {
-	flex: 1;
-}
-vet__box_container-map {
-	flex: 1;
+.vets-info-section__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  flex-basis: calc(100% / 3);
 }
 
-span {
-	font-weight: bold;
+.vets-info-section__info-wrapper_text-bold {
+  font-weight: bold;
 }
 
-.main-vet-banner {
-	width: auto;
-	height: 300px;
+.vets-info-section__img {
+  object-fit: cover;
+  display: block;
+  height: 300px;
 }
-
-.main_veterenarians {
-	text-align: center;
-	padding: 75px 0 65px 0;
-	color: #4788b6;
+.vets-info-section__img-wrapper {
+  flex: 1 1 300px;
 }
-.main_veterenarians h2 {
-	font-size: 30px;
-	padding-bottom: 30px;
-	font-weight: 600;
+.vets-info-section__info-wrapper {
+  flex: 1 1 300px;
 }
-
-.photo {
-	background: gray;
-	height: 125px;
-	width: 125px;
-	border-radius: 50%;
-	margin: 20px auto;
+.vet__box_container-map {
+  flex: 1 1 300px;
 }
-.veterenarians_cards {
-	display: flex;
+.vets-info-section__info_working-hours {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
-.cards {
-	margin: 0 20px;
+.vets-info-section__info_working-hours-blue {
+  color: #4788b6;
 }
-.name {
-	font-size: 20px;
-	margin-bottom: 7px;
-}
-.position {
-	font-size: 16px;
-	font-weight: 200;
-}
-.about_position {
-	font-size: 14px;
-	padding-top: 10px;
+.vets-info-section__info_working-hours-red {
+  color: #bd2237;
 }
