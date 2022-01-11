@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { VetListPageComponent } from './vet-list-page.component'
+import { AnimalPageComponent } from './animal-page.component'
 
-describe('VetListPageComponent', () => {
-	let component: VetListPageComponent
-	let fixture: ComponentFixture<VetListPageComponent>
+describe('AnimalListPageComponent', () => {
+	let component: AnimalPageComponent
+	let fixture: ComponentFixture<AnimalPageComponent>
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [VetListPageComponent]
+			declarations: [AnimalPageComponent]
 		}).compileComponents()
 	})
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(VetListPageComponent)
+		fixture = TestBed.createComponent(AnimalPageComponent)
 		component = fixture.componentInstance
 		fixture.detectChanges()
 	})

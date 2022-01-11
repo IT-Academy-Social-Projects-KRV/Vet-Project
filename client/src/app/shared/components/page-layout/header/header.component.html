@@ -9,14 +9,12 @@
     <div class="header__burger" (click)="clickEvent()" [ngClass]=" active ? 'active' : ''">
       <span></span>
     </div>
-
     <div class="header__menu" [ngClass]="active ? 'active' : 'hide'">
       <ul class="header__nav">
         <li class="header_nav_item">
           <button class="mat-button" routerLink="/" (click)="clickEvent()">Головна</button>
           <div class="mat-button_decoration"></div>
         </li>
-
         <li class="header_nav_item">
           <button class="mat-button" (click)="clickEvent()">Про нас</button>
           <div class="mat-button_decoration"></div>

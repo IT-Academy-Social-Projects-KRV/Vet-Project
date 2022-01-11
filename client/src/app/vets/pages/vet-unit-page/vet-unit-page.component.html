@@ -1,6 +1,6 @@
 <div class="wrapper">
   <section class="vets-info-section">
-    <h2 class="vets-info-section__title">Назва клініки</h2>
+    <h2 class="vets-info-section__title">{{info.title}}</h2>
     <ul class="vets-info-section__container">
       <li class="vets-info-section__img-wrapper">
         <div>
@@ -14,12 +14,13 @@
         </h3>
         <div>
           <p class="vets-info-section__info-wrapper-item">
-            <span class="vets-info-section__info-wrapper_text-bold">Адреса:</span> 098 Londonderry Alley
+            <span class="vets-info-section__info-wrapper_text-bold">Адреса:</span> {{info.adress}}
           </p>
           <p>
-            <span class="vets-info-section__info-wrapper_text-bold">Телефон: </span> <a href="tel:205-216-8574"></a>
+            <span class="vets-info-section__info-wrapper_text-bold">Телефон: </span> <a
+              href="tel:205-216-8574">{{info.phone}}</a>
           </p>
-          <p><span class="vets-info-section__info-wrapper_text-bold">Email:</span> example@gmail.com</p>
+          <p><span class="vets-info-section__info-wrapper_text-bold">Email:</span> {{info.email}}</p>
           <p>
             <span class="vets-info-section__info-wrapper_text-bold">Режим роботи </span>
           </p>
