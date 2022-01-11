@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
 	clickEvent() {
 		this.active = !this.active
 		this.hide = !this.hide
+		document.body.style.overflow = this.active ? 'hidden' : 'visible'
 	}
 	ngOnInit(): void {}
 }
