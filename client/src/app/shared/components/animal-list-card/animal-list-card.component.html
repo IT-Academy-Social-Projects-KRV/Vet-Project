@@ -1,4 +1,4 @@
-<mat-card class="animal-card" [routerLink]="['/animalsList', animalsInfo.id]">
+<mat-card class="animal-card">
 	<img
 		mat-card-image
 		src="../../../assets/animalsPictures/animal_0{{ animalsInfo.id }}.jpg"
@@ -20,5 +20,9 @@
 			Стать:
 			<span class="animal-card__animal-info-item">{{ animalsInfo.gender }}</span>
 		</mat-card-subtitle>
+
+		<button mat-raised-button color="primary" [routerLink]="['/animalsList', animalsInfo.id]">
+			Дізнатись більше
+		</button>
 	</mat-card-content>
 </mat-card>
