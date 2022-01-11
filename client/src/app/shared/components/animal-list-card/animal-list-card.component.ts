@@ -1,16 +1,15 @@
-import { Component, OnInit } from '@angular/core'
-import { AnimalInfoService } from '../../../shared/services/animal-info.service'
+import { Component, OnInit, Input } from '@angular/core'
+import { IAnimalsInfo } from '@shared/interfaces/animals'
+
 @Component({
 	selector: 'app-animal-list-card',
 	templateUrl: './animal-list-card.component.html',
 	styleUrls: ['./animal-list-card.component.scss']
 })
 export class AnimalListCardComponent implements OnInit {
-	animalsInfo: any = []
-	constructor(private animalInfo: AnimalInfoService) {
-		this.animalInfo.getAnimalsInfo().subscribe(item => {
-			this.animalsInfo = item
-		})
-	}
+	@Input()
+	animalsInfo: IAnimalsInfo
+
+	constructor() {}
 	ngOnInit(): void {}
 }
