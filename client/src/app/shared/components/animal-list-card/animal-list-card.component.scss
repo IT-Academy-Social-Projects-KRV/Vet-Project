@@ -1,17 +1,17 @@
-.animal-card__card-header {
+.pet-card {
+	background-color: #f0f5f958;
+}
+.pet-card__card-header {
 	justify-content: center;
-	height: 55px;
 }
 
-.animal-card__card-title {
+.pet-card__card-title {
 	font-weight: bold;
+	height: 50px;
 }
 
-.animal-card__animal-info-item {
+.pet-card__pet-info-item {
 	font-weight: bold;
 	color: black;
 	margin-left: 5px;
-}
-.mat-card-image {
-	margin: 0;
 }
