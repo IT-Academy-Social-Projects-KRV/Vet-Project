@@ -10,7 +10,7 @@ const routes: Routes = [
 		component: VetPageComponent
 	},
 	{
-		path: 'id',
+		path: ':id',
 		component: VetUnitPageComponent
 	}
 ]
