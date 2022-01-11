@@ -12,26 +12,24 @@
     <div class="header__menu" [ngClass]="active ? 'active' : 'hide'">
       <ul class="header__nav">
         <li class="header_nav_item">
-          <button class="mat-button" routerLink="/" (click)="clickEvent()">Головна</button>
+          <button class="mat-button" routerLink="/" (click)="resetBurger()">Головна</button>
+          <div class=" mat-button_decoration">
+          </div>
+        </li>
+        <li class="header_nav_item">
+          <button class="mat-button" (click)="resetBurger()">Про нас</button>
           <div class="mat-button_decoration"></div>
         </li>
         <li class="header_nav_item">
-          <button class="mat-button" (click)="clickEvent()">Про нас</button>
+          <button class="mat-button" routerLink="/vetsList" (click)="resetBurger()">Клініки</button>
           <div class="mat-button_decoration"></div>
         </li>
-
         <li class="header_nav_item">
-          <button class="mat-button" routerLink="/vetsList" (click)="clickEvent()">Клініки</button>
+          <button class="mat-button" routerLink="/animalsList" (click)="resetBurger()">Тварини</button>
           <div class="mat-button_decoration"></div>
         </li>
-
         <li class="header_nav_item">
-          <button class="mat-button" routerLink="/animalsList" (click)="clickEvent()">Тварини</button>
-          <div class="mat-button_decoration"></div>
-        </li>
-
-        <li class="header_nav_item">
-          <button class="mat-button" (click)="clickEvent()">Волонтери</button>
+          <button class="mat-button" (click)="resetBurger()">Волонтери</button>
           <div class="mat-button_decoration"></div>
         </li>
       </ul>
