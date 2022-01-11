@@ -7,8 +7,7 @@ import { IAnimalsInfo } from '@shared/interfaces/animals'
 	styleUrls: ['./animal-list-card.component.scss']
 })
 export class AnimalListCardComponent implements OnInit {
-	@Input()
-	animalsInfo: IAnimalsInfo
+	@Input() animalsInfo: IAnimalsInfo
 	@Input() isButtonVisible = false
 
 	constructor() {}

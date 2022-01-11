@@ -3,12 +3,13 @@
 	border: 2px solid #4788b6;
 
 	&:hover {
-		cursor: pointer;
+		// cursor: pointer;
 		border: 2px solid #d68427;
 	}
 }
 .pet-card__img {
 	width: 226px;
+	cursor: pointer;
 }
 .pet-card__card-header {
 	justify-content: center;
@@ -23,4 +24,13 @@
 	font-weight: bold;
 	color: black;
 	margin-left: 5px;
+}
+.animal-card_button {
+	margin-left: 74px;
+	background-color: #4788b6;
+	color: #fff;
+	&:hover {
+		background-color: #d68427;
+		cursor: pointer;
+	}
 }

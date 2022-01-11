@@ -1,5 +1,5 @@
 <mat-card class="pet-card">
-	<div class="pet-card__wrapper">
+	<div class="pet-card__wrapper" [routerLink]="['/animalsList', animalsInfo.id]">
 		<img class="pet-card__img" src="../../../assets/animalsPictures/animal_0{{ animalsInfo.id }}.jpg"
 			alt="image of {{ animalsInfo.name }}" />
 	</div>
@@ -15,8 +15,8 @@
 		<mat-card-subtitle>Порода:
 			<span class="pet-card__pet-info-item">{{ animalsInfo.breed }}</span>
 		</mat-card-subtitle>
-		<div class="animal-card_button" *ngIf="isButtonVisible">
-			<button mat-raised-button color="primary" [routerLink]="['/animalsList', animalsInfo.id]">
+		<div *ngIf="isButtonVisible">
+			<button class="animal-card_button" mat-raised-button [routerLink]="['/animalsList', animalsInfo.id]">
 				Дізнатись більше
 			</button>
 		</div>
