@@ -8,7 +8,7 @@ import { IVetsInfo } from '@shared/interfaces/vetInfo'
 })
 export class VetListCardComponent implements OnInit {
 	@Input()
-	vetsInfo: IVetsInfo = { title: '', adress: '', phone: '', email: '' }
+	vetsInfo: IVetsInfo
 
 	constructor() {}
 	ngOnInit(): void {}
