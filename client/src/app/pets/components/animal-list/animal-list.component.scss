@@ -1,0 +1,21 @@
+.animal-list-section {
+	margin-top: 90px;
+}
+
+.animal-list-section__container {
+	padding: 0;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.animal-list-section__card {
+	flex-basis: calc(100% / 4 - 3%);
+	margin: 1.5%;
+}
+
+.animal-list-section__card:hover {
+	transform: translateY(5px);
+	box-shadow: 2px 2px 26px rgba(0, 0, 0, 0.3);
+	// cursor: pointer;
+}

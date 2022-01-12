@@ -10,6 +10,10 @@ const routes: Routes = [
 		path: 'vetsList',
 		loadChildren: () => import('./vets/vets.module').then(m => m.VetsModule)
 	},
+  {
+		path: 'volonteersList',
+		loadChildren: () => import('./volunteers/volonteers.module').then(m => m.VolonteersModule)
+	},
 	{
 		path: '',
 		loadChildren: () => import('./home-page/home-page.module').then(m => m.HomePageModule)
@@ -17,7 +21,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-	imports: [RouterModule.forRoot(routes)],
+	imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
 	exports: [RouterModule]
 })
 export class AppRoutingModule {}

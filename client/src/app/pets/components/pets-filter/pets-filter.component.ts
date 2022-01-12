@@ -79,7 +79,6 @@ export class PetsFilterComponent implements OnInit {
 				this.lengthOfnimalsInfoArray = this.animalsInfoArray.length
 				if (this.lengthOfnimalsInfoArray !== 0) {
 					Notify.success(`Greate! We find ${this.lengthOfnimalsInfoArray} animals`)
-					console.log(response)
 				} else {
 					Notify.failure('Sorry, we do not have animal like you want(((')
 				}

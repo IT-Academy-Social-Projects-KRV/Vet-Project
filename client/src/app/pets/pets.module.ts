@@ -8,22 +8,23 @@ import { FormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
 
 
-import { AnimalListPageComponent } from './pages/animal-list-page/animal-list-page.component'
+import { AnimalPageComponent } from './pages/animal-list-page/animal-page.component'
 import { AnimalListCardComponent } from '@shared/components/animal-list-card/animal-list-card.component'
 import { AnimalUnitPageComponent } from './pages/animal-unit-page/animal-unit-page.component'
 
-import { AnimalInfoService } from '@shared/services/animal-info.service';
+import { AnimalInfoService } from '@shared/services/animal-info.service'
 import { PetsFilterComponent } from './components/pets-filter/pets-filter.component'
 import { PetsGethomeComponent } from './components/pets-gethome/pets-gethome.component'
+import { AnimalListComponent } from './components/animal-list/animal-list.component'
 
 @NgModule({
 	declarations: [
-		AnimalListPageComponent,
+		AnimalPageComponent,
 		AnimalListCardComponent,
 		AnimalUnitPageComponent,
 		PetsFilterComponent,
 		PetsGethomeComponent,
-
+		AnimalListComponent
 	],
 	imports: [
 		CommonModule,
@@ -35,6 +36,7 @@ import { PetsGethomeComponent } from './components/pets-gethome/pets-gethome.com
 		HttpClientModule,
 
 	],
+	exports: [AnimalListCardComponent],
 	providers: [AnimalInfoService]
 })
 export class PetsModule {}

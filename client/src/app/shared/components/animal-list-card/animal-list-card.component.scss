@@ -1,39 +1,36 @@
-.animal_list_main {
-	margin-top: 90px;
-}
+.pet-card {
+	background-color: #f0f5f958;
+	border: 2px solid #4788b6;
 
-.animal__container {
-	padding: 0;
-	margin: auto;
-	display: flex;
-	flex-wrap: wrap;
+	&:hover {
+		// cursor: pointer;
+		border: 2px solid #d68427;
+	}
 }
-
-.animal__card {
-	flex-basis: calc(100% / 4 - 3%);
-	margin: 1.5%;
-}
-
-.animal__card:hover {
-	transform: translateY(5px);
-	box-shadow: 2px 2px 26px rgba(0, 0, 0, 0.3);
+.pet-card__img {
+	width: 226px;
 	cursor: pointer;
 }
+.pet-card__card-header {
+	justify-content: center;
+}
 
-.main_info {
+.pet-card__card-title {
+	font-weight: bold;
+	height: 50px;
+}
+
+.pet-card__pet-info-item {
 	font-weight: bold;
 	color: black;
 	margin-left: 5px;
 }
-
-mat-card-header {
-	justify-content: center;
-	height: 55px;
-}
-h3 {
-	text-align: center;
-}
-
-mat-card-title {
-	font-weight: bold;
+.animal-card_button {
+	margin-left: 74px;
+	background-color: #4788b6;
+	color: #fff;
+	&:hover {
+		background-color: #d68427;
+		cursor: pointer;
+	}
 }
