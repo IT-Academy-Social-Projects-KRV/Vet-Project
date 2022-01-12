@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { IVolonteersInfo } from '../interfaces/volonteers'
-import { baseUrl, ApiPaths } from '../path-api'
+import { ApiPaths, baseUrl } from '../path-api'
 
 @Injectable({
 	providedIn: 'root'

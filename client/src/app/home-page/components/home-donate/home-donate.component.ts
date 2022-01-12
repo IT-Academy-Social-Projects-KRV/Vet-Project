@@ -16,7 +16,6 @@ export class HomeDonateComponent implements OnInit {
 	}
 
 	onClickSubmit() {
-
 		if (this.amount == '') {
 			Notify.failure('You have to choose something, please =)')
 			return
