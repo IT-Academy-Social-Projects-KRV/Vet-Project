@@ -68,7 +68,7 @@ router.post(
 router.get('/', async function getAllAnimals(req, res) {
 	try {
 		const animalsList = await db.query(
-			`SELECT id,name,gender,breed,age FROM animals`
+			`SELECT * FROM animals`
 		)
 		res.json(animalsList.rows)
 	} catch (err) {
@@ -99,7 +99,6 @@ router.get('/:id', async function getAnimalById(req, res) {
 		console.error(err)
 	}
 })
-
 router.put(
 	'/:id',
 	async function updateAnimalInfoById(
@@ -173,5 +172,8 @@ router.delete(
 		}
 	}
 )
+
+
+
 
 export default router
