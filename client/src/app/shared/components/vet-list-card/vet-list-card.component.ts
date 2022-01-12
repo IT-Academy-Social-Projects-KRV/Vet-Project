@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core'
+import { Component, Input } from '@angular/core'
 import { IVetsInfo } from '@shared/interfaces/vetInfo'
 
 @Component({
@@ -6,10 +6,9 @@ import { IVetsInfo } from '@shared/interfaces/vetInfo'
 	templateUrl: './vet-list-card.component.html',
 	styleUrls: ['./vet-list-card.component.scss', '../page-layout/header/header.component.scss']
 })
-export class VetListCardComponent implements OnInit {
+export class VetListCardComponent {
 	@Input()
 	vetsInfo: IVetsInfo
 
 	constructor() {}
-	ngOnInit(): void {}
 }

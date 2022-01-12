@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { TestBed } from '@angular/core/testing'
 
 import { AnimalInfoService } from './animal-info.service'

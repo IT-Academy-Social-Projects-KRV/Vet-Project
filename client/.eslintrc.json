@@ -1,14 +1,12 @@
 {
 	"parser": "@typescript-eslint/parser",
-	"root": false,
+	"root": true,
 	"ignorePatterns": ["projects/**/*"],
 	"overrides": [
 		{
 			"files": ["*.ts"],
 			"parserOptions": {
-				"project": ["tsconfig.json"],
-				"tsconfigRootDir": "client",
-				"sourceType": "module",
+				"project": ["./tsconfig.json"],
 				"createDefaultProgram": true
 			},
 			"extends": [

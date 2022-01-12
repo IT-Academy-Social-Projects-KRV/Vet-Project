@@ -1,12 +1,10 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 
 @Component({
 	selector: 'app-veterinarians',
 	templateUrl: './veterinarians.component.html',
 	styleUrls: ['./veterinarians.component.scss']
 })
-export class VeterinariansComponent implements OnInit {
+export class VeterinariansComponent {
 	constructor() {}
-
-	ngOnInit(): void {}
 }

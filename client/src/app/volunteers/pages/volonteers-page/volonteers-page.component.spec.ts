@@ -1,19 +1,19 @@
+/* eslint-disable no-undef */
 import { ComponentFixture, TestBed } from '@angular/core/testing'
+import { VolonteersPageComponent } from './volonteers-page.component'
 
-import { VolunteersListPageComponent } from './volunteers-list-page.component'
-
-describe('VolunteersListPageComponent', () => {
-	let component: VolunteersListPageComponent
-	let fixture: ComponentFixture<VolunteersListPageComponent>
+describe('VolonteersPageComponent', () => {
+	let component: VolonteersPageComponent
+	let fixture: ComponentFixture<VolonteersPageComponent>
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [VolunteersListPageComponent]
+			declarations: [VolonteersPageComponent]
 		}).compileComponents()
 	})
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(VolunteersListPageComponent)
+		fixture = TestBed.createComponent(VolonteersPageComponent)
 		component = fixture.componentInstance
 		fixture.detectChanges()
 	})

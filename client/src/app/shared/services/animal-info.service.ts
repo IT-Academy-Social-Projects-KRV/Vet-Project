@@ -7,6 +7,7 @@ import { ApiPaths, baseUrl } from '../path-api'
 	providedIn: 'root'
 })
 export class AnimalInfoService {
+	// eslint-disable-next-line no-unused-vars
 	constructor(private http: HttpClient) {}
 
 	getAnimalsInfo() {

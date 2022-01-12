@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 import { INewsCardInput } from 'src/app/shared/interfaces/common'
 
 @Component({
@@ -6,7 +6,7 @@ import { INewsCardInput } from 'src/app/shared/interfaces/common'
 	templateUrl: './home-news.component.html',
 	styleUrls: ['./home-news.component.scss']
 })
-export class HomeNewsComponent implements OnInit {
+export class HomeNewsComponent {
 	newsItems: INewsCardInput[] = [
 		{
 			title: 'News 1',
@@ -28,6 +28,4 @@ export class HomeNewsComponent implements OnInit {
 		}
 	]
 	constructor() {}
-
-	ngOnInit(): void {}
 }
