@@ -17,7 +17,6 @@ export class VetUnitPageComponent implements OnInit {
 		this.vetInfo.getVetsUnitInfo(this.id).subscribe(item => {
 			this.vetsInfo = item
 			this.info = this.vetsInfo[0]
-			console.log(this.info)
 		})
 	}
 	ngOnInit(): void {}
