@@ -12,7 +12,7 @@ import { AnimalUnitPageComponent } from './pages/animal-unit-page/animal-unit-pa
 
 import { AnimalInfoService } from '@shared/services/animal-info.service'
 import { PetsFilterComponent } from './components/pets-filter/pets-filter.component'
-import { PetsGethomeComponent } from './components/pets-gethome/pets-gethome.component';
+import { PetsGethomeComponent } from './components/pets-gethome/pets-gethome.component'
 import { AnimalListComponent } from './components/animal-list/animal-list.component'
 
 @NgModule({
@@ -22,7 +22,7 @@ import { AnimalListComponent } from './components/animal-list/animal-list.compon
 		AnimalUnitPageComponent,
 		PetsFilterComponent,
 		PetsGethomeComponent,
-  AnimalListComponent
+		AnimalListComponent
 	],
 	imports: [
 		CommonModule,
@@ -32,6 +32,7 @@ import { AnimalListComponent } from './components/animal-list/animal-list.compon
 		MatSelectModule,
 		FormsModule
 	],
+	exports: [AnimalListCardComponent],
 	providers: [AnimalInfoService]
 })
 export class PetsModule {}

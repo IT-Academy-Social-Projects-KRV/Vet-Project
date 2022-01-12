@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, Input } from '@angular/core'
 import { FormBuilder, FormGroup } from '@angular/forms'
+import { AnimalInfoService } from '@shared/services/animal-info.service'
 
 @Component({
 	selector: 'app-pet-slider',
@@ -7,7 +8,12 @@ import { FormBuilder, FormGroup } from '@angular/forms'
 	styleUrls: ['./pet-slider.component.scss']
 })
 export class PetSliderComponent implements OnInit {
-	constructor() {}
+	animalsInfo: any = []
+	constructor(private animalInfo: AnimalInfoService) {
+		this.animalInfo.getAnimalsInfo().subscribe(item => {
+			this.animalsInfo = item
+		})
+	}
 
 	ngOnInit(): void {}
 }

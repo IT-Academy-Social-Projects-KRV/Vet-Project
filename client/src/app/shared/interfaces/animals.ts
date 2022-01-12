@@ -4,4 +4,5 @@ export interface IAnimalsInfo {
 	gender: string
 	breed: string
 	age: Number
+	curator: string
 }
