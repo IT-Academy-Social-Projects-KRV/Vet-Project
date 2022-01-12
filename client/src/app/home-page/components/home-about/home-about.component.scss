@@ -1,5 +1,6 @@
 .about__main {
 	margin-top: 40px;
+	margin-bottom: 40px;
 	display: flex;
 	flex-direction: row;
 	height: 600px;
@@ -9,7 +10,7 @@
 
 	background: linear-gradient(to right, #00000074, #000000c2),
 		url('../../../../assets/bg-about-us.jpg');
-	background-attachment: fixed;
+	// background-attachment: fixed;
 	background-size: cover;
 }
 .img-wrapper > img {

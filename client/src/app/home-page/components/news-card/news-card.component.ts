@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core'
-import { INewsCardInput } from 'src/app/shared/interfaces/common'
+import { HttpClient } from '@angular/common/http'
 
 @Component({
 	selector: 'app-news-card',
@@ -7,9 +7,9 @@ import { INewsCardInput } from 'src/app/shared/interfaces/common'
 	styleUrls: ['./news-card.component.scss']
 })
 export class NewsCardComponent implements OnInit {
-	@Input() item: INewsCardInput
+ response: any;
 
-	constructor() {}
+	constructor(private http: HttpClient) { }
 
 	ngOnInit(): void {}
 }

@@ -5,6 +5,8 @@ import { PetsRoutingModule } from './pets-routing.module'
 import { MatButtonModule } from '@angular/material/button'
 import { MatSelectModule } from '@angular/material/select'
 import { FormsModule } from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AnimalListPageComponent } from './pages/animal-list-page/animal-list-page.component'
 import { AnimalListCardComponent } from '@shared/components/animal-list-card/animal-list-card.component'
@@ -20,7 +22,8 @@ import { PetsGethomeComponent } from './components/pets-gethome/pets-gethome.com
 		AnimalListCardComponent,
 		AnimalUnitPageComponent,
 		PetsFilterComponent,
-		PetsGethomeComponent
+		PetsGethomeComponent,
+
 	],
 	imports: [
 		CommonModule,
@@ -28,7 +31,9 @@ import { PetsGethomeComponent } from './components/pets-gethome/pets-gethome.com
 		MatButtonModule,
 		PetsRoutingModule,
 		MatSelectModule,
-		FormsModule
+		FormsModule,
+		HttpClientModule,
+
 	],
 	providers: [AnimalInfoService]
 })
