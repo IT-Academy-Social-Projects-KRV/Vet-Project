@@ -1,5 +1,6 @@
 import { Component } from '@angular/core'
 import { VetUnitInfoService } from '@shared/services/vet-unit-info.service'
+
 import { ActivatedRoute } from '@angular/router'
 @Component({
 	selector: 'app-vet-unit-page',
