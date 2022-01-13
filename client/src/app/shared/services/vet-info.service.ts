@@ -1,7 +1,8 @@
+/* eslint-disable no-unused-vars */
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
-import { IVetsInfo, IVetServices } from '../interfaces/vetInfo'
-import { baseUrl, ApiPaths } from '../path-api'
+import { IVetServices, IVetsInfo } from '../interfaces/vetInfo'
+import { ApiPaths, baseUrl } from '../path-api'
 
 @Injectable({
 	providedIn: 'root'

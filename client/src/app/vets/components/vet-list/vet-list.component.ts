@@ -1,23 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { VetInfoService } from '@shared/services/vet-info.service';
-
+import { Component } from '@angular/core'
+import { VetInfoService } from '@shared/services/vet-info.service'
 
 @Component({
-  selector: 'app-vet-list',
-  templateUrl: './vet-list.component.html',
-  styleUrls: ['./vet-list.component.scss']
+	selector: 'app-vet-list',
+	templateUrl: './vet-list.component.html',
+	styleUrls: ['./vet-list.component.scss']
 })
-export class VetListComponent implements OnInit {
-vetsDetailInfo:any  = []
+export class VetListComponent {
+	vetsDetailInfo: any = []
 
-  constructor(private vetDetailInfo: VetInfoService) { 
-    this.vetDetailInfo.getVetDetails().subscribe(item => {
+	// eslint-disable-next-line no-unused-vars
+	constructor(private vetDetailInfo: VetInfoService) {
+		this.vetDetailInfo.getVetDetails().subscribe(item => {
 			this.vetsDetailInfo = item
 		})
-	
-  }
-
-  ngOnInit(): void {
-  }
-
+	}
 }

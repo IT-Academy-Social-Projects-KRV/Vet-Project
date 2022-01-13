@@ -1,25 +1,25 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+/* eslint-disable no-undef */
+import { ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { VolonteersListComponent } from './volonteers-list.component';
+import { VolonteersListComponent } from './volonteers-list.component'
 
 describe('VolonteersListComponent', () => {
-  let component: VolonteersListComponent;
-  let fixture: ComponentFixture<VolonteersListComponent>;
+	let component: VolonteersListComponent
+	let fixture: ComponentFixture<VolonteersListComponent>
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ VolonteersListComponent ]
-    })
-    .compileComponents();
-  });
+	beforeEach(async () => {
+		await TestBed.configureTestingModule({
+			declarations: [VolonteersListComponent]
+		}).compileComponents()
+	})
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(VolonteersListComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	beforeEach(() => {
+		fixture = TestBed.createComponent(VolonteersListComponent)
+		component = fixture.componentInstance
+		fixture.detectChanges()
+	})
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+	it('should create', () => {
+		expect(component).toBeTruthy()
+	})
+})

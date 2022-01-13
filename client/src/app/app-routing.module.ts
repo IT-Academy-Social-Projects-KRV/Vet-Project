@@ -10,7 +10,7 @@ const routes: Routes = [
 		path: 'vetsList',
 		loadChildren: () => import('./vets/vets.module').then(m => m.VetsModule)
 	},
-  {
+	{
 		path: 'volonteersList',
 		loadChildren: () => import('./volunteers/volonteers.module').then(m => m.VolonteersModule)
 	},

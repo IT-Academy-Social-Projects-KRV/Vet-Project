@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 import { Notify } from 'notiflix/build/notiflix-notify-aio'
 import { HttpClient } from '@angular/common/http'
 import {AnimalInfoService} from 'src/app/shared/services/animal-info.service'
@@ -17,15 +17,8 @@ interface IAnimalInfo {
 	templateUrl: './pets-filter.component.html',
 	styleUrls: ['./pets-filter.component.scss']
 })
+
 export class PetsFilterComponent implements OnInit {
-
-	currentItem = [
-    { id: 1, name: 'Hello' },
-    { id: 2, name: 'Test' },
-    { id: 3, name: 'Word' },
-    { id: 4, name: 'Hello Word' },
-  ];
-
 
 	response: any;
 	animalsInfoArray: any;
@@ -36,8 +29,6 @@ export class PetsFilterComponent implements OnInit {
 	baseUrl:string ='http://localhost:3200/api//animals/filter//?'
 	paramsArr = [];
 	getUrl = '';
-
-  
 
 	animal: IAnimalInfo = {
 		gender: '',
@@ -67,18 +58,13 @@ export class PetsFilterComponent implements OnInit {
 		})
 	}
 	
-	
-	
-
 	onSubmite() {
 	  this.paramsArr = [];		
 		this.checkParams()
 		this.getUrl = this.paramsArr.join('&')	
 		
-
 	   this.getAnimalsInfo(this.getUrl)
-		 
-	}
+			}
 
 	getAnimalsInfo(url) {
 		
@@ -100,8 +86,5 @@ export class PetsFilterComponent implements OnInit {
 		console.log(`${this.baseUrl}${url}`)
 
 		}
-	
-	ngOnInit(): void {
-	
-	}
+
 }

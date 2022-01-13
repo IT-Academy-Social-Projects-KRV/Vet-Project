@@ -1,11 +1,14 @@
+
 import { Component, OnInit } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
+
 
 @Component({
 	selector: 'app-home-news',
 	templateUrl: './home-news.component.html',
 	styleUrls: ['./home-news.component.scss']
 })
+
 export class HomeNewsComponent implements OnInit {
 	newsResponse: any = [];
 	newsList: any = [];
@@ -37,4 +40,5 @@ export class HomeNewsComponent implements OnInit {
 	ngOnInit(): void {
 	this.getNewNewsList()
 	}
+
 }

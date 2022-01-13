@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core'
+import { Component, Input } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 
 @Component({
@@ -6,10 +6,9 @@ import { HttpClient } from '@angular/common/http'
 	templateUrl: './news-card.component.html',
 	styleUrls: ['./news-card.component.scss']
 })
-export class NewsCardComponent implements OnInit {
+
+export class NewsCardComponent {
  response: any;
 
 	constructor(private http: HttpClient) { }
-
-	ngOnInit(): void {}
 }

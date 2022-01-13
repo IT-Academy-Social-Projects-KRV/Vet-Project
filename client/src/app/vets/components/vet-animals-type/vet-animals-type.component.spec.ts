@@ -1,25 +1,25 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+/* eslint-disable no-undef */
+import { ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { VetAnimalsTypeComponent } from './vet-animals-type.component';
+import { VetAnimalsTypeComponent } from './vet-animals-type.component'
 
 describe('VetAnimalsTypeComponent', () => {
-  let component: VetAnimalsTypeComponent;
-  let fixture: ComponentFixture<VetAnimalsTypeComponent>;
+	let component: VetAnimalsTypeComponent
+	let fixture: ComponentFixture<VetAnimalsTypeComponent>
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ VetAnimalsTypeComponent ]
-    })
-    .compileComponents();
-  });
+	beforeEach(async () => {
+		await TestBed.configureTestingModule({
+			declarations: [VetAnimalsTypeComponent]
+		}).compileComponents()
+	})
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(VetAnimalsTypeComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	beforeEach(() => {
+		fixture = TestBed.createComponent(VetAnimalsTypeComponent)
+		component = fixture.componentInstance
+		fixture.detectChanges()
+	})
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+	it('should create', () => {
+		expect(component).toBeTruthy()
+	})
+})
