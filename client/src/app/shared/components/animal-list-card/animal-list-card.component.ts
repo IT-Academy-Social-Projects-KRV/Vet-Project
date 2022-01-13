@@ -9,6 +9,7 @@ import { IAnimalsInfo } from '@shared/interfaces/animals'
 export class AnimalListCardComponent implements OnInit {
 	@Input() animalsInfo: IAnimalsInfo
 	@Input() isButtonVisible = false
+	// @Input() data: { gender: string; breed: string; age: string; curator: string}
 
 	constructor() {}
 	ngOnInit(): void {}

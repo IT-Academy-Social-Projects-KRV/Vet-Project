@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { INewsCardInput } from 'src/app/shared/interfaces/common'
+import { HttpClient } from '@angular/common/http'
 
 @Component({
 	selector: 'app-home-news',
@@ -7,27 +7,34 @@ import { INewsCardInput } from 'src/app/shared/interfaces/common'
 	styleUrls: ['./home-news.component.scss']
 })
 export class HomeNewsComponent implements OnInit {
-	newsItems: INewsCardInput[] = [
-		{
-			title: 'News 1',
-			imageUrl: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-			description:
-				'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam odit praesentium fugiat, soluta laborum nostrumeius laudantium, sed sint ut facilis sequi repellendus eaque aliquid molestiae deleniti possimus eos odio?'
-		},
-		{
-			title: 'News 2',
-			imageUrl: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-			description:
-				'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam odit praesentium fugiat, soluta laborum nostrumeius laudantium, sed sint ut facilis sequi repellendus eaque aliquid molestiae deleniti possimus eos odio?'
-		},
-		{
-			title: 'News 3',
-			imageUrl: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-			description:
-				'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam odit praesentium fugiat, soluta laborum nostrumeius laudantium, sed sint ut facilis sequi repellendus eaque aliquid molestiae deleniti possimus eos odio?'
-		}
-	]
-	constructor() {}
+	newsResponse: any = [];
+	newsList: any = [];
+	
 
-	ngOnInit(): void {}
+	pageNews:number = 1;
+	constructor(private http: HttpClient) { 
+		
+	}
+
+	nextPage() {
+		this.pageNews += 1;
+
+		this.getNewNewsList()
+	}
+		previosPage() {
+			this.pageNews -= 1;
+			this.getNewNewsList()
+ }
+
+	getNewNewsList() {
+		this.http.get(`https://newsapi.org/v2/everything?q=cat&apiKey=a727cf33cbca4135914838376fe65461&pageSize=3&page=${this.pageNews}`).subscribe((response) => {
+			this.newsResponse = response;
+			this.newsList = this.newsResponse.articles
+			console.log(this.newsList)
+     })
+	}
+
+	ngOnInit(): void {
+	this.getNewNewsList()
+	}
 }
