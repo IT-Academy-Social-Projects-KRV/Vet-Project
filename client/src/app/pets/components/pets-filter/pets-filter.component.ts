@@ -18,7 +18,7 @@ interface IAnimalInfo {
 	styleUrls: ['./pets-filter.component.scss']
 })
 
-export class PetsFilterComponent implements OnInit {
+export class PetsFilterComponent{
 
 	response: any;
 	animalsInfoArray: any;
