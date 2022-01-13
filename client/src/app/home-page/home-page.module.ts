@@ -47,7 +47,6 @@ import { PetsModule } from '../pets/pets.module'
 		FormsModule,
 		IvyCarouselModule,
 		PetsModule
-
 	]
 })
 export class HomePageModule {}

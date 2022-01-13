@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core'
+import { Component, Input } from '@angular/core'
 import { INewsCardInput } from 'src/app/shared/interfaces/common'
 
 @Component({
@@ -6,10 +6,8 @@ import { INewsCardInput } from 'src/app/shared/interfaces/common'
 	templateUrl: './news-card.component.html',
 	styleUrls: ['./news-card.component.scss']
 })
-export class NewsCardComponent implements OnInit {
+export class NewsCardComponent {
 	@Input() item: INewsCardInput
 
 	constructor() {}
-
-	ngOnInit(): void {}
 }

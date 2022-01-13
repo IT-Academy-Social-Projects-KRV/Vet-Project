@@ -1,15 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
-  selector: 'app-vet-animals-type',
-  templateUrl: './vet-animals-type.component.html',
-  styleUrls: ['./vet-animals-type.component.scss']
+	selector: 'app-vet-animals-type',
+	templateUrl: './vet-animals-type.component.html',
+	styleUrls: ['./vet-animals-type.component.scss']
 })
-export class VetAnimalsTypeComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class VetAnimalsTypeComponent {
+	constructor() {}
 }

@@ -1,11 +1,12 @@
-import { Component, OnInit, Output } from '@angular/core'
-import {} from '@angular/core'
+/* eslint-disable no-undef */
+import { Component } from '@angular/core'
+
 @Component({
 	selector: 'app-header',
 	templateUrl: './header.component.html',
 	styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 	constructor() {}
 	active: boolean = false
 
@@ -17,6 +18,4 @@ export class HeaderComponent implements OnInit {
 		this.active = false
 		document.body.style.overflow = this.active ? 'hidden' : 'visible'
 	}
-
-	ngOnInit(): void {}
 }

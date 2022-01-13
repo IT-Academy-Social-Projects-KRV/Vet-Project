@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 import { Notify } from 'notiflix/build/notiflix-notify-aio'
 
 interface IAnimalInfo {
@@ -13,7 +13,7 @@ interface IAnimalInfo {
 	templateUrl: './pets-filter.component.html',
 	styleUrls: ['./pets-filter.component.scss']
 })
-export class PetsFilterComponent implements OnInit {
+export class PetsFilterComponent {
 	animal: IAnimalInfo = {
 		gender: '',
 		breed: '',
@@ -23,7 +23,6 @@ export class PetsFilterComponent implements OnInit {
 
 	constructor() {}
 
-	ngOnInit(): void {}
 	onSubmite() {
 		Notify.success(`Great! We find ?? animals!!`)
 	}

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 
 import { PetWantedSliderComponent } from './pet-wanted-slider.component'
