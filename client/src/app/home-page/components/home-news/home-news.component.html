@@ -1,8 +1,33 @@
 <section class="news__main">
-	<h1 class="news__titel">Our news</h1>
-	<ul class="news__cards">
-		<li *ngFor="let article of newsItems">
-			<app-news-card [item]="article"></app-news-card>
-		</li>
-	</ul>
+
+<h2 class="news-main__title" >Новини про братів наших менших</h2>
+<ul class="news-list">
+	
+	
+	<li *ngFor="let news of newsList" class="news-list__item">	
+		<a href="{{news.url}}" target="_blank">
+			<mat-card class="example-card">
+ 				 <mat-card-header>
+   				 <mat-card-title class="news-list_item-title">{{news.title}}</mat-card-title>
+    				<mat-card-subtitle class="news-list_item-subtitle">{{news.author}}</mat-card-subtitle>
+ 				 </mat-card-header>
+					<div class="img-wrapper">
+						<img mat-card-image src={{news.urlToImage}} alt="Photo of a Shiba Inu">
+					</div>	 
+				<mat-card-content>
+					<p>
+					{{news.description}}
+					</p>
+				</mat-card-content>
+			</mat-card>
+		</a>
+	</li>
+
+</ul>
+<div class="button-wrapper">
+	<button (click)="previosPage()" [disabled]="pageNews === 1" class="filter-btn" >Попередні</button>
+	<button (click)="nextPage()" class="filter-btn">Наступні</button>
+
+</div>
+
 </section>

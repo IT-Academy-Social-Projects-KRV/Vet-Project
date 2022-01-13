@@ -1,9 +1,12 @@
 .pet-card {
 	background-color: #f0f5f958;
 	border: 2px solid #4788b6;
+	margin-right: 30px;
+	margin-bottom: 30px;
+	
 
 	&:hover {
-
+		box-shadow: 7px 7px 7px 5px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
 		border: 2px solid #d68427;
 	}
 }

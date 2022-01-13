@@ -96,7 +96,6 @@ router.get('/:id', async function getAnimalById(req, res) {
     console.error(err)
   }
 })
-
 router.put(
   '/:id',
   async function updateAnimalInfoById(
@@ -164,5 +163,8 @@ router.delete(
     }
   }
 )
+
+
+
 
 export default router
