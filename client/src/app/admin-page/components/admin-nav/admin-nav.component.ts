@@ -1,4 +1,4 @@
-import { Component, EventEmitter } from '@angular/core'
+import { Component} from '@angular/core'
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
 import { Observable } from 'rxjs'
 import { map, shareReplay } from 'rxjs/operators'
@@ -19,5 +19,7 @@ export class AdminNavComponent {
 		shareReplay()
 	)
 
-	constructor(private breakpointObserver: BreakpointObserver) {}
+	constructor(private breakpointObserver: BreakpointObserver) {
+		this.loadedFeature = 'dashboard'
+	}
 }
