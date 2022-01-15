@@ -11,7 +11,6 @@ export class AnimalUnitPageComponent {
 	petsInfo: any = []
 	id: string
 
-	// eslint-disable-next-line no-unused-vars
 	constructor(private animalInfo: AnimalUnitInfoService, private _Activatedroute: ActivatedRoute) {
 		this._Activatedroute.paramMap.subscribe(params => {
 			this.id = params.get('id')

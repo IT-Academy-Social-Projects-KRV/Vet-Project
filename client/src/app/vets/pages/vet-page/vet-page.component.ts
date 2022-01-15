@@ -6,6 +6,5 @@ import { Component } from '@angular/core'
 	styleUrls: ['./vet-page.component.scss']
 })
 export class VetPageComponent {
-	title = 'Vet List'
 	constructor() {}
 }
