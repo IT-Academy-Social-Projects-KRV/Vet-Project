@@ -5,6 +5,4 @@ import { Component } from '@angular/core'
 	templateUrl: './home-main.component.html',
 	styleUrls: ['./home-main.component.scss']
 })
-export class HomeMainComponent {
-	constructor() {}
-}
+export class HomeMainComponent {}

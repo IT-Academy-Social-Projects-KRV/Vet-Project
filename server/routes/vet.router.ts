@@ -1,19 +1,10 @@
 import { Router, Request } from 'express'
 import db from '../db'
 
+import { IBareVetItem } from "../interfaces"
+import {IVetItem} from "../interfaces"
+
 const router = Router()
-
-export interface IBareVetItem {
-	title: string
-	adress: string
-	phone: string
-	email: string
-	map_link: string
-}
-
-export interface IVetItem extends IBareVetItem {
-	id: number
-}
 
 router.post(
 	'/',

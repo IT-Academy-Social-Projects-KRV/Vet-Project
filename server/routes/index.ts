@@ -8,7 +8,6 @@ import animalFilterRouter from './filter.services'
 const router = Router()
 
 router.use('/vet/', vetRouter)
-
 router.use('/services/', servicesRouter)
 router.use('/vetservices/', vetServicesRouter)
 router.use('/animals/', animalsRouter)
