@@ -31,6 +31,12 @@
 						"style": "camelCase",
 						"type": "attribute"
 					}
+				],
+				"prettier/prettier": [
+					"error",
+					{
+						"endOfLine": "auto"
+					}
 				]
 			}
 		},

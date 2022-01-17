@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 import { Component } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
-
 import { Notify } from 'notiflix/build/notiflix-notify-aio'
 
 import { AnimalInfoService } from 'src/app/shared/services/animal-info.service'
@@ -29,7 +30,6 @@ export class PetsFilterComponent {
 		curator: ''
 	}
 
-	// eslint-disable-next-line no-unused-vars
 	constructor(private http: HttpClient, private animalInfo: AnimalInfoService) {
 		this.animalInfo.getAnimalsInfo().subscribe(item => {
 			this.petsInfo = item
@@ -62,6 +62,8 @@ export class PetsFilterComponent {
 		this.http.get(`${this.baseUrl}${url}`).subscribe(response => {
 			this.animalsInfoArray = response
 			this.response = response
+			console.log(response)
+			this.active = true
 
 			this.lengthOfnimalsInfoArray = this.animalsInfoArray.length
 			if (this.lengthOfnimalsInfoArray !== 0) {
@@ -70,5 +72,6 @@ export class PetsFilterComponent {
 				Notify.failure('Sorry, we do not have animal like you want(((')
 			}
 		})
+		console.log(`${this.baseUrl}${url}`)
 	}
 }
