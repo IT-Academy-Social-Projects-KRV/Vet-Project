@@ -16,7 +16,6 @@ import { PetWantedSliderComponent } from './components/pet-wanted-slider/pet-wan
 import { HomeDonateComponent } from './components/home-donate/home-donate.component'
 import { HomeAboutComponent } from './components/home-about/home-about.component'
 import { HomeNewsComponent } from './components/home-news/home-news.component'
-import { NewsCardComponent } from './components/news-card/news-card.component'
 import { FormsModule } from '@angular/forms'
 
 import { HomePageComponent } from './pages/home-page.component'
@@ -32,7 +31,6 @@ import { PetsModule } from '../pets/pets.module'
 		HomeDonateComponent,
 		HomeAboutComponent,
 		HomeNewsComponent,
-		NewsCardComponent,
 		HomePageComponent,
 		PetServicesComponent
 	],

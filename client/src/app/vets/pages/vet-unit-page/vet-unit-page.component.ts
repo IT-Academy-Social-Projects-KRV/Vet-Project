@@ -11,9 +11,9 @@ export class VetUnitPageComponent {
 	vetsInfo: any = []
 	id: string
 	info: any = {}
-	// eslint-disable-next-line no-unused-vars
-	constructor(private vetInfo: VetUnitInfoService, private _Activatedroute: ActivatedRoute) {
-		this._Activatedroute.paramMap.subscribe(params => {
+
+	constructor(private vetInfo: VetUnitInfoService, private Activatedroute: ActivatedRoute) {
+		this.Activatedroute.paramMap.subscribe(params => {
 			this.id = params.get('id')
 		})
 		this.vetInfo.getVetsUnitInfo(this.id).subscribe(item => {
