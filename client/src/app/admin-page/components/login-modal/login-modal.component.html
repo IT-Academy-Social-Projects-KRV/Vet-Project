@@ -3,7 +3,8 @@
         <form class="example-form">
             <mat-form-field   class="example-full-width">
                 <mat-label>Email</mat-label>
-                <input type="email" matInput>
+                <input type="email" matInput [formControl]="email" required>
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
               </mat-form-field>
               <mat-form-field class="example-full-width">
                 <mat-label>Пароль</mat-label>
