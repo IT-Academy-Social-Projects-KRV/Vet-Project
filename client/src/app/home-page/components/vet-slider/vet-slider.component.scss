@@ -1,0 +1,34 @@
+.main__vet_slider {
+	padding-top: 40px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #f6f9fc;
+	.main__vet_slider__title {
+		margin-bottom: 40px;
+		font-size: 40px;
+		font-weight: 600;
+		font-style: bold;
+		color: #4788b6;
+	}
+}
+
+.vet__slider_cards {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	width: 100%;
+
+	margin-bottom: 40px;
+}
+.vet__slider_cards_title {
+	margin-bottom: 10px;
+}
+.carousel {
+	z-index: 4;
+}
+.mat-card-image {
+  margin: 0;
+}

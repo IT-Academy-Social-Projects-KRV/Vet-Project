@@ -7,8 +7,8 @@ import { IVetsInfo } from '@shared/interfaces/vetInfo'
 	styleUrls: ['./vet-list-card.component.scss', '../page-layout/header/header.component.scss']
 })
 export class VetListCardComponent implements OnInit {
-	@Input()
-	vetsInfo: IVetsInfo
+	@Input() vetsInfo: IVetsInfo
+  @Input() isButtonVisible = false
 
 	constructor() {}
 	ngOnInit(): void {}

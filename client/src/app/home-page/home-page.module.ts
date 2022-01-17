@@ -11,7 +11,7 @@ import { MatIconModule } from '@angular/material/icon'
 import { HomePageRoutingModule } from './home-page-routing.module'
 import { HomeMainComponent } from './components/home-main/home-main.component'
 import { PetSliderComponent } from './components/pet-slider/pet-slider.component'
-import { PetWantedSliderComponent } from './components/pet-wanted-slider/pet-wanted-slider.component'
+import { VetSliderComponent } from './components/vet-slider/vet-slider.component'
 import { HomeDonateComponent } from './components/home-donate/home-donate.component'
 import { HomeAboutComponent } from './components/home-about/home-about.component'
 import { HomeNewsComponent } from './components/home-news/home-news.component'
@@ -22,12 +22,13 @@ import { HomePageComponent } from './pages/home-page.component'
 import { PetServicesComponent } from './components/pet-services/pet-services.component'
 import { IvyCarouselModule } from 'angular-responsive-carousel'
 import { PetsModule } from '../pets/pets.module'
+import { VetsModule } from '../vets/vets.module'
 
 @NgModule({
 	declarations: [
 		HomeMainComponent,
 		PetSliderComponent,
-		PetWantedSliderComponent,
+		VetSliderComponent,
 		HomeDonateComponent,
 		HomeAboutComponent,
 		HomeNewsComponent,
@@ -46,7 +47,8 @@ import { PetsModule } from '../pets/pets.module'
 		MatInputModule,
 		FormsModule,
 		IvyCarouselModule,
-		PetsModule
+		PetsModule,
+    VetsModule
 
 	]
 })
