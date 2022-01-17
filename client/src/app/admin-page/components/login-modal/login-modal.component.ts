@@ -11,9 +11,8 @@ export class LoginModalComponent {
 	hide: boolean = true
 	getErrorMessage() {
 		if (this.email.hasError('required')) {
-			return 'You must enter a value'
+			return "Це поле обов'язкове для заповнення"
 		}
-
-		return this.email.hasError('email') ? 'Not a valid email' : ''
+		return this.email.hasError('email') ? 'Невірний формат електронної пошти' : ''
 	}
 }
