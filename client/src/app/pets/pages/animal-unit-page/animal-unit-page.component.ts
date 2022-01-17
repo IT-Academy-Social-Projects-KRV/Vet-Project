@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Component } from '@angular/core'
 import { AnimalUnitInfoService } from 'src/app/shared/services/animal-unit-info.service'
 import { ActivatedRoute } from '@angular/router'
@@ -11,7 +12,6 @@ export class AnimalUnitPageComponent {
 	petsInfo: any = []
 	id: string
 
-	// eslint-disable-next-line no-unused-vars
 	constructor(private animalInfo: AnimalUnitInfoService, private _Activatedroute: ActivatedRoute) {
 		this._Activatedroute.paramMap.subscribe(params => {
 			this.id = params.get('id')

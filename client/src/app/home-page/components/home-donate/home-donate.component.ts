@@ -9,8 +9,6 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio'
 export class HomeDonateComponent {
 	amount: any
 
-	constructor() {}
-
 	addValue(value: number) {
 		this.amount = value
 	}
@@ -21,7 +19,6 @@ export class HomeDonateComponent {
 			return
 		}
 		Notify.success(`Thank you for the Donate in ${this.amount} points`)
-
 		this.amount = ''
 	}
 }

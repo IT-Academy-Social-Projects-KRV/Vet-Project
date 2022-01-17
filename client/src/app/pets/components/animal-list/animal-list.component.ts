@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Component } from '@angular/core'
 import { AnimalInfoService } from '@shared/services/animal-info.service'
 
@@ -8,7 +9,7 @@ import { AnimalInfoService } from '@shared/services/animal-info.service'
 })
 export class AnimalListComponent {
 	animalsInfo: any = []
-	// eslint-disable-next-line no-unused-vars
+
 	constructor(private animalInfo: AnimalInfoService) {
 		this.animalInfo.getAnimalsInfo().subscribe(item => {
 			this.animalsInfo = item
