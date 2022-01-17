@@ -1,6 +1,5 @@
 import { Component } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
-
 import { Notify } from 'notiflix/build/notiflix-notify-aio'
 
 import { AnimalInfoService } from 'src/app/shared/services/animal-info.service'
@@ -16,6 +15,7 @@ export class PetsFilterComponent {
 	animalsInfoArray: any
 	lengthOfnimalsInfoArray: number
 	petsInfo: any = []
+	active: boolean = false
 
 	baseUrl: string = 'http://localhost:3200/api//animals/filter//?'
 	paramsArr = []
@@ -56,10 +56,26 @@ export class PetsFilterComponent {
 		}
 	}
 
+	constructor(private http: HttpClient, private animalInfo: AnimalInfoService) {
+		this.animalInfo.getAnimalsInfo().subscribe(item => {
+			this.petsInfo = item
+		})
+	}
+
+	onSubmite() {
+		this.paramsArr = []
+		this.checkParams()
+		this.getUrl = this.paramsArr.join('&')
+
+		this.getAnimalsInfo(this.getUrl)
+	}
+
 	getAnimalsInfo(url) {
 		this.http.get(`${this.baseUrl}${url}`).subscribe(response => {
 			this.animalsInfoArray = response
 			this.response = response
+			console.log(response)
+			this.active = true
 
 			this.lengthOfnimalsInfoArray = this.animalsInfoArray.length
 			if (this.lengthOfnimalsInfoArray !== 0) {
@@ -68,5 +84,6 @@ export class PetsFilterComponent {
 				Notify.failure('Sorry, we do not have animal like you want(((')
 			}
 		})
+		console.log(`${this.baseUrl}${url}`)
 	}
 }
