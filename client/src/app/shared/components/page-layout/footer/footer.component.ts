@@ -1,7 +1,6 @@
 import { Component } from '@angular/core'
 import { MatDialog } from '@angular/material/dialog'
-import { LoginModalComponent } from '@shared/components/login-modal/login-modal.component'
-
+import { LoginModalComponent } from 'src/app/admin-page/components/login-modal/login-modal.component'
 @Component({
 	selector: 'app-footer',
 	templateUrl: './footer.component.html',
