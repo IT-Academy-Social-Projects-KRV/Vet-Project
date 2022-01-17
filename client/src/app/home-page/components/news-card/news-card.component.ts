@@ -6,9 +6,8 @@ import { HttpClient } from '@angular/common/http'
 	templateUrl: './news-card.component.html',
 	styleUrls: ['./news-card.component.scss']
 })
-
 export class NewsCardComponent {
- response: any;
+	response: any
 
-	constructor(private http: HttpClient) { }
+	constructor(private http: HttpClient) {}
 }

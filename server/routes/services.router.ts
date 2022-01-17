@@ -1,16 +1,11 @@
 import { Router, Request } from 'express'
 import db from '../db'
 
+import { IBareServiceItem } from '../interfaces'
+import { IServiceItem } from '../interfaces'
+
+
 const router = Router()
-
-export interface IBareServiceItem {
-  title: string
-  description: string
-}
-
-export interface IServiceItem extends IBareServiceItem {
-  id: number
-}
 
 router.post(
   '/',

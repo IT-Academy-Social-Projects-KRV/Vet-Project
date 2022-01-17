@@ -1,15 +1,7 @@
-import { Router, Request } from 'express'
-import { Test } from 'tslint';
+import { Router} from 'express'
 import db from '../db'
 
 const router = Router();
-
-export interface IFilterAtimals {
-    gender : string
-    breed : string
-    age : string
-    curator : string
-}
 
 router.get('/', async function getAllAnimals(req, res) {
    
@@ -20,19 +12,12 @@ router.get('/', async function getAllAnimals(req, res) {
 
 	const params = [gender, breed, age, curator].filter(Boolean)
 
-
-
 	const parametersArr = createParametersArr(req.query);
 	const parametrsStr = createAllStr(parametersArr);
 
-
-
-
-	
 	try {
 		const animalsList = await db.query(
 			`SELECT * FROM animals WHERE ${parametrsStr}`, params
-
 		)
 		res.json(animalsList.rows)
 	} catch (err) {
@@ -64,7 +49,5 @@ function createAllStr(arr) {
 	}
 	return query
 }
-
-
 
 export default router;

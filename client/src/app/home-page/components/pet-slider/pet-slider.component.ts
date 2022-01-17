@@ -1,6 +1,5 @@
 import { Component } from '@angular/core'
 import { AnimalInfoService } from '@shared/services/animal-info.service'
-
 @Component({
 	selector: 'app-pet-slider',
 	templateUrl: './pet-slider.component.html',
@@ -8,7 +7,6 @@ import { AnimalInfoService } from '@shared/services/animal-info.service'
 })
 export class PetSliderComponent {
 	animalsInfo: any = []
-	// eslint-disable-next-line no-unused-vars
 	constructor(private animalInfo: AnimalInfoService) {
 		this.animalInfo.getAnimalsInfo().subscribe(item => {
 			this.animalsInfo = item
