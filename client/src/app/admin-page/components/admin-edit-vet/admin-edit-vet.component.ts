@@ -13,6 +13,14 @@ interface Specialization {
 	styleUrls: ['./admin-edit-vet.component.scss']
 })
 export class AdminEditVetComponent {
+	typesOfShoes: string[] = [
+		'Хірургія',
+		'Травматологія',
+		'Вакцинування',
+		'Офтмальмолог',
+		'Стерилізація'
+	]
+
 	animalControl = new FormControl('', Validators.required)
 	selectFormControl = new FormControl('', Validators.required)
 	animals: Animal[] = [

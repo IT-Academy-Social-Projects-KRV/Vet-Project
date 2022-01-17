@@ -19,6 +19,8 @@ import { AdminEditPetComponent } from './components/admin-edit-pet/admin-edit-pe
 import { AdminEditVolonteerComponent } from './components/admin-edit-volonteer/admin-edit-volonteer.component'
 import { MatSelectModule } from '@angular/material/select'
 import { ReactiveFormsModule } from '@angular/forms'
+import { MatTableModule } from '@angular/material/table'
+import { MatPaginatorModule } from '@angular/material/paginator'
 
 @NgModule({
 	declarations: [
@@ -43,7 +45,9 @@ import { ReactiveFormsModule } from '@angular/forms'
 		MatMenuModule,
 		MatInputModule,
 		MatSelectModule,
-		ReactiveFormsModule
+		ReactiveFormsModule,
+		MatTableModule,
+		MatPaginatorModule
 	]
 })
 export class AdminPageModule {}
