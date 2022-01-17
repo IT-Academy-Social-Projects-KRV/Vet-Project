@@ -56,20 +56,6 @@ export class PetsFilterComponent {
 		}
 	}
 
-	constructor(private http: HttpClient, private animalInfo: AnimalInfoService) {
-		this.animalInfo.getAnimalsInfo().subscribe(item => {
-			this.petsInfo = item
-		})
-	}
-
-	onSubmite() {
-		this.paramsArr = []
-		this.checkParams()
-		this.getUrl = this.paramsArr.join('&')
-
-		this.getAnimalsInfo(this.getUrl)
-	}
-
 	getAnimalsInfo(url) {
 		this.http.get(`${this.baseUrl}${url}`).subscribe(response => {
 			this.animalsInfoArray = response
