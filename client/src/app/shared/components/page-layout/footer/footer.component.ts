@@ -1,4 +1,6 @@
 import { Component } from '@angular/core'
+import { MatDialog } from '@angular/material/dialog'
+import { LoginModalComponent } from '@shared/components/login-modal/login-modal.component'
 
 @Component({
 	selector: 'app-footer',
@@ -6,5 +8,8 @@ import { Component } from '@angular/core'
 	styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
-	constructor() {}
+	constructor(public dialog: MatDialog) {}
+	openDialog() {
+		const dialogRef = this.dialog.open(LoginModalComponent)
+	}
 }
