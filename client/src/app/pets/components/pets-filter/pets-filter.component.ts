@@ -1,14 +1,9 @@
 import { Component } from '@angular/core'
-import { Notify } from 'notiflix/build/notiflix-notify-aio'
 import { HttpClient } from '@angular/common/http'
-import { AnimalInfoService } from 'src/app/shared/services/animal-info.service'
+import { Notify } from 'notiflix/build/notiflix-notify-aio'
 
-interface IAnimalInfo {
-	gender: string
-	breed: string
-	age: string
-	curator: string
-}
+import { AnimalInfoService } from 'src/app/shared/services/animal-info.service'
+import { IAnimalInfo } from 'src/app/shared/interfaces/animals-filter-info'
 
 @Component({
 	selector: 'app-pets-filter',
@@ -32,6 +27,20 @@ export class PetsFilterComponent {
 		age: '',
 		curator: ''
 	}
+
+	constructor(private http: HttpClient, private animalInfo: AnimalInfoService) {
+		this.animalInfo.getAnimalsInfo().subscribe(item => {
+			this.petsInfo = item
+		})
+	}
+
+	onSubmite() {
+		this.paramsArr = []
+		this.checkParams()
+		this.getUrl = this.paramsArr.join('&')
+		this.getAnimalsInfo(this.getUrl)
+	}
+
 	checkParams() {
 		if (this.animal.gender !== '') {
 			this.paramsArr.push(`gender=${this.animal.gender}`)
