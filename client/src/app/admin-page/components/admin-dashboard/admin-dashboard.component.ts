@@ -1,4 +1,4 @@
-import { Component} from '@angular/core'
+import { Component } from '@angular/core'
 import { map } from 'rxjs/operators'
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout'
 import { AnimalInfoService } from '@shared/services/animal-info.service'
@@ -9,13 +9,12 @@ import { AnimalInfoService } from '@shared/services/animal-info.service'
 	styleUrls: ['./admin-dashboard.component.scss']
 })
 export class AdminDashboardComponent {
-
 	/** Based on the screen size, switch from standard to one column per row */
 	cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
 		map(({ matches }) => {
 			if (matches) {
 				return [
-					{ title: 'К-сть тварин', cols: 1, rows: 1},
+					{ title: 'К-сть тварин', cols: 1, rows: 1 },
 					{ title: 'К-сть клінік', cols: 1, rows: 1 },
 					{ title: 'К-сть волонтерів', cols: 1, rows: 1 },
 					{ title: 'Card 4', cols: 1, rows: 1 }
@@ -29,8 +28,8 @@ export class AdminDashboardComponent {
 				{ title: 'Card 4', cols: 1, rows: 1 }
 			]
 		})
-  )
-  //testing something
+	)
+	//testing something
 	animalsInfo: any = []
 	// eslint-disable-next-line no-unused-vars
 	constructor(
@@ -38,7 +37,7 @@ export class AdminDashboardComponent {
 		private animalInfo: AnimalInfoService
 	) {
 		this.animalInfo.getAnimalsInfo().subscribe(item => {
-      this.animalsInfo = item
+			this.animalsInfo = item
 		})
 	}
 

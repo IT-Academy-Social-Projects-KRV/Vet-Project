@@ -13,14 +13,11 @@
 		color: #4788b6;
 	}
 }
-
 .vet__slider_cards {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-
 	width: 100%;
-
 	margin-bottom: 40px;
 }
 .vet__slider_cards_title {
@@ -28,7 +25,4 @@
 }
 .carousel {
 	z-index: 4;
-}
-.mat-card-image {
-  margin: 0;
 }

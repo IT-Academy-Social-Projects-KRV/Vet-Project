@@ -48,8 +48,7 @@ import { VetsModule } from '../vets/vets.module'
 		HttpClientModule,
 		IvyCarouselModule,
 		PetsModule,
-    VetsModule
-
+		VetsModule
 	]
 })
 export class HomePageModule {}
