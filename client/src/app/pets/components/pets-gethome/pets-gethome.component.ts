@@ -1,15 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
-  selector: 'app-pets-gethome',
-  templateUrl: './pets-gethome.component.html',
-  styleUrls: ['./pets-gethome.component.scss']
+	selector: 'app-pets-gethome',
+	templateUrl: './pets-gethome.component.html',
+	styleUrls: ['./pets-gethome.component.scss']
 })
-export class PetsGethomeComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class PetsGethomeComponent {
+	constructor() {}
 }

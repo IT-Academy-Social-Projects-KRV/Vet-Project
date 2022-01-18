@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core'
-
+import { Component } from '@angular/core'
 import { VetUnitInfoService } from '@shared/services/vet-unit-info.service'
 
 import { ActivatedRoute } from '@angular/router'
@@ -8,12 +7,13 @@ import { ActivatedRoute } from '@angular/router'
 	templateUrl: './vet-unit-page.component.html',
 	styleUrls: ['./vet-unit-page.component.scss']
 })
-export class VetUnitPageComponent implements OnInit {
+export class VetUnitPageComponent {
 	vetsInfo: any = []
 	id: string
 	info: any = {}
-	constructor(private vetInfo: VetUnitInfoService, private _Activatedroute: ActivatedRoute) {
-		this._Activatedroute.paramMap.subscribe(params => {
+
+	constructor(private vetInfo: VetUnitInfoService, private Activatedroute: ActivatedRoute) {
+		this.Activatedroute.paramMap.subscribe(params => {
 			this.id = params.get('id')
 		})
 		this.vetInfo.getVetsUnitInfo(this.id).subscribe(item => {
@@ -21,5 +21,4 @@ export class VetUnitPageComponent implements OnInit {
 			this.info = this.vetsInfo[0]
 		})
 	}
-	ngOnInit(): void {}
 }

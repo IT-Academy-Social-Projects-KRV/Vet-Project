@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 import { AnimalUnitInfoService } from 'src/app/shared/services/animal-unit-info.service'
 import { ActivatedRoute } from '@angular/router'
 
@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router'
 	templateUrl: './animal-unit-page.component.html',
 	styleUrls: ['./animal-unit-page.component.scss']
 })
-export class AnimalUnitPageComponent implements OnInit {
+export class AnimalUnitPageComponent {
 	petsInfo: any = []
 	id: string
 
@@ -19,5 +19,4 @@ export class AnimalUnitPageComponent implements OnInit {
 			this.petsInfo = item
 		})
 	}
-	ngOnInit(): void {}
 }

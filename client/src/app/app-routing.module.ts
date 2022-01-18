@@ -10,9 +10,13 @@ const routes: Routes = [
 		path: 'vetsList',
 		loadChildren: () => import('./vets/vets.module').then(m => m.VetsModule)
 	},
-  {
+	{
 		path: 'volonteersList',
 		loadChildren: () => import('./volunteers/volonteers.module').then(m => m.VolonteersModule)
+	},
+	{
+		path: 'admin',
+		loadChildren: () => import('./admin-page/admin-page.module').then(m => m.AdminPageModule)
 	},
 	{
 		path: '',

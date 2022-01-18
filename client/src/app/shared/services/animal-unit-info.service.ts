@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
-import { baseUrl, ApiPaths } from '../path-api'
+import { ApiPaths, baseUrl } from '../path-api'
 import { IAnimalsUnitInfo } from '../interfaces/animals-unit'
 
 @Injectable({

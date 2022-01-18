@@ -7,6 +7,7 @@ import { MatListModule } from '@angular/material/list'
 import { MatInputModule } from '@angular/material/input'
 import { MatButtonModule } from '@angular/material/button'
 import { MatIconModule } from '@angular/material/icon'
+import { HttpClientModule } from '@angular/common/http'
 
 import { HomePageRoutingModule } from './home-page-routing.module'
 import { HomeMainComponent } from './components/home-main/home-main.component'
@@ -15,7 +16,6 @@ import { VetSliderComponent } from './components/vet-slider/vet-slider.component
 import { HomeDonateComponent } from './components/home-donate/home-donate.component'
 import { HomeAboutComponent } from './components/home-about/home-about.component'
 import { HomeNewsComponent } from './components/home-news/home-news.component'
-import { NewsCardComponent } from './components/news-card/news-card.component'
 import { FormsModule } from '@angular/forms'
 
 import { HomePageComponent } from './pages/home-page.component'
@@ -32,7 +32,6 @@ import { VetsModule } from '../vets/vets.module'
 		HomeDonateComponent,
 		HomeAboutComponent,
 		HomeNewsComponent,
-		NewsCardComponent,
 		HomePageComponent,
 		PetServicesComponent
 	],
@@ -46,6 +45,7 @@ import { VetsModule } from '../vets/vets.module'
 		MatCardModule,
 		MatInputModule,
 		FormsModule,
+		HttpClientModule,
 		IvyCarouselModule,
 		PetsModule,
     VetsModule

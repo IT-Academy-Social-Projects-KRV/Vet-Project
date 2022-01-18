@@ -1,0 +1,39 @@
+.pet-card {
+	background-color: #f0f5f958;
+	border: 2px solid #4788b6;
+	margin-right: 30px;
+	margin-bottom: 30px;
+	
+
+	&:hover {
+		box-shadow: 7px 7px 7px 5px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+		border: 2px solid #d68427;
+	}
+}
+.pet-card__img {
+	width: 226px;
+	cursor: pointer;
+}
+.pet-card__card-header {
+	justify-content: center;
+}
+
+.pet-card__card-title {
+	font-weight: bold;
+	height: 50px;
+}
+
+.pet-card__pet-info-item {
+	font-weight: bold;
+	color: black;
+	margin-left: 5px;
+}
+.animal-card_button {
+	margin-left: 74px;
+	background-color: #4788b6;
+	color: #fff;
+	&:hover {
+		background-color: #d68427;
+		cursor: pointer;
+	}
+}

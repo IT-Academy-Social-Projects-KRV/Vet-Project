@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core'
+import { Component, Input } from '@angular/core'
 import { IAnimalsInfo } from '@shared/interfaces/animals'
 
 @Component({
@@ -6,10 +6,10 @@ import { IAnimalsInfo } from '@shared/interfaces/animals'
 	templateUrl: './animal-list-card.component.html',
 	styleUrls: ['./animal-list-card.component.scss']
 })
-export class AnimalListCardComponent implements OnInit {
+export class AnimalListCardComponent {
 	@Input() animalsInfo: IAnimalsInfo
 	@Input() isButtonVisible = false
+	// @Input() data: { gender: string; breed: string; age: string; curator: string}
 
 	constructor() {}
-	ngOnInit(): void {}
 }
