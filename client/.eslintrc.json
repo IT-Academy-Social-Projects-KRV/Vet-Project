@@ -16,6 +16,8 @@
 				"plugin:prettier/recommended"
 			],
 			"rules": {
+				"no-undef": "off",
+				"no-unused-vars": "off",
 				"@angular-eslint/component-selector": [
 					"error",
 					{
