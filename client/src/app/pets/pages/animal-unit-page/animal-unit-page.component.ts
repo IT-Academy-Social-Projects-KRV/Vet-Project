@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core'
 import { ApiServices } from '@shared/services/api.service'
 import { ActivatedRoute } from '@angular/router'
 import { Observable, map } from 'rxjs'
-import { IAnimalsUnitInfo } from '@shared/interfaces/animals-unit'
 
 @Component({
 	selector: 'app-animal-unit-page',
