@@ -1,17 +1,19 @@
-import { Component } from '@angular/core'
-import { VetInfoService } from '@shared/services/vet-info.service'
+/* eslint-disable @angular-eslint/use-lifecycle-interface */
+/* eslint-disable no-unused-vars */
+import { Component, OnInit } from '@angular/core'
+import { ApiServices } from '@shared/services/api.service'
+import { Observable, map } from 'rxjs'
 
 @Component({
 	selector: 'app-vet-list',
 	templateUrl: './vet-list.component.html',
 	styleUrls: ['./vet-list.component.scss']
 })
-export class VetListComponent {
-	vetsDetailInfo: any = []
+export class VetListComponent implements OnInit {
+	vetsDetailInfo$: Observable<any>
 
-	constructor(private vetDetailInfo: VetInfoService) {
-		this.vetDetailInfo.getVetDetails().subscribe(item => {
-			this.vetsDetailInfo = item
-		})
+	constructor(private apiServices: ApiServices) {}
+	ngOnInit(): void {
+		this.vetsDetailInfo$ = this.apiServices.getVetDetails()
 	}
 }

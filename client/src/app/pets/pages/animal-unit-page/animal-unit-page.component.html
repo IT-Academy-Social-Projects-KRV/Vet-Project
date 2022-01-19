@@ -1,4 +1,4 @@
-<section class="animal-main">
+<section class="animal-main" *ngIf="(petsInfo$ | async) as petsInfo">
   <div class="animal-main__photo">
     <img class="animal-main__photo__img" src="../../../../assets//animalsPictures/animal_0{{ petsInfo.id }}.jpg"
       alt="image of pet" />
@@ -7,7 +7,7 @@
     <button class="animal-main__photo__btn2" mat-raised-button>Надати допомогу</button>
   </div>
 
-  <div class="animal-main__info">
+  <div class="animal-main__info" >
     <h2 class="animal-main__info__title">{{ petsInfo.name }}</h2>
     <h3 class="animal-main__info__elem">
       Порода:
