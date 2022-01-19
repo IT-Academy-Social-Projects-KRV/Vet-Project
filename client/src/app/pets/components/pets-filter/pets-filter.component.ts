@@ -1,8 +1,10 @@
+
 /* eslint-disable @angular-eslint/use-lifecycle-interface */
 /* eslint-disable no-unused-vars */
 import { Component, OnInit } from '@angular/core'
 
 import { Observable } from 'rxjs'
+
 
 import { IAnimalInfo } from 'src/app/shared/interfaces/animals-filter-info'
 
@@ -13,9 +15,11 @@ import { ApiServices } from '../../../shared/services/api.service'
 	templateUrl: './pets-filter.component.html',
 	styleUrls: ['./pets-filter.component.scss']
 })
+
 export class PetsFilterComponent implements OnInit {
 	petsInfo$: Observable<any>
 	animalFilterInfo$: Observable<any>
+
 
 	animal: IAnimalInfo = {
 		gender: '',

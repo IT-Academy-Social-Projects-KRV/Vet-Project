@@ -16,6 +16,8 @@
 				"plugin:prettier/recommended"
 			],
 			"rules": {
+        "no-undef": "off",
+        "no-unused-vars": "off",
 				"@angular-eslint/component-selector": [
 					"error",
 					{
@@ -30,6 +32,12 @@
 						"prefix": "app",
 						"style": "camelCase",
 						"type": "attribute"
+					}
+				],
+				"prettier/prettier": [
+					"error",
+					{
+						"endOfLine": "auto"
 					}
 				]
 			}

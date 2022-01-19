@@ -23,7 +23,7 @@ import { VetListComponent } from './components/vet-list/vet-list.component'
 		VetAnimalsTypeComponent,
 		VetListComponent
 	],
-	imports: [CommonModule, MatCardModule, MatDividerModule, MatListModule, VetsRoutingModule]
-
+	imports: [CommonModule, MatCardModule, MatDividerModule, MatListModule, VetsRoutingModule],
+  exports: [VetListCardComponent]
 })
 export class VetsModule {}
