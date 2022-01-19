@@ -11,7 +11,6 @@ import { AnimalPageComponent } from './pages/animal-list-page/animal-page.compon
 import { AnimalListCardComponent } from '@shared/components/animal-list-card/animal-list-card.component'
 import { AnimalUnitPageComponent } from './pages/animal-unit-page/animal-unit-page.component'
 
-import { AnimalInfoService } from '@shared/services/animal-info.service'
 import { PetsFilterComponent } from './components/pets-filter/pets-filter.component'
 import { PetsGethomeComponent } from './components/pets-gethome/pets-gethome.component'
 import { AnimalListComponent } from './components/animal-list/animal-list.component'
@@ -36,7 +35,6 @@ import { FilterResultComponent } from './components/filter-result/filter-result.
 		FormsModule,
 		HttpClientModule
 	],
-	exports: [AnimalListCardComponent],
-	providers: [AnimalInfoService]
+	exports: [AnimalListCardComponent]
 })
 export class PetsModule {}

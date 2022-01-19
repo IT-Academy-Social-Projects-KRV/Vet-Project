@@ -1,20 +1,20 @@
 /* eslint-disable no-undef */
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { PetWantedSliderComponent } from './pet-wanted-slider.component'
+import { VetSliderComponent } from './vet-slider.component'
 
-describe('PetWantedSliderComponent', () => {
-	let component: PetWantedSliderComponent
-	let fixture: ComponentFixture<PetWantedSliderComponent>
+describe('VetSliderComponent', () => {
+	let component: VetSliderComponent
+	let fixture: ComponentFixture<VetSliderComponent>
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [PetWantedSliderComponent]
+			declarations: [VetSliderComponent]
 		}).compileComponents()
 	})
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(PetWantedSliderComponent)
+		fixture = TestBed.createComponent(VetSliderComponent)
 		component = fixture.componentInstance
 		fixture.detectChanges()
 	})
