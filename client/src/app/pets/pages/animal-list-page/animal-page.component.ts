@@ -5,7 +5,4 @@ import { Component } from '@angular/core'
 	templateUrl: './animal-page.component.html',
 	styleUrls: ['./animal-page.component.scss']
 })
-export class AnimalPageComponent {
-	title = 'animal list page'
-	constructor() {}
-}
+export class AnimalPageComponent {}

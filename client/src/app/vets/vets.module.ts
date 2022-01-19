@@ -7,7 +7,6 @@ import { MatListModule } from '@angular/material/list'
 import { VetsRoutingModule } from './vets-routing.module'
 import { VetPageComponent } from './pages/vet-page/vet-page.component'
 import { VetListCardComponent } from '@shared/components/vet-list-card/vet-list-card.component'
-import { VetInfoService } from '@shared/services/vet-info.service'
 import { VetUnitPageComponent } from './pages/vet-unit-page/vet-unit-page.component'
 import { VeterinariansComponent } from './components/veterinarians/veterinarians.component'
 import { VetServicesComponent } from './components/vet-services/vet-services.component'
@@ -24,7 +23,7 @@ import { VetListComponent } from './components/vet-list/vet-list.component'
 		VetAnimalsTypeComponent,
 		VetListComponent
 	],
-	imports: [CommonModule, MatCardModule, MatDividerModule, MatListModule, VetsRoutingModule],
-	providers: [VetInfoService]
+	imports: [CommonModule, MatCardModule, MatDividerModule, MatListModule, VetsRoutingModule]
+
 })
 export class VetsModule {}

@@ -10,6 +10,4 @@ export class AnimalListCardComponent {
 	@Input() animalsInfo: IAnimalsInfo
 	@Input() isButtonVisible = false
 	// @Input() data: { gender: string; breed: string; age: string; curator: string}
-
-	constructor() {}
 }

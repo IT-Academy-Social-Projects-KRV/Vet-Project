@@ -1,25 +1,21 @@
-import { Component } from '@angular/core'
-import { HttpClient } from '@angular/common/http'
+/* eslint-disable @angular-eslint/use-lifecycle-interface */
+/* eslint-disable no-unused-vars */
+import { Component, OnInit } from '@angular/core'
 
-import { Notify } from 'notiflix/build/notiflix-notify-aio'
+import { Observable } from 'rxjs'
 
-import { AnimalInfoService } from 'src/app/shared/services/animal-info.service'
 import { IAnimalInfo } from 'src/app/shared/interfaces/animals-filter-info'
+
+import { ApiServices } from '../../../shared/services/api.service'
 
 @Component({
 	selector: 'app-pets-filter',
 	templateUrl: './pets-filter.component.html',
 	styleUrls: ['./pets-filter.component.scss']
 })
-export class PetsFilterComponent {
-	response: any
-	animalsInfoArray: any
-	lengthOfnimalsInfoArray: number
-	petsInfo: any = []
-
-	baseUrl: string = 'http://localhost:3200/api//animals/filter//?'
-	paramsArr = []
-	getUrl = ''
+export class PetsFilterComponent implements OnInit {
+	petsInfo$: Observable<any>
+	animalFilterInfo$: Observable<any>
 
 	animal: IAnimalInfo = {
 		gender: '',
@@ -27,18 +23,19 @@ export class PetsFilterComponent {
 		age: '',
 		curator: ''
 	}
+	paramsArr = []
 
-	constructor(private http: HttpClient, private animalInfo: AnimalInfoService) {
-		this.animalInfo.getAnimalsInfo().subscribe(item => {
-			this.petsInfo = item
-		})
+	constructor(private apiServices: ApiServices) {}
+
+	ngOnInit(): void {
+		this.petsInfo$ = this.apiServices.getAnimalsInfo()
 	}
 
 	onSubmite() {
 		this.paramsArr = []
 		this.checkParams()
-		this.getUrl = this.paramsArr.join('&')
-		this.getAnimalsInfo(this.getUrl)
+		let getUrl = this.paramsArr.join('&')
+		this.getAnimalsInfo(getUrl)
 	}
 
 	checkParams() {
@@ -57,16 +54,6 @@ export class PetsFilterComponent {
 	}
 
 	getAnimalsInfo(url) {
-		this.http.get(`${this.baseUrl}${url}`).subscribe(response => {
-			this.animalsInfoArray = response
-			this.response = response
-
-			this.lengthOfnimalsInfoArray = this.animalsInfoArray.length
-			if (this.lengthOfnimalsInfoArray !== 0) {
-				Notify.success(`Greate! We find ${this.lengthOfnimalsInfoArray} animals`)
-			} else {
-				Notify.failure('Sorry, we do not have animal like you want(((')
-			}
-		})
+		this.animalFilterInfo$ = this.apiServices.getAnimalsFilterInfo(url)
 	}
 }
