@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { AdminLayoutComponent } from './pages/admin-layout/admin-layout.component'
 import { AdminPageRoutingModule } from './admin-page-routing.module'
 import { AdminNavComponent } from './components/admin-nav/admin-nav.component'
 import { LoginModalComponent } from './components/login-modal/login-modal.component'
@@ -28,7 +27,6 @@ import { FormsModule } from '@angular/forms'
 
 @NgModule({
 	declarations: [
-		AdminLayoutComponent,
 		AdminNavComponent,
 		AdminDashboardComponent,
 		AdminEditVetComponent,
