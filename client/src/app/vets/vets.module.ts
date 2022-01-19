@@ -24,6 +24,6 @@ import { VetListComponent } from './components/vet-list/vet-list.component'
 		VetListComponent
 	],
 	imports: [CommonModule, MatCardModule, MatDividerModule, MatListModule, VetsRoutingModule],
-  exports: [VetListCardComponent]
+	exports: [VetListCardComponent]
 })
 export class VetsModule {}
