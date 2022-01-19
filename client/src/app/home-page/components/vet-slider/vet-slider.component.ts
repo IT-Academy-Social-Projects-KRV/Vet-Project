@@ -1,6 +1,7 @@
+/* eslint-disable @angular-eslint/use-lifecycle-interface */
 import { Component } from '@angular/core'
-import { FormBuilder, FormGroup } from '@angular/forms'
 import { ApiServices } from '@shared/services/api.service'
+import { Observable } from 'rxjs'
 
 @Component({
 	selector: 'app-vet-slider',
@@ -8,10 +9,10 @@ import { ApiServices } from '@shared/services/api.service'
 	styleUrls: ['./vet-slider.component.scss']
 })
 export class VetSliderComponent {
-	vetsInfo: any = []
-	constructor(private apiServices: ApiServices) {
-		this.apiServices.getVetDetails().subscribe(item => {
-			this.vetsInfo = item
-		})
+	vetsInfo$: Observable<any>
+
+	constructor(private apiServices: ApiServices) {}
+	ngOnInit(): void {
+		this.vetsInfo$ = this.apiServices.getVetDetails()
 	}
 }
