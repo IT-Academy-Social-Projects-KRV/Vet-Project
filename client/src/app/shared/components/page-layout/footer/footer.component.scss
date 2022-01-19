@@ -9,6 +9,7 @@ section {
 	display: inline-block;
 	background: #406d8e;
 	height: 30vh;
+  z-index: 2;
 }
 .conteiner {
 	max-width: 1200px;
@@ -80,6 +81,10 @@ section {
 	font-size: 14px;
 	font-weight: normal;
 	margin: 0;
+}
+.footer-dialog-trigger{
+	cursor: pointer;
+	font-weight: 400;
 }
 
 /* Footer Center */

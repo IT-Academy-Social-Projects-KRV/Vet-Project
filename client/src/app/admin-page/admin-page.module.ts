@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common'
 import { AdminUnitComponent } from './pages/admin-unit/admin-unit.component'
 import { AdminPageRoutingModule } from './admin-page-routing.module'
 import { AdminNavComponent } from './components/admin-nav/admin-nav.component'
+import { LoginModalComponent } from './components/login-modal/login-modal.component'
 import { LayoutModule } from '@angular/cdk/layout'
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatButtonModule } from '@angular/material/button'
@@ -21,6 +22,9 @@ import { MatSelectModule } from '@angular/material/select'
 import { ReactiveFormsModule } from '@angular/forms'
 import { MatTableModule } from '@angular/material/table'
 import { MatPaginatorModule } from '@angular/material/paginator'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatDialogModule } from '@angular/material/dialog'
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
 	declarations: [
@@ -29,7 +33,8 @@ import { MatPaginatorModule } from '@angular/material/paginator'
 		AdminDashboardComponent,
 		AdminEditVetComponent,
 		AdminEditPetComponent,
-		AdminEditVolonteerComponent
+		AdminEditVolonteerComponent,
+		LoginModalComponent
 	],
 	imports: [
 		CommonModule,
@@ -47,7 +52,11 @@ import { MatPaginatorModule } from '@angular/material/paginator'
 		MatSelectModule,
 		ReactiveFormsModule,
 		MatTableModule,
-		MatPaginatorModule
-	]
+		MatPaginatorModule,
+		MatFormFieldModule,
+		MatDialogModule,
+		FormsModule
+	],
+	exports: [LoginModalComponent]
 })
 export class AdminPageModule {}

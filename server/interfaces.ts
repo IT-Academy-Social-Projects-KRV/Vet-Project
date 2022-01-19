@@ -34,3 +34,8 @@ export interface IBareVetItem {
 export interface IVetItem extends IBareVetItem {
 	id: number
 }
+
+export interface ILoginItem {
+  email: string
+  password: string
+}

@@ -10,7 +10,8 @@ import { HeaderComponent } from '@shared/components/page-layout/header/header.co
 import { FooterComponent } from '@shared/components/page-layout/footer/footer.component'
 
 import { MatButtonModule } from '@angular/material/button'
-import { MatIconModule } from '@angular/material/icon'
+import { MatDialogModule } from '@angular/material/dialog'
+import { MatCardModule } from '@angular/material/card'
 import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
@@ -18,11 +19,12 @@ import { HttpClientModule } from '@angular/common/http'
 	imports: [
 		BrowserModule,
 		MatButtonModule,
-		MatIconModule,
 		AppRoutingModule,
 		BrowserAnimationsModule,
 		HttpClientModule,
-		FormsModule
+		FormsModule,
+		MatDialogModule,
+		MatCardModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]
