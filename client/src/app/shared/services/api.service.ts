@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
-import { Subject, of, throwError } from 'rxjs'
+import { Subject } from 'rxjs'
 
 import { IAnimalsInfo } from '../interfaces/animals'
 import { IAnimalsUnitInfo } from '../interfaces/animals-unit'
-import { IVetServices, IVetsInfo } from '../interfaces/vetInfo'
+import { IVetServices } from '../interfaces/vetInfo'
 import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
 import { IVolonteersInfo } from '../interfaces/volonteers'
 
@@ -52,15 +52,4 @@ export class ApiServices {
 	getVolonteersInfo() {
 		return this.http.get<IVolonteersInfo>(`${baseUrl}/${ApiPaths.animals}`)
 	}
-}
-
-function responseData(
-	next: any,
-	responseData: any,
-	arg2: undefined,
-	arg3: void,
-	error: Subject<string>,
-	arg5: (error: any) => any
-) {
-	throw new Error('Function not implemented.')
 }

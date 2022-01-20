@@ -45,6 +45,6 @@ export class AdminEditVetComponent {
 
 	onCreateClinic(): void {
 		// Send Http request
-		this.apiServices.postNewClinic('rrerr', '777', '333', 'fgdje', 'fgsdf4')
+		this.apiServices.postNewClinic('New clinic from admin', '777', '333', 'fgdje', 'fgsdf4')
 	}
 }
