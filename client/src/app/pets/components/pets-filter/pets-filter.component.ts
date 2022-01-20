@@ -1,25 +1,22 @@
-
 /* eslint-disable @angular-eslint/use-lifecycle-interface */
 /* eslint-disable no-unused-vars */
 import { Component, OnInit } from '@angular/core'
 
-import { Observable } from 'rxjs'
-
+import { Observable, map } from 'rxjs'
 
 import { IAnimalInfo } from 'src/app/shared/interfaces/animals-filter-info'
 
 import { ApiServices } from '../../../shared/services/api.service'
+import { IAnimalsInfo } from '@shared/interfaces/animals'
 
 @Component({
 	selector: 'app-pets-filter',
 	templateUrl: './pets-filter.component.html',
 	styleUrls: ['./pets-filter.component.scss']
 })
-
 export class PetsFilterComponent implements OnInit {
-	petsInfo$: Observable<any>
-	animalFilterInfo$: Observable<any>
-
+	petsInfo$: Observable<IAnimalsInfo[]>
+	animalFilterInfo$: Observable<IAnimalsInfo[]>
 
 	animal: IAnimalInfo = {
 		gender: '',

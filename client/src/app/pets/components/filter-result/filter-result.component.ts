@@ -7,11 +7,11 @@ import { Component, Input } from '@angular/core'
 })
 export class FilterResultComponent {
 	@Input() data: {
-		id: string
-		name: string
-		gender: string
-		breed: string
-		age: string
-		curator: string
+		id?: number
+		name?: string
+		gender?: string
+		breed?: string
+		age?: number
+		curator?: string
 	}
 }
