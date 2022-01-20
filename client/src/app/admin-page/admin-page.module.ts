@@ -23,7 +23,9 @@ import { MatTableModule } from '@angular/material/table'
 import { MatPaginatorModule } from '@angular/material/paginator'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatDialogModule } from '@angular/material/dialog'
+import { MatTabsModule } from '@angular/material/tabs'
 import { FormsModule } from '@angular/forms'
+import { ApiServices } from '@shared/services/api.service'
 
 @NgModule({
 	declarations: [
@@ -53,8 +55,10 @@ import { FormsModule } from '@angular/forms'
 		MatPaginatorModule,
 		MatFormFieldModule,
 		MatDialogModule,
-		FormsModule
+		FormsModule,
+		MatTabsModule
 	],
+	providers: [ApiServices],
 	exports: [LoginModalComponent]
 })
 export class AdminPageModule {}

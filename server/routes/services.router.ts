@@ -4,7 +4,6 @@ import db from '../db'
 import { IBareServiceItem } from '../interfaces'
 import { IServiceItem } from '../interfaces'
 
-
 const router = Router()
 
 router.post(

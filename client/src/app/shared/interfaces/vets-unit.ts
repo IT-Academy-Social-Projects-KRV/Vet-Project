@@ -1,5 +1,5 @@
 export interface IVetsUnitInfo {
-	id: number
+	id?: number
 	title: string
 	adress: string
 	phone: string
