@@ -3,6 +3,7 @@
 import { Component, OnInit } from '@angular/core'
 import { ApiServices } from '@shared/services/api.service'
 import { Observable, map } from 'rxjs'
+import { IVetsInfo } from '@shared/interfaces/vetInfo'
 
 @Component({
 	selector: 'app-vet-list',
@@ -10,7 +11,7 @@ import { Observable, map } from 'rxjs'
 	styleUrls: ['./vet-list.component.scss']
 })
 export class VetListComponent implements OnInit {
-	vetsDetailInfo$: Observable<any>
+	vetsDetailInfo$: Observable<IVetsInfo[]>
 
 	constructor(private apiServices: ApiServices) {}
 	ngOnInit(): void {
