@@ -1,5 +1,5 @@
 <h3 class="filter-title">Find new friend</h3>
-<form  class="form-filter">
+<form  class="form-filter" *ngIf ="(petsInfo$ | async) as petsInfo">
 	<div class="main-wrap">
 		<div class="child-wrap">
 			<div class="input-wrapper">
@@ -51,7 +51,9 @@
 </form>
 
 <div class="wrap-filter-result">
-	<app-filter-result *ngFor="let item of response" [data]="item"></app-filter-result>
+	<ng-container *ngIf ="(animalFilterInfo$ | async) as animalFilterInfo">
+		<app-filter-result *ngFor="let item of animalFilterInfo" [data]="item"></app-filter-result>
+	</ng-container>
 </div>
 <p class="card-filter-title">Тваринки, які чекають саме Вас</p>
 
