@@ -24,6 +24,7 @@ import { MatPaginatorModule } from '@angular/material/paginator'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatDialogModule } from '@angular/material/dialog'
 import { FormsModule } from '@angular/forms'
+import { EditPetPageComponent } from './components/edit-pet-page/edit-pet-page.component'
 
 @NgModule({
 	declarations: [
@@ -32,7 +33,8 @@ import { FormsModule } from '@angular/forms'
 		AdminEditVetComponent,
 		AdminEditPetComponent,
 		AdminEditVolonteerComponent,
-		LoginModalComponent
+		LoginModalComponent,
+		EditPetPageComponent
 	],
 	imports: [
 		CommonModule,

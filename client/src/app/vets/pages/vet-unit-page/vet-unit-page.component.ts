@@ -10,7 +10,6 @@ import { ActivatedRoute } from '@angular/router'
 	styleUrls: ['./vet-unit-page.component.scss']
 })
 export class VetUnitPageComponent implements OnInit {
-
 	id: string
 
 	vetsInfo$: Observable<any>

@@ -2,7 +2,8 @@
 import { Component, OnInit } from '@angular/core'
 import { ApiServices } from '@shared/services/api.service'
 import { ActivatedRoute } from '@angular/router'
-import { Observable, map } from 'rxjs'
+import { Observable } from 'rxjs'
+import { IAnimalsUnitInfo } from '@shared/interfaces/animals-unit'
 
 @Component({
 	selector: 'app-animal-unit-page',
@@ -13,12 +14,12 @@ export class AnimalUnitPageComponent implements OnInit {
 	id: string
 	petsInfo$: Observable<any>
 
-	constructor(private apiServices: ApiServices, private Activatedroute: ActivatedRoute) {
+	constructor(private apiServices: ApiServices, private Activatedroute: ActivatedRoute) {}
+
+	ngOnInit(): void {
 		this.Activatedroute.paramMap.subscribe(params => {
 			this.id = params.get('id')
 		})
-	}
-	ngOnInit(): void {
 		this.petsInfo$ = this.apiServices.getAnimalsUnitInfo(this.id)
 	}
 }

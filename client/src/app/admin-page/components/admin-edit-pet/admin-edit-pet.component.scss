@@ -25,3 +25,9 @@ mat-form-field {
 .demo-button + .demo-button {
 	margin-left: 8px;
 }
+.mat-row {
+	background-color: transparent;
+	&:hover {
+		background-color: red;
+	}
+}
