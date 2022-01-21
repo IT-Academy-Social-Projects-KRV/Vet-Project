@@ -33,22 +33,17 @@ export class ApiServices {
 	getVetsUnitInfo(id) {
 		return this.http.get<IVetsUnitInfo[]>(`${baseUrl}/${ApiPaths.vets}/${id}`)
 	}
-	postNewClinic(title: string, adress: string, phone: string, email: string, map_link: string) {
-		const postData: IVetsUnitInfo = {
-			title: title,
-			adress: adress,
-			phone: phone,
-			email: email,
-			map_link: map_link
-		}
-		return this.http.post<{ name: string }>(`${baseUrl}/${ApiPaths.vets}`, postData).subscribe({
+	postNewClinic(item) {
+		return this.http.post<{ [key: string]: any }>(`${baseUrl}/${ApiPaths.vets}`, item).subscribe({
 			next: responseData => console.log(responseData),
 			error: e => console.error(e)
 		})
 	}
+
 	getVetServices() {
 		return this.http.get<IVetServices>(`${baseUrl}/${ApiPaths.services}`)
 	}
+
 	getVolonteersInfo() {
 		return this.http.get<IVolonteersInfo>(`${baseUrl}/${ApiPaths.animals}`)
 	}

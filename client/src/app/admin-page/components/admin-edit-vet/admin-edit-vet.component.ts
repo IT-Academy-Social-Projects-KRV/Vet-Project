@@ -1,6 +1,8 @@
 import { Component } from '@angular/core'
 import { FormControl, Validators } from '@angular/forms'
 import { ApiServices } from '@shared/services/api.service'
+import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
+
 interface Animal {
 	name: string
 }
@@ -42,9 +44,16 @@ export class AdminEditVetComponent {
 	]
 
 	constructor(private apiServices: ApiServices) {}
-
+	item: IVetsUnitInfo
 	onCreateClinic(): void {
+		this.item = {
+			title: 'string',
+			adress: 'string',
+			phone: 'string',
+			email: 'string',
+			map_link: 'string'
+		}
 		// Send Http request
-		this.apiServices.postNewClinic('New clinic from admin', '777', '333', 'fgdje', 'fgsdf4')
+		this.apiServices.postNewClinic(this.item)
 	}
 }
