@@ -30,7 +30,7 @@
 					<textarea matInput value="" name="map_link" ngModel></textarea>
 				</mat-form-field>
 
-				<button mat-raised-button color="primary">Додати клініку</button>
+				<button mat-raised-button color="primary" [disabled]="!f.valid">Додати клініку</button>
 			</form></mat-tab
 		>
 		<mat-tab label="Редагувати клініку">Content 2</mat-tab>
