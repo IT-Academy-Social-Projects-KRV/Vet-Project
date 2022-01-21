@@ -1,5 +1,8 @@
 import { Component, ViewChild } from '@angular/core'
+import { NgForm } from '@angular/forms'
 import { MatTable } from '@angular/material/table'
+import { IAnimalsUnitInfo } from '@shared/interfaces/animals-unit'
+import { ApiServices } from '@shared/services/api.service'
 
 export interface PeriodicElement {
 	name: string
@@ -30,6 +33,24 @@ export class AdminEditPetComponent {
 	dataSource = [...ELEMENT_DATA]
 
 	@ViewChild(MatTable) table: MatTable<PeriodicElement>
+
+	constructor(private apiServices: ApiServices) {}
+	item: IAnimalsUnitInfo
+	onSubmit(form): void {
+		this.item = {
+			name: form.title,
+			shelterName: 'string',
+			curator: 'string',
+			gender: form.gender,
+			breed: form.breed,
+			age: form.age,
+			shortInfo: form.shortInfo,
+			behavioralFeatures: form.behavioralFeatures,
+			wishesForShelter: form.wishesForShelter
+		}
+		this.apiServices.postNewAnimal(this.item)
+	}
+	onCreateAnimal(): void {}
 
 	addData() {
 		const randomElementIndex = Math.floor(Math.random() * ELEMENT_DATA.length)
