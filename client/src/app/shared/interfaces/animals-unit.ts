@@ -3,7 +3,7 @@ export interface IAnimalsUnitInfo {
 	name?: string
 	gender?: string
 	breed?: string
-	age?: string
+	age?: number
 	shelter_name?: string
 	curator?: string
 	short_info?: string
