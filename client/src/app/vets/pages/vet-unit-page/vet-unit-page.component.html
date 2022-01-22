@@ -1,6 +1,6 @@
 <div class="wrapper" *ngIf="(vetsInfo$ | async) as vetsInfo">
-  <section class="vets-info-section">
-    <h2 class="vets-info-section__title">{{vetsInfo.title}}</h2>
+  <section class="vets-info-section" *ngFor ="let item of vetsInfo">
+    <h2 class="vets-info-section__title">{{item.title}}</h2>
     <ul class="vets-info-section__container">
       <li class="vets-info-section__img-wrapper">
         <div>
@@ -14,13 +14,13 @@
         </h3>
         <div>
           <p class="vets-info-section__info-wrapper-item">
-            <span class="vets-info-section__info-wrapper_text-bold">Адреса:</span> {{vetsInfo.adress}}
+            <span class="vets-info-section__info-wrapper_text-bold">Адреса:</span> {{item.adress}}
           </p>
           <p>
             <span class="vets-info-section__info-wrapper_text-bold">Телефон: </span> <a
-              href="tel:205-216-8574">{{vetsInfo.phone}}</a>
+              href="tel:205-216-8574">{{item.phone}}</a>
           </p>
-          <p><span class="vets-info-section__info-wrapper_text-bold">Email:</span> {{vetsInfo.email}}</p>
+          <p><span class="vets-info-section__info-wrapper_text-bold">Email:</span> {{item.email}}</p>
           <p>
             <span class="vets-info-section__info-wrapper_text-bold">Режим роботи </span>
           </p>

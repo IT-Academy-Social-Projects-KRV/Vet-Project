@@ -9,6 +9,7 @@ import { IVetServices, IVetsInfo } from '../interfaces/vetInfo'
 import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
 import { IVolonteersInfo } from '../interfaces/volonteers'
 
+
 import { ApiPaths, baseUrl } from '../path-api'
 
 @Injectable({
@@ -18,19 +19,19 @@ export class ApiServices {
     constructor(private http: HttpClient) { }
     
 	getAnimalsFilterInfo(url) {
-		return this.http.get<IAnimalsInfo>(`${baseUrl}${ApiPaths.filter}${url}`)
+		return this.http.get<IAnimalsInfo[]>(`${baseUrl}${ApiPaths.filter}${url}`)
     }
     getAnimalsInfo() {
-		return this.http.get<IAnimalsInfo>(`${baseUrl}/${ApiPaths.animals}`)
+		return this.http.get<IAnimalsInfo[]>(`${baseUrl}/${ApiPaths.animals}`)
     }
     getAnimalsUnitInfo(id) {
 		return this.http.get<IAnimalsUnitInfo>(`${baseUrl}/${ApiPaths.animals}/${id}`)
     }
     getVetDetails() {
-		return this.http.get(`${baseUrl}/${ApiPaths.vets}`)
+		return this.http.get<IVetsInfo[]>(`${baseUrl}/${ApiPaths.vets}`)
     }
     getVetsUnitInfo(id) {
-		return this.http.get<IVetsUnitInfo>(`${baseUrl}/${ApiPaths.vets}/${id}`)
+		return this.http.get<IVetsUnitInfo[]>(`${baseUrl}/${ApiPaths.vets}/${id}`)
 	}
 	getVetServices() {
 		return this.http.get<IVetServices>(`${baseUrl}/${ApiPaths.services}`)
