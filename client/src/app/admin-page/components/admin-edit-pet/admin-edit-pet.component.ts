@@ -15,15 +15,16 @@ export class AdminEditPetComponent {
 	onSubmit(form: IAnimalsUnitInfo): void {
 		this.item = {
 			name: form.name,
-			shelterName: form.shelterName,
+			shelter_name: form.shelter_name,
 			curator: form.curator,
 			gender: form.gender,
 			breed: form.breed,
 			age: form.age,
-			shortInfo: form.shortInfo,
-			behavioralFeatures: form.behavioralFeatures,
-			wishesForShelter: form.wishesForShelter
+			short_info: form.short_info,
+			behavioral_features: form.behavioral_features,
+			wishes_for_shelter: form.wishes_for_shelter
 		}
+		// console.log(this.item)
 
 		this.apiServices.postNewAnimal(this.item)
 	}

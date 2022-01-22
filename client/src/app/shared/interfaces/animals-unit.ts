@@ -4,9 +4,9 @@ export interface IAnimalsUnitInfo {
 	gender?: string
 	breed?: string
 	age?: number
-	shelterName?: string
+	shelter_name?: string
 	curator?: string
-	shortInfo?: string
-	behavioralFeatures?: string
-	wishesForShelter?: string
+	short_info?: string
+	behavioral_features?: string
+	wishes_for_shelter?: string
 }
