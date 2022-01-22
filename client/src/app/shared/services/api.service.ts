@@ -1,7 +1,6 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable no-unused-vars */
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
+import { Subject } from 'rxjs'
 
 import { IAnimalsInfo } from '../interfaces/animals'
 import { IAnimalsUnitInfo } from '../interfaces/animals-unit'
@@ -9,34 +8,52 @@ import { IVetServices, IVetsInfo } from '../interfaces/vetInfo'
 import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
 import { IVolonteersInfo } from '../interfaces/volonteers'
 
-
 import { ApiPaths, baseUrl } from '../path-api'
 
 @Injectable({
 	providedIn: 'root'
 })
 export class ApiServices {
-    constructor(private http: HttpClient) { }
-    
+	error = new Subject<string>()
+
+	constructor(private http: HttpClient) {}
+
+	//FILTERS
 	getAnimalsFilterInfo(url) {
 		return this.http.get<IAnimalsInfo[]>(`${baseUrl}${ApiPaths.filter}${url}`)
-    }
-    getAnimalsInfo() {
+	}
+
+	////////////////////////PET////////////////////////
+	getAnimalsInfo() {
 		return this.http.get<IAnimalsInfo[]>(`${baseUrl}/${ApiPaths.animals}`)
-    }
-    getAnimalsUnitInfo(id) {
+	}
+
+	getAnimalsUnitInfo(id) {
 		return this.http.get<IAnimalsUnitInfo>(`${baseUrl}/${ApiPaths.animals}/${id}`)
-    }
-    getVetDetails() {
+	}
+
+	////////////////////////VET/////////////////////////
+	getVetDetails() {
 		return this.http.get<IVetsInfo[]>(`${baseUrl}/${ApiPaths.vets}`)
-    }
-    getVetsUnitInfo(id) {
+	}
+
+	getVetsUnitInfo(id) {
 		return this.http.get<IVetsUnitInfo[]>(`${baseUrl}/${ApiPaths.vets}/${id}`)
 	}
+
+	postNewClinic(item) {
+		return this.http.post<{ [key: string]: any }>(`${baseUrl}/${ApiPaths.vets}`, item).subscribe({
+			next: responseData => console.log(responseData),
+			error: e => console.error(e)
+		})
+	}
+
 	getVetServices() {
 		return this.http.get<IVetServices>(`${baseUrl}/${ApiPaths.services}`)
-    }
-    getVolonteersInfo() {
+	}
+
+	/////////////////////VOLONTEERS////////////////////////
+	getVolonteersInfo() {
 		return this.http.get<IVolonteersInfo>(`${baseUrl}/${ApiPaths.animals}`)
 	}
 }
