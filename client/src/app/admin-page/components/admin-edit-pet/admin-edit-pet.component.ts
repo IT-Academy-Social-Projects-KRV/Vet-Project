@@ -9,8 +9,9 @@ import { ApiServices } from '@shared/services/api.service'
 	styleUrls: ['./admin-edit-pet.component.scss']
 })
 export class AdminEditPetComponent {
-	constructor(private apiServices: ApiServices) {}
 	item: IAnimalsUnitInfo
+	curators: any[] = ['Куратор 1', 'Куратор 2']
+	constructor(private apiServices: ApiServices) {}
 	onSubmit(form: IAnimalsUnitInfo): void {
 		this.item = {
 			name: form.name,
@@ -23,7 +24,8 @@ export class AdminEditPetComponent {
 			behavioralFeatures: form.behavioralFeatures,
 			wishesForShelter: form.wishesForShelter
 		}
-		this.apiServices.postNewAnimal(this.item)
+		console.log(form)
+		// this.apiServices.postNewAnimal(this.item)
 	}
 	onCreateAnimal(): void {}
 }

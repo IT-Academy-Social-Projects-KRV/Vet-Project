@@ -16,9 +16,13 @@
             <mat-label>Вік</mat-label>
             <input matInput  value="" name="age" ngModel required>
         </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Притулок</mat-label>
+            <input matInput  value="" name="shelterName" ngModel >
+        </mat-form-field>
 
 
-        <mat-form-field appearance="fill">
+        <!-- <mat-form-field appearance="fill">
             <mat-label>Стерилізований</mat-label>
             <mat-select>
                 <mat-option value="one">Так</mat-option>
@@ -32,15 +36,14 @@
                 <mat-option value="one">Так</mat-option>
                 <mat-option value="two">Ні</mat-option>
             </mat-select>
-        </mat-form-field>
+        </mat-form-field> -->
+
         <mat-form-field appearance="fill">
             <mat-label>Куратор</mat-label>
-            <mat-select name='curator'  >
-                <mat-option  value="one">Куратор 1</mat-option>
-                <mat-option  value="two">Куратор 2</mat-option>
-            </mat-select>
+                <mat-select ngModel  name='curator'>
+                    <mat-option *ngFor="let curator of curators" [value]="curator">{{curator}}</mat-option>
+                </mat-select>
         </mat-form-field>
-
 
 
         <mat-form-field class="example-full-width" appearance="fill">
@@ -55,17 +58,19 @@
             <mat-label>Побажання при адопції</mat-label>
             <textarea matInput  name="wishesForShelter" ngModel ></textarea>
         </mat-form-field>
-        <button type="submit" mat-raised-button>Submit</button>
+        <div class="demo-button-container">
+            <button mat-raised-button  class="demo-button">
+                Add data
+            </button>
+            <div class="demo-button-container">
+                <button mat-raised-button  class="demo-button">
+                    Add data
+                </button>
+            </div>
+        </div>
     </form>
 
 
-    <div class="demo-button-container">
-        <button mat-raised-button  class="demo-button">
-            Add data
-        </button>
-        <button mat-raised-button   class="demo-button">
-            Remove data
-        </button>
-    </div>
+  
 
 </section>
