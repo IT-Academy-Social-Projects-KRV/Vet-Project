@@ -15,8 +15,8 @@ export class AdminEditPetComponent {
 	onSubmit(form: IAnimalsUnitInfo): void {
 		this.item = {
 			name: form.name,
-			shelterName: 'string',
-			curator: 'string',
+			shelterName: form.shelterName,
+			curator: form.curator,
 			gender: form.gender,
 			breed: form.breed,
 			age: form.age,
@@ -24,8 +24,8 @@ export class AdminEditPetComponent {
 			behavioralFeatures: form.behavioralFeatures,
 			wishesForShelter: form.wishesForShelter
 		}
-		console.log(form)
-		// this.apiServices.postNewAnimal(this.item)
+
+		this.apiServices.postNewAnimal(this.item)
 	}
 	onCreateAnimal(): void {}
 }
