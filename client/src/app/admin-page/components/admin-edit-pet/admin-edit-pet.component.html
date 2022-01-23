@@ -1,60 +1,51 @@
 <section class="main__pet-edit-page">
-    <form class="example-form">
+    <form class="example-form" (ngSubmit)='onSubmit(f.value)' #f='ngForm'>
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Назва(кличка)</mat-label>
-            <input matInput placeholder="Тузік" value="">
+            <input matInput  name="name" ngModel required>
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Порода</mat-label>
-            <input matInput placeholder="Двортер'єр" value="">
+            <input matInput  name="breed" ngModel required>
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Стать</mat-label>
-            <input matInput placeholder="Хлопчик" value="">
+            <input matInput  name="gender" ngModel required>
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Вік</mat-label>
-            <input matInput placeholder="3 роки" value="">
+            <input matInput   name="age" ngModel required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Притулок</mat-label>
+            <input matInput  name="shelter_name" ngModel  required>
         </mat-form-field>
 
-
-        <mat-form-field appearance="fill">
-            <mat-label>Стерилізований</mat-label>
-            <mat-select>
-                <mat-option value="one">Так</mat-option>
-                <mat-option value="two">Ні</mat-option>
-            </mat-select>
-        </mat-form-field>
-
-        <mat-form-field appearance="fill">
-            <mat-label>Чипований</mat-label>
-            <mat-select>
-                <mat-option value="one">Так</mat-option>
-                <mat-option value="two">Ні</mat-option>
-            </mat-select>
-        </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Куратор</mat-label>
-            <mat-select>
-                <mat-option value="one">Куратор 1</mat-option>
-                <mat-option value="two">Куратор 2</mat-option>
-            </mat-select>
+                <mat-select ngModel  name='curator'>
+                    <mat-option *ngFor="let curator of curators" [value]="curator">{{curator}}</mat-option>
+                </mat-select>
         </mat-form-field>
-
 
 
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Історія</mat-label>
-            <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+            <textarea matInput  name="short_info" ngModel></textarea>
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Повадки</mat-label>
-            <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+            <textarea matInput  name="behavioral_features" ngModel></textarea>
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Побажання при адопції</mat-label>
-            <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+            <textarea matInput  name="wishes_for_shelter" ngModel ></textarea>
         </mat-form-field>
+        <div class="demo-button-container">
+            <button mat-raised-button  class="demo-button">
+                Add data
+            </button>
+        </div>
     </form>
 
 

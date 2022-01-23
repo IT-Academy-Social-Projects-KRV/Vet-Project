@@ -4,6 +4,7 @@ import { Observable } from 'rxjs'
 import { ApiServices } from '@shared/services/api.service'
 
 import { ActivatedRoute } from '@angular/router'
+import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
 @Component({
 	selector: 'app-vet-unit-page',
 	templateUrl: './vet-unit-page.component.html',
@@ -12,7 +13,7 @@ import { ActivatedRoute } from '@angular/router'
 export class VetUnitPageComponent implements OnInit {
 	id: string
 
-	vetsInfo$: Observable<any>
+	vetsInfo$: Observable<IVetsUnitInfo[]>
 
 	constructor(private apiServices: ApiServices, private Activatedroute: ActivatedRoute) {
 		this.Activatedroute.paramMap.subscribe(params => {

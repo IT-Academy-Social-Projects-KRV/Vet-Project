@@ -18,11 +18,11 @@ router.post(
         gender,
         breed,
         age,
-        shelterName,
+        shelter_name,
         curator,
-        shortInfo,
-        behavioralFeatures,
-        wishesForShelter
+        short_info,
+        behavioral_features,
+        wishes_for_shelter
       } = req.body
       const newAnimal = await db.query<IAnimalItem>(
         `
@@ -35,11 +35,11 @@ router.post(
           gender,
           breed,
           age,
-          shelterName,
+          shelter_name,
           curator,
-          shortInfo,
-          behavioralFeatures,
-          wishesForShelter
+          short_info,
+          behavioral_features,
+          wishes_for_shelter
         ]
       )
 
@@ -95,11 +95,11 @@ router.put(
         gender,
         breed,
         age,
-        shelterName,
+        shelter_name,
         curator,
-        shortInfo,
-        behavioralFeatures,
-        wishesForShelter,
+        short_info,
+        behavioral_features,
+        wishes_for_shelter,
         id
       } = req.body
 
@@ -115,11 +115,11 @@ router.put(
           gender,
           breed,
           age,
-          shelterName,
+          shelter_name,
           curator,
-          shortInfo,
-          behavioralFeatures,
-          wishesForShelter,
+          short_info,
+          behavioral_features,
+          wishes_for_shelter,
           id
         ]
       )

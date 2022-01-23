@@ -12,7 +12,7 @@ import { IAnimalsUnitInfo } from '@shared/interfaces/animals-unit'
 })
 export class AnimalUnitPageComponent implements OnInit {
 	id: string
-	petsInfo$: Observable<any>
+	petsInfo$: Observable<IAnimalsUnitInfo>
 
 	constructor(private apiServices: ApiServices, private Activatedroute: ActivatedRoute) {}
 
