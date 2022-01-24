@@ -15,7 +15,7 @@ export class LoginService {
 	login(user: ILoginUSer): Observable<{ token: string }> {
 		return this.http.post<{ token: string }>(`${baseUrl}/${ApiPaths.login}`, user).pipe(
 			tap(({ token }) => {
-				localStorage.setItem('login-token', token)
+				localStorage.setItem('token', token)
 				this.setToken(token)
 			})
 		)
