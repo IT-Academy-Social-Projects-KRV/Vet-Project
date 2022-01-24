@@ -3,11 +3,11 @@ export interface IBareAnimalItem {
   gender: string
   breed: string
   age: string
-  shelterName: string
-  curator: string
-  shortInfo: string
-  behavioralFeatures: string
-  wishesForShelter: string
+	shelter_name: string
+	curator: string
+	short_info: string
+	behavioral_features: string
+	wishes_for_shelter: string
 }
 
 export interface IAnimalItem extends IBareAnimalItem {

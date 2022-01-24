@@ -1,29 +1,33 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Налаштування сайту</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item (click)="onSelect('dashboard')">Статистика</a>
-      <a mat-list-item (click)="onSelect('addVet')">Додатки клініку</a>
-      <a mat-list-item (click)="onSelect('addPet')">Додати тваринку</a>
-      <a mat-list-item (click)="onSelect('addVolonteer')">Додати волонтера</a>
-      <!-- <a *ngFor="let item of menuItems" mat-list-item [routerLink]="'/'+item"> {{item | titlecase}} </a> -->
-    </mat-nav-list>
-
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar class="nav__toolbar">
-      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      <span>Панель адміністратора</span>
-      <button mat-button (click)="openDialog()">Вийти</button>
-    </mat-toolbar>
-    <!-- Add Content Here -->
-    <app-admin-dashboard *ngIf="loadedFeature === 'dashboard' "></app-admin-dashboard>
-    <app-admin-edit-vet *ngIf="loadedFeature === 'addVet' "></app-admin-edit-vet>
-    <app-admin-edit-pet *ngIf="loadedFeature === 'addPet' "></app-admin-edit-pet>
-    <app-admin-edit-volonteer *ngIf="loadedFeature === 'addVolonteer' "></app-admin-edit-volonteer>
-  </mat-sidenav-content>
+	<mat-sidenav
+		#drawer
+		class="sidenav"
+		fixedInViewport
+		[attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+		[mode]="(isHandset$ | async) ? 'over' : 'side'"
+		[opened]="(isHandset$ | async) === false">
+		<mat-toolbar>Налаштування сайту</mat-toolbar>
+		<mat-nav-list>
+			<a mat-list-item routerLink="/admin/dashboard">Статистика</a>
+			<a mat-list-item routerLink="/admin/editVet">Клініки</a>
+			<a mat-list-item routerLink="/admin/editPet">Тварини</a>
+			<a mat-list-item routerLink="/admin/editVolonteer">Волонтери</a>
+		</mat-nav-list>
+	</mat-sidenav>
+	<mat-sidenav-content>
+		<mat-toolbar class="nav__toolbar">
+			<button
+				type="button"
+				aria-label="Toggle sidenav"
+				mat-icon-button
+				(click)="drawer.toggle()"
+				*ngIf="isHandset$ | async">
+				<mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+			</button>
+			<span>Панель адміністратора</span>
+			<button mat-button (click)="openDialog()">Вийти</button>
+		</mat-toolbar>
+		<!-- Add Content Here -->
+		<router-outlet></router-outlet>
+	</mat-sidenav-content>
 </mat-sidenav-container>

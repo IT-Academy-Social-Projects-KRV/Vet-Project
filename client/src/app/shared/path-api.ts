@@ -6,5 +6,6 @@ export enum ApiPaths {
 	vets = '/vet',
 	services = '/services',
 	volonteers = '/volonteers',
-	login = '/login'
+	login = '/login',
+	filter = '//animals/filter//?'
 }

@@ -1,19 +1,18 @@
-import { Component, OnInit } from '@angular/core'
-import { FormBuilder, FormGroup } from '@angular/forms'
-import { VetInfoService } from '@shared/services/vet-info.service'
+/* eslint-disable @angular-eslint/use-lifecycle-interface */
+import { Component } from '@angular/core'
+import { ApiServices } from '@shared/services/api.service'
+import { Observable } from 'rxjs'
 
 @Component({
 	selector: 'app-vet-slider',
 	templateUrl: './vet-slider.component.html',
 	styleUrls: ['./vet-slider.component.scss']
 })
-export class VetSliderComponent implements OnInit {
-	vetsInfo: any = []
-	constructor(private vetInfo: VetInfoService) {
-		this.vetInfo.getVetDetails().subscribe(item => {
-			this.vetsInfo = item
-		})
-	}
+export class VetSliderComponent {
+	vetsInfo$: Observable<any>
 
-	ngOnInit(): void {}
+	constructor(private apiServices: ApiServices) {}
+	ngOnInit(): void {
+		this.vetsInfo$ = this.apiServices.getVetDetails()
+	}
 }

@@ -1,24 +1,26 @@
-import { Component } from '@angular/core'
-import { VetUnitInfoService } from '@shared/services/vet-unit-info.service'
+/* eslint-disable no-unused-vars */
+import { Component, OnInit } from '@angular/core'
+import { Observable } from 'rxjs'
+import { ApiServices } from '@shared/services/api.service'
 
 import { ActivatedRoute } from '@angular/router'
+import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
 @Component({
 	selector: 'app-vet-unit-page',
 	templateUrl: './vet-unit-page.component.html',
 	styleUrls: ['./vet-unit-page.component.scss']
 })
-export class VetUnitPageComponent {
-	vetsInfo: any = []
+export class VetUnitPageComponent implements OnInit {
 	id: string
-	info: any = {}
 
-	constructor(private vetInfo: VetUnitInfoService, private Activatedroute: ActivatedRoute) {
+	vetsInfo$: Observable<IVetsUnitInfo[]>
+
+	constructor(private apiServices: ApiServices, private Activatedroute: ActivatedRoute) {
 		this.Activatedroute.paramMap.subscribe(params => {
 			this.id = params.get('id')
 		})
-		this.vetInfo.getVetsUnitInfo(this.id).subscribe(item => {
-			this.vetsInfo = item
-			this.info = this.vetsInfo[0]
-		})
+	}
+	ngOnInit(): void {
+		this.vetsInfo$ = this.apiServices.getVetsUnitInfo(this.id)
 	}
 }
