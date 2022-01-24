@@ -1,29 +1,45 @@
-import { Router, Request} from 'express'
-import db from '../db'
-import { ILoginItem } from '../interfaces';
+import { Router} from 'express'
+import db from '../db';
+import * as bcrypt from 'bcryptjs'
+import * as jwt from 'jsonwebtoken'
 
 
-const router = Router();
+const router = Router()
 
-router.get ('/', async function getUser (req, res) {
-	 const email = req.query.login;
-	// console.log(email)
-	 const password = req.query.password;
 
-	try {
-		const animalsList = await db.query(
-			`SELECT * FROM users WHERE email = $1 AND password = $2`,[email, password]
-		)
-		res.json(animalsList.rows)
-	} catch (err) {
-		console.error(err)
-		res.status(500).send(err)
-	}
 
-})	
 
+
+router.post ('/', async function login(req, res){
+	const tokenKey = 'dev-jwt'
+	try { 
+		const candidate = await db.query (`SELECT * FROM users`)	
+		if (candidate.rows[0].email == req.body.email) {
+			const passwordResult:boolean = bcrypt.compareSync(req.body.password, candidate.rows[0].password)		
+			if (passwordResult) {
+				const token = jwt.sign({
+					email: candidate.rows[0].email,
+					id : candidate.rows[0].id
+				}, tokenKey, {expiresIn: 60 * 60})
+
+				res.status(200).json({
+					token: `Bearer ${token}`
+				})
+			} else {
+				res.status(401).json({
+					message: 'Не правильно введені дані'
+				})
+			}
+		} else {
+			res.status(404).json({
+				message: `Не правильно введені дані`
+			})
+		}
+	} catch {
+		res.status(500)
+	} 
+	
+})
 	
 
-
-
-export default router
+export default router;

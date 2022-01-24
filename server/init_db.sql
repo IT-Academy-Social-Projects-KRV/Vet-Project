@@ -121,7 +121,7 @@ INSERT INTO animal_types
 		VALUES(1, 'Птахи'),(2, 'Гризуни'),(3, 'Рептилії'),(4, 'Дикі тварини'),(5, 'Домашні тварини');
 
 
-INSERT INTO users ( id, email, password) VALUES (1 , 'admin@gmail.com', 'admin')
+INSERT INTO users ( id, email, password) VALUES (1 , 'admin@gmail.com', '$2a$10$qd7j8HJTlEgjtuvl6jNy0uV1mIS0zJuk2L9AayG1cYFLdlW5cYq3G')
 
 SELECT
 	pg_catalog.setval(pg_get_serial_sequence('animals', 'id'), MAX(id))

@@ -1,18 +1,45 @@
-import { Component } from '@angular/core'
-import { FormControl, Validators } from '@angular/forms'
+import { Component, OnDestroy, OnInit } from '@angular/core'
+import { FormControl, FormGroup, Validators } from '@angular/forms'
+import { ActivatedRoute, Params, Router } from '@angular/router'
+import { LoginService } from '@shared/services/login.service'
+import { Subscription } from 'rxjs'
 
 @Component({
 	selector: 'app-login-modal',
 	templateUrl: './login-modal.component.html',
 	styleUrls: ['./login-modal.component.scss']
 })
-export class LoginModalComponent {
-	email = new FormControl('', [Validators.required, Validators.email])
+export class LoginModalComponent implements OnInit, OnDestroy {
 	hide: boolean = true
-	getErrorMessage() {
-		if (this.email.hasError('required')) {
-			return "Це поле обов'язкове для заповнення"
-		}
-		return this.email.hasError('email') ? 'Невірний формат електронної пошти' : ''
+	loginForm: FormGroup
+	aSUb: Subscription
+	constructor(private login: LoginService, private router: Router) {}
+
+	ngOnInit(): void {
+		this.loginForm = new FormGroup({
+			password: new FormControl('', [Validators.required]),
+			email: new FormControl('', [Validators.required, Validators.email])
+		})
 	}
+
+	ngOnDestroy(): void {
+		if (this.aSUb) {
+			this.aSUb.unsubscribe
+		}
+	}
+	onSubmit() {
+		this.loginForm.disable()
+		const user = {
+			email: this.loginForm.value.email,
+			password: this.loginForm.value.password
+		}
+		this.aSUb = this.login.login(user).subscribe({
+			next: () => this.router.navigate(['/admin/dashboard']),
+			error: error => {
+				console.warn(error)
+				this.loginForm.enable()
+			}
+		})
+	}
+	
 }
