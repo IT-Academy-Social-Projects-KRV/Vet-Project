@@ -21,8 +21,8 @@ router.get('/', async function getAllAnimals(req, res) {
 		)
 		res.json(animalsList.rows)
 	} catch (err) {
-		console.error(err)
 		res.status(500).send(err)
+		// res.json(err)
 	}
 })
 

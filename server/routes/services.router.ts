@@ -1,8 +1,8 @@
 import { Router, Request } from 'express'
 import db from '../db'
 
-import { IBareServiceItem } from '../interfaces'
-import { IServiceItem } from '../interfaces'
+import { IBareServiceItem } from '../interfaces/bare-service-item'
+import { IServiceItem } from '../interfaces/service-item'
 
 
 const router = Router()

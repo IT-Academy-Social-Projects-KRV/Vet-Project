@@ -3,13 +3,13 @@
 	border: 2px solid #4788b6;
 
 	&:hover {
-
+       cursor: pointer;
 		border: 2px solid #d68427;
 	}
 }
 .pet-card__img {
 	width: 226px;
-	cursor: pointer;
+	
 }
 .pet-card__card-header {
 	justify-content: center;

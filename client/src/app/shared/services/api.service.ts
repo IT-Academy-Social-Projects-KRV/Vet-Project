@@ -1,16 +1,18 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-unused-vars */
 import { Injectable } from '@angular/core'
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpErrorResponse } from '@angular/common/http'
 
 import { IAnimalsInfo } from '../interfaces/animals'
 import { IAnimalsUnitInfo } from '../interfaces/animals-unit'
 import { IVetServices, IVetsInfo } from '../interfaces/vetInfo'
 import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
 import { IVolonteersInfo } from '../interfaces/volonteers'
+import { Observable, throwError } from 'rxjs'
 
+import { catchError } from 'rxjs/operators'
 
-import { ApiPaths, baseUrl } from '../path-api'
+import {  baseUrl } from '../path-api'
 
 @Injectable({
 	providedIn: 'root'
@@ -18,25 +20,46 @@ import { ApiPaths, baseUrl } from '../path-api'
 export class ApiServices {
     constructor(private http: HttpClient) { }
     
-	getAnimalsFilterInfo(url) {
-		return this.http.get<IAnimalsInfo[]>(`${baseUrl}${ApiPaths.filter}${url}`)
-    }
-    getAnimalsInfo() {
-		return this.http.get<IAnimalsInfo[]>(`${baseUrl}/${ApiPaths.animals}`)
-    }
-    getAnimalsUnitInfo(id) {
-		return this.http.get<IAnimalsUnitInfo>(`${baseUrl}/${ApiPaths.animals}/${id}`)
-    }
-    getVetDetails() {
-		return this.http.get<IVetsInfo[]>(`${baseUrl}/${ApiPaths.vets}`)
-    }
-    getVetsUnitInfo(id) {
-		return this.http.get<IVetsUnitInfo[]>(`${baseUrl}/${ApiPaths.vets}/${id}`)
+	getAnimalsFilterInfo(url): Observable<IAnimalsInfo[]>{
+		return this.http.get<IAnimalsInfo[]>(`${baseUrl}//animals/filter//?${url}`).pipe(catchError(this.handleError))
 	}
-	getVetServices() {
-		return this.http.get<IVetServices>(`${baseUrl}/${ApiPaths.services}`)
-    }
-    getVolonteersInfo() {
-		return this.http.get<IVolonteersInfo>(`${baseUrl}/${ApiPaths.animals}`)
+
+    getAnimalsInfo() :Observable<IAnimalsInfo[]> {
+		return this.http.get<IAnimalsInfo[]>(`${baseUrl}//animals`).pipe(catchError(this.handleError))
 	}
+	
+    getAnimalsUnitInfo(id):Observable<IAnimalsUnitInfo> {
+		return this.http.get<IAnimalsUnitInfo>(`${baseUrl}//animals/${id}`).pipe(catchError(this.handleError))
+	}
+	
+	getVetDetails():Observable<IVetsInfo[]> {
+		return this.http.get<IVetsInfo[]>(`${baseUrl}//vet`).pipe(catchError(this.handleError))
+	}
+	
+    getVetsUnitInfo(id):Observable<IVetsUnitInfo[]> {
+		return this.http.get<IVetsUnitInfo[]>(`${baseUrl}//vet/${id}`).pipe(catchError(this.handleError))
+	}
+
+	getVetServices():Observable<IVetServices> {
+		return this.http.get<IVetServices>(`${baseUrl}//services`).pipe(catchError(this.handleError))
+	}
+	
+	getVolonteersInfo():Observable<IVolonteersInfo> {
+		return this.http.get<IVolonteersInfo>(`${baseUrl}//animals`).pipe(catchError(this.handleError))
+	}
+
+	
+private handleError(error: HttpErrorResponse) {
+  if (error.status === 0) {
+
+    console.error('An error occurred:', error.error);
+  } else {
+
+    console.error(
+      `Backend returned code ${error.status}, body was: `, error.error);
+  }
+
+  return throwError(
+    'Щось пішло не так; Спробуйте, будь ласка, пізніше. =(');
+}
 }
