@@ -36,20 +36,13 @@ export class AdminDashboardComponent {
 	// eslint-disable-next-line no-unused-vars
 	constructor(
 		private breakpointObserver: BreakpointObserver,
-		private animalInfo: AnimalInfoService,
-		private login: LoginService,
-		private route: Router
+		private animalInfo: AnimalInfoService
 	) {
 		this.animalInfo.getAnimalsInfo().subscribe(item => {
 			this.animalsInfo = item
 		})
 	}
 	
-	logOut() {
-		this.login.logout();
-		this.route.navigate([''])
-		
-	}	
 	// constructor(private breakpointObserver: BreakpointObserver) {}
 }
 

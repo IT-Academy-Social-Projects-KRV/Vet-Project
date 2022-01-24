@@ -24,7 +24,8 @@ import { MatTableModule } from '@angular/material/table'
 import { MatPaginatorModule } from '@angular/material/paginator'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatDialogModule } from '@angular/material/dialog'
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { LogoutModalComponent } from './components/logout-modal/logout-modal.component'
 
 
 
@@ -36,7 +37,8 @@ import { FormsModule } from '@angular/forms'
 		AdminEditVetComponent,
 		AdminEditPetComponent,
 		AdminEditVolonteerComponent,
-		LoginModalComponent
+		LoginModalComponent,
+  LogoutModalComponent
 	],
 	imports: [
 		CommonModule,

@@ -18,6 +18,7 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>Панель адміністратора</span>
+      <button mat-button (click)="openDialog()">Вийти</button>
     </mat-toolbar>
     <!-- Add Content Here -->
     <app-admin-dashboard *ngIf="loadedFeature === 'dashboard' "></app-admin-dashboard>
