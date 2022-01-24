@@ -1,8 +1,8 @@
 <section class="vet-list-section">
-	<ul class="vet-list-section__container" >
+	<ul class="vet-list-section__container">
 		<ng-container *ngIf="(vetsDetailInfo$ | async) as vetsDetailInfo">
 			<li class="vet-list-section__card" *ngFor="let vet of vetsDetailInfo">
-				<app-vet-list-card [vetsInfo]="vet" ></app-vet-list-card>
+				<app-vet-list-card [vetsInfo]="vet"></app-vet-list-card>
 			</li>
 		</ng-container>
 	</ul>

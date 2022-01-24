@@ -1,7 +1,7 @@
 <section class="main__vet-edit-page">
 	<mat-tab-group mat-align-tabs="center">
-		<mat-tab label="Додати клініку"
-			><form class="example-form" (ngSubmit)="onCreateClinic(f.value)" #f="ngForm">
+		<mat-tab label="Додати клініку">
+			<form class="example-form" (ngSubmit)="onCreateClinic(f.value)" #f="ngForm">
 				<mat-form-field class="example-full-width" appearance="fill">
 					<mat-label>Назва клініки</mat-label>
 					<input matInput value="" name="title" ngModel required />
@@ -16,14 +16,7 @@
 				</mat-form-field>
 				<mat-form-field class="example-full-width" appearance="fill">
 					<mat-label>Електронна пошта</mat-label>
-					<input
-						matInput
-						type="email"
-						value="gmail@gmail.com"
-						name="email"
-						ngModel
-						email="true"
-						required />
+					<input matInput type="email" value="gmail@gmail.com" name="email" ngModel email="true" required />
 				</mat-form-field>
 				<mat-form-field class="example-full-width" appearance="fill">
 					<mat-label>I-frame google-карти клініки</mat-label>
@@ -31,8 +24,8 @@
 				</mat-form-field>
 
 				<button mat-raised-button color="primary" [disabled]="!f.valid">Додати клініку</button>
-			</form></mat-tab
-		>
+			</form>
+		</mat-tab>
 		<mat-tab label="Редагувати клініку">Content 2</mat-tab>
 		<mat-tab label="Видалити клініку">
 			<button mat-raised-button color="warn">Exterminate all clinics</button>

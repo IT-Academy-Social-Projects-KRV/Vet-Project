@@ -14,12 +14,12 @@ export class AnimalUnitPageComponent implements OnInit {
 	id: string
 	petsInfo$: Observable<IAnimalsUnitInfo>
 
-	constructor(private apiServices: ApiServices, private Activatedroute: ActivatedRoute) {
+	constructor(private apiServices: ApiServices, private Activatedroute: ActivatedRoute) {}
+
+	ngOnInit(): void {
 		this.Activatedroute.paramMap.subscribe(params => {
 			this.id = params.get('id')
 		})
-	}
-	ngOnInit(): void {
 		this.petsInfo$ = this.apiServices.getAnimalsUnitInfo(this.id)
 	}
 }

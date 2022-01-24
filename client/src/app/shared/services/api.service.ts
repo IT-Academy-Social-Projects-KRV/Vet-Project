@@ -56,11 +56,12 @@ export class ApiServices {
 	getVolonteersInfo() {
 		return this.http.get<IVolonteersInfo>(`${baseUrl}/${ApiPaths.animals}`)
 	}
-	postNewAnimal(item){
-		return this.http.post<{ [key: string]: any }>(`${baseUrl}/${ApiPaths.animals}`, item).subscribe({
-		next: responseData => console.log(responseData),
-		error: e => console.error(e)
-		})
+	postNewAnimal(item) {
+		return this.http
+			.post<{ [key: string]: any }>(`${baseUrl}/${ApiPaths.animals}`, item)
+			.subscribe({
+				next: responseData => console.log(responseData),
+				error: e => console.error(e)
+			})
 	}
-		
 }
