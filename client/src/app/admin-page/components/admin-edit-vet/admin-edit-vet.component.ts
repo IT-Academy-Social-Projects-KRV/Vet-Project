@@ -1,11 +1,7 @@
 import { Component } from '@angular/core'
 import { FormControl, Validators } from '@angular/forms'
-interface Animal {
-	name: string
-}
-interface Specialization {
-	name: string
-}
+import { ApiServices } from '@shared/services/api.service'
+import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
 
 @Component({
 	selector: 'app-admin-edit-vet',
@@ -13,30 +9,20 @@ interface Specialization {
 	styleUrls: ['./admin-edit-vet.component.scss']
 })
 export class AdminEditVetComponent {
-	typesOfShoes: string[] = [
-		'Хірургія',
-		'Травматологія',
-		'Вакцинування',
-		'Офтмальмолог',
-		'Стерилізація'
-	]
-
-	animalControl = new FormControl('', Validators.required)
 	selectFormControl = new FormControl('', Validators.required)
-	animals: Animal[] = [
-		{ name: 'Коти' },
-		{ name: 'Собаки' },
-		{ name: 'Гризуни' },
-		{ name: 'Рептилії' },
-		{ name: 'Птахи' }
-	]
-	vetSpecialization = new FormControl('', Validators.required)
-	selectSpecializationControl = new FormControl('', Validators.required)
-	specialization: Specialization[] = [
-		{ name: 'Хірургія' },
-		{ name: 'Травматологія' },
-		{ name: 'Вакцинування' },
-		{ name: 'Офтмальмолог' },
-		{ name: 'Стерилізація' }
-	]
+
+	constructor(private apiServices: ApiServices) {}
+	item: IVetsUnitInfo
+
+	onCreateClinic(form): void {
+		this.item = {
+			title: form.title,
+			adress: form.adress,
+			phone: form.phone,
+			email: form.email,
+			map_link: form.map_link
+		}
+		// Send Http request
+		this.apiServices.postNewClinic(this.item)
+	}
 }

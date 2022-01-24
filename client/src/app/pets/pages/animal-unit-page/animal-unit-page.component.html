@@ -1,4 +1,4 @@
-<section class="animal-main">
+<section class="animal-main" *ngIf="(petsInfo$ | async) as petsInfo">
   <div class="animal-main__photo">
     <img class="animal-main__photo__img" src="../../../../assets//animalsPictures/animal_0{{ petsInfo.id }}.jpg"
       alt="image of pet" />
@@ -23,7 +23,7 @@
     </h3>
     <h3 class="animal-main__info__elem">
       Притулок:
-      <span> {{ petsInfo.shelter_name }} </span>
+      <span> {{ petsInfo.shelter_name}} </span>
     </h3>
     <h3 class="animal-main__info__elem">
       Куратор:
