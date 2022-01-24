@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core'
+import { Component, OnInit, ViewChild } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { IAnimalsUnitInfo } from '@shared/interfaces/animals-unit'
 import { ApiServices } from '@shared/services/api.service'
@@ -15,13 +15,11 @@ import { MatTableDataSource } from '@angular/material/table'
 })
 export class AdminEditPetComponent implements OnInit {
 	displayedColumns: string[] = ['id', 'name', 'gender', 'breed', 'age', 'curator']
-	animalsInfo$: Observable<IAnimalsInfo[]>
-	petsInfo$: Observable<IAnimalsUnitInfo>
+	animalsInfo$: Observable<Array<IAnimalsInfo>>
 
-	dataSource: MatTableDataSource<IAnimalsInfo>
-
-	@ViewChild(MatPaginator) paginator: MatPaginator
-	@ViewChild(MatSort) sort: MatSort
+	dataSource = new MatTableDataSource<IAnimalsInfo[]>()
+	@ViewChild(MatPaginator, { static: true }) paginator: MatPaginator
+	@ViewChild(MatSort, { static: true }) sort: MatSort
 
 	constructor(private apiServices: ApiServices) {}
 
@@ -29,10 +27,6 @@ export class AdminEditPetComponent implements OnInit {
 		this.animalsInfo$ = this.apiServices.getAnimalsInfo()
 	}
 
-	ngAfterViewInit() {
-		this.dataSource.paginator = this.paginator
-		this.dataSource.sort = this.sort
-	}
 	applyFilter(event: Event) {
 		const filterValue = (event.target as HTMLInputElement).value
 		this.dataSource.filter = filterValue.trim().toLowerCase()
@@ -41,11 +35,7 @@ export class AdminEditPetComponent implements OnInit {
 			this.dataSource.paginator.firstPage()
 		}
 	}
-	onEdit() {
-		// this.Activatedroute.paramMap.subscribe(params => {
-		// 	this.petsInfo$ = this.apiServices.getAnimalsUnitInfo(params.get('id'))
-		// })
-	}
+	onEdit() {}
 
 	item: IAnimalsUnitInfo
 	curators: any[] = ['Куратор 1', 'Куратор 2']
@@ -61,7 +51,6 @@ export class AdminEditPetComponent implements OnInit {
 			behavioral_features: form.behavioral_features,
 			wishes_for_shelter: form.wishes_for_shelter
 		}
-		// console.log(this.item)
 
 		this.apiServices.postNewAnimal(this.item)
 	}

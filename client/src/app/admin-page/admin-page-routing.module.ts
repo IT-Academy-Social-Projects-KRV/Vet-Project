@@ -23,12 +23,6 @@ const routes: Routes = [
 			{
 				path: 'editPet',
 				component: AdminEditPetComponent
-				// children: [
-				// 	{
-				// 		path: ':id',
-				// 		component: EditPetPageComponent
-				// 	}
-				// ]
 			},
 			{
 				path: 'editPet/:id',
