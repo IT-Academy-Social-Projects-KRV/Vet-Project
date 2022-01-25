@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
-import { ActivatedRoute, Params, Router } from '@angular/router'
-import { LoginService } from '@shared/services/login.service'
+import { Router } from '@angular/router'
+import { ApiServices } from '@shared/services/api.service'
 import { Subscription } from 'rxjs'
 
 @Component({
@@ -13,7 +13,7 @@ export class LoginModalComponent implements OnInit, OnDestroy {
 	hide: boolean = true
 	loginForm: FormGroup
 	aSUb: Subscription
-	constructor(private login: LoginService, private router: Router) {}
+	constructor(private login: ApiServices, private router: Router) {}
 
 	ngOnInit(): void {
 		this.loginForm = new FormGroup({
@@ -41,5 +41,4 @@ export class LoginModalComponent implements OnInit, OnDestroy {
 			}
 		})
 	}
-	
 }

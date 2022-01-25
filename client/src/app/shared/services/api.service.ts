@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
-import { Subject } from 'rxjs'
+import { Observable, Subject, tap } from 'rxjs'
 
 import { IAnimalsInfo } from '../interfaces/animals'
 import { IAnimalsUnitInfo } from '../interfaces/animals-unit'
@@ -9,12 +9,14 @@ import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
 import { IVolonteersInfo } from '../interfaces/volonteers'
 
 import { ApiPaths, baseUrl } from '../path-api'
+import { ILoginUSer } from '@shared/interfaces/login'
 
 @Injectable({
 	providedIn: 'root'
 })
 export class ApiServices {
 	error = new Subject<string>()
+	private token = null
 
 	constructor(private http: HttpClient) {}
 
@@ -63,5 +65,32 @@ export class ApiServices {
 				next: responseData => console.log(responseData),
 				error: e => console.error(e)
 			})
+	}
+
+	//////////////LOGIN///////////////////////////////////////
+	login(user: ILoginUSer): Observable<{ token: string }> {
+		return this.http.post<{ token: string }>(`${baseUrl}/${ApiPaths.login}`, user).pipe(
+			tap(({ token }) => {
+				localStorage.setItem('token', token)
+				this.setToken(token)
+			})
+		)
+	}
+
+	setToken(token: string) {
+		this.token = token
+	}
+
+	getToken(): string {
+		return this.token
+	}
+
+	isAuthenticated(): boolean {
+		return !!this.token
+	}
+
+	logout() {
+		this.setToken(null)
+		localStorage.clear()
 	}
 }

@@ -2,11 +2,8 @@ import { Component } from '@angular/core'
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
 import { Observable } from 'rxjs'
 import { map, shareReplay } from 'rxjs/operators'
-import { LoginService } from '@shared/services/login.service'
-import { Router } from '@angular/router'
 import { MatDialog } from '@angular/material/dialog'
 import { LogoutModalComponent } from '../logout-modal/logout-modal.component'
-
 
 @Component({
 	selector: 'app-admin-nav',
@@ -24,14 +21,11 @@ export class AdminNavComponent {
 		shareReplay()
 	)
 
-	constructor(private breakpointObserver: BreakpointObserver, private login: LoginService, private route: Router, public dialog: MatDialog) {
+	constructor(private breakpointObserver: BreakpointObserver, public dialog: MatDialog) {
 		this.loadedFeature = 'dashboard'
 	}
-	
+
 	openDialog() {
-		this.dialog.open(LogoutModalComponent);
-	  }
+		this.dialog.open(LogoutModalComponent)
+	}
 }
-
-
-

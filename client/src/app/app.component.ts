@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { LoginService } from '@shared/services/login.service'
+import { ApiServices } from '@shared/services/api.service'
 
 @Component({
 	selector: 'app-root',
@@ -8,8 +8,7 @@ import { LoginService } from '@shared/services/login.service'
 })
 export class AppComponent implements OnInit {
 	title = 'client'
-	constructor(private login: LoginService) {
-	}
+	constructor(private login: ApiServices) {}
 	ngOnInit(): void {
 		const potentialToken = localStorage.getItem('token')
 		if (potentialToken !== null) {

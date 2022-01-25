@@ -2,6 +2,7 @@
     min-width: 150px;
     max-width: 500px;
     width: 100%;
+    
   }
   
   .example-full-width {
@@ -23,3 +24,13 @@
       background-color: #60b4f034;
     }
   }
+
+.wrapper {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  height: 100%;
+}
+
