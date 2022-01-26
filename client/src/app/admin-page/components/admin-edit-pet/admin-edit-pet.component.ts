@@ -1,8 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core'
-import { ActivatedRoute } from '@angular/router'
+import { HttpClient } from '@angular/common/http'
 import { IAnimalsUnitInfo } from '@shared/interfaces/animals-unit'
 import { ApiServices } from '@shared/services/api.service'
-import { Observable } from 'rxjs'
 import { IAnimalsInfo } from '@shared/interfaces/animals'
 import { MatPaginator } from '@angular/material/paginator'
 import { MatSort } from '@angular/material/sort'
@@ -15,16 +14,22 @@ import { MatTableDataSource } from '@angular/material/table'
 })
 export class AdminEditPetComponent implements OnInit {
 	displayedColumns: string[] = ['id', 'name', 'gender', 'breed', 'age', 'curator']
-	animalsInfo$: Observable<Array<IAnimalsInfo>>
+	dataSource = new MatTableDataSource<IAnimalsInfo>()
 
-	dataSource = new MatTableDataSource<IAnimalsInfo[]>()
 	@ViewChild(MatPaginator, { static: true }) paginator: MatPaginator
 	@ViewChild(MatSort, { static: true }) sort: MatSort
-
-	constructor(private apiServices: ApiServices) {}
+	constructor(private apiServices: ApiServices, private http: HttpClient) {}
 
 	ngOnInit(): void {
-		this.animalsInfo$ = this.apiServices.getAnimalsInfo()
+		this.fetchPets()
+	}
+
+	private fetchPets() {
+		this.http.get<IAnimalsUnitInfo[]>('http://localhost:3200/api/animals').subscribe(response => {
+			this.dataSource.data = response as unknown as IAnimalsInfo[]
+			this.dataSource.sort = this.sort
+			this.dataSource.paginator = this.paginator
+		})
 	}
 
 	applyFilter(event: Event) {
@@ -35,8 +40,7 @@ export class AdminEditPetComponent implements OnInit {
 			this.dataSource.paginator.firstPage()
 		}
 	}
-	onEdit() {}
-
+	//Service for adding pets info
 	item: IAnimalsUnitInfo
 	curators: any[] = ['Куратор 1', 'Куратор 2']
 	onSubmit(form: IAnimalsUnitInfo): void {

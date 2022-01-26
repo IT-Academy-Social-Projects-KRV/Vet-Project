@@ -49,6 +49,56 @@
                     </button>
                 </div>
             </form>
+
+            <mat-form-field appearance="standard">
+                <mat-label>Пошук</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Почніть писати" #input>
+            </mat-form-field>
+
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table" matSort>
+                <!-- Position Column -->
+                <ng-container matColumnDef="id" mat-sort-header>
+                    <th mat-header-cell *matHeaderCellDef>No.</th>
+                    <td mat-cell *matCellDef="let element">{{element.id}}</td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="name" mat-sort-header>
+                    <th mat-header-cell *matHeaderCellDef>Ім'я</th>
+                    <td mat-cell *matCellDef="let element">{{element.name}}</td>
+                </ng-container>
+
+                <!-- Gender Column -->
+                <ng-container matColumnDef="gender" mat-sort-header>
+                    <th mat-header-cell *matHeaderCellDef>Стать</th>
+                    <td mat-cell *matCellDef="let element">{{element.gender}}</td>
+                </ng-container>
+
+                <!-- Breed Column -->
+                <ng-container matColumnDef="breed" mat-sort-header>
+                    <th mat-header-cell *matHeaderCellDef>Порода</th>
+                    <td mat-cell *matCellDef="let element">{{element.breed}}</td>
+                </ng-container>
+                <!-- Age Column -->
+                <ng-container matColumnDef="age" mat-sort-header>
+                    <th mat-header-cell *matHeaderCellDef>Вік</th>
+                    <td mat-cell *matCellDef="let element">{{element.age}}</td>
+                </ng-container>
+
+                <!-- Curator Column -->
+                <ng-container matColumnDef="curator" mat-sort-header>
+                    <th mat-header-cell *matHeaderCellDef>Куратор</th>
+                    <td mat-cell *matCellDef="let element">{{element.curator}}</td>
+                </ng-container>
+
+                <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="4">Відсутні об'єкти для відображення "{{input.value}}"</td>
+                </tr>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+
         </mat-tab>
 
         <mat-tab label="Редагувати відомості про тваринку">
@@ -57,7 +107,7 @@
                 <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
             </mat-form-field>
 
-            <table mat-table [dataSource]="animalsInfo$" class="mat-elevation-z8 demo-table" matSort>
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table" matSort>
                 <!-- Position Column -->
                 <ng-container matColumnDef="id" mat-sort-header>
                     <th mat-header-cell *matHeaderCellDef>No.</th>
