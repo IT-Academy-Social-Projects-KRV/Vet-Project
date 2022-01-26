@@ -7,6 +7,7 @@ import { MatPaginator } from '@angular/material/paginator'
 import { MatSort } from '@angular/material/sort'
 import { MatTableDataSource } from '@angular/material/table'
 import { MatDialog } from '@angular/material/dialog'
+import { PetEditDialogComponent } from '../pet-edit-dialog/pet-edit-dialog.component'
 
 @Component({
 	selector: 'app-admin-edit-pet',
@@ -62,15 +63,13 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 		})
 	}
 
-	// openDialog(row: IAnimalsUnitInfo) {
-	// 	console.log('Row clicked', row)
-	// 	const dialog = this.dialog.open(SampleDialogComponent, {
-	// 		width: '250px',
-	// 		// Can be closed only by clicking the close button
-	// 		disableClose: true,
-	// 		data: row
-	// 	})
-	// }
+	redirectToUpdate(row: IAnimalsUnitInfo) {
+		const dialog = this.dialog.open(PetEditDialogComponent, {
+			width: '500px',
+			disableClose: true,
+			data: row
+		})
+	}
 
 	applyFilter(event: Event) {
 		const filterValue = (event.target as HTMLInputElement).value
@@ -81,7 +80,7 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 		}
 	}
 
-	public redirectToUpdate = (id: string) => {}
+	// public redirectToUpdate = (id: string) => {}
 	public redirectToDelete = (id: string) => {}
 	//Service for adding pets info
 	item: IAnimalsUnitInfo
