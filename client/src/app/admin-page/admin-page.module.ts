@@ -20,6 +20,7 @@ import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatTabsModule } from '@angular/material/tabs'
 import { MatTreeModule } from '@angular/material/tree'
+import { MatSortModule } from '@angular/material/sort'
 
 import { ApiServices } from '@shared/services/api.service'
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component'
@@ -60,7 +61,8 @@ import { LoginModalComponent } from './components/login-modal/login-modal.compon
 		MatDialogModule,
 		FormsModule,
 		MatTabsModule,
-		MatTreeModule
+		MatTreeModule,
+		MatSortModule
 	],
 	providers: [ApiServices],
 	exports: [LoginModalComponent]

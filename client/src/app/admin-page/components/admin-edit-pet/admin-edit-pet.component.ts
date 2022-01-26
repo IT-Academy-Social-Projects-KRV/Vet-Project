@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core'
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { IAnimalsUnitInfo } from '@shared/interfaces/animals-unit'
 import { ApiServices } from '@shared/services/api.service'
@@ -12,13 +12,16 @@ import { MatTableDataSource } from '@angular/material/table'
 	templateUrl: './admin-edit-pet.component.html',
 	styleUrls: ['./admin-edit-pet.component.scss']
 })
-export class AdminEditPetComponent implements OnInit {
+export class AdminEditPetComponent implements OnInit, AfterViewInit {
 	displayedColumns: string[] = ['id', 'name', 'gender', 'breed', 'age', 'curator', 'delete']
 	dataSource = new MatTableDataSource<IAnimalsInfo>()
 
 	@ViewChild(MatPaginator, { static: true }) paginator: MatPaginator
 	@ViewChild(MatSort, { static: true }) sort: MatSort
 	constructor(private apiServices: ApiServices, private http: HttpClient) {}
+	ngAfterViewInit(): void {
+		this.dataSource.sort = this.sort
+	}
 
 	ngOnInit(): void {
 		this.fetchPets()
@@ -27,7 +30,6 @@ export class AdminEditPetComponent implements OnInit {
 	private fetchPets() {
 		this.http.get<IAnimalsUnitInfo[]>('http://localhost:3200/api/animals').subscribe(response => {
 			this.dataSource.data = response as unknown as IAnimalsInfo[]
-			this.dataSource.sort = this.sort
 			this.dataSource.paginator = this.paginator
 		})
 	}

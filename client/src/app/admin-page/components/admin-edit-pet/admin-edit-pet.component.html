@@ -57,37 +57,37 @@
 
             <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table" matSort>
                 <!-- Position Column -->
-                <ng-container matColumnDef="id" mat-sort-header>
-                    <th mat-header-cell *matHeaderCellDef>No.</th>
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>No.</th>
                     <td mat-cell *matCellDef="let element">{{element.id}}</td>
                 </ng-container>
 
                 <!-- Name Column -->
-                <ng-container matColumnDef="name" mat-sort-header>
-                    <th mat-header-cell *matHeaderCellDef>Ім'я</th>
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Ім'я</th>
                     <td mat-cell *matCellDef="let element">{{element.name}}</td>
                 </ng-container>
 
                 <!-- Gender Column -->
-                <ng-container matColumnDef="gender" mat-sort-header>
-                    <th mat-header-cell *matHeaderCellDef>Стать</th>
+                <ng-container matColumnDef="gender">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Стать</th>
                     <td mat-cell *matCellDef="let element">{{element.gender}}</td>
                 </ng-container>
 
                 <!-- Breed Column -->
-                <ng-container matColumnDef="breed" mat-sort-header>
-                    <th mat-header-cell *matHeaderCellDef>Порода</th>
+                <ng-container matColumnDef="breed">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Порода</th>
                     <td mat-cell *matCellDef="let element">{{element.breed}}</td>
                 </ng-container>
                 <!-- Age Column -->
-                <ng-container matColumnDef="age" mat-sort-header>
-                    <th mat-header-cell *matHeaderCellDef>Вік</th>
+                <ng-container matColumnDef="age">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Вік</th>
                     <td mat-cell *matCellDef="let element">{{element.age}}</td>
                 </ng-container>
 
                 <!-- Curator Column -->
-                <ng-container matColumnDef="curator" mat-sort-header>
-                    <th mat-header-cell *matHeaderCellDef>Куратор</th>
+                <ng-container matColumnDef="curator">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Куратор</th>
                     <td mat-cell *matCellDef="let element">{{element.curator}}</td>
                 </ng-container>
 
@@ -111,10 +111,6 @@
         </mat-tab>
 
         <mat-tab label="Редагувати відомості про тваринку">
-            <mat-form-field appearance="standard">
-                <mat-label>Фільтр</mat-label>
-                <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
-            </mat-form-field>
 
 
         </mat-tab>
