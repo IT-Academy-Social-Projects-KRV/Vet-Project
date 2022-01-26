@@ -1,4 +1,4 @@
-<mat-card class="pet-card" >
+<mat-card class="pet-card"  [routerLink]="['/animalsList', data.id]">
 	<div class="pet-card__wrapper">
 		<img class="pet-card__img" src="../../../assets/animalsPictures/animal_0{{ data.id }}.jpg"/>
 	</div>
