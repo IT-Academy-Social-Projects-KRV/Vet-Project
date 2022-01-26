@@ -69,7 +69,7 @@ export class ApiServices {
 
 	/////////////////////VOLONTEERS////////////////////////
 	getVolonteersInfo(): Observable<IVolonteersInfo> {
-		return this.http.get<IVolonteersInfo>(`${baseUrl}//animals`).pipe(catchError(this.handleError))
+		return this.http.get<IVolonteersInfo>(`${baseUrl}/s/animals`).pipe(catchError(this.handleError))
 	}
 
 	private handleError(error: HttpErrorResponse) {
