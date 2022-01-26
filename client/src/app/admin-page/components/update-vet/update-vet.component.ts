@@ -22,13 +22,12 @@ export class UpdateVetComponent implements OnInit {
 		private apiServices: ApiServices,
 		public dialogRef: MatDialogRef<UpdateVetComponent>,
 		@Inject(MAT_DIALOG_DATA) public data: any
-	) {
+	) {}
+
+	ngOnInit(): void {
 		this.Activatedroute.paramMap.subscribe(params => {
 			this.id = params.get('id')
 		})
-	}
-
-	ngOnInit() {
 		this.vetsInfo$ = this.apiServices.getVetsUnitInfo(this.id)
 	}
 
