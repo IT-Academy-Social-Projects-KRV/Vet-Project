@@ -16,7 +16,7 @@ import { ApiPaths, baseUrl } from '../path-api'
 })
 export class ApiServices {
     constructor(private http: HttpClient) { }
-    
+
 	getAnimalsFilterInfo(url) {
 		return this.http.get<IAnimalsInfo>(`${baseUrl}${ApiPaths.filter}${url}`)
     }
@@ -37,5 +37,11 @@ export class ApiServices {
     }
     getVolonteersInfo() {
 		return this.http.get<IVolonteersInfo>(`${baseUrl}/${ApiPaths.animals}`)
+	}
+  updateVet(item) {
+		return this.http.put<{ [key: string]: any }>(`${baseUrl}/${ApiPaths.vets}`, item).subscribe({
+			next: responseData => console.log(responseData),
+			error: e => console.error(e)
+		})
 	}
 }

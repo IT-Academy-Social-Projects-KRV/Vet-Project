@@ -1,0 +1,27 @@
+<div class="basic-container">
+  <form class="example-form" (ngSubmit)='onUpdateVet(f.value)' #f='ngForm'>
+    <mat-form-field>
+      <mat-label>Назва клініки</mat-label>
+      <input matInput name="title" ngModel required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Адреса клініки</mat-label>
+      <input matInput name="adress" ngModel required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Телефон клініки</mat-label>
+      <input matInput name="phone" ngModel required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>E-mail клініки</mat-label>
+      <input matInput name="email" ngModel required>
+    </mat-form-field>
+
+    <button type="submit" mat-button>Змінити</button>
+    <button type="button" mat-button (click)="closeDialog()">Закрити</button>
+  </form>
+
+  </div>

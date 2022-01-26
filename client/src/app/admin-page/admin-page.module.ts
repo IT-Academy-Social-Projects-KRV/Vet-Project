@@ -24,7 +24,9 @@ import { MatPaginatorModule } from '@angular/material/paginator'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatDialogModule } from '@angular/material/dialog'
 import { FormsModule } from '@angular/forms'
-
+import { AdminUpdateVetComponent } from './components/admin-update-vet/admin-update-vet.component'
+import { VetsModule } from '../vets/vets.module'
+import { UpdateVetComponent } from './components/update-vet/update-vet.component'
 @NgModule({
 	declarations: [
 		AdminNavComponent,
@@ -32,7 +34,9 @@ import { FormsModule } from '@angular/forms'
 		AdminEditVetComponent,
 		AdminEditPetComponent,
 		AdminEditVolonteerComponent,
-		LoginModalComponent
+		LoginModalComponent,
+		AdminUpdateVetComponent,
+		UpdateVetComponent
 	],
 	imports: [
 		CommonModule,
@@ -53,7 +57,8 @@ import { FormsModule } from '@angular/forms'
 		MatPaginatorModule,
 		MatFormFieldModule,
 		MatDialogModule,
-		FormsModule
+		FormsModule,
+		VetsModule
 	],
 	exports: [LoginModalComponent]
 })

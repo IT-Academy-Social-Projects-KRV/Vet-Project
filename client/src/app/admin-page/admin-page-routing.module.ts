@@ -5,6 +5,7 @@ import { AdminEditPetComponent } from './components/admin-edit-pet/admin-edit-pe
 import { AdminEditVetComponent } from './components/admin-edit-vet/admin-edit-vet.component'
 import { AdminEditVolonteerComponent } from './components/admin-edit-volonteer/admin-edit-volonteer.component'
 import { AdminNavComponent } from './components/admin-nav/admin-nav.component'
+import { AdminUpdateVetComponent } from './components/admin-update-vet/admin-update-vet.component'
 
 const routes: Routes = [
 	{
@@ -26,6 +27,10 @@ const routes: Routes = [
 			{
 				path: 'editVolonteer',
 				component: AdminEditVolonteerComponent
+			},
+			{
+				path: 'updateVet',
+				component: AdminUpdateVetComponent
 			},
 			{
 				path: '',

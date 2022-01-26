@@ -10,4 +10,9 @@
     <mat-card-subtitle>Телефон: <span class="vet-card__vet-info-item">{{vetsInfo.phone}}</span></mat-card-subtitle>
     <mat-card-subtitle>Email: <span class="vet-card__vet-info-item">{{vetsInfo.email}}</span></mat-card-subtitle>
   </mat-card-content>
+  <div *ngIf="isButtonVisible">
+    <button class="vet-card_button" mat-raised-button [routerLink]="['/vetsList', vetsInfo.id]">
+      Редагувати
+    </button>
+  </div>
 </mat-card>
