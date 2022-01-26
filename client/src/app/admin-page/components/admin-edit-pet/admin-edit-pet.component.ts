@@ -6,6 +6,7 @@ import { IAnimalsInfo } from '@shared/interfaces/animals'
 import { MatPaginator } from '@angular/material/paginator'
 import { MatSort } from '@angular/material/sort'
 import { MatTableDataSource } from '@angular/material/table'
+import { MatDialog } from '@angular/material/dialog'
 
 @Component({
 	selector: 'app-admin-edit-pet',
@@ -13,18 +14,45 @@ import { MatTableDataSource } from '@angular/material/table'
 	styleUrls: ['./admin-edit-pet.component.scss']
 })
 export class AdminEditPetComponent implements OnInit, AfterViewInit {
-	displayedColumns: string[] = ['id', 'name', 'gender', 'breed', 'age', 'curator', 'delete']
+	displayedColumns: string[] = [
+		'id',
+		'name',
+		'gender',
+		'breed',
+		'age',
+		'curator',
+		'details',
+		'delete'
+	]
 	dataSource = new MatTableDataSource<IAnimalsInfo>()
 
 	@ViewChild(MatPaginator, { static: true }) paginator: MatPaginator
 	@ViewChild(MatSort, { static: true }) sort: MatSort
-	constructor(private apiServices: ApiServices, private http: HttpClient) {}
+	constructor(
+		private apiServices: ApiServices,
+		private http: HttpClient,
+		public dialog: MatDialog
+	) {}
 	ngAfterViewInit(): void {
 		this.dataSource.sort = this.sort
 	}
 
 	ngOnInit(): void {
 		this.fetchPets()
+		this.paginator._intl.itemsPerPageLabel = "Кількість об'єктів на сторінці:"
+		this.paginator._intl.nextPageLabel = 'Наступна сторінка'
+		this.paginator._intl.previousPageLabel = 'Попередня сторінка'
+		this.paginator._intl.lastPageLabel = 'Остання сторінка'
+		this.paginator._intl.getRangeLabel = (page: number, pageSize: number, length: number) => {
+			if (length === 0 || pageSize === 0) {
+				return '0 з ' + length
+			}
+			length = Math.max(length, 0)
+			const startIndex = page * pageSize
+			const endIndex =
+				startIndex < length ? Math.min(startIndex + pageSize, length) : startIndex + pageSize
+			return startIndex + 1 + ' - ' + endIndex + ' з ' + length
+		}
 	}
 
 	private fetchPets() {
@@ -33,6 +61,16 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 			this.dataSource.paginator = this.paginator
 		})
 	}
+
+	// openDialog(row: IAnimalsUnitInfo) {
+	// 	console.log('Row clicked', row)
+	// 	const dialog = this.dialog.open(SampleDialogComponent, {
+	// 		width: '250px',
+	// 		// Can be closed only by clicking the close button
+	// 		disableClose: true,
+	// 		data: row
+	// 	})
+	// }
 
 	applyFilter(event: Event) {
 		const filterValue = (event.target as HTMLInputElement).value
