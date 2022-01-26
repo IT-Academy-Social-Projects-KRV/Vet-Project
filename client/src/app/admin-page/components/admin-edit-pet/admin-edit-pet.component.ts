@@ -13,7 +13,7 @@ import { MatTableDataSource } from '@angular/material/table'
 	styleUrls: ['./admin-edit-pet.component.scss']
 })
 export class AdminEditPetComponent implements OnInit {
-	displayedColumns: string[] = ['id', 'name', 'gender', 'breed', 'age', 'curator']
+	displayedColumns: string[] = ['id', 'name', 'gender', 'breed', 'age', 'curator', 'delete']
 	dataSource = new MatTableDataSource<IAnimalsInfo>()
 
 	@ViewChild(MatPaginator, { static: true }) paginator: MatPaginator
@@ -40,6 +40,9 @@ export class AdminEditPetComponent implements OnInit {
 			this.dataSource.paginator.firstPage()
 		}
 	}
+
+	public redirectToUpdate = (id: string) => {}
+	public redirectToDelete = (id: string) => {}
 	//Service for adding pets info
 	item: IAnimalsUnitInfo
 	curators: any[] = ['Куратор 1', 'Куратор 2']
