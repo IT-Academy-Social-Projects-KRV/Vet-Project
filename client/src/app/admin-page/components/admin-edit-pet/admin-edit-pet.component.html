@@ -109,9 +109,9 @@
           </td>
         </ng-container>
 
-        <<<<<<< HEAD <tr mat-header-row *matHeaderRowDef="displayedColumns">
-          </tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns">
+        </tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
       <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
     </mat-tab>
@@ -119,24 +119,4 @@
       <button mat-raised-button color="warn">Exterminate all humans</button>
     </mat-tab>
   </mat-tab-group>
-  =======
-  <tr class="mat-row" *matNoDataRow>
-    <td class="mat-cell" colspan="4">Відсутні об'єкти для відображення "{{input.value}}"</td>
-  </tr>
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
-
-  </mat-tab>
-
-  <mat-tab label="Редагувати відомості про тваринку">
-
-
-  </mat-tab>
-  <mat-tab label="Видалити тваринку">
-    <button mat-raised-button color="warn">Exterminate all humans</button>
-  </mat-tab>
-  </mat-tab-group>
-  >>>>>>> 17a2b5c24518845e624bce23a2034fbaa01bb7a0
 </section>
