@@ -22,3 +22,17 @@ td {
 	margin: 20px auto;
 	text-transform: uppercase;
 }
+
+mat-form-field {
+	margin-left: 5px;
+}
+.demo-table {
+	width: 100%;
+}
+
+.mat-row {
+	background-color: transparent;
+	&:hover {
+		background-color: #f44336;
+	}
+}
