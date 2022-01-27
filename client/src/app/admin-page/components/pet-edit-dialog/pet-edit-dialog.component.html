@@ -1,5 +1,5 @@
 <form class="example-form" (ngSubmit)='onUpdate(f.value)' #f='ngForm'>
-  <mat-form-field class="example-full-width" appearance="fill">
+  <mat-form-field class="example-full-width id-hide" appearance="fill">
     <mat-label>No</mat-label>
     <input matInput name="id" [(ngModel)]="data.id" ngModel type="text" readonly>
   </mat-form-field>
@@ -27,10 +27,6 @@
     <mat-label>Куратор</mat-label>
     <input matInput name="curator" [(ngModel)]="data.curator" ngModel required>
   </mat-form-field>
-
-
-
-
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Історія</mat-label>
     <textarea matInput name="short_info" [(ngModel)]="data.short_info" ngModel></textarea>
@@ -44,7 +40,7 @@
     <textarea matInput name="wishes_for_shelter" [(ngModel)]="data.wishes_for_shelter" ngModel></textarea>
   </mat-form-field>
   <div class="demo-button-container">
-    <button mat-button (click)="closeDialog()">Відхилити зміни</button>
-    <button mat-button (click)="onUpdate(f.value)">Зберегти зміни</button>
+    <button mat-button class="pet-edit_dialog-button" (click)="closeDialog()">Відхилити зміни</button>
+    <button mat-button class="pet-edit_dialog-button">Зберегти зміни</button>
   </div>
 </form>

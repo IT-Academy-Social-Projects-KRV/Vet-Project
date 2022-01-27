@@ -34,7 +34,6 @@ export class PetEditDialogComponent {
 		}
 
 		this.apiServices.putEditAnimal(this.data).subscribe()
-		console.log(this.data)
 		this.dialogRef.close()
 	}
 }

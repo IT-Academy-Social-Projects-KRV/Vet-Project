@@ -83,14 +83,29 @@ router.get('/:id', async function getAnimalById(req, res) {
     console.error(err)
   }
 })
-router.put(
-  '/',
-  async function updateAnimalInfoById(
-    req: Request<{}, {}, IAnimalItem>,
-    res
-  ) {
-    try {
-      const {
+router.put('/', async function updateAnimalInfoById(req: Request<{}, {}, IAnimalItem>, res) {
+  try {
+    const {
+      name,
+      gender,
+      breed,
+      age,
+      shelter_name,
+      curator,
+      short_info,
+      behavioral_features,
+      wishes_for_shelter,
+      id
+    } = req.body
+
+    const updateAnimal = await db.query(
+      `
+                UPDATE animals 
+                SET name = $1, gender = $2, breed = $3, age = $4, shelter_name = $5, curator = $6,
+                short_info = $7, behavioral_features = $8, wishes_for_shelter = $9
+                WHERE id = $10
+                RETURNING *`,
+      [
         name,
         gender,
         breed,
@@ -101,35 +116,14 @@ router.put(
         behavioral_features,
         wishes_for_shelter,
         id
-      } = req.body
-
-      const updateAnimal = await db.query<IAnimalItem>(
-        `
-                UPDATE animals 
-                SET name = $1, gender = $2, breed = $3, age = $4, shelter_name = $5, curator = $6,
-                short_info = $7, behavioral_features = $8, wishes_for_shelter = $9
-                WHERE id = $10
-                RETURNING *`,
-        [
-          name,
-          gender,
-          breed,
-          age,
-          shelter_name,
-          curator,
-          short_info,
-          behavioral_features,
-          wishes_for_shelter,
-          id
-        ]
-      )
-      res.json(updateAnimal.rows[0])
-    } catch (err) {
-      res.status(500).send(err)
-      console.error(err)
-    }
+      ]
+    )
+    res.json(updateAnimal.rows[0])
+  } catch (err) {
+    res.status(500).send(err)
+    console.error(err)
   }
-)
+})
 
 router.delete(
   '/:id(\\d+)',

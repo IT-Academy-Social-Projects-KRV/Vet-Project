@@ -12,7 +12,8 @@ import { FooterComponent } from '@shared/components/page-layout/footer/footer.co
 import { MatButtonModule } from '@angular/material/button'
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatCardModule } from '@angular/material/card'
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
+import { ErrorHttpInterseptor } from './error-http-interseptor'
 
 @NgModule({
 	declarations: [AppComponent, HeaderComponent, FooterComponent],
@@ -26,7 +27,13 @@ import { HttpClientModule } from '@angular/common/http'
 		MatDialogModule,
 		MatCardModule
 	],
-	providers: [],
+	providers: [
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: ErrorHttpInterseptor,
+			multi: true
+		}
+	],
 	bootstrap: [AppComponent]
 })
 export class AppModule {}
