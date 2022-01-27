@@ -29,11 +29,7 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 
 	@ViewChild(MatPaginator, { static: true }) paginator: MatPaginator
 	@ViewChild(MatSort, { static: true }) sort: MatSort
-	constructor(
-		private apiServices: ApiServices,
-		private http: HttpClient,
-		public dialog: MatDialog
-	) {}
+	constructor(private apiServices: ApiServices, public dialog: MatDialog) {}
 	ngAfterViewInit(): void {
 		this.dataSource.sort = this.sort
 	}

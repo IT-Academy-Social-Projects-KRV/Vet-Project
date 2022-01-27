@@ -45,12 +45,7 @@ export class ApiServices {
 		})
 	}
 	putEditAnimal(data) {
-		return this.http.put<{ [key: string]: any }>(`${baseUrl}//animals`, data).pipe(
-			catchError(this.handleError),
-			map(item => {
-				console.log(item)
-			})
-		)
+		return this.http.put(`${baseUrl}//animals`, data).pipe(catchError(this.handleError))
 	}
 
 	////////////////////////VET/////////////////////////

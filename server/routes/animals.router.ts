@@ -103,7 +103,7 @@ router.put(
         id
       } = req.body
 
-      const updateAnimal = await db.query(
+      const updateAnimal = await db.query<IAnimalItem>(
         `
                 UPDATE animals 
                 SET name = $1, gender = $2, breed = $3, age = $4, shelter_name = $5, curator = $6,

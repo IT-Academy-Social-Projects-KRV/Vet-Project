@@ -17,7 +17,7 @@ import { MatTableDataSource } from '@angular/material/table'
 export class AdminEditVetComponent implements OnInit {
 	selectFormControl = new FormControl('', Validators.required)
 
-	displayedColumns: string[] = ['id', 'title', 'adress', 'phone', 'email']
+	displayedColumns: string[] = ['id', 'title', 'adress', 'phone', 'email', 'delete']
 	IVetsInfo$: Observable<Array<IVetsInfo>>
 
 	dataSource = new MatTableDataSource<IVetsInfo[]>()
@@ -38,6 +38,12 @@ export class AdminEditVetComponent implements OnInit {
 			this.dataSource.paginator.firstPage()
 		}
 	}
+
+	// private getVets() {
+	// 	this.apiServices.getVetDetails().subscribe(response => {
+	// 		this.dataSource.data = response
+	// 	})
+	// }
 
 	item: IVetsUnitInfo
 

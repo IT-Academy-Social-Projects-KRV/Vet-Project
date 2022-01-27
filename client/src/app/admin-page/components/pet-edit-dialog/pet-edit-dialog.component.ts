@@ -33,8 +33,8 @@ export class PetEditDialogComponent {
 			wishes_for_shelter: form.wishes_for_shelter
 		}
 
-		this.apiServices.putEditAnimal(this.data)
-		// console.log(this.data)
+		this.apiServices.putEditAnimal(this.data).subscribe()
+		console.log(this.data)
 		this.dialogRef.close()
 	}
 }
