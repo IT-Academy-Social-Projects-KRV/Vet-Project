@@ -1,8 +1,8 @@
 import { Router, Request } from 'express'
 import db from '../db'
 
-import { IBareAnimalItem } from "../interfaces"
-import {IAnimalItem} from "../interfaces"
+import { IBareAnimalItem, IAnimalItem } from "../interfaces/animal-item"
+
 
 const router = Router()
 

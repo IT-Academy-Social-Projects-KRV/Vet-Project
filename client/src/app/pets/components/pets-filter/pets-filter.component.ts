@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 import { Component, OnInit } from '@angular/core'
 
-import { Observable, map } from 'rxjs'
+import { Observable } from 'rxjs'
 
 import { IAnimalInfo } from 'src/app/shared/interfaces/animals-filter-info'
 
@@ -15,10 +15,10 @@ import { IAnimalsInfo } from '@shared/interfaces/animals'
 	styleUrls: ['./pets-filter.component.scss']
 })
 export class PetsFilterComponent implements OnInit {
-	petsInfo$: Observable<IAnimalsInfo[]>
-	animalFilterInfo$: Observable<IAnimalsInfo[]>
+	public petsInfo$: Observable<IAnimalsInfo[]>
+	public animalFilterInfo$: Observable<IAnimalsInfo[]>
 
-	animal: IAnimalInfo = {
+	public animal: IAnimalInfo = {
 		gender: '',
 		breed: '',
 		age: '',
@@ -32,14 +32,14 @@ export class PetsFilterComponent implements OnInit {
 		this.petsInfo$ = this.apiServices.getAnimalsInfo()
 	}
 
-	onSubmite() {
+	onSubmite(): void {
 		this.paramsArr = []
 		this.checkParams()
 		let getUrl = this.paramsArr.join('&')
 		this.getAnimalsInfo(getUrl)
 	}
 
-	checkParams() {
+	checkParams(): void {
 		if (this.animal.gender !== '') {
 			this.paramsArr.push(`gender=${this.animal.gender}`)
 		}
@@ -54,7 +54,7 @@ export class PetsFilterComponent implements OnInit {
 		}
 	}
 
-	getAnimalsInfo(url) {
+	getAnimalsInfo(url): void {
 		this.animalFilterInfo$ = this.apiServices.getAnimalsFilterInfo(url)
 	}
 }
