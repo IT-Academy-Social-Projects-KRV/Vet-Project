@@ -1,0 +1,29 @@
+.example-form {
+	margin: 40px auto 15px;
+	min-width: 150px;
+	max-width: 500px;
+	width: 100%;
+}
+
+.example-full-width {
+	width: 100%;
+}
+
+mat-form-field {
+	margin-left: 5px;
+}
+.id-hide {
+	display: none;
+}
+.demo-button-container {
+	display: flex;
+	justify-content: space-evenly;
+}
+.pet-edit_dialog-button {
+	background-color: #4788b6;
+	color: #fff;
+	&:hover {
+		background-color: #d68427;
+		cursor: pointer;
+	}
+}

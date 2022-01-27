@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditPetPageComponent } from './edit-pet-page.component';
+import { PetEditDialogComponent } from './pet-edit-dialog.component';
 
-describe('EditPetPageComponent', () => {
-  let component: EditPetPageComponent;
-  let fixture: ComponentFixture<EditPetPageComponent>;
+describe('PetEditDialogComponent', () => {
+  let component: PetEditDialogComponent;
+  let fixture: ComponentFixture<PetEditDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditPetPageComponent ]
+      declarations: [ PetEditDialogComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EditPetPageComponent);
+    fixture = TestBed.createComponent(PetEditDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
