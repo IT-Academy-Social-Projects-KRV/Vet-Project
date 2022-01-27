@@ -39,13 +39,6 @@ export class LoginModalComponent implements OnInit, OnDestroy {
 			email: this.loginForm.value.email,
 			password: this.loginForm.value.password
 		}
-		// this.aSUb = this.login.login(user).subscribe({
-		// 	next: () => this.router.navigate(['/admin/dashboard']),
-		// 	error: error => {
-		// 		console.warn(error)
-		// 		this.loginForm.enable()
-		// 	}
-		// })
 
 		this.aSUb = this.login.login(user).subscribe(() => {
 			if (this.login.isAuthenticated()) {

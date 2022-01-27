@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
-import { HttpClient } from '@angular/common/http'
-import { Observable, Subject, tap } from 'rxjs'
+import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http'
+import { Observable, Subject, tap, throwError } from 'rxjs'
 
 import { IAnimalsInfo } from '../interfaces/animals'
 import { IAnimalsUnitInfo } from '../interfaces/animals-unit'
@@ -10,7 +10,7 @@ import { IVolonteersInfo } from '../interfaces/volonteers'
 
 import { ApiPaths, baseUrl } from '../path-api'
 import { ILoginUSer } from '@shared/interfaces/login'
-
+import { catchError } from 'rxjs/operators'
 @Injectable({
 	providedIn: 'root'
 })
@@ -68,8 +68,18 @@ export class ApiServices {
 	}
 
 	//////////////LOGIN///////////////////////////////////////
+	// login(user: ILoginUSer): Observable<{ token: string }> {
+	// 	return this.http.post<{ token: string }>(`${baseUrl}/${ApiPaths.login}`, user).pipe(
+	// 		tap(({ token }) => {
+	// 			localStorage.setItem('token', token)
+	// 			this.setToken(token)
+	// 		})
+	// 	)
+	// }
+
 	login(user: ILoginUSer): Observable<{ token: string }> {
 		return this.http.post<{ token: string }>(`${baseUrl}/${ApiPaths.login}`, user).pipe(
+			catchError(this.handleError),
 			tap(({ token }) => {
 				localStorage.setItem('token', token)
 				this.setToken(token)
@@ -92,5 +102,15 @@ export class ApiServices {
 	logout() {
 		this.setToken(null)
 		localStorage.clear()
+	}
+
+	private handleError(error: HttpErrorResponse) {
+		if (error.status === 0) {
+			console.error('An error occurred:', error.error)
+		} else {
+			console.error(`Backend returned code ${error.status}, body was: `, error.error)
+		}
+
+		return throwError('Щось пішло не так; Спробуйте, будь ласка, пізніше. =(')
 	}
 }
