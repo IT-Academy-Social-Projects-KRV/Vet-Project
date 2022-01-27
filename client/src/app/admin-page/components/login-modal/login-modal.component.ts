@@ -3,7 +3,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router'
 import { ApiServices } from '@shared/services/api.service'
 import { Subscription } from 'rxjs'
-
+import { MatDialogRef } from '@angular/material/dialog'
+import { MatError } from '@angular/material/form-field'
 @Component({
 	selector: 'app-login-modal',
 	templateUrl: './login-modal.component.html',
@@ -13,11 +14,16 @@ export class LoginModalComponent implements OnInit, OnDestroy {
 	hide: boolean = true
 	loginForm: FormGroup
 	aSUb: Subscription
-	constructor(private login: ApiServices, private router: Router) {}
+
+	constructor(
+		private login: ApiServices,
+		private router: Router,
+		public dialogRef: MatDialogRef<LoginModalComponent>
+	) {}
 
 	ngOnInit(): void {
 		this.loginForm = new FormGroup({
-			password: new FormControl('', [Validators.required]),
+			password: new FormControl('', [Validators.required, Validators.minLength(5)]),
 			email: new FormControl('', [Validators.required, Validators.email])
 		})
 	}
@@ -33,12 +39,24 @@ export class LoginModalComponent implements OnInit, OnDestroy {
 			email: this.loginForm.value.email,
 			password: this.loginForm.value.password
 		}
-		this.aSUb = this.login.login(user).subscribe({
-			next: () => this.router.navigate(['/admin/dashboard']),
-			error: error => {
-				console.warn(error)
-				this.loginForm.enable()
+		// this.aSUb = this.login.login(user).subscribe({
+		// 	next: () => this.router.navigate(['/admin/dashboard']),
+		// 	error: error => {
+		// 		console.warn(error)
+		// 		this.loginForm.enable()
+		// 	}
+		// })
+
+		this.aSUb = this.login.login(user).subscribe(() => {
+			if (this.login.isAuthenticated()) {
+				this.dialogRef.close()
 			}
+
+			this.dialogRef.afterClosed().subscribe(() => this.router.navigate(['/admin']))
+			// this.getErrorMessage()
 		})
+	}
+	getErrorMessage() {
+		return 'Enter correct value'
 	}
 }

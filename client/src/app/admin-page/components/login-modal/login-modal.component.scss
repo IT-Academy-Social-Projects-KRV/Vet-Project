@@ -1,36 +1,25 @@
 .example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-    
-  }
-  
-  .example-full-width {
-    width: 100%;
-  }
+	min-width: 150px;
+	max-width: 500px;
+	width: 100%;
+}
 
- .mat-button{
-    border: 1px solid #4788b6;
-    border-radius: 3px;
-	  color: #4788b6;
-    
-  }
+.example-full-width {
+	width: 100%;
+}
 
-  .close-button {
-    &:hover {
-      color: #d68427;
-      border-color: #d68427;
-      cursor: pointer;
-      background-color: #60b4f034;
-    }
-  }
+.mat-button {
+	border: 1px solid #4788b6;
+	border-radius: 3px;
+	color: #4788b6;
+}
 
-.wrapper {
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  height: 100%;
+.close-button {
+	&:hover {
+		color: #d68427;
+		border-color: #d68427;
+		cursor: pointer;
+		background-color: #60b4f034;
+	}
 }
 

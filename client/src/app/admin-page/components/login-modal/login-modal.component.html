@@ -1,14 +1,14 @@
-<div class="wrapper">
 <h2 mat-dialog-title align='center'>Вхід</h2>
-<form class="example-form" (ngSUbmit)="onSubmit()" [formGroup]="loginForm">
+<form class="example-form" (ngSubmit)="onSubmit()" [formGroup]="loginForm">
   <mat-dialog-content>
     <mat-form-field class="example-full-width">
       <mat-label>Email</mat-label>
       <input type="email" matInput formControlName="email" required>
-      <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+      <mat-error>JKNKNKLNKLNKLNKLNK</mat-error>
     </mat-form-field>
     <mat-form-field class="example-full-width">
       <mat-label>Пароль</mat-label>
+
       <input formControlName="password" [type]="hide ? 'password' : 'text'" matInput>
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
         [attr.aria-pressed]="hide">
@@ -17,9 +17,7 @@
     </mat-form-field>
   </mat-dialog-content>
   <mat-dialog-actions align="center">
-    <button class="close-button" mat-button mat-dialog-close>Скасувати</button>
-    <button mat-button [mat-dialog-close]="" [disabled]="loginForm.invalid || loginForm.disabled"
-      (click)="onSubmit()">Увійти</button>
+    <button class="close-button" mat-button [mat-dialog-close]="true">Скасувати</button>
+    <button mat-button (click)="onSubmit()" [disabled]="loginForm.invalid || loginForm.disabled">Увійти</button>
   </mat-dialog-actions>
 </form>
-</div>

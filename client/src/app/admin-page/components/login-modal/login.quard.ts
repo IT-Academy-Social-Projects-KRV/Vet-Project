@@ -16,8 +16,6 @@ export class LoginGuard implements CanActivate, CanActivateChild {
 	constructor(private login: ApiServices, private router: Router) {}
 
 	canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
-		console.log(route)
-		console.log(state.url)
 		if (this.login.isAuthenticated()) {
 			return of(true)
 		} else {
