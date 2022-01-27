@@ -7,7 +7,7 @@ import { IAnimalsUnitInfo } from '../interfaces/animals-unit'
 import { IVetServices, IVetsInfo } from '../interfaces/vetInfo'
 import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
 import { IVolonteersInfo } from '../interfaces/volonteers'
-import { Observable, throwError } from 'rxjs'
+import { Observable, throwError, map } from 'rxjs'
 import { catchError } from 'rxjs/operators'
 
 import { baseUrl } from '../path-api'
@@ -43,6 +43,14 @@ export class ApiServices {
 			next: responseData => console.log(responseData),
 			error: e => console.error(e)
 		})
+	}
+	putEditAnimal(data) {
+		return this.http.put<{ [key: string]: any }>(`${baseUrl}//animals`, data).pipe(
+			catchError(this.handleError),
+			map(item => {
+				console.log(item)
+			})
+		)
 	}
 
 	////////////////////////VET/////////////////////////

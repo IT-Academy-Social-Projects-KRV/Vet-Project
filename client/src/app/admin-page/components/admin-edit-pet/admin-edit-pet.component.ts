@@ -40,6 +40,7 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 
 	ngOnInit(): void {
 		this.fetchPets()
+		this.dataSource.paginator = this.paginator
 		this.paginator._intl.itemsPerPageLabel = "Кількість об'єктів на сторінці:"
 		this.paginator._intl.nextPageLabel = 'Наступна сторінка'
 		this.paginator._intl.previousPageLabel = 'Попередня сторінка'
@@ -57,9 +58,8 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 	}
 
 	private fetchPets() {
-		this.http.get<IAnimalsUnitInfo[]>('http://localhost:3200/api/animals').subscribe(response => {
-			this.dataSource.data = response as unknown as IAnimalsInfo[]
-			this.dataSource.paginator = this.paginator
+		this.apiServices.getAnimalsInfo().subscribe(response => {
+			this.dataSource.data = response
 		})
 	}
 

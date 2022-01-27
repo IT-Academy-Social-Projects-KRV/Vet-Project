@@ -1,4 +1,8 @@
-<form class="example-form">
+<form class="example-form" (ngSubmit)='onUpdate(f.value)' #f='ngForm'>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>No</mat-label>
+        <input matInput name="id" [(ngModel)]="data.id" ngModel type="text" readonly>
+    </mat-form-field>
     <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Назва(кличка)</mat-label>
         <input matInput name="name" [(ngModel)]="data.name" ngModel required>
@@ -19,6 +23,11 @@
         <mat-label>Притулок</mat-label>
         <input matInput name="shelter_name" [(ngModel)]="data.shelter_name" ngModel required>
     </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Куратор</mat-label>
+        <input matInput name="curator" [(ngModel)]="data.curator" ngModel required>
+    </mat-form-field>
+
 
 
 
@@ -36,6 +45,6 @@
     </mat-form-field>
     <div class="demo-button-container">
         <button mat-button (click)="closeDialog()">Відхилити зміни</button>
-        <button mat-button (click)="closeDialog()">Зберегти зміни</button>
+        <button mat-button>Зберегти зміни</button>
     </div>
 </form>
