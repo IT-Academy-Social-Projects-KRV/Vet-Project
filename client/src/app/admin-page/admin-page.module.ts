@@ -20,6 +20,7 @@ import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatTabsModule } from '@angular/material/tabs'
 import { MatTreeModule } from '@angular/material/tree'
+import { MatSortModule } from '@angular/material/sort'
 
 import { ApiServices } from '@shared/services/api.service'
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component'
@@ -29,7 +30,7 @@ import { AdminEditPetComponent } from './components/admin-edit-pet/admin-edit-pe
 import { AdminEditVolonteerComponent } from './components/admin-edit-volonteer/admin-edit-volonteer.component'
 import { AdminEditVetComponent } from './components/admin-edit-vet/admin-edit-vet.component'
 import { LoginModalComponent } from './components/login-modal/login-modal.component'
-import { EditPetPageComponent } from './components/edit-pet-page/edit-pet-page.component'
+import { PetEditDialogComponent } from './components/pet-edit-dialog/pet-edit-dialog.component'
 
 @NgModule({
 	declarations: [
@@ -39,7 +40,7 @@ import { EditPetPageComponent } from './components/edit-pet-page/edit-pet-page.c
 		AdminEditPetComponent,
 		AdminEditVolonteerComponent,
 		LoginModalComponent,
-		EditPetPageComponent
+		PetEditDialogComponent
 	],
 	imports: [
 		CommonModule,
@@ -62,7 +63,8 @@ import { EditPetPageComponent } from './components/edit-pet-page/edit-pet-page.c
 		MatDialogModule,
 		FormsModule,
 		MatTabsModule,
-		MatTreeModule
+		MatTreeModule,
+		MatSortModule
 	],
 	providers: [ApiServices],
 	exports: [LoginModalComponent]
