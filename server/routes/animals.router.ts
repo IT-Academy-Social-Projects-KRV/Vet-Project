@@ -84,9 +84,9 @@ router.get('/:id', async function getAnimalById(req, res) {
   }
 })
 router.put(
-  '/:id',
+  '/',
   async function updateAnimalInfoById(
-    req: Request<{ id: string }, {}, IAnimalItem>,
+    req: Request<{}, {}, IAnimalItem>,
     res
   ) {
     try {
@@ -106,8 +106,8 @@ router.put(
       const updateAnimal = await db.query(
         `
                 UPDATE animals 
-                SET name = $1, gender = $2, breed = $3, age = $4, shelter_name = $5, curator = $6
-                short_info = $7, behavioral_features = $8, wishes_for_shelter = 9
+                SET name = $1, gender = $2, breed = $3, age = $4, shelter_name = $5, curator = $6,
+                short_info = $7, behavioral_features = $8, wishes_for_shelter = $9
                 WHERE id = $10
                 RETURNING *`,
         [
