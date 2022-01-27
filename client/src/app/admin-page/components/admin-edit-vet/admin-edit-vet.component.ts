@@ -23,6 +23,6 @@ export class AdminEditVetComponent {
 			map_link: form.map_link
 		}
 		// Send Http request
-		this.apiServices.postNewClinic(this.item)
+		this.apiServices.postNewClinic(this.item).subscribe()
 	}
 }

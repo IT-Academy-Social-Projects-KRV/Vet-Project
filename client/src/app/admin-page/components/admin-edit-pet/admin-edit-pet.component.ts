@@ -95,7 +95,7 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 			wishes_for_shelter: form.wishes_for_shelter
 		}
 
-		this.apiServices.postNewAnimal(this.item)
+		this.apiServices.postNewAnimal(this.item).subscribe()
 	}
 	onCreateAnimal(): void {}
 }
