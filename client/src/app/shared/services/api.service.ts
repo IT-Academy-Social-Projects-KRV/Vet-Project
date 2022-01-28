@@ -6,7 +6,7 @@ import { IAnimalsUnitInfo } from '../interfaces/animals-unit'
 import { IVetServices, IVetsInfo } from '../interfaces/vetInfo'
 import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
 import { IVolonteersInfo } from '../interfaces/volonteers'
-import { Observable, throwError, map } from 'rxjs'
+import { Observable } from 'rxjs'
 import { catchError } from 'rxjs/operators'
 
 import { ApiUrlBuilder } from '../api-url-builder'
