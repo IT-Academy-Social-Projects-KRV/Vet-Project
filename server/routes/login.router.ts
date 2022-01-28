@@ -1,6 +1,6 @@
 import { Router, Request} from 'express'
 import db from '../db'
-import { ILoginItem } from '../interfaces';
+import { ILoginItem } from '../interfaces/login'
 
 
 const router = Router();
