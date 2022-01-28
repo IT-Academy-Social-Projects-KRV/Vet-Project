@@ -34,7 +34,6 @@ export class LoginModalComponent implements OnInit, OnDestroy {
 		}
 	}
 	onSubmit() {
-		this.loginForm.disable()
 		const user = {
 			email: this.loginForm.value.email,
 			password: this.loginForm.value.password
@@ -47,8 +46,6 @@ export class LoginModalComponent implements OnInit, OnDestroy {
 			}
 		})
 
-		this.loginForm.controls['email'].enable()
-		this.loginForm.controls['password'].enable()
 		this.loginForm.reset()
 	}
 }
