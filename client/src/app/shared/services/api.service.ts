@@ -8,11 +8,8 @@ import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
 
 import { Observable } from 'rxjs'
 
+import { UrlBuilder } from '../builder-url'
 
-import { ApiUrlBuilder } from '../api-url-builder'
-import { UrlBuilder } from '../services/builder-url'
-
-let apiUrlBuilder = new ApiUrlBuilder()
 let builder = new UrlBuilder()
 @Injectable({
 	providedIn: 'root'
@@ -23,51 +20,42 @@ export class ApiServices {
 	//FILTERS
 
 	getAnimalsFilterInfo(url): Observable<IAnimalsInfo[]> {
-		let t = apiUrlBuilder.getAnimalsFilterInfoUrl(url)
-		console.log(t)
-		return this.http.get<IAnimalsInfo[]>(t)
+		return this.http.get<IAnimalsInfo[]>(builder.baseUrl().animal().filter(url).getUrl())
 	}
 
 	////////////////////////PET////////////////////////
 
 	getAnimalsInfo(): Observable<IAnimalsInfo[]> {
-		let test = builder.baseUrl().animal().getUrl()
-		console.log(test)
-		return this.http.get<IAnimalsInfo[]>(test)
+		return this.http.get<IAnimalsInfo[]>(builder.baseUrl().animal().getUrl())
 	}
 
-	// getAnimalsUnitInfo(id): Observable<IAnimalsUnitInfo> {
-	// 	return this.http.get<IAnimalsUnitInfo>(apiUrlBuilder.getAnimalsUnitInfoUrl(id))
-	// }
 	getAnimalsUnitInfo(id): Observable<IAnimalsUnitInfo> {
-		let testUrl = builder.baseUrl().animal().addId(id).getUrl()
-		console.log(testUrl)
-		return this.http.get<IAnimalsUnitInfo>(testUrl)
+		return this.http.get<IAnimalsUnitInfo>(builder.baseUrl().animal().addId(id).getUrl())
 	}
 
 	postNewAnimal(item) {
-		return this.http.post<{ [key: string]: any }>(apiUrlBuilder.getAnimalsInfoUrl(), item)
+		return this.http.post<{ [key: string]: any }>(builder.baseUrl().animal().getUrl(), item)
 	}
 	putEditAnimal(data) {
-		return this.http.put<{ [key: string]: any }>(apiUrlBuilder.getAnimalsInfoUrl(), data)
+		return this.http.put<{ [key: string]: any }>(builder.baseUrl().animal().getUrl(), data)
 	}
 
 	////////////////////////VET/////////////////////////
 
 	getVetDetails(): Observable<IVetsInfo[]> {
-		return this.http.get<IVetsInfo[]>(apiUrlBuilder.getVetDetailsUrl())
+		return this.http.get<IVetsInfo[]>(builder.baseUrl().vet().getUrl())
 	}
 
 	getVetsUnitInfo(id): Observable<IVetsUnitInfo[]> {
-		return this.http.get<IVetsUnitInfo[]>(apiUrlBuilder.getVetsUnitInfoUrl(id))
+		return this.http.get<IVetsUnitInfo[]>(builder.baseUrl().vet().addId(id).getUrl())
 	}
 
 	postNewClinic(item) {
-		return this.http.post<{ [key: string]: any }>(apiUrlBuilder.getVetDetailsUrl(), item)
+		return this.http.post<{ [key: string]: any }>(builder.baseUrl().vet().getUrl(), item)
 	}
 
 	getVetServices(): Observable<IVetServices> {
-		return this.http.get<IVetServices>(apiUrlBuilder.getVetServicesUrl())
+		return this.http.get<IVetServices>(builder.baseUrl().services().getUrl())
 	}
 
 	/////////////////////VOLONTEERS////////////////////////
