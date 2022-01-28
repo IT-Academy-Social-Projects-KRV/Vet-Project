@@ -1,10 +1,10 @@
 <h2 mat-dialog-title align='center'>Вхід</h2>
 <form class="example-form" (ngSubmit)="onSubmit()" [formGroup]="loginForm">
   <mat-dialog-content>
-    <mat-form-field class="example-full-width" >
+    <mat-form-field class="example-full-width">
       <mat-label>Email</mat-label>
-      <input type="email" matInput formControlName="email" required >
-      <!-- <mat-error >{{showErrorMessage()}}</mat-error> -->
+      <input type="email" matInput formControlName="email" required>
+      <mat-error> Невірні дані </mat-error>
     </mat-form-field>
     <mat-form-field class="example-full-width">
       <mat-label>Пароль</mat-label>

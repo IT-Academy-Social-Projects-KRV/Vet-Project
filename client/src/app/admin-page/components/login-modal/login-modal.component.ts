@@ -43,14 +43,12 @@ export class LoginModalComponent implements OnInit, OnDestroy {
 		this.aSUb = this.login.login(user).subscribe(() => {
 			if (this.login.isAuthenticated()) {
 				this.dialogRef.close()
+				this.dialogRef.afterClosed().subscribe(() => this.router.navigate(['/admin']))
 			}
-
-			this.dialogRef.afterClosed().subscribe(() => this.router.navigate(['/admin']))
 		})
 
 		this.loginForm.controls['email'].enable()
 		this.loginForm.controls['password'].enable()
 		this.loginForm.reset()
-		this.loginForm.setErrors({ incorrect: true })
 	}
 }
