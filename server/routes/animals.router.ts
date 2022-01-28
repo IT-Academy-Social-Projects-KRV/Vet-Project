@@ -51,7 +51,7 @@ router.post(
   }
 )
 
-router.get('/', async function getAllAnimals(req, res) {
+router.get('', async function getAllAnimals(req, res) {
   try {
     const animalsList = await db.query(
       `SELECT * FROM animals`
