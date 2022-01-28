@@ -38,9 +38,7 @@ export class ApiServices {
 		return this.http.post<{ [key: string]: any }>(apiUrlBuilder.getAnimalsInfoUrl(), item)
 	}
 	putEditAnimal(data) {
-		return this.http
-			.put<{ [key: string]: any }>(`${baseUrl}//animals`, data)
-			.pipe(catchError(this.handleError))
+		return this.http.put<{ [key: string]: any }>(apiUrlBuilder.getAnimalsInfoUrl(), data)
 	}
 
 	////////////////////////VET/////////////////////////
