@@ -30,7 +30,8 @@ import { AdminEditPetComponent } from './components/admin-edit-pet/admin-edit-pe
 import { AdminEditVolonteerComponent } from './components/admin-edit-volonteer/admin-edit-volonteer.component'
 import { AdminEditVetComponent } from './components/admin-edit-vet/admin-edit-vet.component'
 import { LoginModalComponent } from './components/login-modal/login-modal.component'
-import { PetEditDialogComponent } from './components/pet-edit-dialog/pet-edit-dialog.component'
+import { PetEditDialogComponent } from './components/pet-edit-dialog/pet-edit-dialog.component';
+import { PetAddDialogComponent } from './components/pet-add-dialog/pet-add-dialog.component'
 
 @NgModule({
 	declarations: [
@@ -40,7 +41,8 @@ import { PetEditDialogComponent } from './components/pet-edit-dialog/pet-edit-di
 		AdminEditPetComponent,
 		AdminEditVolonteerComponent,
 		LoginModalComponent,
-		PetEditDialogComponent
+		PetEditDialogComponent,
+  PetAddDialogComponent
 	],
 	imports: [
 		CommonModule,

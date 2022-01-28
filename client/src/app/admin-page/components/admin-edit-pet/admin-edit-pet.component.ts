@@ -7,6 +7,7 @@ import { MatSort } from '@angular/material/sort'
 import { MatTableDataSource } from '@angular/material/table'
 import { MatDialog } from '@angular/material/dialog'
 import { PetEditDialogComponent } from '../pet-edit-dialog/pet-edit-dialog.component'
+import { PetAddDialogComponent } from '../pet-add-dialog/pet-add-dialog.component'
 
 @Component({
 	selector: 'app-admin-edit-pet',
@@ -67,6 +68,9 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 			data: icon
 		})
 	}
+	openAddDialog() {
+		const dialog = this.dialog.open(PetAddDialogComponent)
+	}
 
 	applyFilter(event: Event) {
 		const filterValue = (event.target as HTMLInputElement).value
@@ -78,24 +82,8 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 	}
 
 	// public redirectToUpdate = (id: string) => {}
-	public redirectToDelete = (id: string) => {}
-	//Service for adding pets info
-	item: IAnimalsUnitInfo
-	curators: any[] = ['Куратор 1', 'Куратор 2']
-	onSubmit(form: IAnimalsUnitInfo): void {
-		this.item = {
-			name: form.name,
-			shelter_name: form.shelter_name,
-			curator: form.curator,
-			gender: form.gender,
-			breed: form.breed,
-			age: form.age,
-			short_info: form.short_info,
-			behavioral_features: form.behavioral_features,
-			wishes_for_shelter: form.wishes_for_shelter
-		}
-
-		this.apiServices.postNewAnimal(this.item).subscribe()
+	public redirectToDelete = (id: string) => {
+		console.log('test')
 	}
-	onCreateAnimal(): void {}
+	//Service for adding pets info
 }
