@@ -4,7 +4,7 @@ import { Router } from '@angular/router'
 import { ApiServices } from '@shared/services/api.service'
 import { Subscription } from 'rxjs'
 import { MatDialogRef } from '@angular/material/dialog'
-import { MatError } from '@angular/material/form-field'
+
 @Component({
 	selector: 'app-login-modal',
 	templateUrl: './login-modal.component.html',
@@ -46,10 +46,11 @@ export class LoginModalComponent implements OnInit, OnDestroy {
 			}
 
 			this.dialogRef.afterClosed().subscribe(() => this.router.navigate(['/admin']))
-			// this.getErrorMessage()
 		})
-	}
-	getErrorMessage() {
-		return 'Enter correct value'
+
+		this.loginForm.controls['email'].enable()
+		this.loginForm.controls['password'].enable()
+		this.loginForm.reset()
+		this.loginForm.setErrors({ incorrect: true })
 	}
 }
