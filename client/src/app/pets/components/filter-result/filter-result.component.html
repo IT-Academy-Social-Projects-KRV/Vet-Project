@@ -1,19 +1,18 @@
-<mat-card class="pet-card"  [routerLink]="['/animalsList', data.id]">
-	<div class="pet-card__wrapper">
-		<img class="pet-card__img" src="../../../assets/animalsPictures/animal_0{{ data.id }}.jpg"/>
-	</div>
-	<mat-card-header class="pet-card__card-header">
-		<mat-card-title class="pet-card__card-title">{{ data.name }}</mat-card-title>
-	</mat-card-header>
-	<mat-card-content class="pet-card__pet-info-container">
-		<mat-card-subtitle>Вік: <span class="pet-card__pet-info-item">{{ data.age }}</span>
-		</mat-card-subtitle>
-		<mat-card-subtitle>Стать:
-			<span class="pet-card__pet-info-item">{{ data.gender }}</span>
-		</mat-card-subtitle>
-		<mat-card-subtitle>Порода:
-			<span class="pet-card__pet-info-item">{{ data.breed }}</span>
-		</mat-card-subtitle>
-	</mat-card-content>
-</mat-card> 
-
+<mat-card class="pet-card" [routerLink]="['/animals-list', data.id]">
+  <div class="pet-card__wrapper">
+    <img class="pet-card__img" src="../../../assets/animalsPictures/animal_0{{ data.id }}.jpg" />
+  </div>
+  <mat-card-header class="pet-card__card-header">
+    <mat-card-title class="pet-card__card-title">{{ data.name }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="pet-card__pet-info-container">
+    <mat-card-subtitle>Вік: <span class="pet-card__pet-info-item">{{ data.age }}</span>
+    </mat-card-subtitle>
+    <mat-card-subtitle>Стать:
+      <span class="pet-card__pet-info-item">{{ data.gender }}</span>
+    </mat-card-subtitle>
+    <mat-card-subtitle>Порода:
+      <span class="pet-card__pet-info-item">{{ data.breed }}</span>
+    </mat-card-subtitle>
+  </mat-card-content>
+</mat-card>
