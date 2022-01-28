@@ -43,14 +43,14 @@ html {
 	color: white;
 }
 .error.mat-snack-bar-container{
-    background: rgb(0, 206, 0);
+    background: red;
 	color: white;
 }
 .info.mat-snack-bar-container{
     background: orange;
 	color: white;
 }
-.mat-button-wrapper{
+.mat-snack-bar-container .mat-button-wrapper{
 color: white;
 }
 

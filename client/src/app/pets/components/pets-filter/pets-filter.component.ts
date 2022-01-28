@@ -26,15 +26,19 @@ export class PetsFilterComponent implements OnInit, OnDestroy {
 		curator: ''
 	}
 	paramsArr = []
+	subscriptionStatus: boolean
 	notifySub: Subscription
 
 	constructor(private apiServices: ApiServices, private notifierService: NotifierService) {}
 
 	ngOnInit(): void {
+		this.subscriptionStatus = false
 		this.petsInfo$ = this.apiServices.getAnimalsInfo()
 	}
 	ngOnDestroy() {
-		this.notifySub.unsubscribe()
+		if (this.subscriptionStatus) {
+			this.notifySub.unsubscribe()
+		}
 	}
 	onSubmite(): void {
 		this.paramsArr = []
@@ -62,13 +66,14 @@ export class PetsFilterComponent implements OnInit, OnDestroy {
 		this.animalFilterInfo$ = this.apiServices.getAnimalsFilterInfo(url)
 
 		this.notifySub = this.apiServices.getAnimalsFilterInfo(url).subscribe(item => {
+			this.subscriptionStatus = true
 			if (item.length == 0) {
-				this.notifierService.showAnimalInfoNotification(
-					'З такими параметрами нажаль нічого немає =(',
+				this.notifierService.showInfoNotification(
+					'З такими параметрами, нажаль, нічого немає =(',
 					'Ok'
 				)
 			} else {
-				this.notifierService.showAnimalResultNotification(
+				this.notifierService.showSuccessNotification(
 					`Ми знайшли для Вас ${item.length} тварин =)`,
 					'Ok'
 				)

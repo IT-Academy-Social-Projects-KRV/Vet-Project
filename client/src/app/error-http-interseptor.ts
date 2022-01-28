@@ -19,18 +19,16 @@ export class ErrorHttpInterseptor implements HttpInterceptor {
 		} else {
 			console.error(`Backend returned code ${error.status}, body was: `, error.error)
 		}
-		// this.notifierService.showNotification()
 		return throwError('Щось пішло не так; Спробуйте, будь ласка, пізніше. =(')
 	}
 
 	intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-		next.handle(req).pipe(
-			catchError(err => {
-				console.log('Handling error locally and rethrowing it...', err)
-				return throwError(err)
-			})
+		next.handle(req).subscribe(
+			item => {},
+			error => {
+				this.notifierService.showErrorNotification('Щось пішло не так, спробуйте пізніше.', 'Ok')
+			}
 		)
-
 		return next.handle(req).pipe(catchError(this.handleError))
 	}
 }

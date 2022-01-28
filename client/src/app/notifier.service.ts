@@ -7,7 +7,7 @@ import { MatSnackBar } from '@angular/material/snack-bar'
 export class NotifierService {
 	constructor(public snackBar: MatSnackBar) {}
 
-	showAnimalResultNotification(displayMessage: string, buttonText: string) {
+	showSuccessNotification(displayMessage: string, buttonText: string) {
 		this.snackBar.open(displayMessage, buttonText, {
 			duration: 5000,
 			horizontalPosition: 'right',
@@ -15,7 +15,7 @@ export class NotifierService {
 			panelClass: 'success'
 		})
 	}
-	showAnimalInfoNotification(displayMessage: string, buttonText: string) {
+	showInfoNotification(displayMessage: string, buttonText: string) {
 		this.snackBar.open(displayMessage, buttonText, {
 			duration: 5000,
 			horizontalPosition: 'right',
@@ -23,7 +23,12 @@ export class NotifierService {
 			panelClass: 'info'
 		})
 	}
-	showNotification() {
-		alert(3)
+	showErrorNotification(displayMessage: string, buttonText: string) {
+		this.snackBar.open(displayMessage, buttonText, {
+			duration: 5000,
+			horizontalPosition: 'right',
+			verticalPosition: 'top',
+			panelClass: 'error'
+		})
 	}
 }
