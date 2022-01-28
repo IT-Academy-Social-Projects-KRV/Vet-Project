@@ -19,6 +19,10 @@ export class VetAddDialogComponent {
 		this.dialogRef.close()
 	}
 
+	getVets() {
+		this.apiServices.getVetDetails().subscribe()
+	}
+
 	item: IVetsUnitInfo
 
 	onCreateClinic(form: IVetsUnitInfo): void {
@@ -31,6 +35,7 @@ export class VetAddDialogComponent {
 		}
 		// Send Http request
 		this.apiServices.postNewClinic(this.item).subscribe()
+		this.getVets()
 		this.dialogRef.close()
 	}
 }

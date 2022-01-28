@@ -62,7 +62,7 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 		}
 	}
 
-	private getVets() {
+	getVets() {
 		this.apiServices.getVetDetails().subscribe(response => {
 			this.dataSource.data = response
 		})
@@ -74,8 +74,6 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 			disableClose: false
 		})
 	}
-
-	public redirectToDelete = (id: string) => {}
 
 	item: IVetsUnitInfo
 
@@ -89,9 +87,12 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 		}
 		// Send Http request
 		this.apiServices.postNewClinic(this.item).subscribe()
+		this.getVets()
 	}
 
-	onDeleteClinic(): void {
-		//...
+	onDeleteClinic(form: IVetsUnitInfo): void {
+		this.item = { id: form.id }
+		this.apiServices.deleteClinic(this.item.id).subscribe()
+		this.getVets()
 	}
 }
