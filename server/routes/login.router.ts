@@ -1,5 +1,5 @@
 import { Router} from 'express'
-import db from '../db';
+import db from '../db'
 import * as bcrypt from 'bcryptjs'
 import * as jwt from 'jsonwebtoken'
 
@@ -40,6 +40,14 @@ router.post ('/', async function login(req, res){
 	} 
 	
 })
+
+
+
+
+
+
+	
+
 	
 
 export default router;

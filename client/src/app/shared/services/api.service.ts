@@ -8,9 +8,13 @@ import { IVetServices, IVetsInfo } from '../interfaces/vetInfo'
 import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
 import { IVolonteersInfo } from '../interfaces/volonteers'
 
-import { ApiPaths, baseUrl } from '../path-api'
-import { ILoginUSer } from '@shared/interfaces/login'
 import { catchError } from 'rxjs/operators'
+
+import { ILoginUSer } from '@shared/interfaces/login'
+
+import { ApiUrlBuilder } from '../api-url-builder'
+
+let apiUrlBuilder = new ApiUrlBuilder()
 @Injectable({
 	providedIn: 'root'
 })
@@ -21,65 +25,55 @@ export class ApiServices {
 	constructor(private http: HttpClient) {}
 
 	//FILTERS
-	getAnimalsFilterInfo(url) {
-		return this.http.get<IAnimalsInfo[]>(`${baseUrl}${ApiPaths.filter}${url}`)
+
+	getAnimalsFilterInfo(url: any): Observable<IAnimalsInfo[]> {
+		return this.http.get<IAnimalsInfo[]>(apiUrlBuilder.getAnimalsFilterInfoUrl(url))
 	}
 
 	////////////////////////PET////////////////////////
-	getAnimalsInfo() {
-		return this.http.get<IAnimalsInfo[]>(`${baseUrl}/${ApiPaths.animals}`)
+
+	getAnimalsInfo(): Observable<IAnimalsInfo[]> {
+		return this.http.get<IAnimalsInfo[]>(apiUrlBuilder.getAnimalsInfoUrl())
 	}
 
-	getAnimalsUnitInfo(id) {
-		return this.http.get<IAnimalsUnitInfo>(`${baseUrl}/${ApiPaths.animals}/${id}`)
+	getAnimalsUnitInfo(id: string): Observable<IAnimalsUnitInfo> {
+		return this.http.get<IAnimalsUnitInfo>(apiUrlBuilder.getAnimalsUnitInfoUrl(id))
+	}
+
+	putEditAnimal(data: any) {
+		return this.http.put<{ [key: string]: any }>(apiUrlBuilder.getAnimalsInfoUrl(), data)
+	}
+	postNewAnimal(item: IAnimalsUnitInfo) {
+		return this.http.post<{ [key: string]: any }>(apiUrlBuilder.getAnimalsInfoUrl(), item)
 	}
 
 	////////////////////////VET/////////////////////////
-	getVetDetails() {
-		return this.http.get<IVetsInfo[]>(`${baseUrl}/${ApiPaths.vets}`)
+
+	getVetDetails(): Observable<IVetsInfo[]> {
+		return this.http.get<IVetsInfo[]>(apiUrlBuilder.getVetDetailsUrl())
 	}
 
-	getVetsUnitInfo(id) {
-		return this.http.get<IVetsUnitInfo[]>(`${baseUrl}/${ApiPaths.vets}/${id}`)
+	getVetsUnitInfo(id: string): Observable<IVetsUnitInfo[]> {
+		return this.http.get<IVetsUnitInfo[]>(apiUrlBuilder.getVetsUnitInfoUrl(id))
 	}
 
-	postNewClinic(item) {
-		return this.http.post<{ [key: string]: any }>(`${baseUrl}/${ApiPaths.vets}`, item).subscribe({
-			next: responseData => console.log(responseData),
-			error: e => console.error(e)
-		})
+	postNewClinic(item: IVetsUnitInfo) {
+		return this.http.post<{ [key: string]: any }>(apiUrlBuilder.getVetDetailsUrl(), item)
 	}
 
-	getVetServices() {
-		return this.http.get<IVetServices>(`${baseUrl}/${ApiPaths.services}`)
+	getVetServices(): Observable<IVetServices> {
+		return this.http.get<IVetServices>(apiUrlBuilder.getVetServicesUrl())
 	}
 
 	/////////////////////VOLONTEERS////////////////////////
-	getVolonteersInfo() {
-		return this.http.get<IVolonteersInfo>(`${baseUrl}/${ApiPaths.animals}`)
-	}
-	postNewAnimal(item) {
-		return this.http
-			.post<{ [key: string]: any }>(`${baseUrl}/${ApiPaths.animals}`, item)
-			.subscribe({
-				next: responseData => console.log(responseData),
-				error: e => console.error(e)
-			})
-	}
-
-	//////////////LOGIN///////////////////////////////////////
-	// login(user: ILoginUSer): Observable<{ token: string }> {
-	// 	return this.http.post<{ token: string }>(`${baseUrl}/${ApiPaths.login}`, user).pipe(
-	// 		tap(({ token }) => {
-	// 			localStorage.setItem('token', token)
-	// 			this.setToken(token)
-	// 		})
-	// 	)
+	// getVolonteersInfo() {
+	// 	return this.http.get<IVolonteersInfo>(`${baseUrl}/${ApiPaths.animals}`)
 	// }
 
+	//////////////LOGIN///////////////////////////////////////
+
 	login(user: ILoginUSer): Observable<{ token: string }> {
-		return this.http.post<{ token: string }>(`${baseUrl}/${ApiPaths.login}`, user).pipe(
-			catchError(this.handleError),
+		return this.http.post<{ token: string }>(apiUrlBuilder.getLoginUrl(), user).pipe(
 			tap(({ token }) => {
 				localStorage.setItem('token', token)
 				this.setToken(token)
@@ -113,4 +107,7 @@ export class ApiServices {
 
 		return throwError('Щось пішло не так; Спробуйте, будь ласка, пізніше. =(')
 	}
+	// getVolonteersInfo(): Observable<IVolonteersInfo> {
+	// 	return this.http.get<IVolonteersInfo>(`${baseUrl}//animals`).pipe(catchError(this.handleError))
+	// }
 }

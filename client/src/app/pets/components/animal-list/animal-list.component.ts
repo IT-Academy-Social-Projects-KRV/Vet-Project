@@ -1,4 +1,4 @@
-statusimport { Component, OnInit } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { Observable } from 'rxjs'
 import { ApiServices } from '../../../shared/services/api.service'
 import { IAnimalsInfo } from '@shared/interfaces/animals'

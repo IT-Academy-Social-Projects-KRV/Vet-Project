@@ -14,6 +14,7 @@ import { MatDialogModule } from '@angular/material/dialog'
 import { MatCardModule } from '@angular/material/card'
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { LoginInterceptor } from './admin-page/components/login-modal/login.interceptor'
+import { ErrorHttpInterseptor } from './error-http-interseptor'
 
 @NgModule({
 	declarations: [AppComponent, HeaderComponent, FooterComponent],
@@ -32,6 +33,11 @@ import { LoginInterceptor } from './admin-page/components/login-modal/login.inte
 			provide: HTTP_INTERCEPTORS,
 			multi: true,
 			useClass: LoginInterceptor
+		},
+		{
+			provide: HTTP_INTERCEPTORS,
+			multi: true,
+			useClass: ErrorHttpInterseptor
 		}
 	],
 	bootstrap: [AppComponent]
