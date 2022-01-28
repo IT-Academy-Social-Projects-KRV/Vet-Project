@@ -58,6 +58,10 @@ export class ApiServices {
 		return this.http.get<IVetServices>(builder.baseUrl().services().getUrl())
 	}
 
+	deleteAnimal(id) {
+		return this.http.delete<IAnimalsUnitInfo>(builder.baseUrl().animal().addId(id).getUrl())
+	}
+
 	/////////////////////VOLONTEERS////////////////////////
 	// getVolonteersInfo(): Observable<IVolonteersInfo> {
 	// 	return this.http.get<IVolonteersInfo>(`${baseUrl}//animals`).pipe(catchError(this.handleError))

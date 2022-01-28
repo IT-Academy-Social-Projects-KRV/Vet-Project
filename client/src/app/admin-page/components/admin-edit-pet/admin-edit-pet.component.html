@@ -1,8 +1,6 @@
 <section class="main__pet-edit-page">
   <button mat-raised-button
-   color="primary"
-   (click)="openAddDialog()"
-   >Primary</button>
+   color="primary"(click)="openAddDialog()">Додати Тварину</button>
    
       <mat-form-field appearance="standard">
         <mat-label>Пошук</mat-label>
@@ -70,9 +68,3 @@
       <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
    
 </section>
-
-
-
-<!-- deleteAnimal(id) {
-		return this.http.delete<IAnimalsUnitInfo>(builder.baseUrl().animal().addId(id).getUrl())
-	} -->

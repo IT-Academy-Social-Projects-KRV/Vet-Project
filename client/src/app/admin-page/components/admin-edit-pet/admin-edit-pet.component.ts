@@ -69,7 +69,11 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 		})
 	}
 	openAddDialog() {
-		const dialog = this.dialog.open(PetAddDialogComponent)
+		const dialog = this.dialog.open(PetAddDialogComponent, {
+			width: '500px',
+			height: '90%',
+			disableClose: true
+		})
 	}
 
 	applyFilter(event: Event) {
@@ -83,7 +87,8 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 
 	// public redirectToUpdate = (id: string) => {}
 	public redirectToDelete = (id: string) => {
-		console.log('test')
+		this.apiServices.deleteAnimal(id).subscribe()
+		this.fetchPets()
 	}
 	//Service for adding pets info
 }
