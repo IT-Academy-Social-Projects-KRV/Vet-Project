@@ -12,9 +12,9 @@ import { catchError } from 'rxjs/operators'
 
 import { ILoginUSer } from '@shared/interfaces/login'
 
-import { ApiUrlBuilder } from '../api-url-builder'
+import { UrlBuilder } from '../builder-url'
 
-let apiUrlBuilder = new ApiUrlBuilder()
+let builder = new UrlBuilder()
 @Injectable({
 	providedIn: 'root'
 })
@@ -26,43 +26,43 @@ export class ApiServices {
 
 	//FILTERS
 
-	getAnimalsFilterInfo(url: any): Observable<IAnimalsInfo[]> {
-		return this.http.get<IAnimalsInfo[]>(apiUrlBuilder.getAnimalsFilterInfoUrl(url))
+	getAnimalsFilterInfo(url): Observable<IAnimalsInfo[]> {
+		return this.http.get<IAnimalsInfo[]>(builder.baseUrl().animal().filter(url).getUrl())
 	}
 
 	////////////////////////PET////////////////////////
 
 	getAnimalsInfo(): Observable<IAnimalsInfo[]> {
-		return this.http.get<IAnimalsInfo[]>(apiUrlBuilder.getAnimalsInfoUrl())
+		return this.http.get<IAnimalsInfo[]>(builder.baseUrl().animal().getUrl())
 	}
 
-	getAnimalsUnitInfo(id: string): Observable<IAnimalsUnitInfo> {
-		return this.http.get<IAnimalsUnitInfo>(apiUrlBuilder.getAnimalsUnitInfoUrl(id))
+	getAnimalsUnitInfo(id): Observable<IAnimalsUnitInfo> {
+		return this.http.get<IAnimalsUnitInfo>(builder.baseUrl().animal().addId(id).getUrl())
 	}
 
-	putEditAnimal(data: any) {
-		return this.http.put<{ [key: string]: any }>(apiUrlBuilder.getAnimalsInfoUrl(), data)
+	postNewAnimal(item) {
+		return this.http.post<{ [key: string]: any }>(builder.baseUrl().animal().getUrl(), item)
 	}
-	postNewAnimal(item: IAnimalsUnitInfo) {
-		return this.http.post<{ [key: string]: any }>(apiUrlBuilder.getAnimalsInfoUrl(), item)
+	putEditAnimal(data) {
+		return this.http.put<{ [key: string]: any }>(builder.baseUrl().animal().getUrl(), data)
 	}
 
 	////////////////////////VET/////////////////////////
 
 	getVetDetails(): Observable<IVetsInfo[]> {
-		return this.http.get<IVetsInfo[]>(apiUrlBuilder.getVetDetailsUrl())
+		return this.http.get<IVetsInfo[]>(builder.baseUrl().vet().getUrl())
 	}
 
-	getVetsUnitInfo(id: string): Observable<IVetsUnitInfo[]> {
-		return this.http.get<IVetsUnitInfo[]>(apiUrlBuilder.getVetsUnitInfoUrl(id))
+	getVetsUnitInfo(id): Observable<IVetsUnitInfo[]> {
+		return this.http.get<IVetsUnitInfo[]>(builder.baseUrl().vet().addId(id).getUrl())
 	}
 
-	postNewClinic(item: IVetsUnitInfo) {
-		return this.http.post<{ [key: string]: any }>(apiUrlBuilder.getVetDetailsUrl(), item)
+	postNewClinic(item) {
+		return this.http.post<{ [key: string]: any }>(builder.baseUrl().vet().getUrl(), item)
 	}
 
 	getVetServices(): Observable<IVetServices> {
-		return this.http.get<IVetServices>(apiUrlBuilder.getVetServicesUrl())
+		return this.http.get<IVetServices>(builder.baseUrl().services().getUrl())
 	}
 
 	/////////////////////VOLONTEERS////////////////////////
@@ -73,7 +73,7 @@ export class ApiServices {
 	//////////////LOGIN///////////////////////////////////////
 
 	login(user: ILoginUSer): Observable<{ token: string }> {
-		return this.http.post<{ token: string }>(apiUrlBuilder.getLoginUrl(), user).pipe(
+		return this.http.post<{ token: string }>(builder.baseUrl().login().getUrl(), user).pipe(
 			tap(({ token }) => {
 				localStorage.setItem('token', token)
 				this.setToken(token)
