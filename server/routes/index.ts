@@ -12,5 +12,4 @@ router.use('/services/', servicesRouter)
 router.use('/vetservices/', vetServicesRouter)
 router.use('/animals/', animalsRouter)
 router.use('/animals/filter/',animalFilterRouter)
-
 export default router
