@@ -1,0 +1,24 @@
+<form class="example-form" (ngSubmit)="onCreateClinic(f.value)" #f="ngForm">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Назва клініки</mat-label>
+    <input matInput value="" name="title" ngModel required />
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Адреса</mat-label>
+    <input matInput value="" name="adress" ngModel required />
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Номер телефону</mat-label>
+    <input matInput value="" name="phone" ngModel required />
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Електронна пошта</mat-label>
+    <input matInput type="email" value="gmail@gmail.com" name="email" ngModel email="true" required />
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>I-frame google-карти клініки</mat-label>
+    <textarea matInput value="" name="map_link" ngModel></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" [disabled]="!f.valid">Додати клініку</button>
+</form>
