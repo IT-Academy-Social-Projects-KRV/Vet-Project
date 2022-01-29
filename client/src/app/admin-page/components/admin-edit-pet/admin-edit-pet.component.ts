@@ -90,5 +90,4 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 		this.apiServices.deleteAnimal(id).subscribe()
 		this.fetchPets()
 	}
-	//Service for adding pets info
 }

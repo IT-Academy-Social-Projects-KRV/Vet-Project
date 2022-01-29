@@ -1,11 +1,14 @@
 <section class="main__pet-edit-page">
-  <button mat-raised-button
-   color="primary"(click)="openAddDialog()">Додати Тварину</button>
-   
+ 
+  <div class="add-modal-trigger">
       <mat-form-field appearance="standard">
-        <mat-label>Пошук</mat-label>
+          <mat-label>Пошук</mat-label>
         <input matInput (keyup)="applyFilter($event)" placeholder="Почніть писати" #input>
       </mat-form-field>
+      <button mat-raised-button
+      color="primary"(click)="openAddDialog()">Додати Тварину
+      </button>
+    </div>
 
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table" matSort>
         <!-- Position Column -->
