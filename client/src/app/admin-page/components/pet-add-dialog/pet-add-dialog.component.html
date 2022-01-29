@@ -1,5 +1,7 @@
 <mat-card-content>
+   
     <form class="example-form" (ngSubmit)='onCreateAnimal(f.value)' #f='ngForm'>
+        <div class="modal">
        <div class="left">
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Назва(кличка)</mat-label>
@@ -21,14 +23,14 @@
                 <mat-label>Притулок</mat-label>
                 <input matInput name="shelter_name" ngModel required>
               </mat-form-field>
-            </div>
-        <div class="right">
-            <mat-form-field appearance="fill">
+              <mat-form-field appearance="fill">
                 <mat-label>Куратор</mat-label>
                 <mat-select ngModel name='curator'>
                   <mat-option *ngFor="let curator of curators" [value]="curator">{{curator}}</mat-option>
                 </mat-select>
               </mat-form-field>
+            </div>
+        <div class="right">
               <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Історія</mat-label>
                 <textarea rows="4" matInput name="short_info" ngModel></textarea>
@@ -42,6 +44,7 @@
                 <textarea rows="4" matInput name="wishes_for_shelter" ngModel></textarea>
               </mat-form-field>
             </div>
+        </div>
               <mat-dialog-actions align="center">
                 <button
                 mat-raised-button color="primary" [disabled]="!f.valid">Підтвердити</button>

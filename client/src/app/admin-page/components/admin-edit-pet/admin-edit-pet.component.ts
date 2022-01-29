@@ -70,8 +70,6 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 	}
 	openAddDialog() {
 		const dialog = this.dialog.open(PetAddDialogComponent, {
-			width: '500px',
-			height: '90%',
 			disableClose: true
 		})
 	}
