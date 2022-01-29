@@ -36,3 +36,21 @@ button {
 html {
 	scroll-behavior: smooth;
 }
+
+// / snackbar
+.success.mat-snack-bar-container{
+    background: rgb(0, 206, 0);
+	color: white;
+}
+.error.mat-snack-bar-container{
+    background: red;
+	color: white;
+}
+.info.mat-snack-bar-container{
+    background: orange;
+	color: white;
+}
+.mat-snack-bar-container .mat-button-wrapper{
+color: white;
+}
+

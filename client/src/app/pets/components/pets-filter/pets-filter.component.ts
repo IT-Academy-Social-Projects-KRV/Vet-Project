@@ -1,20 +1,21 @@
 /* eslint-disable @angular-eslint/use-lifecycle-interface */
 /* eslint-disable no-unused-vars */
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, OnDestroy } from '@angular/core'
 
-import { Observable } from 'rxjs'
+import { Observable, Subscription } from 'rxjs'
 
 import { IAnimalInfo } from 'src/app/shared/interfaces/animals-filter-info'
 
 import { ApiServices } from '../../../shared/services/api.service'
 import { IAnimalsInfo } from '@shared/interfaces/animals'
+import { NotifierService } from 'src/app/notifier.service'
 
 @Component({
 	selector: 'app-pets-filter',
 	templateUrl: './pets-filter.component.html',
 	styleUrls: ['./pets-filter.component.scss']
 })
-export class PetsFilterComponent implements OnInit {
+export class PetsFilterComponent implements OnInit, OnDestroy {
 	public petsInfo$: Observable<IAnimalsInfo[]>
 	public animalFilterInfo$: Observable<IAnimalsInfo[]>
 
@@ -25,13 +26,20 @@ export class PetsFilterComponent implements OnInit {
 		curator: ''
 	}
 	paramsArr = []
+	subscriptionStatus: boolean
+	notifySub: Subscription
 
-	constructor(private apiServices: ApiServices) {}
+	constructor(private apiServices: ApiServices, private notifierService: NotifierService) {}
 
 	ngOnInit(): void {
+		this.subscriptionStatus = false
 		this.petsInfo$ = this.apiServices.getAnimalsInfo()
 	}
-
+	ngOnDestroy() {
+		if (this.subscriptionStatus) {
+			this.notifySub.unsubscribe()
+		}
+	}
 	onSubmite(): void {
 		this.paramsArr = []
 		this.checkParams()
@@ -56,5 +64,20 @@ export class PetsFilterComponent implements OnInit {
 
 	getAnimalsInfo(url): void {
 		this.animalFilterInfo$ = this.apiServices.getAnimalsFilterInfo(url)
+
+		this.notifySub = this.apiServices.getAnimalsFilterInfo(url).subscribe(item => {
+			this.subscriptionStatus = true
+			if (item.length == 0) {
+				this.notifierService.showInfoNotification(
+					'З такими параметрами, нажаль, нічого немає =(',
+					'Ok'
+				)
+			} else {
+				this.notifierService.showSuccessNotification(
+					`Ми знайшли для Вас ${item.length} тварин =)`,
+					'Ok'
+				)
+			}
+		})
 	}
 }
