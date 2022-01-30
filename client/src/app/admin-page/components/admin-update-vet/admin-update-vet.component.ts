@@ -3,8 +3,7 @@ import { ActivatedRoute } from '@angular/router'
 import { IVetsInfo, IVetServices } from '@shared/interfaces/vetInfo'
 import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
 import { ApiServices } from '@shared/services/api.service'
-import { map, Observable } from 'rxjs'
-import { VetsModule } from 'src/app/vets/vets.module'
+import { Observable } from 'rxjs'
 import { UpdateVetComponent } from '../update-vet/update-vet.component'
 import { MatDialog } from '@angular/material/dialog'
 
@@ -16,7 +15,7 @@ import { MatDialog } from '@angular/material/dialog'
 export class AdminUpdateVetComponent implements OnInit {
 	displayedColumns: string[] = ['id', 'title', 'adress']
 
-	vetsInfo$: Observable<any>
+	vetsInfo$: Observable<Array<IVetsUnitInfo>>
 
 	constructor(private apiServices: ApiServices, private _dialog: MatDialog) {}
 
@@ -25,7 +24,7 @@ export class AdminUpdateVetComponent implements OnInit {
 	}
 	openDialog(row: IVetsInfo) {
 		const dialog = this._dialog.open(UpdateVetComponent, {
-			width: '800px',
+			width: '1200px',
 			// Can be closed only by clicking the close button
 			disableClose: true,
 			data: row

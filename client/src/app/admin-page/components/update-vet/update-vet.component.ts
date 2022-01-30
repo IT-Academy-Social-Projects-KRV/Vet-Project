@@ -14,7 +14,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
 	styleUrls: ['./update-vet.component.scss']
 })
 export class UpdateVetComponent implements OnInit {
-	vetsInfo$: Observable<IVetsUnitInfo>
+	vetsInfo$: Observable<any>
 	id: string
 	item: IVetsUnitInfo
 	constructor(
@@ -22,12 +22,13 @@ export class UpdateVetComponent implements OnInit {
 		private apiServices: ApiServices,
 		public dialogRef: MatDialogRef<UpdateVetComponent>,
 		@Inject(MAT_DIALOG_DATA) public data: any
-	) {}
-
-	ngOnInit(): void {
+	) {
 		this.Activatedroute.paramMap.subscribe(params => {
 			this.id = params.get('id')
 		})
+	}
+
+	ngOnInit() {
 		this.vetsInfo$ = this.apiServices.getVetsUnitInfo(this.id)
 	}
 

@@ -2,22 +2,22 @@
   <form class="example-form" (ngSubmit)='onUpdateVet(f.value)' #f='ngForm'>
     <mat-form-field>
       <mat-label>Назва клініки</mat-label>
-      <input matInput name="title" ngModel required>
+      <input matInput name="title" ngModel required placeholder="title" [(ngModel)]="data.title">
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Адреса клініки</mat-label>
-      <input matInput name="adress" ngModel required>
+      <input matInput name="adress" ngModel required placeholder="adress" [(ngModel)]="data.adress">
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Телефон клініки</mat-label>
-      <input matInput name="phone" ngModel required>
+      <input matInput name="phone" ngModel required placeholder="phone" [(ngModel)]="data.phone">
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>E-mail клініки</mat-label>
-      <input matInput name="email" ngModel required>
+      <input matInput name="email" ngModel required placeholder="email" [(ngModel)]="data.email">
     </mat-form-field>
 
     <button type="submit" mat-button>Змінити</button>

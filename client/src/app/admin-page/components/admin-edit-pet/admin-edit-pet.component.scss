@@ -2,6 +2,7 @@
 	margin: 15px 50px;
 }
 .example-form {
+	margin: 40px auto 15px;
 	min-width: 150px;
 	max-width: 500px;
 	width: 100%;
@@ -18,10 +19,9 @@ mat-form-field {
 	width: 100%;
 }
 
-.demo-button-container {
-	padding-bottom: 16px;
-}
-
-.demo-button + .demo-button {
-	margin-left: 8px;
+.mat-row {
+	background-color: transparent;
+	&:hover {
+		background-color: #4788b6;
+	}
 }

@@ -1,87 +1,41 @@
 <section class="main__vet-edit-page">
-    <form class="example-form">
-        <table class="example-full-width" cellspacing="0">
-            <tr>
-                <td>
-                    <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>Скорочена назва</mat-label>
-                        <input matInput>
-                    </mat-form-field>
-                </td>
-                <td>
-                    <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>Повна назва клініки</mat-label>
-                        <input matInput>
-                    </mat-form-field>
-                </td>
-            </tr>
-        </table>
+	<mat-tab-group mat-align-tabs="center">
+		<mat-tab label="Додати клініку">
+			<form class="example-form" (ngSubmit)="onCreateClinic(f.value)" #f="ngForm">
+				<mat-form-field class="example-full-width" appearance="fill">
+					<mat-label>Назва клініки</mat-label>
+					<input matInput value="" name="title" ngModel required />
+				</mat-form-field>
+				<mat-form-field class="example-full-width" appearance="fill">
+					<mat-label>Адреса</mat-label>
+					<input matInput value="" name="adress" ngModel required />
+				</mat-form-field>
+				<mat-form-field class="example-full-width" appearance="fill">
+					<mat-label>Номер телефону</mat-label>
+					<input matInput value="" name="phone" ngModel required />
+				</mat-form-field>
+				<mat-form-field class="example-full-width" appearance="fill">
+					<mat-label>Електронна пошта</mat-label>
+					<input matInput type="email" value="gmail@gmail.com" name="email" ngModel email="true" required />
+				</mat-form-field>
+				<mat-form-field class="example-full-width" appearance="fill">
+					<mat-label>I-frame google-карти клініки</mat-label>
+					<textarea matInput value="" name="map_link" ngModel></textarea>
+				</mat-form-field>
 
-        <p>
-            <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Вулиця</mat-label>
-                <textarea matInput placeholder="вулиця">вул. Соборна</textarea>
-            </mat-form-field>
-        </p>
-
-        <table class="example-full-width" cellspacing="0">
-            <tr>
-                <td>
-                    <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>будинок</mat-label>
-                        <input matInput placeholder="номер будинку">
-                    </mat-form-field>
-                </td>
-                <td>
-
-                </td>
-                <td>
-                    <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>Індекс</mat-label>
-                        <input matInput #postalCode maxlength="5" placeholder="33000" value="33000">
-                        <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
-                    </mat-form-field>
-                </td>
-            </tr>
-        </table>
-        <table class="example-full-width" cellspacing="0">
-            <tr>
-
-                <td>
-                    <h4>Спеціалізація по типу тварин</h4>
-                    <mat-form-field appearance="fill">
-                        <mat-label>Тип тварин</mat-label>
-                        <mat-select [formControl]="animalControl" required>
-                            <mat-option>--</mat-option>
-                            <mat-option *ngFor="let animal of animals" [value]="animal">
-                                {{animal.name}}
-                            </mat-option>
-                        </mat-select>
-                        <mat-error *ngIf="animalControl.hasError('required')">Виберіть тип тварини</mat-error>
-                    </mat-form-field>
-                </td>
-                <td>
-
-                    <h4>Спеціалізація</h4>
-                    <mat-form-field appearance="fill">
-                        <mat-label>Cпеціалізація</mat-label>
-                        <mat-select [formControl]="vetSpecialization" required>
-                            <mat-option>--</mat-option>
-                            <mat-option *ngFor="let spec of specialization" [value]="spec">
-                                {{spec.name}}
-                            </mat-option>
-                        </mat-select>
-                        <mat-error *ngIf="animalControl.hasError('required')">Виберіть спеціалізацію</mat-error>
-                    </mat-form-field>
-
-
-                </td>
-            </tr>
-        </table>
-        <mat-selection-list #shoes>
-            <mat-list-option *ngFor="let shoe of typesOfShoes">
-                {{shoe}}
-            </mat-list-option>
-        </mat-selection-list>
-    </form>
+				<button mat-raised-button color="primary" [disabled]="!f.valid">Додати клініку</button>
+			</form>
+		</mat-tab>
+		<mat-tab label="Редагувати клініку">
+      <mat-form-field appearance="standard" style="width: 100%">
+        <mat-label>Фільтр</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Назва клініки" #input style="width: 100%">
+      </mat-form-field>
+      <app-admin-update-vet></app-admin-update-vet>
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+    </mat-tab>
+		<mat-tab label="Видалити клініку">
+			<button mat-raised-button color="warn">Exterminate all clinics</button>
+		</mat-tab>
+	</mat-tab-group>
 </section>
