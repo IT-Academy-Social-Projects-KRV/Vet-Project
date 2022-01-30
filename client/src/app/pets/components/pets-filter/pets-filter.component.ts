@@ -1,8 +1,6 @@
-
 import { Component, OnInit } from '@angular/core'
 
 import { Observable } from 'rxjs'
-
 
 import { IAnimalInfo } from 'src/app/shared/interfaces/animals-filter-info'
 
