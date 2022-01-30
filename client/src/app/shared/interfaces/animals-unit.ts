@@ -1,5 +1,5 @@
 export interface IAnimalsUnitInfo {
-	id?: string
+	id?: number
 	name?: string
 	gender?: string
 	breed?: string

@@ -1,61 +1,78 @@
 @media (max-width: 800px) {
-  .wrapper {
-    max-width: none;
-  }
-  .vets-info-section__container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    flex-basis: calc(100% / 2);
-  }
+	.wrapper {
+		max-width: none;
+	}
+	.vets-info-section__container {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		flex-basis: calc(100% / 2);
+	}
 }
 .wrapper {
-  max-width: 1200px;
-  margin: 100px auto 0;
+	max-width: 1200px;
+	margin: 100px auto 0;
 }
 
 .vets-info-section__title {
-  margin-bottom: 50px;
-  text-align: center;
-  font-size: 36px;
-  color: #4788b6;
-  font-weight: 600;
-  padding-top: 25px;
+	margin-bottom: 50px;
+	text-align: center;
+	font-size: 36px;
+	color: #4788b6;
+	font-weight: 600;
+	padding-top: 25px;
 }
 
 .vets-info-section__container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  flex-basis: calc(100% / 3);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	flex-basis: calc(100% / 3);
 }
 
 .vets-info-section__info-wrapper_text-bold {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 .vets-info-section__img {
-  object-fit: cover;
-  display: block;
-  height: 300px;
+	object-fit: cover;
+	display: block;
+	height: 300px;
 }
 .vets-info-section__img-wrapper {
-  flex: 1 1 300px;
+	flex: 1 1 300px;
 }
 .vets-info-section__info-wrapper {
-  flex: 1 1 300px;
+	flex: 1 1 300px;
 }
 .vet__box_container-map {
-  flex: 1 1 300px;
+	flex: 1 1 300px;
 }
 .vets-info-section__info_working-hours {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+	padding: 0;
+	margin: 0;
+	list-style: none;
 }
 .vets-info-section__info_working-hours-blue {
-  color: #4788b6;
+	color: #4788b6;
 }
 .vets-info-section__info_working-hours-red {
-  color: #bd2237;
+	color: #bd2237;
+}
+
+.vet-btn1 {
+	margin-top: 30px;
+	margin-left: 420px;
+	font-size: 24px;
+	color: #4788b6;
+	background-color: white;
+	height: 50px;
+	width: 350px;
+	border: 1px solid;
+
+	&:hover {
+		color: #d68427;
+		border-color: #d68427;
+		cursor: pointer;
+	}
 }

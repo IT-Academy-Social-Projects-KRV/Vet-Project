@@ -65,6 +65,10 @@ export class ApiServices {
 		return this.http.get<IVetServices>(builder.baseUrl().services().getUrl())
 	}
 
+	deleteClinic(id) {
+		return this.http.delete<IVetsInfo>(builder.baseUrl().vet().addId(id).getUrl())
+	}
+
 	/////////////////////VOLONTEERS////////////////////////
 	// getVolonteersInfo() {
 	// 	return this.http.get<IVolonteersInfo>(`${baseUrl}/${ApiPaths.animals}`)

@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatSelectModule } from '@angular/material/select'
 import { FormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 import { AnimalPageComponent } from './pages/animal-list-page/animal-page.component'
 import { AnimalListCardComponent } from '@shared/components/animal-list-card/animal-list-card.component'
@@ -33,7 +34,8 @@ import { FilterResultComponent } from './components/filter-result/filter-result.
 		PetsRoutingModule,
 		MatSelectModule,
 		FormsModule,
-		HttpClientModule
+		HttpClientModule,
+		MatSnackBarModule
 	],
 	exports: [AnimalListCardComponent]
 })

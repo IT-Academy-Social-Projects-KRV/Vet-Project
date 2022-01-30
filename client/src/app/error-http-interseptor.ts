@@ -6,10 +6,13 @@ import {
 	HttpRequest
 } from '@angular/common/http'
 import { Injectable } from '@angular/core'
-import { catchError, Observable, retry, throwError } from 'rxjs'
+import { catchError, Observable, throwError } from 'rxjs'
+import { NotifierService } from './notifier.service'
 
 @Injectable()
 export class ErrorHttpInterseptor implements HttpInterceptor {
+	constructor(private notifierService: NotifierService) {}
+
 	private handleError(error: HttpErrorResponse) {
 		if (error.status === 0) {
 			console.error('An error occurred:', error.error)
@@ -20,6 +23,12 @@ export class ErrorHttpInterseptor implements HttpInterceptor {
 	}
 
 	intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-		return next.handle(req).pipe(retry(2), catchError(this.handleError))
+		next.handle(req).subscribe(
+			item => {},
+			error => {
+				this.notifierService.showErrorNotification('Щось пішло не так, спробуйте пізніше.', 'Ok')
+			}
+		)
+		return next.handle(req).pipe(catchError(this.handleError))
 	}
 }

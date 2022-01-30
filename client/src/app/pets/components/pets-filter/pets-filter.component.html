@@ -1,61 +1,58 @@
 <h3 class="filter-title">Знайди нового друга</h3>
-<form  class="form-filter" *ngIf ="(petsInfo$ | async) as petsInfo">
-	<div class="main-wrap">
-		<div class="child-wrap">
-			<div class="input-wrapper">
-				<label class="form-filter__label" for="gender">Стать</label>
-				<select id="gender" name="gender" [(ngModel)]="animal.gender" class="form-filter__input">
-					<option></option>
-					<option value="M" >M</option>
-					<option value="F">F</option>
-				</select>
-			</div>
+<form class="form-filter" *ngIf="(petsInfo$ | async) as petsInfo">
+  <div class="main-wrap">
+    <div class="child-wrap">
+      <div class="input-wrapper">
+        <label class="form-filter__label" for="gender">Стать</label>
+        <select id="gender" name="gender" [(ngModel)]="animal.gender" class="form-filter__input">
+          <option></option>
+          <option value="M">M</option>
+          <option value="F">F</option>
+        </select>
+      </div>
 
-			<div class="input-wrapper">
-				<label class="form-filter__label" for="breed">Порода</label>
-				<select id="breed" name="breed" [(ngModel)]="animal.breed" class="form-filter__input">
-					<option></option>
-					<option *ngFor = 'let item of petsInfo'>
-						{{item.breed}}
-					</option>
-				
-				</select>
-			</div>
-		</div>
+      <div class="input-wrapper">
+        <label class="form-filter__label" for="breed">Порода</label>
+        <select id="breed" name="breed" [(ngModel)]="animal.breed" class="form-filter__input">
+          <option></option>
+          <option *ngFor='let item of petsInfo'>
+            {{item.breed}}
+          </option>
 
-		<div class="child-wrap">
-			<div class="input-wrapper">
-				<label class="form-filter__label" for="age">Вік</label>
-				<select id="age" name="age" [(ngModel)]="animal.age" class="form-filter__input">
-					<option></option>
-					<option *ngFor = 'let item of petsInfo'>
-						{{item.age}}
-					</option>
-					
-				</select>
-			</div>
+        </select>
+      </div>
+    </div>
 
-			<div class="input-wrapper">
-				<label class="form-filter__label" for="curator">Куратор</label>
-				<select id="curator" name="curator" [(ngModel)]="animal.curator" class="form-filter__input">
-					<option></option>
-					<option value="Мамчур Аліса Бекішівна">Мамчур Аліса Бекішівна</option>
-					<option value="Наталія Канюк">Наталія Канюк</option>
-					
-				</select>
-			</div>
-		</div>
-	</div>
+    <div class="child-wrap">
+      <div class="input-wrapper">
+        <label class="form-filter__label" for="age">Вік</label>
+        <select id="age" name="age" [(ngModel)]="animal.age" class="form-filter__input">
+          <option></option>
+          <option *ngFor='let item of petsInfo'>
+            {{item.age}}
+          </option>
 
-	<button class="form-filter-btn" type="submit" (click)="onSubmite()">Знайти</button>
+        </select>
+      </div>
+
+      <div class="input-wrapper">
+        <label class="form-filter__label" for="curator">Куратор</label>
+        <select id="curator" name="curator" [(ngModel)]="animal.curator" class="form-filter__input">
+          <option></option>
+          <option value="Мамчур Аліса Бекішівна">Мамчур Аліса Бекішівна</option>
+          <option value="Наталія Канюк">Наталія Канюк</option>
+
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <button class="form-filter-btn" type="submit" (click)="onSubmite()">Знайти</button>
 </form>
 
 <div class="wrap-filter-result">
-	<ng-container *ngIf ="(animalFilterInfo$ | async) as animalFilterInfo">
-		<app-filter-result *ngFor="let item of animalFilterInfo" [data]="item"></app-filter-result>
-	</ng-container>
+  <ng-container *ngIf="(animalFilterInfo$ | async) as animalFilterInfo">
+    <app-filter-result *ngFor="let item of animalFilterInfo" [data]="item"></app-filter-result>
+  </ng-container>
 </div>
 <p class="card-filter-title">Тваринки, які чекають саме Вас</p>
-
-
-

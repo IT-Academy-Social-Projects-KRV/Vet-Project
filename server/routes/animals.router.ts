@@ -129,6 +129,7 @@ router.delete(
   '/:id(\\d+)',
   async function deleteAnimalById(req, res) {
     const id = req.params.id
+    req.params.id = id
 
     try {
       const deletedAnimal = await db.query(

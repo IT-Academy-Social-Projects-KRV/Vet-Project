@@ -15,6 +15,7 @@ import { MatCardModule } from '@angular/material/card'
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { LoginInterceptor } from './admin-page/components/login-modal/login.interceptor'
 import { ErrorHttpInterseptor } from './error-http-interseptor'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 @NgModule({
 	declarations: [AppComponent, HeaderComponent, FooterComponent],
@@ -26,7 +27,8 @@ import { ErrorHttpInterseptor } from './error-http-interseptor'
 		HttpClientModule,
 		FormsModule,
 		MatDialogModule,
-		MatCardModule
+		MatCardModule,
+		MatSnackBarModule
 	],
 	providers: [
 		{
