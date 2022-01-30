@@ -4,8 +4,7 @@ import {
 	CanActivate,
 	CanActivateChild,
 	Router,
-	RouterStateSnapshot,
-	UrlTree
+	RouterStateSnapshot
 } from '@angular/router'
 import { ApiServices } from '@shared/services/api.service'
 import { Observable, of } from 'rxjs'

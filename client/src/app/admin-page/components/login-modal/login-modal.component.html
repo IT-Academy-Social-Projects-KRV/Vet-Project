@@ -17,6 +17,6 @@
   </mat-dialog-content>
   <mat-dialog-actions align="center">
     <button class="close-button" mat-button [mat-dialog-close]="true">Скасувати</button>
-    <button mat-button (click)="onSubmit()" [disabled]="loginForm.invalid || loginForm.disabled">Увійти</button>
+    <button mat-button [disabled]="loginForm.invalid || loginForm.disabled">Увійти</button>
   </mat-dialog-actions>
 </form>

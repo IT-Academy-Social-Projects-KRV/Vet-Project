@@ -1,9 +1,11 @@
+/* eslint-disable no-empty */
 import { Component, OnDestroy, OnInit } from '@angular/core'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router'
 import { ApiServices } from '@shared/services/api.service'
 import { Subscription } from 'rxjs'
 import { MatDialogRef } from '@angular/material/dialog'
+import { NotifierService } from 'src/app/notifier.service'
 
 @Component({
 	selector: 'app-login-modal',
@@ -18,7 +20,8 @@ export class LoginModalComponent implements OnInit, OnDestroy {
 	constructor(
 		private login: ApiServices,
 		private router: Router,
-		public dialogRef: MatDialogRef<LoginModalComponent>
+		public dialogRef: MatDialogRef<LoginModalComponent>,
+		private notifierService: NotifierService
 	) {}
 
 	ngOnInit(): void {
@@ -40,12 +43,11 @@ export class LoginModalComponent implements OnInit, OnDestroy {
 		}
 
 		this.aSUb = this.login.login(user).subscribe(() => {
-			if (this.login.isAuthenticated()) {
-				this.dialogRef.close()
-				this.dialogRef.afterClosed().subscribe(() => this.router.navigate(['/admin']))
-			}
+			this.dialogRef.close()
+			this.router.navigate(['/admin'])
+			this.notifierService.showSuccessNotification(`Вітаємо в особистому кабінеті`, 'Ok')
 		})
 
-		this.loginForm.reset()
+		setTimeout(() => this.loginForm.reset(), 350)
 	}
 }
