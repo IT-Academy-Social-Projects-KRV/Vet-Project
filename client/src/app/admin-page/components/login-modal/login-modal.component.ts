@@ -42,10 +42,12 @@ export class LoginModalComponent implements OnInit, OnDestroy {
 			password: this.loginForm.value.password
 		}
 
-		this.aSUb = this.login.login(user).subscribe(() => {
-			this.dialogRef.close()
-			this.router.navigate(['/admin'])
-			this.notifierService.showSuccessNotification(`Вітаємо в особистому кабінеті`, 'Ok')
+		this.aSUb = this.login.login(user).subscribe(item => {
+			if (item) {
+				this.dialogRef.close()
+				this.router.navigate(['/admin'])
+				this.notifierService.showSuccessNotification(`Вітаємо в особистому кабінеті`, 'Ok')
+			}
 		})
 
 		setTimeout(() => this.loginForm.reset(), 350)
