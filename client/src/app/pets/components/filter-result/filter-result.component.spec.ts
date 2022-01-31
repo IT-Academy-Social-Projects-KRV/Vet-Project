@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 
 import { FilterResultComponent } from './filter-result.component'

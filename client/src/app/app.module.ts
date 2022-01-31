@@ -13,6 +13,7 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatCardModule } from '@angular/material/card'
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
+import { LoginInterceptor } from './admin-page/components/login-modal/login.interceptor'
 import { ErrorHttpInterseptor } from './error-http-interseptor'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
 
@@ -32,8 +33,13 @@ import { MatSnackBarModule } from '@angular/material/snack-bar'
 	providers: [
 		{
 			provide: HTTP_INTERCEPTORS,
-			useClass: ErrorHttpInterseptor,
-			multi: true
+			multi: true,
+			useClass: LoginInterceptor
+		},
+		{
+			provide: HTTP_INTERCEPTORS,
+			multi: true,
+			useClass: ErrorHttpInterseptor
 		}
 	],
 	bootstrap: [AppComponent]
