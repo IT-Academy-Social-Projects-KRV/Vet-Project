@@ -2,7 +2,7 @@
   <h1 class="mat-h1">Статистика</h1>
   <mat-grid-list cols="4" rowHeight="250px">
     <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
-      <mat-card class="dashboard-car)d">
+      <mat-card class="dashboard-card">
         <mat-card-header>
           <mat-card-title>
             {{card.title}}
