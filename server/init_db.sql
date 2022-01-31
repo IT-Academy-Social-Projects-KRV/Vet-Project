@@ -43,9 +43,6 @@ password varchar(250) NOT NULL
 );
 
 
-
-
-
 INSERT INTO animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
 VALUES (1, 'Colobus, magistrate black', 'F', 'Colobus guerza', 1, 'Приватний притулок для собак', 'Мамчур Аліса Бекішівна', 'Маленьку дівчинку підібрали та принесли до притулку', 'Міка дуже ніжна кішечка, любить ласку і увагу, обожнює гратися.', 'Подарує своєму господареві радість і всю свою неосяжну любов!');
 INSERT INTO  animals (id, name, gender, breed, age, shelter_name, curator,  short_info, behavioral_features, wishes_for_shelter) 

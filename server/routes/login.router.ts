@@ -3,12 +3,7 @@ import db from '../db'
 import * as bcrypt from 'bcryptjs'
 import * as jwt from 'jsonwebtoken'
 
-
 const router = Router()
-
-
-
-
 
 router.post ('/', async function login(req, res){
 	const tokenKey = 'dev-jwt'
@@ -40,14 +35,5 @@ router.post ('/', async function login(req, res){
 	} 
 	
 })
-
-
-
-
-
-
-	
-
-	
 
 export default router;
