@@ -92,7 +92,6 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 
 	onDeleteClinic(form: IVetsUnitInfo): void {
 		this.item = { id: form.id }
-		this.apiServices.deleteClinic(this.item.id).subscribe()
-		this.getVets()
+		this.apiServices.deleteClinic(this.item.id).subscribe(() => this.getVets())
 	}
 }
