@@ -18,6 +18,8 @@ import { MatTableModule } from '@angular/material/table'
 import { MatPaginatorModule } from '@angular/material/paginator'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatDialogModule } from '@angular/material/dialog'
+import { LogoutModalComponent } from './components/logout-modal/logout-modal.component'
+
 import { MatTabsModule } from '@angular/material/tabs'
 import { MatTreeModule } from '@angular/material/tree'
 import { MatSortModule } from '@angular/material/sort'
@@ -42,6 +44,7 @@ import { VetAddDialogComponent } from './components/vet-add-dialog/vet-add-dialo
 		AdminEditPetComponent,
 		AdminEditVolonteerComponent,
 		LoginModalComponent,
+		LogoutModalComponent,
 		PetEditDialogComponent,
 		PetAddDialogComponent,
 		VetAddDialogComponent
