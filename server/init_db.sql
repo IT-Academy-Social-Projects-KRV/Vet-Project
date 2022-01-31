@@ -41,6 +41,14 @@ id SERIAL PRIMARY KEY,
 email varchar(250) NOT NULL UNIQUE,
 password varchar(250) NOT NULL
 );
+create table volonteers (
+	id INT,
+	first_name VARCHAR(50),
+	last_name VARCHAR(50),
+	email VARCHAR(50),
+	number VARCHAR(50),
+	city VARCHAR(50)
+);
 
 
 INSERT INTO animals (id, name, gender, breed, age, shelter_name, curator, short_info, behavioral_features, wishes_for_shelter) 
@@ -120,6 +128,19 @@ INSERT INTO animal_types
 
 INSERT INTO users ( id, email, password) VALUES (1 , 'admin@gmail.com', '$2a$10$qd7j8HJTlEgjtuvl6jNy0uV1mIS0zJuk2L9AayG1cYFLdlW5cYq3G')
 
+
+insert into volonteers (id, first_name, last_name, email, number, city) values (1, 'Dell', 'Dunleavy', 'ddunleavy0@digg.com', '(232) 3412231', 'Irtyshskiy');
+insert into volonteers (id, first_name, last_name, email, number, city) values (2, 'Hetty', 'Makeswell', 'hmakeswell1@usgs.gov', '(166) 9920801', 'Nuga');
+insert into volonteers (id, first_name, last_name, email, number, city) values (3, 'Evanne', 'Argrave', 'eargrave2@cbsnews.com', '(192) 5707074', 'Nishiwaki');
+insert into volonteers (id, first_name, last_name, email, number, city) values (4, 'Donnamarie', 'Craydon', 'dcraydon3@sakura.ne.jp', '(902) 9225029', 'Hufang');
+insert into volonteers (id, first_name, last_name, email, number, city) values (5, 'Alexander', 'Venediktov', 'avenediktov4@odnoklassniki.ru', '(611) 6427631', 'Furudate');
+insert into volonteers (id, first_name, last_name, email, number, city) values (6, 'Ransom', 'Alderson', 'ralderson5@narod.ru', '(157) 4982060', 'Huxi');
+insert into volonteers (id, first_name, last_name, email, number, city) values (7, 'Caryl', 'Moriarty', 'cmoriarty6@parallels.com', '(505) 1923678', 'Lékoni');
+insert into volonteers (id, first_name, last_name, email, number, city) values (8, 'Marco', 'Stych', 'mstych7@yelp.com', '(269) 6007226', 'Gareba');
+insert into volonteers (id, first_name, last_name, email, number, city) values (9, 'Denny', 'Volage', 'dvolage8@discuz.net', '(760) 8305013', 'Sanli');
+insert into volonteers (id, first_name, last_name, email, number, city) values (10, 'Dominik', 'Swinburne', 'dswinburne9@bbb.org', '(365) 4886918', 'Baitoa');
+
+
 SELECT
 	pg_catalog.setval(pg_get_serial_sequence('animals', 'id'), MAX(id))
 FROM
@@ -132,6 +153,11 @@ FROM
 
 SELECT
 	pg_catalog.setval(pg_get_serial_sequence('services', 'id'), MAX(id))
+
+FROM
+	services;
+SELECT
+	pg_catalog.setval(pg_get_serial_sequence('volonteers', 'id'), MAX(id))
 
 FROM
 	services;
