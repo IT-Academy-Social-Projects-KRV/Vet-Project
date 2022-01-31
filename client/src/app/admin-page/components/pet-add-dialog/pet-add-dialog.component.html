@@ -1,4 +1,4 @@
-<mat-card-content>
+<section>
    
     <form class="example-form" (ngSubmit)='onCreateAnimal(f.value)' #f='ngForm'>
         <div class="modal">
@@ -45,14 +45,12 @@
               </mat-form-field>
             </div>
         </div>
-              <mat-dialog-actions align="center">
+              <div class="demo-button-container">
                 <button
                 mat-raised-button color="primary" [disabled]="!f.valid">Підтвердити</button>
                 <button 
-                type="button" mat-raised-button color="primary" [mat-dialog-close]="true">Скасувати</button>
-              </mat-dialog-actions>
+                type="button" mat-raised-button color="primary" [matDialogClose]="true">Скасувати</button>
+              </div>
       </form>
 
-    </mat-card-content>
- 
- 
+    </section>

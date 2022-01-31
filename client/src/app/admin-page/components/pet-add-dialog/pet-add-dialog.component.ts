@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 import { IAnimalsUnitInfo } from '@shared/interfaces/animals-unit'
 import { ApiServices } from '@shared/services/api.service'
+import { MatDialogRef } from '@angular/material/dialog'
 
 @Component({
 	selector: 'app-pet-add-dialog',
 	templateUrl: './pet-add-dialog.component.html',
 	styleUrls: ['./pet-add-dialog.component.scss']
 })
-export class PetAddDialogComponent implements OnInit {
-	constructor(private apiServices: ApiServices) {}
+export class PetAddDialogComponent {
+	constructor(private apiServices: ApiServices, public dialogRef: MatDialogRef<IAnimalsUnitInfo>) {}
 	item: IAnimalsUnitInfo
 	curators: any[] = ['Куратор 1', 'Куратор 2']
 	onCreateAnimal(form: IAnimalsUnitInfo): void {
@@ -25,7 +26,6 @@ export class PetAddDialogComponent implements OnInit {
 		}
 
 		this.apiServices.postNewAnimal(this.item).subscribe()
+		this.dialogRef.close()
 	}
-
-	ngOnInit(): void {}
 }

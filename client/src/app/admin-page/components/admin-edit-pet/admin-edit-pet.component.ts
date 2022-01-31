@@ -83,9 +83,9 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 		}
 	}
 
-	// public redirectToUpdate = (id: string) => {}
-	public redirectToDelete = (id: string) => {
-		this.apiServices.deleteAnimal(id).subscribe()
-		this.fetchPets()
+	public redirectToDelete(id) {
+		this.apiServices.deleteAnimal(id).subscribe(() => {
+			this.fetchPets()
+		})
 	}
 }
