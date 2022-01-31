@@ -18,6 +18,8 @@ import { MatTableModule } from '@angular/material/table'
 import { MatPaginatorModule } from '@angular/material/paginator'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatDialogModule } from '@angular/material/dialog'
+import { LogoutModalComponent } from './components/logout-modal/logout-modal.component'
+
 import { MatTabsModule } from '@angular/material/tabs'
 import { MatTreeModule } from '@angular/material/tree'
 import { MatSortModule } from '@angular/material/sort'
@@ -30,7 +32,7 @@ import { AdminEditPetComponent } from './components/admin-edit-pet/admin-edit-pe
 import { AdminEditVolonteerComponent } from './components/admin-edit-volonteer/admin-edit-volonteer.component'
 import { AdminEditVetComponent } from './components/admin-edit-vet/admin-edit-vet.component'
 import { LoginModalComponent } from './components/login-modal/login-modal.component'
-import { PetEditDialogComponent } from './components/pet-edit-dialog/pet-edit-dialog.component';
+import { PetEditDialogComponent } from './components/pet-edit-dialog/pet-edit-dialog.component'
 import { VetAddDialogComponent } from './components/vet-add-dialog/vet-add-dialog.component'
 
 @NgModule({
@@ -41,8 +43,9 @@ import { VetAddDialogComponent } from './components/vet-add-dialog/vet-add-dialo
 		AdminEditPetComponent,
 		AdminEditVolonteerComponent,
 		LoginModalComponent,
+		LogoutModalComponent,
 		PetEditDialogComponent,
-  VetAddDialogComponent
+		VetAddDialogComponent
 	],
 	imports: [
 		CommonModule,

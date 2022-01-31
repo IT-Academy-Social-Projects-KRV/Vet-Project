@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+
 import { Component, OnInit } from '@angular/core'
 import { ApiServices } from '@shared/services/api.service'
 import { Observable } from 'rxjs'
