@@ -102,15 +102,6 @@ export class ApiServices {
 		localStorage.clear()
 	}
 
-	private handleError(error: HttpErrorResponse) {
-		if (error.status === 0) {
-			console.error('An error occurred:', error.error)
-		} else {
-			console.error(`Backend returned code ${error.status}, body was: `, error.error)
-		}
-
-		return throwError('Щось пішло не так; Спробуйте, будь ласка, пізніше. =(')
-	}
 	// getVolonteersInfo(): Observable<IVolonteersInfo> {
 	// 	return this.http.get<IVolonteersInfo>(`${baseUrl}//animals`).pipe(catchError(this.handleError))
 	// }
