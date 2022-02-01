@@ -42,7 +42,7 @@ email varchar(250) NOT NULL UNIQUE,
 password varchar(250) NOT NULL
 );
 create table volonteers (
-	id INT,
+	id SERIAL PRIMARY KEY,
 	first_name VARCHAR(50),
 	last_name VARCHAR(50),
 	email VARCHAR(50),
@@ -160,6 +160,6 @@ SELECT
 	pg_catalog.setval(pg_get_serial_sequence('volonteers', 'id'), MAX(id))
 
 FROM
-	services;
+	volonteers;
 
 
