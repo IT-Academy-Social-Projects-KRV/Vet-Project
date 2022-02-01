@@ -37,7 +37,6 @@ router.post('/', async function addVolunteer (
 	
 })
 
-
 router.get('/', async function getAllVolunteers (req, res) {
 	try {
 	  const Volunteers = await db.query(
@@ -135,5 +134,3 @@ router.delete(
 	}
 	
 }  )
-
-
