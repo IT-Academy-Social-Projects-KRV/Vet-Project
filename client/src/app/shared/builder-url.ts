@@ -33,7 +33,7 @@ export class UrlBuilder {
 		return this
 	}
 	volonteers() {
-		this.url += '/volonteers'
+		this.url += '/volunteers'
 		return this
 	}
 	getUrl() {

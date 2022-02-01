@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core'
 import { FormControl, Validators } from '@angular/forms'
-import { Observable } from 'rxjs'
 
 import { MatPaginator } from '@angular/material/paginator'
 import { MatSort } from '@angular/material/sort'
@@ -21,7 +20,6 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 	selectFormControl = new FormControl('', Validators.required)
 
 	displayedColumns: string[] = ['id', 'title', 'adress', 'phone', 'email', 'delete']
-	IVetsInfo$: Observable<Array<IVetsInfo>>
 
 	dataSource = new MatTableDataSource<IVetsInfo>()
 

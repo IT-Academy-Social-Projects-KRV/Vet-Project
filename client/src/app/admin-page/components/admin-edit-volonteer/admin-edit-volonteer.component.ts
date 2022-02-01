@@ -4,8 +4,6 @@ import { MatSort } from '@angular/material/sort'
 import { MatTableDataSource } from '@angular/material/table'
 import { IVolonteersInfo } from '@shared/interfaces/volonteers'
 import { ApiServices } from '@shared/services/api.service'
-import { Observable } from 'rxjs'
-
 
 /** Constants used to fill up our data base. */
 
