@@ -5,9 +5,10 @@ import { IAnimalsInfo } from '@shared/interfaces/animals'
 import { MatPaginator } from '@angular/material/paginator'
 import { MatSort } from '@angular/material/sort'
 import { MatTableDataSource } from '@angular/material/table'
-import { MatDialog } from '@angular/material/dialog'
+import { MatDialog, MatDialogRef } from '@angular/material/dialog'
 import { PetEditDialogComponent } from '../pet-edit-dialog/pet-edit-dialog.component'
 import { PetAddDialogComponent } from '../pet-add-dialog/pet-add-dialog.component'
+import { PetDeleteModalComponent } from '../pet-delete-modal/pet-delete-modal.component'
 
 @Component({
 	selector: 'app-admin-edit-pet',
@@ -29,7 +30,7 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 
 	@ViewChild(MatPaginator, { static: true }) paginator: MatPaginator
 	@ViewChild(MatSort, { static: true }) sort: MatSort
-
+	dialogRef: MatDialogRef<any>
 	constructor(private apiServices: ApiServices, public dialog: MatDialog) {}
 
 	ngAfterViewInit(): void {
@@ -55,7 +56,7 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 		}
 	}
 
-	private fetchPets() {
+	public fetchPets() {
 		this.apiServices.getAnimalsInfo().subscribe(response => {
 			this.dataSource.data = response
 		})
@@ -73,8 +74,20 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 			disableClose: true
 		})
 	}
+	openDeleteDialog(id) {
+		this.dialogRef = this.dialog.open(PetDeleteModalComponent, {
+			disableClose: true
+		})
+		this.dialogRef.componentInstance.confirmMessage = 'Are you sure you want to delete?'
+		this.dialogRef.afterClosed().subscribe(result => {
+			if (result) {
+				this.onDelete(id)
+			}
+			this.dialogRef = null
+		})
+	}
 
-	applyFilter(event: Event) {
+	applyFilter(event: Event): void {
 		const filterValue = (event.target as HTMLInputElement).value
 		this.dataSource.filter = filterValue.trim().toLowerCase()
 
@@ -83,9 +96,10 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 		}
 	}
 
-	public redirectToDelete(id) {
-		this.apiServices.deleteAnimal(id).subscribe(() => {
-			this.fetchPets()
-		})
+	public onDelete(id) {
+		this.apiServices.deleteAnimal(id).subscribe(() => {})
+		const filtered = this.dataSource.data.filter(element => element.id !== id)
+		this.dataSource.data = filtered
+		// console.log(filtered)
 	}
 }

@@ -12,6 +12,7 @@ export class PetAddDialogComponent {
 	constructor(private apiServices: ApiServices, public dialogRef: MatDialogRef<IAnimalsUnitInfo>) {}
 	item: IAnimalsUnitInfo
 	curators: any[] = ['Куратор 1', 'Куратор 2']
+
 	onCreateAnimal(form: IAnimalsUnitInfo): void {
 		this.item = {
 			name: form.name,
