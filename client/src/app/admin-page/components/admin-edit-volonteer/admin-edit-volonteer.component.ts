@@ -13,7 +13,15 @@ import { ApiServices } from '@shared/services/api.service'
 	styleUrls: ['./admin-edit-volonteer.component.scss']
 })
 export class AdminEditVolonteerComponent implements OnInit, AfterViewInit {
-	displayedColumns: string[] = ['id', 'first_name', 'second_name', 'email', 'number', 'city']
+	displayedColumns: string[] = [
+		'id',
+		'first_name',
+		'second_name',
+		'email',
+		'number',
+		'edit',
+		'delete'
+	]
 	dataSource = new MatTableDataSource<IVolonteersInfo>()
 
 	@ViewChild(MatPaginator) paginator: MatPaginator
