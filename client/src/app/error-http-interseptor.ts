@@ -22,11 +22,7 @@ export class ErrorHttpInterseptor implements HttpInterceptor {
 		return throwError('Щось пішло не так; Спробуйте, будь ласка, пізніше. =(')
 	}
 
-<<<<<<< HEAD
 	intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-=======
-	intercept(req: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
->>>>>>> develop
 		return next.handle(req).pipe(
 			catchError((error: HttpErrorResponse) => {
 				this.notifierService.showErrorNotification('Щось пішло не так, спробуйте пізніше.', 'Ok')
