@@ -4,7 +4,7 @@ import { FormControl, Validators } from '@angular/forms'
 import { MatPaginator } from '@angular/material/paginator'
 import { MatSort } from '@angular/material/sort'
 import { MatTableDataSource } from '@angular/material/table'
-import { MatDialog } from '@angular/material/dialog'
+import { MatDialog, MatDialogRef } from '@angular/material/dialog'
 
 import { ApiServices } from '@shared/services/api.service'
 import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
@@ -26,6 +26,7 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 
 	@ViewChild(MatPaginator, { static: true }) paginator: MatPaginator
 	@ViewChild(MatSort, { static: true }) sort: MatSort
+	dialogRef: MatDialogRef<any>
 
 	constructor(private apiServices: ApiServices, public dialog: MatDialog) {}
 
@@ -35,6 +36,21 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 
 	ngOnInit(): void {
 		this.getVets()
+		this.dataSource.paginator = this.paginator
+		this.paginator._intl.itemsPerPageLabel = "Кількість об'єктів на сторінці:"
+		this.paginator._intl.nextPageLabel = 'Наступна сторінка'
+		this.paginator._intl.previousPageLabel = 'Попередня сторінка'
+		this.paginator._intl.lastPageLabel = 'Остання сторінка'
+		this.paginator._intl.getRangeLabel = (page: number, pageSize: number, length: number) => {
+			if (length === 0 || pageSize === 0) {
+				return '0 з ' + length
+			}
+			length = Math.max(length, 0)
+			const startIndex = page * pageSize
+			const endIndex =
+				startIndex < length ? Math.min(startIndex + pageSize, length) : startIndex + pageSize
+			return startIndex + 1 + ' - ' + endIndex + ' з ' + length
+		}
 	}
 
 	applyFilter(event: Event) {
@@ -59,17 +75,21 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 		})
 	}
 
-	onDelete(id: string) {
-		const dialog = this.dialog.open(VetDeleteDialogComponent, {
-			width: '550px',
-			disableClose: false
+	onDelete(id: number) {
+		this.dialogRef = this.dialog.open(VetDeleteDialogComponent, {
+			disableClose: true
+		})
+		this.dialogRef.afterClosed().subscribe(result => {
+			if (result) {
+				this.onDeleteClinic(id)
+			}
+			this.dialogRef = null
 		})
 	}
 
-	item: IVetsUnitInfo
-
-	onDeleteClinic(form: IVetsUnitInfo): void {
-		this.item = { id: form.id }
-		this.apiServices.deleteClinic(this.item.id).subscribe(() => this.getVets())
+	public onDeleteClinic(id: number): void {
+		this.apiServices.deleteClinic(id).subscribe()
+		const filtered = this.dataSource.data.filter(element => element.id !== id)
+		this.dataSource.data = filtered
 	}
 }

@@ -14,18 +14,4 @@ export class VetDeleteDialogComponent {
 		public dialogRef: MatDialogRef<IVetsUnitInfo>,
 		@Inject(MAT_DIALOG_DATA) public data: any
 	) {}
-
-	closeDialog() {
-		this.dialogRef.close()
-	}
-
-	getVets() {
-		this.apiServices.getVetDetails().subscribe()
-	}
-
-	onDeleteClinic(form: IVetsUnitInfo): void {
-		this.data = { id: form.id }
-		this.apiServices.deleteClinic(this.data.id).subscribe()
-		this.closeDialog()
-	}
 }
