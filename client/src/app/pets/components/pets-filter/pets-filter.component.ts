@@ -1,8 +1,8 @@
 /* eslint-disable @angular-eslint/use-lifecycle-interface */
 /* eslint-disable no-unused-vars */
-import { Component, OnInit, OnDestroy } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 
-import { Observable, Subscription } from 'rxjs'
+import { Observable } from 'rxjs'
 
 import { IAnimalInfo } from 'src/app/shared/interfaces/animals-filter-info'
 
@@ -15,7 +15,7 @@ import { NotifierService } from 'src/app/notifier.service'
 	templateUrl: './pets-filter.component.html',
 	styleUrls: ['./pets-filter.component.scss']
 })
-export class PetsFilterComponent implements OnInit, OnDestroy {
+export class PetsFilterComponent implements OnInit {
 	public petsInfo$: Observable<IAnimalsInfo[]>
 	public animalFilterInfo$: Observable<IAnimalsInfo[]>
 
@@ -26,20 +26,13 @@ export class PetsFilterComponent implements OnInit, OnDestroy {
 		curator: ''
 	}
 	paramsArr = []
-	subscriptionStatus: boolean
-	notifySub: Subscription
 
 	constructor(private apiServices: ApiServices, private notifierService: NotifierService) {}
 
 	ngOnInit(): void {
-		this.subscriptionStatus = false
 		this.petsInfo$ = this.apiServices.getAnimalsInfo()
 	}
-	ngOnDestroy() {
-		if (this.subscriptionStatus) {
-			this.notifySub.unsubscribe()
-		}
-	}
+
 	onSubmite(): void {
 		this.paramsArr = []
 		this.checkParams()
@@ -65,8 +58,7 @@ export class PetsFilterComponent implements OnInit, OnDestroy {
 	getAnimalsInfo(url): void {
 		this.animalFilterInfo$ = this.apiServices.getAnimalsFilterInfo(url)
 
-		this.notifySub = this.apiServices.getAnimalsFilterInfo(url).subscribe(item => {
-			this.subscriptionStatus = true
+		this.apiServices.getAnimalsFilterInfo(url).subscribe(item => {
 			if (item.length == 0) {
 				this.notifierService.showInfoNotification(
 					'З такими параметрами, нажаль, нічого немає =(',

@@ -74,9 +74,9 @@ export class ApiServices {
 	}
 
 	/////////////////////VOLONTEERS////////////////////////
-	// getVolonteersInfo() {
-	// 	return this.http.get<IVolonteersInfo>(`${baseUrl}/${ApiPaths.animals}`)
-	// }
+	getVolonteersInfo() {
+		return this.http.get<IVolonteersInfo[]>(builder.baseUrl().volonteers().getUrl())
+	}
 
 	//////////////LOGIN///////////////////////////////////////
 
