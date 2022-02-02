@@ -10,7 +10,17 @@ table {
 	width: 100%;
 }
 
-td,
-th {
-	width: 25%;
+.mat-row {
+	background-color: transparent;
+	&:hover {
+		background-color: #4788b6;
+		cursor: pointer;
+	}
+}
+[mat-raised-button]:hover{
+background-color: #f5962a;
+margin-left: auto;
+}
+.mat-header-cell{
+	color:  #d68427;
 }

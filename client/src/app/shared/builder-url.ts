@@ -32,6 +32,10 @@ export class UrlBuilder {
 		this.url += '/login'
 		return this
 	}
+	volonteers() {
+		this.url += '/volunteers'
+		return this
+	}
 	getUrl() {
 		let result = this.url
 		this.reset()

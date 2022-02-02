@@ -1,7 +1,7 @@
 export interface IVolonteersInfo {
-	id: number
-	name: string
-	age: number
-	detailInfo: string
-	contacts: string
+	first_name?: string
+	last_name?: string
+	email?: string
+	number?: string
+	city?: string
 }
