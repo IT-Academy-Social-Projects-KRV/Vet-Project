@@ -70,8 +70,13 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 		})
 	}
 	openAddDialog() {
-		const dialog = this.dialog.open(PetAddDialogComponent, {
+		this.dialogRef = this.dialog.open(PetAddDialogComponent, {
 			disableClose: true
+		})
+		this.dialogRef.afterClosed().subscribe(() => {
+			const newArr = this.dataSource.data.concat(this.dialogRef.componentInstance.item)
+
+			this.dataSource.data = newArr
 		})
 	}
 	openDeleteDialog(id) {
