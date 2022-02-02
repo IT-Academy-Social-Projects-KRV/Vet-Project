@@ -4,33 +4,28 @@ import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
 import { ApiServices } from '@shared/services/api.service'
 
 @Component({
-	selector: 'app-vet-add-dialog',
-	templateUrl: './vet-add-dialog.component.html',
-	styleUrls: ['./vet-add-dialog.component.scss']
+	selector: 'app-vet-delete-dialog',
+	templateUrl: './vet-delete-dialog.component.html',
+	styleUrls: ['./vet-delete-dialog.component.scss']
 })
-export class VetAddDialogComponent {
+export class VetDeleteDialogComponent {
 	constructor(
 		private apiServices: ApiServices,
 		public dialogRef: MatDialogRef<IVetsUnitInfo>,
 		@Inject(MAT_DIALOG_DATA) public data: any
 	) {}
 
+	closeDialog() {
+		this.dialogRef.close()
+	}
+
 	getVets() {
 		this.apiServices.getVetDetails().subscribe()
 	}
 
-	item: IVetsUnitInfo
-
-	onCreateClinic(form: IVetsUnitInfo): void {
-		this.item = {
-			title: form.title,
-			adress: form.adress,
-			phone: form.phone,
-			email: form.email,
-			map_link: form.map_link
-		}
-
-		this.dialogRef.close()
-		this.apiServices.postNewClinic(this.item).subscribe(() => this.getVets())
+	onDeleteClinic(form: IVetsUnitInfo): void {
+		this.data = { id: form.id }
+		this.apiServices.deleteClinic(this.data.id).subscribe()
+		this.closeDialog()
 	}
 }

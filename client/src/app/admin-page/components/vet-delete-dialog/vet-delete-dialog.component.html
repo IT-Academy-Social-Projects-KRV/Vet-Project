@@ -1,0 +1,9 @@
+<form class="example-form">
+  <p>Ви дійсно хочете видалити клініку?</p>
+  <mat-form-field class="example-full-width id-hide" appearance="fill">
+    <mat-label>No</mat-label>
+    <input matInput name="id" [(ngModel)]="data.id" ngModel type="text" readonly>
+    <button mat-raised-button color="primary" (click)="onDeleteClinic(data.id)">Так</button>
+    <button mat-raised-button color="warn" (click)="closeDialog()">Ні</button>
+  </mat-form-field>
+</form>
