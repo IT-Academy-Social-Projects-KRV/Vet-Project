@@ -43,10 +43,13 @@ export class LoginModalComponent implements OnInit, OnDestroy {
 		}
 
 		this.aSUb = this.login.login(user).subscribe(item => {
-			if (item) {
+			if (item.token) {
 				this.dialogRef.close()
 				this.router.navigate(['/admin'])
 				this.notifierService.showSuccessNotification(`Вітаємо в особистому кабінеті`, 'Ok')
+				console.log(item.token)
+			} else {
+				console.log('blablabla')
 			}
 		})
 

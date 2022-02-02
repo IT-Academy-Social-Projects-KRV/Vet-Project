@@ -34,6 +34,8 @@ import { AdminEditVetComponent } from './components/admin-edit-vet/admin-edit-ve
 import { LoginModalComponent } from './components/login-modal/login-modal.component'
 import { PetEditDialogComponent } from './components/pet-edit-dialog/pet-edit-dialog.component'
 import { VetAddDialogComponent } from './components/vet-add-dialog/vet-add-dialog.component'
+// import { HTTP_INTERCEPTORS } from '@angular/common/http'
+// import { LoginInterceptor } from './components/login-modal/login.interceptor'
 
 @NgModule({
 	declarations: [
@@ -71,7 +73,14 @@ import { VetAddDialogComponent } from './components/vet-add-dialog/vet-add-dialo
 		MatTreeModule,
 		MatSortModule
 	],
-	providers: [ApiServices],
+	providers: [
+		ApiServices
+		// {
+		// 	provide: HTTP_INTERCEPTORS,
+		// 	multi: true,
+		// 	useClass: LoginInterceptor
+		// }
+	],
 	exports: [LoginModalComponent]
 })
 export class AdminPageModule {}
