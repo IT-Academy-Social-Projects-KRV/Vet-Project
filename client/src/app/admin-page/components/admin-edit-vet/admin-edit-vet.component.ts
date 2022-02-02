@@ -62,20 +62,24 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 		}
 	}
 
-	getVets() {
+	private getVets() {
 		this.apiServices.getVetDetails().subscribe(response => {
 			this.dataSource.data = response
 		})
 	}
 
-	onAdd() {
-		const dialog = this.dialog.open(VetAddDialogComponent, {
+	public onOpenAddDialog(): void {
+		this.dialogRef = this.dialog.open(VetAddDialogComponent, {
 			width: '550px',
 			disableClose: false
 		})
+		this.dialogRef.afterClosed().subscribe(() => {
+			const newDataArr = this.dataSource.data.concat(this.dialogRef.componentInstance.item)
+			this.dataSource.data = newDataArr
+		})
 	}
 
-	onDelete(id: number) {
+	public onOpenDeleteDialog(id: number): void {
 		this.dialogRef = this.dialog.open(VetDeleteDialogComponent, {
 			disableClose: true
 		})
@@ -87,7 +91,7 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 		})
 	}
 
-	public onDeleteClinic(id: number): void {
+	private onDeleteClinic(id: number): void {
 		this.apiServices.deleteClinic(id).subscribe()
 		const filtered = this.dataSource.data.filter(element => element.id !== id)
 		this.dataSource.data = filtered

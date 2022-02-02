@@ -13,7 +13,7 @@
           <input matInput (keyup)="applyFilter($event)" placeholder="" #input>
         </mat-form-field>
 
-        <button mat-raised-button (click)="onAdd()" color="primary">Додати клініку</button>
+        <button mat-raised-button (click)="onOpenAddDialog()" color="primary">Додати клініку</button>
 
       </div>
 
@@ -51,7 +51,7 @@
         <ng-container matColumnDef="delete">
           <th mat-header-cell *matHeaderCellDef> Видалити </th>
           <td mat-cell *matCellDef="let element">
-            <button mat-icon-button color="warn" (click)="onDelete(element.id)">
+            <button mat-icon-button color="warn" (click)="onOpenDeleteDialog(element.id)">
               <mat-icon class=" mat-18">delete</mat-icon>
             </button>
           </td>
