@@ -26,7 +26,9 @@
 // }
 .stats-cards {
 	display: flex;
+	flex-basis: calc(100% / 3);
+	flex-wrap: wrap;
 	justify-content: space-evenly;
 	flex-direction: row;
-	gap: 20px;
+	gap: 10px;
 }

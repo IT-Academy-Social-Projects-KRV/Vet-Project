@@ -12,7 +12,7 @@ export class WidgetPieComponent implements OnInit {
 			type: 'pie'
 		},
 		title: {
-			text: 'Piechart'
+			text: 'Статистика'
 		},
 		credits: {
 			enabled: false

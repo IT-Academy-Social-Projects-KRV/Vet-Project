@@ -46,8 +46,8 @@ export class WidgetCardComponent implements OnInit {
 	constructor() {}
 
 	ngOnInit() {
-		setTimeout(() => {
-			window.dispatchEvent(new Event('resize'))
-		}, 300)
+		// setTimeout(() => {
+		// 	window.dispatchEvent(new Event('resize'))
+		// }, 300)
 	}
 }
