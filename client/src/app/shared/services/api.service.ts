@@ -82,7 +82,4 @@ export class ApiServices {
 		)
 	}
 
-	// getVolonteersInfo(): Observable<IVolonteersInfo> {
-	// 	return this.http.get<IVolonteersInfo>(`${baseUrl}//animals`).pipe(catchError(this.handleError))
-	// }
 }
