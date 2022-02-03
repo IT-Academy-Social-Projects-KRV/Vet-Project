@@ -13,7 +13,9 @@
               </mat-form-field>
               <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Стать</mat-label>
-                <input matInput name="gender" ngModel required>
+                <mat-select ngModel required name='gender'>
+                  <mat-option *ngFor="let gender of genders" [value]="gender">{{gender}}</mat-option>
+                </mat-select>
               </mat-form-field>
               <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Вік</mat-label>

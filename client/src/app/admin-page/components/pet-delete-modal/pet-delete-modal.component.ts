@@ -1,8 +1,5 @@
-import { Component, Inject } from '@angular/core'
-import { AdminEditPetComponent } from '../admin-edit-pet/admin-edit-pet.component'
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
-import { ApiServices } from '@shared/services/api.service'
-import { MatTableDataSource } from '@angular/material/table'
+import { Component } from '@angular/core'
+import { MatDialogRef } from '@angular/material/dialog'
 
 @Component({
 	selector: 'app-pet-delete-modal',
@@ -10,10 +7,5 @@ import { MatTableDataSource } from '@angular/material/table'
 	styleUrls: ['./pet-delete-modal.component.scss']
 })
 export class PetDeleteModalComponent {
-	constructor(
-		public dialogRef: MatDialogRef<any>,
-		private apiServices: ApiServices,
-		@Inject(MAT_DIALOG_DATA) public data: any
-	) {}
-	public confirmMessage: string
+	constructor(public dialogRef: MatDialogRef<any>) {}
 }

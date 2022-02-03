@@ -63,7 +63,7 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 	}
 
 	onUpdate(icon: IAnimalsUnitInfo) {
-		const dialog = this.dialog.open(PetEditDialogComponent, {
+		this.dialogRef = this.dialog.open(PetEditDialogComponent, {
 			width: '500px',
 			disableClose: true,
 			data: icon
@@ -75,7 +75,6 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 		})
 		this.dialogRef.afterClosed().subscribe(() => {
 			const newArr = this.dataSource.data.concat(this.dialogRef.componentInstance.item)
-
 			this.dataSource.data = newArr
 		})
 	}
@@ -102,9 +101,8 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 	}
 
 	public onDelete(id) {
-		this.apiServices.deleteAnimal(id).subscribe(() => {})
+		this.apiServices.deleteAnimal(id).subscribe()
 		const filtered = this.dataSource.data.filter(element => element.id !== id)
 		this.dataSource.data = filtered
-		// console.log(filtered)
 	}
 }
