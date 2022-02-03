@@ -4,6 +4,7 @@ import { MatSort } from '@angular/material/sort'
 import { MatTableDataSource } from '@angular/material/table'
 import { IVolonteersInfo } from '@shared/interfaces/volonteers'
 import { ApiServices } from '@shared/services/api.service'
+import { DialogService } from './dialog.service'
 
 /** Constants used to fill up our data base. */
 
@@ -13,13 +14,22 @@ import { ApiServices } from '@shared/services/api.service'
 	styleUrls: ['./admin-edit-volonteer.component.scss']
 })
 export class AdminEditVolonteerComponent implements OnInit, AfterViewInit {
-	displayedColumns: string[] = ['id', 'first_name', 'second_name', 'email', 'number', 'city']
+	displayedColumns: string[] = [
+		'id',
+		'first_name',
+		'second_name',
+		'email',
+		'number',
+		'edit',
+		'delete'
+	]
 	dataSource = new MatTableDataSource<IVolonteersInfo>()
 
 	@ViewChild(MatPaginator) paginator: MatPaginator
 	@ViewChild(MatSort) sort: MatSort
 
-	constructor(private apiServices: ApiServices) {}
+	constructor(private apiServices: ApiServices, private dialog: DialogService) {}
+
 	ngOnInit(): void {
 		this.getVolonteers()
 	}
@@ -40,5 +50,11 @@ export class AdminEditVolonteerComponent implements OnInit, AfterViewInit {
 		if (this.dataSource.paginator) {
 			this.dataSource.paginator.firstPage()
 		}
+	}
+	openConfirmDialog() {
+		this.dialog.openConfirmDialog()
+	}
+	openDeleteDialog() {
+		this.dialog.openDeleteDialog()
 	}
 }
