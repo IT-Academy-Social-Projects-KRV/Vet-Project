@@ -30,3 +30,13 @@ mat-form-field {
 	font-weight: bold;
 	color: #d68427;
 }
+.add-modal-trigger{
+	display: flex;
+	justify-content: space-between;
+}
+.mat-raised-button {
+	width: 160px;
+	height: 40px;
+	text-transform: uppercase;
+	margin-top: 20px;
+}
