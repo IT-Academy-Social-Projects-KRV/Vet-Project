@@ -1,0 +1,57 @@
+<h3 class="filter-title">Знайди відповідну клініку</h3>
+<form class="form-filter" *ngIf="(vetsInfo$ | async) as vetsInfo">
+  <div class="main-wrap">
+    <div class="child-wrap">
+      <div class="input-wrapper">
+        <label class="form-filter__label" for="title">Hазва</label>
+        <select id="gender" name="gender" [(ngModel)]="vet.title" class="form-filter__input">
+          <option *ngFor='let item of vetsInfo'>
+            {{item.title}}
+          </option>
+        </select>
+      </div>
+
+      <div class="input-wrapper">
+        <label class="form-filter__label" for="adress">Aдреса</label>
+        <select id="breed" name="adress" [(ngModel)]="vet.adress" class="form-filter__input">
+          <option></option>
+          <option *ngFor='let item of vetsInfo'>
+            {{item.adress}}
+          </option>
+
+        </select>
+      </div>
+    </div>
+
+    <div class="child-wrap">
+      <div class="input-wrapper">
+        <label class="form-filter__label" for="type">Спеціалізація</label>
+        <select id="age" name="type" class="form-filter__input">
+          <option></option>
+          <option value="Cобаки">Cобаки</option>
+          <option value="Kоти">Kоти</option>
+          <option value="Xом'яки">Xом'яки</option>
+        </select>
+      </div>
+
+      <div class="input-wrapper">
+        <label class="form-filter__label" for="service">Тип послуг</label>
+        <select id="curator" name="service" class="form-filter__input">
+          <option></option>
+          <option value="Oгляд">Oгляд</option>
+          <option value="Xірургічне втручання">Xірургічне втручання</option>
+          <option value="Щеплення">Щеплення</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <button class="form-filter-btn" type="submit" (click)="onSubmite()">Знайти</button>
+</form>
+
+<!-- <div class="wrap-filter-result">
+  <ng-container *ngIf="(animalFilterInfo$ | async) as animalFilterInfo">
+    <app-filter-result *ngFor="let item of animalFilterInfo" [data]="item"></app-filter-result>
+  </ng-container>
+</div>
+<p class="card-filter-title">Тваринки, які чекають саме Вас</p> -->

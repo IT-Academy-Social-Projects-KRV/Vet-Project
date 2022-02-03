@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
+import { FormsModule } from '@angular/forms'
+
 import { MatCardModule } from '@angular/material/card'
 import { MatDividerModule } from '@angular/material/divider'
 import { MatListModule } from '@angular/material/list'
@@ -13,6 +15,7 @@ import { VeterinariansComponent } from './components/veterinarians/veterinarians
 import { VetServicesComponent } from './components/vet-services/vet-services.component'
 import { VetAnimalsTypeComponent } from './components/vet-animals-type/vet-animals-type.component'
 import { VetListComponent } from './components/vet-list/vet-list.component'
+import { VetsFilterComponent } from './components/vets-filter/vets-filter.component'
 
 @NgModule({
 	declarations: [
@@ -22,7 +25,8 @@ import { VetListComponent } from './components/vet-list/vet-list.component'
 		VeterinariansComponent,
 		VetServicesComponent,
 		VetAnimalsTypeComponent,
-		VetListComponent
+		VetListComponent,
+		VetsFilterComponent
 	],
 	imports: [
 		CommonModule,
@@ -30,7 +34,8 @@ import { VetListComponent } from './components/vet-list/vet-list.component'
 		MatDividerModule,
 		MatListModule,
 		VetsRoutingModule,
-		MatButtonModule
+		MatButtonModule,
+		FormsModule
 	],
 	exports: [VetListCardComponent]
 })
