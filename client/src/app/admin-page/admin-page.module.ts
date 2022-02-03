@@ -25,6 +25,7 @@ import { MatTreeModule } from '@angular/material/tree'
 import { MatSortModule } from '@angular/material/sort'
 
 import { ApiServices } from '@shared/services/api.service'
+import { VolunteersService } from './components/admin-edit-volonteer/volunteers.service'
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component'
 import { AdminPageRoutingModule } from './admin-page-routing.module'
 import { AdminNavComponent } from './components/admin-nav/admin-nav.component'
@@ -34,6 +35,8 @@ import { AdminEditVetComponent } from './components/admin-edit-vet/admin-edit-ve
 import { LoginModalComponent } from './components/login-modal/login-modal.component'
 import { PetEditDialogComponent } from './components/pet-edit-dialog/pet-edit-dialog.component'
 import { VetAddDialogComponent } from './components/vet-add-dialog/vet-add-dialog.component'
+import { VolunteersAddDialogComponent } from './components/volunteers-add-dialog/volunteers-add-dialog.component';
+import { VolunteersDeleteDialogComponent } from './components/volunteers-delete-dialog/volunteers-delete-dialog.component'
 
 @NgModule({
 	declarations: [
@@ -45,7 +48,9 @@ import { VetAddDialogComponent } from './components/vet-add-dialog/vet-add-dialo
 		LoginModalComponent,
 		LogoutModalComponent,
 		PetEditDialogComponent,
-		VetAddDialogComponent
+		VetAddDialogComponent,
+		VolunteersAddDialogComponent,
+  VolunteersDeleteDialogComponent
 	],
 	imports: [
 		CommonModule,
@@ -71,7 +76,7 @@ import { VetAddDialogComponent } from './components/vet-add-dialog/vet-add-dialo
 		MatTreeModule,
 		MatSortModule
 	],
-	providers: [ApiServices],
+	providers: [ApiServices, VolunteersService],
 	exports: [LoginModalComponent]
 })
 export class AdminPageModule {}
