@@ -1,36 +1,40 @@
-<form [formGroup]="service.form" class="normal-form">
-    <span class="admin-voluntiers-dialog">Створити нового волонтера</span>
-    <mat-grid-list cols="2" rowHeight = "300px" >
-          <mat-grid-tile>
-              <div class="controles-container">
-                <input type="hidden" formControlName = '$key'>
-                     <mat-form-field>
-                         <input formControlName = 'firstName' matInput placeholder="Ім'я">
-                         <mat-error>Це поле обов'язкове</mat-error>
-                    </mat-form-field>
-                        <mat-form-field>
-                         <input formControlName = 'secondName' matInput placeholder="Прізвище">
-                         <mat-error>Це поле обов'язкове</mat-error>
-                    </mat-form-field>
-              </div>
-        </mat-grid-tile>
-        <mat-grid-tile>
-            <div class="controles-container">
-               <mat-form-field>
-                         <input formControlName = 'email' matInput placeholder="Email" type="email">
-                         <mat-error>Невірно вказаний email</mat-error>
-                    </mat-form-field>
-                        <mat-form-field>
-                         <input formControlName = 'number' matInput placeholder="Номер телефону" >
-                         <mat-error *ngIf ="service.form.controls['number'].hasError('minlength')">Необхідно ввести мінімум 10 символів</mat-error>
-                         <mat-error *ngIf ="service.form.controls['number'].hasError('required')">Це поле обов'язкове</mat-error>
+<form [formGroup]="service.form" class="normal-form" (ngSubmit)='onSubmit()'>
+  <span class="admin-voluntiers-dialog">Створити нового волонтера</span>
+  <mat-grid-list cols="2" rowHeight="300px">
+    <mat-grid-tile>
+      <div class="controles-container">
+        <input type="hidden" formControlName='$key'>
+        <mat-form-field>
+          <input formControlName='firstName' matInput placeholder="Ім'я">
+          <mat-error *ngIf="service.form.controls['firstName'].hasError('pattern')">Допустимі символи а-Я</mat-error>
+          <mat-error *ngIf="service.form.controls['firstName'].hasError('required')">Це поле обов'язкове</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName='secondName' matInput placeholder="Прізвище">
+          <mat-error *ngIf="service.form.controls['secondName'].hasError('pattern')">Допустимі символи а-Я</mat-error>
+          <mat-error *ngIf="service.form.controls['secondName'].hasError('required')">Це поле обов'язкове</mat-error>
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="controles-container">
+        <mat-form-field>
+          <input formControlName='email' matInput placeholder="Email" type="email">
+          <mat-error>Невірно вказаний email</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName='number' matInput placeholder="Номер телефону">
+          <mat-error *ngIf="service.form.controls['number'].hasError('pattern')">Невірний формат</mat-error>
+          <mat-error *ngIf="service.form.controls['number'].hasError('required')">Це поле обов'язкове</mat-error>
 
-                    </mat-form-field>
-                    </div>
-        </mat-grid-tile>
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
   </mat-grid-list>
   <div class="button-row">
-      <button mat-raised-button color="primary" class="addVolunteerBtn" [disabled]="service.form.invalid">Додати волонтера</button>
-      <button mat-raised-button color="warn" (click)="onClear()" >Очитити</button>
+    <button mat-raised-button color="primary"  type="submit" class="addVolunteerBtn" 
+      [disabled]="service.form.invalid">Додати волонтера</button>
+    <button mat-raised-button color="warn" type="reset" (click)="onClear()">Очитити</button>
+    <button mat-raised-button color="basic" type ="button" (click)="closeDialog()">Cкасувати</button>
   </div>
 </form>

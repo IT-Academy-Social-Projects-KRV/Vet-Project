@@ -9,10 +9,10 @@ export class VolunteersService {
 
 	form: FormGroup = new FormGroup({
 		$key: new FormControl(null),
-		firstName: new FormControl('', Validators.required),
-		secondName: new FormControl('', Validators.required),
+		firstName: new FormControl('', [Validators.required, Validators.pattern("^[а-яА-я']+")]),
+		secondName: new FormControl('', [Validators.required, Validators.pattern("^[а-яА-я ']+")]),
 		email: new FormControl('', Validators.email),
-		number: new FormControl('', [Validators.required, Validators.minLength(10)])
+		number: new FormControl('', [Validators.required, Validators.pattern('[- +()0-9]{10,}')])
 	})
 	initializeFormGroup() {
 		this.form.setValue({
