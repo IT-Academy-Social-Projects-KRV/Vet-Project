@@ -1,125 +1,72 @@
 <section class="main__pet-edit-page">
-  <mat-tab-group mat-align-tabs="center">
-    <mat-tab label="Додати тваринку">
-      <form class="example-form" (ngSubmit)='onSubmit(f.value)' #f='ngForm'>
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Назва(кличка)</mat-label>
-          <input matInput name="name" ngModel required>
-        </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Порода</mat-label>
-          <input matInput name="breed" ngModel required>
-        </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Стать</mat-label>
-          <input matInput name="gender" ngModel required>
-        </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Вік</mat-label>
-          <input matInput name="age" ngModel required>
-        </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Притулок</mat-label>
-          <input matInput name="shelter_name" ngModel required>
-        </mat-form-field>
 
-        <mat-form-field appearance="fill">
-          <mat-label>Куратор</mat-label>
-          <mat-select ngModel name='curator'>
-            <mat-option *ngFor="let curator of curators" [value]="curator">{{curator}}</mat-option>
-          </mat-select>
-        </mat-form-field>
+  <div class="add-modal-trigger">
+    <mat-form-field appearance="standard">
+      <mat-label>Пошук</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Почніть писати" #input>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="openAddDialog()">Додати Тварину
+    </button>
+  </div>
 
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table" matSort>
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>No.</th>
+      <td mat-cell *matCellDef="let element">{{element.id}}</td>
+    </ng-container>
 
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Історія</mat-label>
-          <textarea matInput name="short_info" ngModel></textarea>
-        </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Повадки</mat-label>
-          <textarea matInput name="behavioral_features" ngModel></textarea>
-        </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Побажання при адопції</mat-label>
-          <textarea matInput name="wishes_for_shelter" ngModel></textarea>
-        </mat-form-field>
-        <div class="demo-button-container">
-          <button mat-raised-button class="demo-button">
-            Add data
-          </button>
-        </div>
-      </form>
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Ім'я</th>
+      <td mat-cell *matCellDef="let element">{{element.name}}</td>
+    </ng-container>
 
-      <mat-form-field appearance="standard">
-        <mat-label>Пошук</mat-label>
-        <input matInput (keyup)="applyFilter($event)" placeholder="Почніть писати" #input>
-      </mat-form-field>
+    <!-- Gender Column -->
+    <ng-container matColumnDef="gender">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Стать</th>
+      <td mat-cell *matCellDef="let element">{{element.gender}}</td>
+    </ng-container>
 
-      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table" matSort>
-        <!-- Position Column -->
-        <ng-container matColumnDef="id">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>No.</th>
-          <td mat-cell *matCellDef="let element">{{element.id}}</td>
-        </ng-container>
+    <!-- Breed Column -->
+    <ng-container matColumnDef="breed">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Порода</th>
+      <td mat-cell *matCellDef="let element">{{element.breed}}</td>
+    </ng-container>
+    <!-- Age Column -->
+    <ng-container matColumnDef="age">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Вік</th>
+      <td mat-cell *matCellDef="let element">{{element.age}}</td>
+    </ng-container>
 
-        <!-- Name Column -->
-        <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Ім'я</th>
-          <td mat-cell *matCellDef="let element">{{element.name}}</td>
-        </ng-container>
+    <!-- Curator Column -->
+    <ng-container matColumnDef="curator">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Куратор</th>
+      <td mat-cell *matCellDef="let element">{{element.curator}}</td>
+    </ng-container>
 
-        <!-- Gender Column -->
-        <ng-container matColumnDef="gender">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Стать</th>
-          <td mat-cell *matCellDef="let element">{{element.gender}}</td>
-        </ng-container>
+    <ng-container matColumnDef="details">
+      <th mat-header-cell *matHeaderCellDef> Редагувати </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button color="primary" (click)="onUpdate(element)">
+          <mat-icon class="mat-18">edit</mat-icon>
+        </button>
+      </td>
+    </ng-container>
 
-        <!-- Breed Column -->
-        <ng-container matColumnDef="breed">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Порода</th>
-          <td mat-cell *matCellDef="let element">{{element.breed}}</td>
-        </ng-container>
-        <!-- Age Column -->
-        <ng-container matColumnDef="age">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Вік</th>
-          <td mat-cell *matCellDef="let element">{{element.age}}</td>
-        </ng-container>
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef> Видалити </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button color="warn" (click)='openDeleteDialog(element.id)'>
+          <mat-icon class="mat-18">delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
 
-        <!-- Curator Column -->
-        <ng-container matColumnDef="curator">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Куратор</th>
-          <td mat-cell *matCellDef="let element">{{element.curator}}</td>
-        </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns">
+    </tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
 
-        <ng-container matColumnDef="details">
-          <th mat-header-cell *matHeaderCellDef> Редагувати </th>
-          <td mat-cell *matCellDef="let element">
-            <button mat-icon-button color="primary" (click)="onUpdate(element)">
-              <mat-icon class="mat-18">edit</mat-icon>
-            </button>
-          </td>
-        </ng-container>
-
-        <ng-container matColumnDef="delete">
-          <th mat-header-cell *matHeaderCellDef> Видалити </th>
-          <td mat-cell *matCellDef="let element">
-            <button mat-icon-button color="warn" (click)="redirectToDelete(element.id)">
-              <mat-icon class="mat-18">delete</mat-icon>
-            </button>
-          </td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="displayedColumns">
-        </tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      </table>
-      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
-
-    </mat-tab>
-
-    <mat-tab label="Редагувати відомості про тваринку"></mat-tab>
-    <mat-tab label="Видалити тваринку">
-      <button mat-raised-button color="warn">Exterminate all humans</button>
-    </mat-tab>
-  </mat-tab-group>
 </section>
