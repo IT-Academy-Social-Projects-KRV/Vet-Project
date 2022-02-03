@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
 import { Router } from '@angular/router'
-import { ApiServices } from '@shared/services/api.service'
+import { LoginService } from '../login-modal/login.service'
 
 @Component({
 	selector: 'app-logout-modal',
@@ -8,10 +8,10 @@ import { ApiServices } from '@shared/services/api.service'
 	styleUrls: ['./logout-modal.component.scss']
 })
 export class LogoutModalComponent {
-	constructor(private login: ApiServices, private route: Router) {}
+	constructor(private loginService: LoginService, private route: Router) {}
 
 	logOut() {
-		this.login.logout()
+		this.loginService.logout()
 		this.route.navigate([''])
 	}
 }
