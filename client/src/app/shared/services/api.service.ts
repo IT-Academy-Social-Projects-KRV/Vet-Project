@@ -82,24 +82,6 @@ export class ApiServices {
 		)
 	}
 
-	// setToken(token: string) {
-	// 	this.token = token
-	// }
-
-	// getToken(): string {
-	// 	return this.token
-	// }
-
-	// isAuthenticated(): boolean {
-	// 	debugger
-	// 	return !!this.token
-	// }
-
-	// logout() {
-	// 	this.setToken(null)
-	// 	localStorage.clear()
-	// }
-
 	// getVolonteersInfo(): Observable<IVolonteersInfo> {
 	// 	return this.http.get<IVolonteersInfo>(`${baseUrl}//animals`).pipe(catchError(this.handleError))
 	// }

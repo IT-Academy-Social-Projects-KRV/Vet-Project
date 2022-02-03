@@ -8,7 +8,6 @@ export class LoginInterceptor implements HttpInterceptor {
 
 	intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 		if (this.loginService.isAuthenticated()) {
-			console.log('first')
 			req = req.clone({
 				setHeaders: {
 					Authorization: this.loginService.getToken()

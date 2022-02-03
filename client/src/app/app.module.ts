@@ -16,7 +16,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { LoginInterceptor } from './admin-page/components/login-modal/login.interceptor'
 import { ErrorHttpInterseptor } from './error-http-interseptor'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
-import { httpInterceptorProviders } from './http-interceptors'
 
 @NgModule({
 	declarations: [AppComponent, HeaderComponent, FooterComponent],
@@ -32,17 +31,16 @@ import { httpInterceptorProviders } from './http-interceptors'
 		MatSnackBarModule
 	],
 	providers: [
-		// {
-		// 	provide: HTTP_INTERCEPTORS,
-		// 	multi: true,
-		// 	useClass: LoginInterceptor
-		// },
-		// {
-		// 	provide: HTTP_INTERCEPTORS,
-		// 	multi: true,
-		// 	useClass: ErrorHttpInterseptor
-		// }
-		httpInterceptorProviders
+		{
+			provide: HTTP_INTERCEPTORS,
+			multi: true,
+			useClass: LoginInterceptor
+		},
+		{
+			provide: HTTP_INTERCEPTORS,
+			multi: true,
+			useClass: ErrorHttpInterseptor
+		}
 	],
 	bootstrap: [AppComponent]
 })
