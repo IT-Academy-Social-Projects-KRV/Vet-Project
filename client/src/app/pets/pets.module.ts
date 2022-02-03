@@ -34,7 +34,7 @@ import { FilterResultComponent } from './components/filter-result/filter-result.
 		PetsRoutingModule,
 		MatSelectModule,
 		FormsModule,
-		HttpClientModule,
+		// HttpClientModule,
 		MatSnackBarModule
 	],
 	exports: [AnimalListCardComponent]

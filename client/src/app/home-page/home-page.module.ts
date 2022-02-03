@@ -46,7 +46,7 @@ import { VetsModule } from '../vets/vets.module'
 		MatCardModule,
 		MatInputModule,
 		FormsModule,
-		HttpClientModule,
+		// HttpClientModule,
 		IvyCarouselModule,
 		PetsModule,
 		VetsModule,
