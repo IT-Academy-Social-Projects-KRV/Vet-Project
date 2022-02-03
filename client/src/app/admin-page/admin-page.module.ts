@@ -35,7 +35,7 @@ import { AdminEditVetComponent } from './components/admin-edit-vet/admin-edit-ve
 import { LoginModalComponent } from './components/login-modal/login-modal.component'
 import { PetEditDialogComponent } from './components/pet-edit-dialog/pet-edit-dialog.component'
 import { VetAddDialogComponent } from './components/vet-add-dialog/vet-add-dialog.component'
-import { VolunteersAddDialogComponent } from './components/volunteers-add-dialog/volunteers-add-dialog.component';
+import { VolunteersAddDialogComponent } from './components/volunteers-add-dialog/volunteers-add-dialog.component'
 import { VolunteersDeleteDialogComponent } from './components/volunteers-delete-dialog/volunteers-delete-dialog.component'
 
 @NgModule({
@@ -50,7 +50,7 @@ import { VolunteersDeleteDialogComponent } from './components/volunteers-delete-
 		PetEditDialogComponent,
 		VetAddDialogComponent,
 		VolunteersAddDialogComponent,
-  VolunteersDeleteDialogComponent
+		VolunteersDeleteDialogComponent
 	],
 	imports: [
 		CommonModule,
