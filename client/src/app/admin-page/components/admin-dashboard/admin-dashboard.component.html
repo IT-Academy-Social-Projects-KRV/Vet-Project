@@ -1,17 +1,17 @@
-<div class="grid-container">
+<div class="dashboard__container">
   <h1 class="mat-h1">Статистика</h1>
-  <mat-grid-list cols="3" rowHeight="250px">
-    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
-      <mat-card class="dashboard-card">
-        <mat-card-header>
-          <mat-card-title>
-            {{card.title}}
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <div class="dashboard__number">{{card.amount}} {{vetsAmount}}</div>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
+  <div class="stats-cards">
+    <mat-card fxFlex="25">
+      <app-widget-card label="New Users" total="12k" percentage="50"></app-widget-card>
+    </mat-card>
+    <mat-card fxFlex="25">
+      <app-widget-card label="Users retention" total="10k" percentage="40"></app-widget-card>
+    </mat-card>
+    <mat-card fxFlex="25">
+      <app-widget-card label="Users engagement" total="8k" percentage="30"></app-widget-card>
+    </mat-card>
+    <mat-card fxFlex="25">
+      <app-widget-card label="Referral" total="6k" percentage="20"></app-widget-card>
+    </mat-card>
+  </div>
 </div>
