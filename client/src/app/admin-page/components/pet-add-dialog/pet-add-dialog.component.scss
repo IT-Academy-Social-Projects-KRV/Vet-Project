@@ -1,13 +1,13 @@
-.modal{
+.modal-wrapper{
   display: flex;
 }
-.right,
-.left{
+.modal-right-section,
+.modal-left-section{
   display: flex;
   flex-wrap: wrap;
   width: 400px;
 }
-.right{
+.modal-right-section{
   justify-content: flex-end;
 }
 

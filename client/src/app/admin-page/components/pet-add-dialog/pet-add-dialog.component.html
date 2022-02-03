@@ -1,8 +1,8 @@
 <section>
    
     <form class="example-form" (ngSubmit)='onCreateAnimal(f.value)' #f='ngForm'>
-        <div class="modal">
-       <div class="left">
+        <div class="modal-wrapper">
+       <div class="modal-left-section">
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Назва(кличка)</mat-label>
                 <input matInput name="name" ngModel required>
@@ -32,7 +32,7 @@
                 </mat-select>
               </mat-form-field>
             </div>
-        <div class="right">
+        <div class="modal-right-section">
               <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Історія</mat-label>
                 <textarea rows="4" matInput name="short_info" ngModel></textarea>
@@ -56,3 +56,4 @@
       </form>
 
     </section>
+    
