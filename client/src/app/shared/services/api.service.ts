@@ -8,10 +8,8 @@ import { IVetServices, IVetsInfo } from '../interfaces/vetInfo'
 import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
 import { IVolonteersInfo } from '../interfaces/volonteers'
 
-import { catchError } from 'rxjs/operators'
-
 import { ILoginUSer } from '@shared/interfaces/login'
-
+import { LoginService } from 'src/app/admin-page/components/login-modal/login.service'
 import { UrlBuilder } from '../builder-url'
 
 let builder = new UrlBuilder()
@@ -20,9 +18,8 @@ let builder = new UrlBuilder()
 })
 export class ApiServices {
 	error = new Subject<string>()
-	private token = null
 
-	constructor(private http: HttpClient) {}
+	constructor(private http: HttpClient, private loginService: LoginService) {}
 
 	//FILTERS
 
@@ -84,29 +81,9 @@ export class ApiServices {
 		return this.http.post<{ token: string }>(builder.baseUrl().login().getUrl(), user).pipe(
 			tap(({ token }) => {
 				localStorage.setItem('token', token)
-				this.setToken(token)
+				this.loginService.setToken(token)
 			})
 		)
 	}
 
-	setToken(token: string) {
-		this.token = token
-	}
-
-	getToken(): string {
-		return this.token
-	}
-
-	isAuthenticated(): boolean {
-		return !!this.token
-	}
-
-	logout() {
-		this.setToken(null)
-		localStorage.clear()
-	}
-
-	// getVolonteersInfo(): Observable<IVolonteersInfo> {
-	// 	return this.http.get<IVolonteersInfo>(`${baseUrl}//animals`).pipe(catchError(this.handleError))
-	// }
 }

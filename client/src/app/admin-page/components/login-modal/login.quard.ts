@@ -8,14 +8,15 @@ import {
 } from '@angular/router'
 import { ApiServices } from '@shared/services/api.service'
 import { Observable, of } from 'rxjs'
+import { LoginService } from './login.service'
 @Injectable({
 	providedIn: 'root'
 })
 export class LoginGuard implements CanActivate, CanActivateChild {
-	constructor(private login: ApiServices, private router: Router) {}
+	constructor(private loginService: LoginService, private router: Router) {}
 
 	canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
-		if (this.login.isAuthenticated()) {
+		if (this.loginService.isAuthenticated()) {
 			return of(true)
 		} else {
 			this.router.navigate([''])
