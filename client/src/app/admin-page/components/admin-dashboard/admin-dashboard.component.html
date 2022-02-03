@@ -1,17 +1,30 @@
-<div class="dashboard__container">
-  <h1 class="mat-h1">Статистика</h1>
-  <div class="stats-cards">
-    <mat-card fxFlex="25">
-      <app-widget-card label="New Users" total="12k" percentage="50"></app-widget-card>
-    </mat-card>
-    <mat-card fxFlex="25">
-      <app-widget-card label="Users retention" total="10k" percentage="40"></app-widget-card>
-    </mat-card>
-    <mat-card fxFlex="25">
-      <app-widget-card label="Users engagement" total="8k" percentage="30"></app-widget-card>
-    </mat-card>
-    <mat-card fxFlex="25">
-      <app-widget-card label="Referral" total="6k" percentage="20"></app-widget-card>
-    </mat-card>
-  </div>
+<br>
+
+<mat-divider></mat-divider>
+
+<br>
+
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
+  <mat-card>
+    <app-widget-card label="Тварин:" total="12k" percentage="50" [data]="cards"></app-widget-card>
+  </mat-card>
+  <mat-card>
+    <app-widget-card label="Клінік:" total="10k" percentage="40" [data]="cards"></app-widget-card>
+  </mat-card>
+  <mat-card>
+    <app-widget-card label="Ветеренарів:" total="8k" percentage="30" [data]="cards"></app-widget-card>
+  </mat-card>
+  <mat-card>
+    <app-widget-card label="Всього записів:" total="6k" percentage="20" [data]="cards"></app-widget-card>
+  </mat-card>
+</div>
+
+<br>
+
+<mat-divider></mat-divider>
+
+<br>
+
+<div fxFlex="40">
+  <app-widget-pie [data]="pieChart"></app-widget-pie>
 </div>

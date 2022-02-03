@@ -19,10 +19,13 @@ import { MatPaginatorModule } from '@angular/material/paginator'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatDialogModule } from '@angular/material/dialog'
 import { LogoutModalComponent } from './components/logout-modal/logout-modal.component'
-
 import { MatTabsModule } from '@angular/material/tabs'
 import { MatTreeModule } from '@angular/material/tree'
 import { MatSortModule } from '@angular/material/sort'
+
+import { ChartModule, HIGHCHARTS_MODULES } from 'angular-highcharts'
+import * as more from 'highcharts/highcharts-more.src'
+import * as exporting from 'highcharts/modules/exporting.src'
 
 import { ApiServices } from '@shared/services/api.service'
 import { VolunteersService } from './components/admin-edit-volonteer/volunteers.service'
@@ -39,6 +42,8 @@ import { VetAddDialogComponent } from './components/vet-add-dialog/vet-add-dialo
 import { PetDeleteModalComponent } from './components/pet-delete-modal/pet-delete-modal.component'
 import { VolunteersAddDialogComponent } from './components/volunteers-add-dialog/volunteers-add-dialog.component'
 import { VolunteersDeleteDialogComponent } from './components/volunteers-delete-dialog/volunteers-delete-dialog.component'
+import { WidgetCardComponent } from './components/widget-card/widget-card.component'
+import { WidgetPieComponent } from './components/widget-pie/widget-pie.component'
 
 @NgModule({
 	declarations: [
@@ -55,7 +60,9 @@ import { VolunteersDeleteDialogComponent } from './components/volunteers-delete-
 		PetDeleteModalComponent,
 		VetAddDialogComponent,
 		VolunteersAddDialogComponent,
-		VolunteersDeleteDialogComponent
+		VolunteersDeleteDialogComponent,
+		WidgetCardComponent,
+		WidgetPieComponent
 	],
 	imports: [
 		CommonModule,
@@ -79,9 +86,14 @@ import { VolunteersDeleteDialogComponent } from './components/volunteers-delete-
 		FormsModule,
 		MatTabsModule,
 		MatTreeModule,
-		MatSortModule
+		MatSortModule,
+		ChartModule
 	],
-	providers: [ApiServices, VolunteersService],
+	providers: [
+		{ provide: HIGHCHARTS_MODULES, useFactory: () => [more, exporting] },
+		ApiServices,
+		VolunteersService
+	],
 	exports: [LoginModalComponent]
 })
 export class AdminPageModule {}

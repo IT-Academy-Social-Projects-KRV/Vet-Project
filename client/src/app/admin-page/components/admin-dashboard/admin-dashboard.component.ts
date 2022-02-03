@@ -1,4 +1,7 @@
-import { Component } from '@angular/core'
+import { Component, OnInit, ViewChild } from '@angular/core'
+import { MatPaginator } from '@angular/material/paginator'
+import { DashboardService } from './dashboard.service'
+import { MatTableDataSource } from '@angular/material/table'
 
 @Component({
 	selector: 'app-admin-dashboard',
@@ -6,5 +9,13 @@ import { Component } from '@angular/core'
 	styleUrls: ['./admin-dashboard.component.scss']
 })
 export class AdminDashboardComponent {
-	constructor() {}
+	cards = []
+	pieChart = []
+
+	constructor(private dashboardService: DashboardService) {}
+
+	ngOnInit() {
+		this.cards = this.dashboardService.cards()
+		this.pieChart = this.dashboardService.pieChart()
+	}
 }
