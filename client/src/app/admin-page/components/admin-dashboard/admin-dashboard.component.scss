@@ -14,12 +14,11 @@
 	}
 }
 
-.more-button {
-	position: absolute;
-	top: 5px;
-	right: 10px;
-}
-
 .dashboard-card-content {
 	text-align: center;
+}
+.dashboard__number {
+	padding-top: 30px;
+	font-size: 50px;
+	color: dodgerblue;
 }
