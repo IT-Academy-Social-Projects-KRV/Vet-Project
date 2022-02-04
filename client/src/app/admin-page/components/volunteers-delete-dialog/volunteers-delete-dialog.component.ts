@@ -7,6 +7,7 @@ import { MatDialogRef } from '@angular/material/dialog'
 })
 export class VolunteersDeleteDialogComponent {
 	constructor(public dialogRef: MatDialogRef<VolunteersDeleteDialogComponent>) {}
+	status: boolean
 	onCloseDialog() {
 		this.dialogRef.close()
 	}

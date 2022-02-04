@@ -2,8 +2,7 @@ export interface IBareVolunteer {
 	first_name: string,
 	last_name: string,
 	email: string,
-	number: string,
-	city: string
+	number: string
 }
 
 export interface IVolunteer extends IBareVolunteer {

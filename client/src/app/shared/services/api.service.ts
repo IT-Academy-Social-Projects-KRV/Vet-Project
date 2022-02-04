@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
-import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http'
-import { Observable, Subject, tap, throwError } from 'rxjs'
+import { HttpClient } from '@angular/common/http'
+import { Observable, Subject, tap } from 'rxjs'
 
 import { IAnimalsInfo } from '../interfaces/animals'
 import { IAnimalsUnitInfo } from '../interfaces/animals-unit'
@@ -69,12 +69,20 @@ export class ApiServices {
 	deleteClinic(id) {
 		return this.http.delete<IVetsInfo>(builder.baseUrl().vet().addId(id).getUrl())
 	}
-
 	/////////////////////VOLONTEERS////////////////////////
 	getVolonteersInfo() {
 		return this.http.get<IVolonteersInfo[]>(builder.baseUrl().volonteers().getUrl())
 	}
+	putEditVolunteer(data) {
+		return this.http.put<{ [key: string]: any }>(builder.baseUrl().volonteers().getUrl(), data)
+	}
+	deleteVolunteer(id) {
+		return this.http.delete<IVetsInfo>(builder.baseUrl().volonteers().addId(id).getUrl())
+	}
 
+	postNewVolunteer(item) {
+		return this.http.post<{ [key: string]: any }>(builder.baseUrl().volonteers().getUrl(), item)
+	}
 	//////////////LOGIN///////////////////////////////////////
 
 	login(user: ILoginUSer): Observable<{ token: string }> {
@@ -85,5 +93,4 @@ export class ApiServices {
 			})
 		)
 	}
-
 }
