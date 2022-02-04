@@ -79,13 +79,13 @@ router.put('/', async function updateVolunteers (
 			email,
 			number,
 			id
-		  } = req.body
+		} = req.body
 		  const updatedVolunteer = await db.query<IVolunteer> (
 			  `UPDATE volonteers
-			   SET first_name = $1,
+			   set first_name = $1,
 			   last_name = $2,
 			   email = $3,
-			   number = $4,
+			   number = $4
 			   WHERE id = $5
 			   RETURNING *`, 
 			  [
@@ -93,7 +93,7 @@ router.put('/', async function updateVolunteers (
 				  last_name,
 				  email,
 				  number,
-				  id			  	
+				  id				  	
 			  ]
 			  )
 			  res.json(updatedVolunteer.rows[0])

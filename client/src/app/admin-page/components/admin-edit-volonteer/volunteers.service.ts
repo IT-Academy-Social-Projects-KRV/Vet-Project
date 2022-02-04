@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core'
 import { FormGroup, FormControl, Validators } from '@angular/forms'
+import { ApiServices } from '@shared/services/api.service'
+
 
 @Injectable({
 	providedIn: 'root'
 })
 export class VolunteersService {
-	constructor() {}
+	constructor(public apiService: ApiServices) {}
+	volunteersList: any = []
 
 	form: FormGroup = new FormGroup({
 		id: new FormControl(null),
@@ -28,5 +31,14 @@ export class VolunteersService {
 			email: '',
 			number: ''
 		})
+	}
+	updateVolunteer(volunteer: any): void {
+		this.apiService.putEditVolunteer(volunteer).subscribe()
+	}
+	populateForm(volunteer) {
+		this.form.setValue(volunteer)
+	}
+	deleteVolunteer(id: string) {
+		this.apiService.deleteVolunteer(id).subscribe()
 	}
 }
