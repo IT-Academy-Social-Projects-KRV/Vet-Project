@@ -7,7 +7,6 @@ import { Component } from '@angular/core'
 })
 export class AdminLayoutComponent {
 	sideBarOpen = true
-	constructor() {}
 
 	sideBarToggler() {
 		this.sideBarOpen = !this.sideBarOpen
