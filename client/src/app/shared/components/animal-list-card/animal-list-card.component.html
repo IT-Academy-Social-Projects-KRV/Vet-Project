@@ -15,7 +15,7 @@
     <mat-card-subtitle>Порода:
       <span class="pet-card__pet-info-item">{{ animalsInfo.breed }}</span>
     </mat-card-subtitle>
-    <div *ngIf="isButtonVisible">
+    <div *ngIf="isButtonVisible" class="animal-card__button-container">
       <button class="animal-card_button" mat-raised-button [routerLink]="['/animals-list', animalsInfo.id]">
         Дізнатись більше
       </button>

@@ -9,6 +9,7 @@ import { IVetsInfo } from '@shared/interfaces/vetInfo'
 export class VetListCardComponent {
 	@Input()
 	vetsInfo: IVetsInfo
+	@Input() isButtonVisible = false
 
 	constructor() {}
 }
