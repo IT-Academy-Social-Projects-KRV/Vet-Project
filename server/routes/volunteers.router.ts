@@ -80,24 +80,22 @@ router.put('/', async function updateVolunteers (
 			last_name,
 			email,
 			number,
-			city,
 			id
-		  } = req.body
+		} = req.body
+		console.log(last_name)
 		  const updatedVolunteer = await db.query<IVolunteer> (
 			  `UPDATE volonteers
-			   SET first_name = $1,
+			   set first_name = $1,
 			   last_name = $2,
 			   email = $3,
-			   number = $4,
-			   city = $5 
-			   WHERE id = $6
+			   number = $4
+			   WHERE id = $5
 			   RETURNING *`, 
 			  [
 				  first_name,
 				  last_name,
 				  email,
 				  number,
-				  city,
 				  id				  	
 			  ]
 			  )
