@@ -19,28 +19,40 @@ export class VolunteersAddDialogComponent {
 	onClear() {
 		this.service.form.reset()
 		this.service.initializeFormGroup()
+		this.notifier.showInfoNotification('Дані з форми видалено!', 'Ок!')
+	}
+
+	onSubmit() {
+		if (this.service.form.valid) {
+			if (!this.service.form.get('id').value) {
+				this.apiService
+					.postNewVolunteer({
+						first_name: this.service.form.value.first_name,
+						last_name: this.service.form.value.last_name,
+						email: this.service.form.value.email,
+						number: this.service.form.value.number
+					})
+					.subscribe()
+
+				this.notifier.showSuccessNotification('Волонтер успішно доданий', 'OK')
+				this.dialogRef.close(this.service.form.value)
+				this.service.form.reset()
+			} else {
+				this.service.updateVolunteer(this.service.form.value)
+			}
+			this.service.form.reset()
+			this.service.initializeFormGroup()
+			this.notifier.showSuccessNotification('Дані успішно додані!', 'Чудово!')
+			this.onClose()
+		}
+	}
+	onClose() {
+		this.service.form.reset()
+		this.service.initializeFormGroup()
+		this.dialogRef.close()
 	}
 
 	closeDialog() {
 		this.dialogRef.close()
-	}
-	// refreshPAge() {
-	// 	this.apiService
-	// 		.postNewVolunteer(this.service.form.value)
-	// 		.subscribe(values => this.dialogRef.close(values))
-	// }
-	onSubmit() {
-		this.apiService
-			.postNewVolunteer({
-				first_name: this.service.form.value.first_name,
-				last_name: this.service.form.value.last_name,
-				email: this.service.form.value.email,
-				number: this.service.form.value.number
-			})
-			.subscribe()
-
-		this.notifier.showSuccessNotification('Волонтер успішно доданий', 'OK')
-		this.dialogRef.close(this.service.form.value)
-		this.service.form.reset()
 	}
 }
