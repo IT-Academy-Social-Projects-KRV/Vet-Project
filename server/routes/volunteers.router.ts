@@ -80,7 +80,6 @@ router.put('/', async function updateVolunteers (
 			number,
 			id
 		} = req.body
-		console.log(last_name)
 		  const updatedVolunteer = await db.query<IVolunteer> (
 			  `UPDATE volonteers
 			   set first_name = $1,

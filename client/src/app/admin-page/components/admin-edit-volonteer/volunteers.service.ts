@@ -32,18 +32,7 @@ export class VolunteersService {
 			number: ''
 		})
 	}
-	insertVolunteer(volunteer) {
-		console.log(volunteer)
-		this.volunteersList.push({
-			first_name: volunteer.first_name,
-			last_name: volunteer.last_name,
-			email: volunteer.email,
-			number: volunteer.number
-		})
-		console.log('vol list' + this.volunteersList)
-	}
 	updateVolunteer(volunteer: any): void {
-		console.log(volunteer)
 		this.apiService.putEditVolunteer(volunteer).subscribe()
 	}
 	populateForm(volunteer) {

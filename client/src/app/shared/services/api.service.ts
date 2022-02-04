@@ -74,8 +74,6 @@ export class ApiServices {
 		return this.http.get<IVolonteersInfo[]>(builder.baseUrl().volonteers().getUrl())
 	}
 	putEditVolunteer(data) {
-		console.log(data)
-		console.log(builder.baseUrl().volonteers().getUrl())
 		return this.http.put<{ [key: string]: any }>(builder.baseUrl().volonteers().getUrl(), data)
 	}
 	deleteVolunteer(id) {

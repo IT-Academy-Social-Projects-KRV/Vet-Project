@@ -66,6 +66,7 @@ export class AdminEditVolonteerComponent implements OnInit, AfterViewInit {
 			.subscribe(data => {
 				const arr = this.dataSource.data.concat(data)
 				this.dataSource.data = arr
+				console.log(arr)
 				this.getVolonteers()
 			})
 	}
@@ -74,9 +75,17 @@ export class AdminEditVolonteerComponent implements OnInit, AfterViewInit {
 	}
 	onEdit(row) {
 		this.service.populateForm(row)
-		this.matDialog.open(VolunteersAddDialogComponent, {
-			width: '500px',
-			disableClose: true
-		})
+		this.matDialog
+			.open(VolunteersAddDialogComponent, {
+				width: '500px',
+				disableClose: true
+			})
+			.afterClosed()
+			.subscribe(data => {
+				const arr = this.dataSource.data.concat(data)
+				this.dataSource.data = arr
+				console.log(arr)
+				this.getVolonteers()
+			})
 	}
 }

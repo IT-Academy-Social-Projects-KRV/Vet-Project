@@ -55,23 +55,4 @@ export class VolunteersAddDialogComponent {
 	closeDialog() {
 		this.dialogRef.close()
 	}
-	// refreshPAge() {
-	// 	this.apiService
-	// 		.postNewVolunteer(this.service.form.value)
-	// 		.subscribe(values => this.dialogRef.close(values))
-	// }
-	// onSubmit() {
-	// 	this.apiService
-	// 		.postNewVolunteer({
-	// 			first_name: this.service.form.value.first_name,
-	// 			last_name: this.service.form.value.last_name,
-	// 			email: this.service.form.value.email,
-	// 			number: this.service.form.value.number
-	// 		})
-	// 		.subscribe()
-
-	// 	this.notifier.showSuccessNotification('Волонтер успішно доданий', 'OK')
-	// 	this.dialogRef.close(this.service.form.value)
-	// 	this.service.form.reset()
-	// }
 }

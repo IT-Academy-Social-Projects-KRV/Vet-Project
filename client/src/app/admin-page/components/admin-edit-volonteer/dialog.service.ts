@@ -11,7 +11,7 @@ export class DialogService {
 	constructor(private dialog: MatDialog, public service: VolunteersService) {}
 	public dialogRef: MatDialogRef<any>
 	openConfirmDialog() {
-		this.dialog.open(VolunteersAddDialogComponent, {
+		return this.dialog.open(VolunteersAddDialogComponent, {
 			width: '500px',
 			disableClose: true
 		})
