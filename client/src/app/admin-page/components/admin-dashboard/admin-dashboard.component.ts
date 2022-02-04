@@ -1,7 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core'
-import { MatPaginator } from '@angular/material/paginator'
 import { DashboardService } from './dashboard.service'
-import { MatTableDataSource } from '@angular/material/table'
 
 @Component({
 	selector: 'app-admin-dashboard',

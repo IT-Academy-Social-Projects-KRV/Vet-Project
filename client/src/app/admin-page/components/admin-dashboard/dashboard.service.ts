@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core'
 	providedIn: 'root'
 })
 export class DashboardService {
-	constructor() {}
+	volonteersNumber = 6
 
 	cards() {
 		return [71, 78, 39, 66]
@@ -24,7 +24,7 @@ export class DashboardService {
 			},
 			{
 				name: 'Волонтери',
-				y: 6
+				y: this.volonteersNumber
 			}
 		]
 	}
