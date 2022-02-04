@@ -12,10 +12,16 @@ export class VolunteersService {
 
 	form: FormGroup = new FormGroup({
 		id: new FormControl(null),
-		first_name: new FormControl('', Validators.required),
-		last_name: new FormControl('', Validators.required),
+		first_name: new FormControl('', [
+			Validators.required,
+			Validators.pattern("^[а-яА-я / і / ґ / ї / І / Ї/ Ґ']+")
+		]),
+		last_name: new FormControl('', [
+			Validators.required,
+			Validators.pattern("^[а-яА-я / і / ґ / ї / І / Ї/ Ґ']+")
+		]),
 		email: new FormControl('', Validators.email),
-		number: new FormControl('', [Validators.required, Validators.minLength(10)])
+		number: new FormControl('', [Validators.required, Validators.pattern('[- +()0-9]{10,}')])
 	})
 	initializeFormGroup() {
 		this.form.setValue({

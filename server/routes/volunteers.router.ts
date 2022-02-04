@@ -14,18 +14,16 @@ router.post('/', async function addVolunteer (
 			  first_name,
 			  last_name,
 			  email,
-			  number,
-			  city,
+			  number
 			} = req.body
 			const newVolunteer = await db.query<IVolunteer> (
-				`INSERT INTO volonteers (first_name, last_name, email, number, city)
-				VALUES ($1,$2,$3,$4,$5) RETURNING *`, 
+				`INSERT INTO volonteers (first_name, last_name, email, number)
+				VALUES ($1,$2,$3,$4) RETURNING *`, 
 				[
 					first_name,
 					last_name,
 					email,
-					number,
-					city,				
+					number			
 				]
 				)
 				res.json(newVolunteer.rows[0])

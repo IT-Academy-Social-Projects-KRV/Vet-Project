@@ -59,8 +59,15 @@ export class AdminEditVolonteerComponent implements OnInit, AfterViewInit {
 			this.dataSource.paginator.firstPage()
 		}
 	}
-	openAddDialog() {
-		this.dialog.openConfirmDialog()
+	openConfirmDialog() {
+		this.dialog
+			.openConfirmDialog()
+			.afterClosed()
+			.subscribe(data => {
+				const arr = this.dataSource.data.concat(data)
+				this.dataSource.data = arr
+				this.getVolonteers()
+			})
 	}
 	openDeleteDialog(id) {
 		this.dialog.openDeleteDialog(id)

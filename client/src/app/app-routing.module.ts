@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
+import { AdminPageModule } from './admin-page/admin-page.module'
 import { LoginModalComponent } from './admin-page/components/login-modal/login-modal.component'
 
 const routes: Routes = [
@@ -26,7 +27,12 @@ const routes: Routes = [
 ]
 
 @NgModule({
-	imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
+	imports: [
+		RouterModule.forRoot(routes, {
+			scrollPositionRestoration: 'enabled',
+			anchorScrolling: 'enabled'
+		})
+	],
 	exports: [RouterModule]
 })
 export class AppRoutingModule {}

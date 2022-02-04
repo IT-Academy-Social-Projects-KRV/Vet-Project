@@ -1,20 +1,20 @@
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http'
 import { Injectable } from '@angular/core'
-import { ApiServices } from '@shared/services/api.service'
 import { Observable } from 'rxjs'
-
+import { LoginService } from './login.service'
 @Injectable()
 export class LoginInterceptor implements HttpInterceptor {
-	constructor(private login: ApiServices) {}
+	constructor(private loginService: LoginService) {}
 
 	intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-		if (this.login.isAuthenticated()) {
+		if (this.loginService.isAuthenticated()) {
 			req = req.clone({
 				setHeaders: {
-					Authorization: this.login.getToken()
+					Authorization: this.loginService.getToken()
 				}
 			})
 		}
+
 		return next.handle(req)
 	}
 }
