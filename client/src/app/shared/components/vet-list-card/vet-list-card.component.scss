@@ -9,6 +9,10 @@
 .vet-card__card-header {
 	justify-content: center;
 }
+.pet-card__img {
+	width: 328px;
+	cursor: pointer;
+}
 
 .vet-card__card-title {
 	font-weight: bold;
@@ -20,19 +24,15 @@
 	color: black;
 	margin-left: 5px;
 }
+.vet-card__button-container {
+	display: flex;
+	justify-content: center;
+}
 .vet-card_button {
-  width: 120px;
-  height: 40px;
-  cursor: pointer;
-  background-color: #4788b6;
+	background-color: #4788b6;
 	color: #fff;
-  transition: 0.2s;
 	&:hover {
 		background-color: #d68427;
+		cursor: pointer;
 	}
-}
-.ng-star-inserted {
-  justify-content: center;
-  align-items: center;
-  display: flex;
 }

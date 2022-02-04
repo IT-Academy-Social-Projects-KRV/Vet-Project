@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { VetAddDialogComponent } from './vet-add-dialog.component'
+import { WidgetCardComponent } from './widget-card.component'
 
-describe('VetAddDialogComponent', () => {
-	let component: VetAddDialogComponent
-	let fixture: ComponentFixture<VetAddDialogComponent>
+describe('WidgetCardComponent', () => {
+	let component: WidgetCardComponent
+	let fixture: ComponentFixture<WidgetCardComponent>
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [VetAddDialogComponent]
+			declarations: [WidgetCardComponent]
 		}).compileComponents()
 	})
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(VetAddDialogComponent)
+		fixture = TestBed.createComponent(WidgetCardComponent)
 		component = fixture.componentInstance
 		fixture.detectChanges()
 	})

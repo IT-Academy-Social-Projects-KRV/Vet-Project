@@ -1,6 +1,7 @@
-import { Component } from '@angular/core'
-import { map } from 'rxjs/operators'
-import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout'
+import { Component, OnInit, ViewChild } from '@angular/core'
+import { MatPaginator } from '@angular/material/paginator'
+import { DashboardService } from './dashboard.service'
+import { MatTableDataSource } from '@angular/material/table'
 
 @Component({
 	selector: 'app-admin-dashboard',
@@ -8,26 +9,14 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout'
 	styleUrls: ['./admin-dashboard.component.scss']
 })
 export class AdminDashboardComponent {
-	/** Based on the screen size, switch from standard to one column per row */
-	cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-		map(({ matches }) => {
-			if (matches) {
-				return [
-					{ title: 'К-сть тварин', cols: 1, rows: 1 },
-					{ title: 'К-сть клінік', cols: 1, rows: 1 },
-					{ title: 'К-сть волонтерів', cols: 1, rows: 1 },
-					{ title: 'Card 4', cols: 1, rows: 1 }
-				]
-			}
+	cards = []
+	pieChart = []
 
-			return [
-				{ title: 'К-сть тварин', cols: 1, rows: 1 },
-				{ title: 'К-сть клінік', cols: 1, rows: 1 },
-				{ title: 'К-сть волонтерів', cols: 1, rows: 1 },
-				{ title: 'Card 4', cols: 1, rows: 1 }
-			]
-		})
-	)
+	constructor(private dashboardService: DashboardService) {}
 
-	constructor(private breakpointObserver: BreakpointObserver) {}
+	// eslint-disable-next-line @angular-eslint/use-lifecycle-interface
+	ngOnInit() {
+		this.cards = this.dashboardService.cards()
+		this.pieChart = this.dashboardService.pieChart()
+	}
 }

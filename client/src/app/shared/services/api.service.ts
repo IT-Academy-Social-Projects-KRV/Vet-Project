@@ -77,7 +77,16 @@ export class ApiServices {
 	getVolonteersInfo() {
 		return this.http.get<IVolonteersInfo[]>(builder.baseUrl().volonteers().getUrl())
 	}
+	putEditVolunteer(data) {
+		return this.http.put<{ [key: string]: any }>(builder.baseUrl().volonteers().getUrl(), data)
+	}
+	deleteVolunteer(id) {
+		return this.http.delete<IVetsInfo>(builder.baseUrl().volonteers().addId(id).getUrl())
+	}
 
+	postNewVolunteer(item) {
+		return this.http.post<{ [key: string]: any }>(builder.baseUrl().volonteers().getUrl(), item)
+	}
 	//////////////LOGIN///////////////////////////////////////
 
 	login(user: ILoginUSer): Observable<{ token: string }> {

@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { VetAddDialogComponent } from './vet-add-dialog.component'
+import { AdminLayoutComponent } from './admin-layout.component'
 
-describe('VetAddDialogComponent', () => {
-	let component: VetAddDialogComponent
-	let fixture: ComponentFixture<VetAddDialogComponent>
+describe('AdminLayoutComponent', () => {
+	let component: AdminLayoutComponent
+	let fixture: ComponentFixture<AdminLayoutComponent>
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [VetAddDialogComponent]
+			declarations: [AdminLayoutComponent]
 		}).compileComponents()
 	})
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(VetAddDialogComponent)
+		fixture = TestBed.createComponent(AdminLayoutComponent)
 		component = fixture.componentInstance
 		fixture.detectChanges()
 	})

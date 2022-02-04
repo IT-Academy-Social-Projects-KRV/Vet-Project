@@ -82,9 +82,12 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 			width: '550px',
 			disableClose: false
 		})
-		this.dialogRef.afterClosed().subscribe(() => {
-			const newDataArr = this.dataSource.data.concat(this.dialogRef.componentInstance.item)
-			this.dataSource.data = newDataArr
+		this.dialogRef.afterClosed().subscribe(result => {
+			if (result) {
+				const newDataArr = this.dataSource.data.concat(this.dialogRef.componentInstance.item)
+				this.dataSource.data = newDataArr
+			}
+			this.dialogRef = null
 		})
 	}
 
@@ -93,6 +96,7 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 			disableClose: true
 		})
 		this.dialogRef.afterClosed().subscribe(result => {
+			console.log(result)
 			if (result) {
 				this.onDeleteClinic(id)
 			}

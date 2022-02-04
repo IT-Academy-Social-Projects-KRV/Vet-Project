@@ -22,6 +22,10 @@ import { MatTabsModule } from '@angular/material/tabs'
 import { MatTreeModule } from '@angular/material/tree'
 import { MatSortModule } from '@angular/material/sort'
 
+import { ChartModule, HIGHCHARTS_MODULES } from 'angular-highcharts'
+import * as more from 'highcharts/highcharts-more.src'
+import * as exporting from 'highcharts/modules/exporting.src'
+
 import { ApiServices } from '@shared/services/api.service'
 import { VolunteersService } from './components/admin-edit-volonteer/volunteers.service'
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component'
@@ -41,6 +45,9 @@ import { VetDeleteDialogComponent } from './components/vet-delete-dialog/vet-del
 import { PetDeleteModalComponent } from './components/pet-delete-modal/pet-delete-modal.component'
 import { VolunteersAddDialogComponent } from './components/volunteers-add-dialog/volunteers-add-dialog.component'
 import { VolunteersDeleteDialogComponent } from './components/volunteers-delete-dialog/volunteers-delete-dialog.component'
+import { WidgetCardComponent } from './components/widget-card/widget-card.component'
+import { WidgetPieComponent } from './components/widget-pie/widget-pie.component'
+import { AdminLayoutComponent } from './components/admin-layout/admin-layout.component'
 
 @NgModule({
 	declarations: [
@@ -60,7 +67,10 @@ import { VolunteersDeleteDialogComponent } from './components/volunteers-delete-
 		VetAddDialogComponent,
 		PetDeleteModalComponent,
 		VolunteersAddDialogComponent,
-		VolunteersDeleteDialogComponent
+		VolunteersDeleteDialogComponent,
+		WidgetCardComponent,
+		WidgetPieComponent,
+		AdminLayoutComponent
 	],
 	imports: [
 		CommonModule,
@@ -84,9 +94,15 @@ import { VolunteersDeleteDialogComponent } from './components/volunteers-delete-
 		FormsModule,
 		MatTabsModule,
 		MatTreeModule,
-		MatSortModule
+		MatSortModule,
+		ChartModule
 	],
-	providers: [ApiServices, VolunteersService, MatTableModule],
+	providers: [
+		{ provide: HIGHCHARTS_MODULES, useFactory: () => [more, exporting] },
+		ApiServices,
+		VolunteersService,
+		MatTableModule
+	],
 	exports: [LoginModalComponent]
 })
 export class AdminPageModule {}
