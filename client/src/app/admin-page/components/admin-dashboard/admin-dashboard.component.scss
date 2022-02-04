@@ -1,29 +1,3 @@
-// .grid-container {
-// 	margin: 20px;
-// }
-
-// .dashboard-card {
-// 	position: absolute;
-// 	top: 15px;
-// 	left: 15px;
-// 	right: 15px;
-// 	bottom: 15px;
-// 	&:hover {
-// 		transform: translateY(5px);
-// 		box-shadow: 2px 2px 26px rgba(0, 0, 0, 0.3);
-// 	}
-// }
-
-// .dashboard-card-content {
-// 	text-align: center;
-// }
-// .dashboard__number {
-// 	padding-top: 30px;
-// 	font-size: 50px;
-// 	color: dodgerblue;
-// }
-// .dashboard__container {
-// }
 .stats-cards {
 	display: flex;
 	flex-basis: calc(100% / 3);
@@ -31,4 +5,7 @@
 	justify-content: space-evenly;
 	flex-direction: row;
 	gap: 10px;
+}
+.mat-card {
+	width: 250px;
 }

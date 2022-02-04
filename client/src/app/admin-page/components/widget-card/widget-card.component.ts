@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core'
+import { Component, Input } from '@angular/core'
 import { Chart } from 'angular-highcharts'
 
 @Component({
@@ -6,48 +6,49 @@ import { Chart } from 'angular-highcharts'
 	templateUrl: './widget-card.component.html',
 	styleUrls: ['./widget-card.component.scss']
 })
-export class WidgetCardComponent implements OnInit {
+export class WidgetCardComponent {
 	@Input() label: string
 	@Input() total: string
 	@Input() percentage: string
 	@Input() data = []
-	chartOptions = {}
 
-	chart = new Chart({
-		chart: {
-			type: 'area',
-			backgroundColor: null,
-			borderWidth: 0,
-			margin: [2, 2, 2, 2],
-			height: 60
-		},
-		title: {
-			text: null
-		},
-		subtitle: {
-			text: null
-		},
-		tooltip: {
-			split: true,
-			outside: true
-		},
-		legend: {
-			enabled: false
-		},
-		credits: {
-			enabled: false
-		},
-		exporting: {
-			enabled: false
-		},
-		series: [{ type: undefined, name: 'name I', data: [1, 2, 3] }]
-	})
+	chart: Chart
 
-	constructor() {}
-
+	// eslint-disable-next-line @angular-eslint/use-lifecycle-interface
 	ngOnInit() {
-		// setTimeout(() => {
-		// 	window.dispatchEvent(new Event('resize'))
-		// }, 300)
+		this.init()
 	}
+	init() {
+		let chart = new Chart({
+			chart: {
+				type: 'area',
+				backgroundColor: null,
+				borderWidth: 0,
+				margin: [2, 2, 2, 2],
+				height: 60
+			},
+			title: {
+				text: null
+			},
+			subtitle: {
+				text: null
+			},
+			tooltip: {
+				split: true,
+				outside: true
+			},
+			legend: {
+				enabled: false
+			},
+			credits: {
+				enabled: false
+			},
+			exporting: {
+				enabled: false
+			},
+			series: [{ type: undefined, name: 'name I', data: this.data }]
+		})
+		this.chart = chart
+	}
+	constructor() {}
 }
