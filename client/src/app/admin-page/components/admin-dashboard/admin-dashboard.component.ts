@@ -14,6 +14,7 @@ export class AdminDashboardComponent {
 
 	constructor(private dashboardService: DashboardService) {}
 
+	// eslint-disable-next-line @angular-eslint/use-lifecycle-interface
 	ngOnInit() {
 		this.cards = this.dashboardService.cards()
 		this.pieChart = this.dashboardService.pieChart()
