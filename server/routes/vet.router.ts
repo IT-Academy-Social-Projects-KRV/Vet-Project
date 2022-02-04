@@ -108,7 +108,7 @@ router.put(
 				await db.query(
 					`
                 UPDATE vetlist 
-                SET title = $1, adress = $2, phone = $3, email = 4, map_link = 5 
+                SET title = $1, adress = $2, phone = $3, email = $4, map_link = $5 
                 WHERE id = $6
                 RETURNING *`,
 					[

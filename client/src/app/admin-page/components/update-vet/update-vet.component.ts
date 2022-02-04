@@ -36,7 +36,6 @@ export class UpdateVetComponent implements OnInit {
 		}
 		this.apiServices.putUpdateVet(this.data).subscribe()
 		this.dialogRef.close()
-		console.log(this.item)
 	}
 
 	closeDialog() {
