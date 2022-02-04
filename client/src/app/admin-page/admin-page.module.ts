@@ -44,7 +44,8 @@ import { PetDeleteModalComponent } from './components/pet-delete-modal/pet-delet
 import { VolunteersAddDialogComponent } from './components/volunteers-add-dialog/volunteers-add-dialog.component'
 import { VolunteersDeleteDialogComponent } from './components/volunteers-delete-dialog/volunteers-delete-dialog.component'
 import { WidgetCardComponent } from './components/widget-card/widget-card.component'
-import { WidgetPieComponent } from './components/widget-pie/widget-pie.component'
+import { WidgetPieComponent } from './components/widget-pie/widget-pie.component';
+import { AdminLayoutComponent } from './components/admin-layout/admin-layout.component'
 
 @NgModule({
 	declarations: [
@@ -64,7 +65,8 @@ import { WidgetPieComponent } from './components/widget-pie/widget-pie.component
 		VolunteersAddDialogComponent,
 		VolunteersDeleteDialogComponent,
 		WidgetCardComponent,
-		WidgetPieComponent
+		WidgetPieComponent,
+  AdminLayoutComponent
 	],
 	imports: [
 		CommonModule,
