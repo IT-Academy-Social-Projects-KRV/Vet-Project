@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { ApiServices } from '@shared/services/api.service'
+import { LoginService } from './admin-page/components/login-modal/login.service'
 
 @Component({
 	selector: 'app-root',
@@ -8,11 +8,11 @@ import { ApiServices } from '@shared/services/api.service'
 })
 export class AppComponent implements OnInit {
 	title = 'client'
-	constructor(private login: ApiServices) {}
+	constructor(private loginService: LoginService) {}
 	ngOnInit(): void {
 		const potentialToken = localStorage.getItem('token')
 		if (potentialToken !== null) {
-			this.login.setToken(potentialToken)
+			this.loginService.setToken(potentialToken)
 		}
 	}
 }
