@@ -2,7 +2,6 @@ import { Component, ViewChild, OnInit, AfterViewInit } from '@angular/core'
 import { FormControl, Validators } from '@angular/forms'
 import { ApiServices } from '@shared/services/api.service'
 import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
-import { IVetsInfo } from '@shared/interfaces/vetInfo'
 import { MatPaginator } from '@angular/material/paginator'
 import { MatSort } from '@angular/material/sort'
 import { MatTableDataSource } from '@angular/material/table'
@@ -20,9 +19,9 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 	selectFormControl = new FormControl('', Validators.required)
 
 	displayedColumns: string[] = ['id', 'title', 'adress', 'details', 'delete']
-	IVetsInfo$: Observable<Array<IVetsInfo>>
+	IVetsInfo$: Observable<Array<IVetsUnitInfo>>
 
-	dataSource = new MatTableDataSource<IVetsInfo>()
+	dataSource = new MatTableDataSource<IVetsUnitInfo>()
 
 	@ViewChild(MatPaginator, { static: true }) paginator: MatPaginator
 	@ViewChild(MatSort, { static: true }) sort: MatSort
@@ -58,7 +57,7 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 		})
 	}
 
-	openDialog(row: IVetsInfo) {
+	openDialog(row: IVetsUnitInfo) {
 		const dialog = this.dialog.open(UpdateVetComponent, {
 			width: '800px',
 			// Can be closed only by clicking the close button

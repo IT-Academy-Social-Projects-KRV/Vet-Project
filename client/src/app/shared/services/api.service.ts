@@ -66,8 +66,4 @@ export class ApiServices {
 	putUpdateVet(data) {
 		return this.http.put<{ [key: string]: any }>(builder.baseUrl().vet().getUrl(), data)
 	}
-	/////////////////////VOLONTEERS////////////////////////
-	// getVolonteersInfo(): Observable<IVolonteersInfo> {
-	// 	return this.http.get<IVolonteersInfo>(`${baseUrl}//animals`).pipe(catchError(this.handleError))
-	// }
 }
