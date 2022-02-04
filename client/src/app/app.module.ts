@@ -16,6 +16,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { LoginInterceptor } from './admin-page/components/login-modal/login.interceptor'
 import { ErrorHttpInterseptor } from './error-http-interseptor'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 
 @NgModule({
 	declarations: [AppComponent, HeaderComponent, FooterComponent],
@@ -28,7 +29,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar'
 		FormsModule,
 		MatDialogModule,
 		MatCardModule,
-		MatSnackBarModule
+		MatSnackBarModule,
+		FontAwesomeModule
 	],
 	providers: [
 		{

@@ -15,17 +15,9 @@ export class VetAddDialogComponent {
 		@Inject(MAT_DIALOG_DATA) public data: any
 	) {}
 
-	closeDialog() {
-		this.dialogRef.close()
-	}
-
-	getVets() {
-		this.apiServices.getVetDetails().subscribe()
-	}
-
 	item: IVetsUnitInfo
 
-	onCreateClinic(form: IVetsUnitInfo): void {
+	public onCreateClinic(form: IVetsUnitInfo): void {
 		this.item = {
 			title: form.title,
 			adress: form.adress,
@@ -33,9 +25,8 @@ export class VetAddDialogComponent {
 			email: form.email,
 			map_link: form.map_link
 		}
-		// Send Http request
-		this.apiServices.postNewClinic(this.item).subscribe()
-		this.getVets()
+
 		this.dialogRef.close()
+		this.apiServices.postNewClinic(this.item).subscribe()
 	}
 }
