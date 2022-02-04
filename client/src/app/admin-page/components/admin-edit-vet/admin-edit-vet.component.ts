@@ -6,9 +6,10 @@ import { MatPaginator } from '@angular/material/paginator'
 import { MatSort } from '@angular/material/sort'
 import { MatTableDataSource } from '@angular/material/table'
 import { Observable } from 'rxjs'
-import { VetAddDialogComponent } from '../vet-add-dialog/vet-add-dialog.component'
-import { MatDialog } from '@angular/material/dialog'
+import { MatDialog, MatDialogRef } from '@angular/material/dialog'
 import { UpdateVetComponent } from '../update-vet/update-vet.component'
+import { VetAddDialogComponent } from '../vet-add-dialog/vet-add-dialog.component'
+import { VetDeleteDialogComponent } from '../vet-delete-dialog/vet-delete-dialog.component'
 
 @Component({
 	selector: 'app-admin-edit-vet',
@@ -25,6 +26,7 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 
 	@ViewChild(MatPaginator, { static: true }) paginator: MatPaginator
 	@ViewChild(MatSort, { static: true }) sort: MatSort
+	dialogRef: MatDialogRef<any>
 
 	constructor(private apiServices: ApiServices, public dialog: MatDialog) {}
 
@@ -75,31 +77,32 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 		}
 	}
 
-	onAdd() {
-		const dialog = this.dialog.open(VetAddDialogComponent, {
+	onOpenAddDialog(): void {
+		this.dialogRef = this.dialog.open(VetAddDialogComponent, {
 			width: '550px',
 			disableClose: false
 		})
+		this.dialogRef.afterClosed().subscribe(() => {
+			const newDataArr = this.dataSource.data.concat(this.dialogRef.componentInstance.item)
+			this.dataSource.data = newDataArr
+		})
 	}
 
-	item: IVetsUnitInfo
-
-	onCreateClinic(form: IVetsUnitInfo): void {
-		this.item = {
-			title: form.title,
-			adress: form.adress,
-			phone: form.phone,
-			email: form.email,
-			map_link: form.map_link
-		}
-		// Send Http request
-		this.apiServices.postNewClinic(this.item).subscribe()
-		this.getVets()
+	onOpenDeleteDialog(id: number): void {
+		this.dialogRef = this.dialog.open(VetDeleteDialogComponent, {
+			disableClose: true
+		})
+		this.dialogRef.afterClosed().subscribe(result => {
+			if (result) {
+				this.onDeleteClinic(id)
+			}
+			this.dialogRef = null
+		})
 	}
 
-	onDeleteClinic(form: IVetsUnitInfo): void {
-		this.item = { id: form.id }
-		this.apiServices.deleteClinic(this.item.id).subscribe()
-		this.getVets()
+	onDeleteClinic(id: number): void {
+		this.apiServices.deleteClinic(id).subscribe()
+		const filtered = this.dataSource.data.filter(element => element.id !== id)
+		this.dataSource.data = filtered
 	}
 }

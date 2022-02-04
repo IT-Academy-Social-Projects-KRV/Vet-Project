@@ -1,13 +1,14 @@
-.main__vet-edit-page {
-	margin: 15px 50px;
-}
 .example-form {
 	margin: 40px auto 15px;
 	min-width: 150px;
 	max-width: 500px;
 	width: 100%;
 }
-
+.form-header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .example-full-width {
 	width: 100%;
 }
@@ -33,8 +34,13 @@ mat-form-field {
 .mat-row {
 	background-color: transparent;
 	&:hover {
-		background-color: #949191;
+		background-color: #4788b6;
 	}
+}
+
+.mat-header-cell {
+	font-weight: bold;
+	color: #d68427;
 }
 
 .right {

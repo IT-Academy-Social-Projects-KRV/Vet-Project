@@ -23,6 +23,7 @@ import { MatTreeModule } from '@angular/material/tree'
 import { MatSortModule } from '@angular/material/sort'
 
 import { ApiServices } from '@shared/services/api.service'
+import { VolunteersService } from './components/admin-edit-volonteer/volunteers.service'
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component'
 import { AdminPageRoutingModule } from './admin-page-routing.module'
 import { AdminNavComponent } from './components/admin-nav/admin-nav.component'
@@ -34,6 +35,12 @@ import { PetEditDialogComponent } from './components/pet-edit-dialog/pet-edit-di
 import { VetAddDialogComponent } from './components/vet-add-dialog/vet-add-dialog.component'
 import { UpdateVetComponent } from './components/update-vet/update-vet.component'
 import { EditPetPageComponent } from './components/edit-pet-page/edit-pet-page.component'
+import { PetAddDialogComponent } from './components/pet-add-dialog/pet-add-dialog.component'
+import { LogoutModalComponent } from './components/logout-modal/logout-modal.component'
+import { VetDeleteDialogComponent } from './components/vet-delete-dialog/vet-delete-dialog.component'
+import { PetDeleteModalComponent } from './components/pet-delete-modal/pet-delete-modal.component'
+import { VolunteersAddDialogComponent } from './components/volunteers-add-dialog/volunteers-add-dialog.component'
+import { VolunteersDeleteDialogComponent } from './components/volunteers-delete-dialog/volunteers-delete-dialog.component'
 
 @NgModule({
 	declarations: [
@@ -43,10 +50,17 @@ import { EditPetPageComponent } from './components/edit-pet-page/edit-pet-page.c
 		AdminEditPetComponent,
 		AdminEditVolonteerComponent,
 		LoginModalComponent,
+		LogoutModalComponent,
 		PetEditDialogComponent,
 		VetAddDialogComponent,
 		UpdateVetComponent,
-		EditPetPageComponent
+		EditPetPageComponent,
+		VetDeleteDialogComponent,
+		PetAddDialogComponent,
+		VetAddDialogComponent,
+		PetDeleteModalComponent,
+		VolunteersAddDialogComponent,
+		VolunteersDeleteDialogComponent
 	],
 	imports: [
 		CommonModule,
@@ -72,7 +86,7 @@ import { EditPetPageComponent } from './components/edit-pet-page/edit-pet-page.c
 		MatTreeModule,
 		MatSortModule
 	],
-	providers: [ApiServices],
-	exports: [LoginModalComponent, MatTableModule]
+	providers: [ApiServices, VolunteersService, MatTableModule],
+	exports: [LoginModalComponent]
 })
 export class AdminPageModule {}

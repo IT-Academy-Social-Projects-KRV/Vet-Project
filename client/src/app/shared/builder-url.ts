@@ -28,6 +28,14 @@ export class UrlBuilder {
 		this.url += '/services'
 		return this
 	}
+	login() {
+		this.url += '/login'
+		return this
+	}
+	volonteers() {
+		this.url += '/volunteers'
+		return this
+	}
 	getUrl() {
 		let result = this.url
 		this.reset()

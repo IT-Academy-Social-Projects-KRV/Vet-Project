@@ -1,68 +1,43 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core'
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core'
 import { MatPaginator } from '@angular/material/paginator'
 import { MatSort } from '@angular/material/sort'
 import { MatTableDataSource } from '@angular/material/table'
-
-export interface UserData {
-	id: string
-	name: string
-	progress: string
-	fruit: string
-}
+import { IVolonteersInfo } from '@shared/interfaces/volonteers'
+import { ApiServices } from '@shared/services/api.service'
+import { DialogService } from './dialog.service'
 
 /** Constants used to fill up our data base. */
-const FRUITS: string[] = [
-	'blueberry',
-	'lychee',
-	'kiwi',
-	'mango',
-	'peach',
-	'lime',
-	'pomegranate',
-	'pineapple'
-]
-const NAMES: string[] = [
-	'Maia',
-	'Asher',
-	'Olivia',
-	'Atticus',
-	'Amelia',
-	'Jack',
-	'Charlotte',
-	'Theodore',
-	'Isla',
-	'Oliver',
-	'Isabella',
-	'Jasper',
-	'Cora',
-	'Levi',
-	'Violet',
-	'Arthur',
-	'Mia',
-	'Thomas',
-	'Elizabeth'
-]
 
 @Component({
 	selector: 'app-admin-edit-volonteer',
 	templateUrl: './admin-edit-volonteer.component.html',
 	styleUrls: ['./admin-edit-volonteer.component.scss']
 })
-export class AdminEditVolonteerComponent implements AfterViewInit {
-	displayedColumns: string[] = ['id', 'name', 'progress', 'fruit']
-	dataSource: MatTableDataSource<UserData>
+export class AdminEditVolonteerComponent implements OnInit, AfterViewInit {
+	displayedColumns: string[] = [
+		'id',
+		'first_name',
+		'second_name',
+		'email',
+		'number',
+		'edit',
+		'delete'
+	]
+	dataSource = new MatTableDataSource<IVolonteersInfo>()
 
 	@ViewChild(MatPaginator) paginator: MatPaginator
 	@ViewChild(MatSort) sort: MatSort
 
-	constructor() {
-		// Create 100 users
-		const users = Array.from({ length: 100 }, (_, k) => createNewUser(k + 1))
+	constructor(private apiServices: ApiServices, private dialog: DialogService) {}
 
-		// Assign the data to the data source for the table to render
-		this.dataSource = new MatTableDataSource(users)
+	ngOnInit(): void {
+		this.getVolonteers()
 	}
-
+	getVolonteers() {
+		this.apiServices.getVolonteersInfo().subscribe(response => {
+			this.dataSource.data = response
+		})
+	}
 	ngAfterViewInit() {
 		this.dataSource.paginator = this.paginator
 		this.dataSource.sort = this.sort
@@ -76,20 +51,10 @@ export class AdminEditVolonteerComponent implements AfterViewInit {
 			this.dataSource.paginator.firstPage()
 		}
 	}
-}
-
-/** Builds and returns a new User. */
-function createNewUser(id: number): UserData {
-	const name =
-		NAMES[Math.round(Math.random() * (NAMES.length - 1))] +
-		' ' +
-		NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) +
-		'.'
-
-	return {
-		id: id.toString(),
-		name: name,
-		progress: Math.round(Math.random() * 100).toString(),
-		fruit: FRUITS[Math.round(Math.random() * (FRUITS.length - 1))]
+	openConfirmDialog() {
+		this.dialog.openConfirmDialog()
+	}
+	openDeleteDialog() {
+		this.dialog.openDeleteDialog()
 	}
 }

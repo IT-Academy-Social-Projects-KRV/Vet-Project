@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
-import { Subject } from 'rxjs'
+import { Observable, Subject, tap } from 'rxjs'
 
 import { IAnimalsInfo } from '../interfaces/animals'
 import { IAnimalsUnitInfo } from '../interfaces/animals-unit'
 import { IVetServices, IVetsInfo } from '../interfaces/vetInfo'
 import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
+import { IVolonteersInfo } from '../interfaces/volonteers'
 
-import { Observable } from 'rxjs'
-
+import { ILoginUSer } from '@shared/interfaces/login'
+import { LoginService } from 'src/app/admin-page/components/login-modal/login.service'
 import { UrlBuilder } from '../builder-url'
 
 let builder = new UrlBuilder()
@@ -16,7 +17,9 @@ let builder = new UrlBuilder()
 	providedIn: 'root'
 })
 export class ApiServices {
-	constructor(private http: HttpClient) {}
+	error = new Subject<string>()
+
+	constructor(private http: HttpClient, private loginService: LoginService) {}
 
 	//FILTERS
 
@@ -59,11 +62,30 @@ export class ApiServices {
 		return this.http.get<IVetServices>(builder.baseUrl().services().getUrl())
 	}
 
+	deleteAnimal(id) {
+		return this.http.delete<IAnimalsUnitInfo>(builder.baseUrl().animal().addId(id).getUrl())
+	}
+
 	deleteClinic(id) {
 		return this.http.delete<IVetsInfo>(builder.baseUrl().vet().addId(id).getUrl())
 	}
 
 	putUpdateVet(data) {
 		return this.http.put<{ [key: string]: any }>(builder.baseUrl().vet().getUrl(), data)
+	}
+	/////////////////////VOLONTEERS////////////////////////
+	getVolonteersInfo() {
+		return this.http.get<IVolonteersInfo[]>(builder.baseUrl().volonteers().getUrl())
+	}
+
+	//////////////LOGIN///////////////////////////////////////
+
+	login(user: ILoginUSer): Observable<{ token: string }> {
+		return this.http.post<{ token: string }>(builder.baseUrl().login().getUrl(), user).pipe(
+			tap(({ token }) => {
+				localStorage.setItem('token', token)
+				this.loginService.setToken(token)
+			})
+		)
 	}
 }
