@@ -33,8 +33,13 @@ mat-form-field {
 .mat-row {
 	background-color: transparent;
 	&:hover {
-		background-color: #949191;
+		background-color: #4788b6;
 	}
+}
+
+.mat-header-cell {
+	font-weight: bold;
+	color: #d68427;
 }
 
 .right {
