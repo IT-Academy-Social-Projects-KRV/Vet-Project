@@ -1,6 +1,6 @@
 <section class="main__volonteer-edit-page">
     <!-- <app-volunteers-add-dialog></app-volunteers-add-dialog> -->
-    <button mat-raised-button color="primary" class="volunteers_btn" (click)="openConfirmDialog()">Додати волонтера</button>
+    <button mat-raised-button color="primary" class="volunteers_btn" (click)="openAddDialog()">Додати волонтера</button>
     <mat-form-field appearance="standard">
         <mat-label>Filter</mat-label>
         <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
@@ -40,7 +40,7 @@
              <ng-container matColumnDef="edit">
                 <th mat-header-cell *matHeaderCellDef> Редагувати </th>
                  <td mat-cell *matCellDef="let row">
-                <button mat-icon-button color="primary" >
+                <button mat-icon-button color="primary" (click)="onEdit(row)" >
                 <mat-icon class="mat-18">edit</mat-icon>
             </button>
           </td>
@@ -49,7 +49,7 @@
         <ng-container matColumnDef="delete">
           <th mat-header-cell *matHeaderCellDef> Видалити </th>
           <td mat-cell *matCellDef="let element">
-            <button mat-icon-button color="warn" (click)="openDeleteDialog()" >
+            <button mat-icon-button color="warn" (click)="openDeleteDialog(element.id)" >
               <mat-icon class="mat-18">delete</mat-icon>
             </button>
           </td>

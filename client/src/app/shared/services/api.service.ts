@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core'
-import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http'
-import { Observable, Subject, tap, throwError } from 'rxjs'
+import { HttpClient } from '@angular/common/http'
+import { Observable, Subject, tap } from 'rxjs'
 
 import { IAnimalsInfo } from '../interfaces/animals'
 import { IAnimalsUnitInfo } from '../interfaces/animals-unit'
 import { IVetServices, IVetsInfo } from '../interfaces/vetInfo'
 import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
 import { IVolonteersInfo } from '../interfaces/volonteers'
-
-import { catchError } from 'rxjs/operators'
 
 import { ILoginUSer } from '@shared/interfaces/login'
 
@@ -68,10 +66,18 @@ export class ApiServices {
 	deleteClinic(id) {
 		return this.http.delete<IVetsInfo>(builder.baseUrl().vet().addId(id).getUrl())
 	}
-
 	/////////////////////VOLONTEERS////////////////////////
 	getVolonteersInfo() {
 		return this.http.get<IVolonteersInfo[]>(builder.baseUrl().volonteers().getUrl())
+	}
+	putEditVolunteer(data) {
+		console.log(data)
+		console.log(builder.baseUrl().volonteers().getUrl())
+		return this.http.put<{ [key: string]: any }>(builder.baseUrl().volonteers().getUrl(), data)
+	}
+	deleteVolunteer(id) {
+		console.log(builder.baseUrl().volonteers().addId(id).getUrl())
+		return this.http.delete<IVetsInfo>(builder.baseUrl().volonteers().addId(id).getUrl())
 	}
 
 	//////////////LOGIN///////////////////////////////////////

@@ -1,15 +1,16 @@
+<div class="closeBtn"><button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1"><mat-icon>clear</mat-icon></button></div>
 <form [formGroup]="service.form" class="normal-form">
-    <span class="admin-voluntiers-dialog">Створити нового волонтера</span>
+    <span class="admin-voluntiers-dialog">{{service.form.controls['id'].value?"Змінити волонтера":"Додати волонтера"}}</span>
     <mat-grid-list cols="2" rowHeight = "300px" >
           <mat-grid-tile>
               <div class="controles-container">
-                <input type="hidden" formControlName = '$key'>
+                <input type="hidden" formControlName = 'id'>
                      <mat-form-field>
-                         <input formControlName = 'firstName' matInput placeholder="Ім'я">
+                         <input formControlName = 'first_name' matInput placeholder="Ім'я">
                          <mat-error>Це поле обов'язкове</mat-error>
                     </mat-form-field>
                         <mat-form-field>
-                         <input formControlName = 'secondName' matInput placeholder="Прізвище">
+                         <input formControlName = 'last_name' matInput placeholder="Прізвище">
                          <mat-error>Це поле обов'язкове</mat-error>
                     </mat-form-field>
               </div>
@@ -30,7 +31,7 @@
         </mat-grid-tile>
   </mat-grid-list>
   <div class="button-row">
-      <button mat-raised-button color="primary" class="addVolunteerBtn" [disabled]="service.form.invalid">Додати волонтера</button>
+      <button mat-raised-button color="primary" class="addVolunteerBtn" [disabled]="service.form.invalid" (click)="onSubmit()">Додати волонтера</button>
       <button mat-raised-button color="warn" (click)="onClear()" >Очитити</button>
   </div>
 </form>

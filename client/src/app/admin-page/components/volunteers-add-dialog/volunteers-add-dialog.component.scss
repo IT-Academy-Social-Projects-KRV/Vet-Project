@@ -20,3 +20,13 @@
 mat-form-field{
     margin-bottom: 20px;
 }
+.closeBtn{
+    display: flex;
+    justify-content: end;
+    color: #4788b6;
+    margin-bottom: 15px;
+    border: none;
+}
+.mat-stroked-button{
+    border: currentColor;
+}
