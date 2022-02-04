@@ -20,7 +20,7 @@ import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatTabsModule } from '@angular/material/tabs'
 import { MatTreeModule } from '@angular/material/tree'
-import { VetsModule } from '../vets/vets.module'
+import { MatSortModule } from '@angular/material/sort'
 
 import { ApiServices } from '@shared/services/api.service'
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component'
@@ -29,9 +29,10 @@ import { AdminNavComponent } from './components/admin-nav/admin-nav.component'
 import { AdminEditPetComponent } from './components/admin-edit-pet/admin-edit-pet.component'
 import { AdminEditVolonteerComponent } from './components/admin-edit-volonteer/admin-edit-volonteer.component'
 import { AdminEditVetComponent } from './components/admin-edit-vet/admin-edit-vet.component'
-import { AdminUpdateVetComponent } from './components/admin-update-vet/admin-update-vet.component'
-import { UpdateVetComponent } from './components/update-vet/update-vet.component'
 import { LoginModalComponent } from './components/login-modal/login-modal.component'
+import { PetEditDialogComponent } from './components/pet-edit-dialog/pet-edit-dialog.component'
+import { VetAddDialogComponent } from './components/vet-add-dialog/vet-add-dialog.component'
+import { UpdateVetComponent } from './components/update-vet/update-vet.component'
 import { EditPetPageComponent } from './components/edit-pet-page/edit-pet-page.component'
 
 @NgModule({
@@ -42,7 +43,8 @@ import { EditPetPageComponent } from './components/edit-pet-page/edit-pet-page.c
 		AdminEditPetComponent,
 		AdminEditVolonteerComponent,
 		LoginModalComponent,
-		AdminUpdateVetComponent,
+		PetEditDialogComponent,
+		VetAddDialogComponent,
 		UpdateVetComponent,
 		EditPetPageComponent
 	],
@@ -66,11 +68,11 @@ import { EditPetPageComponent } from './components/edit-pet-page/edit-pet-page.c
 		MatFormFieldModule,
 		MatDialogModule,
 		FormsModule,
-		VetsModule,
 		MatTabsModule,
-		MatTreeModule
+		MatTreeModule,
+		MatSortModule
 	],
 	providers: [ApiServices],
-	exports: [LoginModalComponent]
+	exports: [LoginModalComponent, MatTableModule]
 })
 export class AdminPageModule {}

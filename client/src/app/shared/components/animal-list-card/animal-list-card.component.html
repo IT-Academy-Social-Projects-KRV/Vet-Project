@@ -1,24 +1,24 @@
-<mat-card class="pet-card" >
-	<div class="pet-card__wrapper" [routerLink]="['/animalsList', animalsInfo.id]">
-		<img class="pet-card__img" src="../../../assets/animalsPictures/animal_0{{ animalsInfo.id }}.jpg"
-			alt="image of {{ animalsInfo.name }}" />
-	</div>
-	<mat-card-header class="pet-card__card-header">
-		<mat-card-title class="pet-card__card-title">{{ animalsInfo.name }}</mat-card-title>
-	</mat-card-header>
-	<mat-card-content class="pet-card__pet-info-container">
-		<mat-card-subtitle>Вік: <span class="pet-card__pet-info-item">{{ animalsInfo.age }}</span>
-		</mat-card-subtitle>
-		<mat-card-subtitle>Стать:
-			<span class="pet-card__pet-info-item">{{ animalsInfo.gender }}</span>
-		</mat-card-subtitle>
-		<mat-card-subtitle>Порода:
-			<span class="pet-card__pet-info-item">{{ animalsInfo.breed }}</span>
-		</mat-card-subtitle>
-		<div *ngIf="isButtonVisible">
-			<button class="animal-card_button" mat-raised-button [routerLink]="['/animalsList', animalsInfo.id]">
-				Дізнатись більше
-			</button>
-		</div>
-	</mat-card-content>
+<mat-card class="pet-card">
+  <div class="pet-card__wrapper" [routerLink]="['/animals-list', animalsInfo.id]">
+    <img class="pet-card__img" src="../../../assets/animalsPictures/animal_0{{ animalsInfo.id }}.jpg"
+      alt="image of {{ animalsInfo.name }}" />
+  </div>
+  <mat-card-header class="pet-card__card-header">
+    <mat-card-title class="pet-card__card-title">{{ animalsInfo.name }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="pet-card__pet-info-container">
+    <mat-card-subtitle>Вік: <span class="pet-card__pet-info-item">{{ animalsInfo.age }}</span>
+    </mat-card-subtitle>
+    <mat-card-subtitle>Стать:
+      <span class="pet-card__pet-info-item">{{ animalsInfo.gender }}</span>
+    </mat-card-subtitle>
+    <mat-card-subtitle>Порода:
+      <span class="pet-card__pet-info-item">{{ animalsInfo.breed }}</span>
+    </mat-card-subtitle>
+    <div *ngIf="isButtonVisible">
+      <button class="animal-card_button" mat-raised-button [routerLink]="['/animals-list', animalsInfo.id]">
+        Дізнатись більше
+      </button>
+    </div>
+  </mat-card-content>
 </mat-card>

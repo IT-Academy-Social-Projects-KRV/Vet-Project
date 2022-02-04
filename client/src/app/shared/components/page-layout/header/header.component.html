@@ -3,7 +3,7 @@
     <div class="logo" routerLink="/">
       <a href="#home">
         <div class="logo_icon"></div>
-        <span class="logo_text">OurCompany</span>
+        <span class="logo_text">Vets-Pets</span>
       </a>
     </div>
     <div class="header__burger" (click)="clickEvent()" [ngClass]=" active ? 'active' : ''">
@@ -21,15 +21,15 @@
           <div class="mat-button_decoration"></div>
         </li>
         <li class="header_nav_item">
-          <button class="mat-button" routerLink="/vetsList" (click)="resetBurger()">Клініки</button>
+          <button class="mat-button" routerLink="/vets-list" (click)="resetBurger()">Клініки</button>
           <div class="mat-button_decoration"></div>
         </li>
         <li class="header_nav_item">
-          <button class="mat-button" routerLink="/animalsList" (click)="resetBurger()">Тварини</button>
+          <button class="mat-button" routerLink="/animals-list" (click)="resetBurger()">Тварини</button>
           <div class="mat-button_decoration"></div>
         </li>
         <li class="header_nav_item">
-          <button class="mat-button" (click)="resetBurger()" routerLink="/volonteersList">Волонтери</button>
+          <button class="mat-button" (click)="resetBurger()" routerLink="/volonteers-list">Волонтери</button>
           <div class="mat-button_decoration"></div>
         </li>
       </ul>

@@ -6,68 +6,68 @@ import { IAnimalsInfo } from '../interfaces/animals'
 import { IAnimalsUnitInfo } from '../interfaces/animals-unit'
 import { IVetServices, IVetsInfo } from '../interfaces/vetInfo'
 import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
-import { IVolonteersInfo } from '../interfaces/volonteers'
 
-import { ApiPaths, baseUrl } from '../path-api'
+import { Observable } from 'rxjs'
 
+import { UrlBuilder } from '../builder-url'
+
+let builder = new UrlBuilder()
 @Injectable({
 	providedIn: 'root'
 })
 export class ApiServices {
-	error = new Subject<string>()
-
 	constructor(private http: HttpClient) {}
 
 	//FILTERS
-	getAnimalsFilterInfo(url) {
-		return this.http.get<IAnimalsInfo[]>(`${baseUrl}${ApiPaths.filter}${url}`)
+
+	getAnimalsFilterInfo(url): Observable<IAnimalsInfo[]> {
+		return this.http.get<IAnimalsInfo[]>(builder.baseUrl().animal().filter(url).getUrl())
 	}
 
 	////////////////////////PET////////////////////////
-	getAnimalsInfo() {
-		return this.http.get<IAnimalsInfo[]>(`${baseUrl}/${ApiPaths.animals}`)
+
+	getAnimalsInfo(): Observable<IAnimalsInfo[]> {
+		return this.http.get<IAnimalsInfo[]>(builder.baseUrl().animal().getUrl())
 	}
 
-	getAnimalsUnitInfo(id) {
-		return this.http.get<IAnimalsUnitInfo>(`${baseUrl}/${ApiPaths.animals}/${id}`)
+	getAnimalsUnitInfo(id): Observable<IAnimalsUnitInfo> {
+		return this.http.get<IAnimalsUnitInfo>(builder.baseUrl().animal().addId(id).getUrl())
+	}
+
+	postNewAnimal(item) {
+		return this.http.post<{ [key: string]: any }>(builder.baseUrl().animal().getUrl(), item)
+	}
+	putEditAnimal(data) {
+		return this.http.put<{ [key: string]: any }>(builder.baseUrl().animal().getUrl(), data)
 	}
 
 	////////////////////////VET/////////////////////////
-	getVetDetails() {
-		return this.http.get<IVetsInfo[]>(`${baseUrl}/${ApiPaths.vets}`)
+
+	getVetDetails(): Observable<IVetsInfo[]> {
+		return this.http.get<IVetsInfo[]>(builder.baseUrl().vet().getUrl())
 	}
 
-	getVetsUnitInfo(id) {
-		return this.http.get<IVetsUnitInfo[]>(`${baseUrl}/${ApiPaths.vets}/${id}`)
+	getVetsUnitInfo(id): Observable<IVetsUnitInfo[]> {
+		return this.http.get<IVetsUnitInfo[]>(builder.baseUrl().vet().addId(id).getUrl())
 	}
 
 	postNewClinic(item) {
-		return this.http.post<{ [key: string]: any }>(`${baseUrl}/${ApiPaths.vets}`, item).subscribe({
-			next: responseData => console.log(responseData),
-			error: e => console.error(e)
-		})
+		return this.http.post<{ [key: string]: any }>(builder.baseUrl().vet().getUrl(), item)
 	}
 
-	getVetServices() {
-		return this.http.get<IVetServices>(`${baseUrl}/${ApiPaths.services}`)
+	getVetServices(): Observable<IVetServices> {
+		return this.http.get<IVetServices>(builder.baseUrl().services().getUrl())
 	}
 
+	deleteClinic(id) {
+		return this.http.delete<IVetsInfo>(builder.baseUrl().vet().addId(id).getUrl())
+	}
+
+	putUpdateVet(data) {
+		return this.http.put<{ [key: string]: any }>(builder.baseUrl().vet().getUrl(), data)
+	}
 	/////////////////////VOLONTEERS////////////////////////
-	getVolonteersInfo() {
-		return this.http.get<IVolonteersInfo>(`${baseUrl}/${ApiPaths.animals}`)
-	}
-	updateVet(item) {
-		return this.http.put<{ [key: string]: any }>(`${baseUrl}/${ApiPaths.vets}`, item).subscribe({
-			next: responseData => console.log(responseData),
-			error: e => console.error(e)
-		})
-	}
-	postNewAnimal(item) {
-		return this.http
-			.post<{ [key: string]: any }>(`${baseUrl}/${ApiPaths.animals}`, item)
-			.subscribe({
-				next: responseData => console.log(responseData),
-				error: e => console.error(e)
-			})
-	}
+	// getVolonteersInfo(): Observable<IVolonteersInfo> {
+	// 	return this.http.get<IVolonteersInfo>(`${baseUrl}//animals`).pipe(catchError(this.handleError))
+	// }
 }

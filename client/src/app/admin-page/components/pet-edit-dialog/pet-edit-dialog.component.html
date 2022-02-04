@@ -1,0 +1,46 @@
+<form class="example-form" (ngSubmit)='onUpdate(f.value)' #f='ngForm'>
+  <mat-form-field class="example-full-width id-hide" appearance="fill">
+    <mat-label>No</mat-label>
+    <input matInput name="id" [(ngModel)]="data.id" ngModel type="text" readonly>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Назва(кличка)</mat-label>
+    <input matInput name="name" [(ngModel)]="data.name" ngModel required>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Порода</mat-label>
+    <input matInput name="breed" [(ngModel)]="data.breed" ngModel required>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Стать</mat-label>
+    <input matInput name="gender" [(ngModel)]="data.gender" ngModel required>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Вік</mat-label>
+    <input matInput name="age" [(ngModel)]="data.age" ngModel required>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Притулок</mat-label>
+    <input matInput name="shelter_name" [(ngModel)]="data.shelter_name" ngModel required>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Куратор</mat-label>
+    <input matInput name="curator" [(ngModel)]="data.curator" ngModel required>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Історія</mat-label>
+    <textarea matInput name="short_info" [(ngModel)]="data.short_info" ngModel></textarea>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Повадки</mat-label>
+    <textarea matInput name="behavioral_features" [(ngModel)]="data.behavioral_features" ngModel></textarea>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Побажання при адопції</mat-label>
+    <textarea matInput name="wishes_for_shelter" [(ngModel)]="data.wishes_for_shelter" ngModel></textarea>
+  </mat-form-field>
+  <div class="demo-button-container">
+    <button mat-button class="pet-edit_dialog-button" (click)="closeDialog()">Відхилити зміни</button>
+    <button mat-button class="pet-edit_dialog-button">Зберегти зміни</button>
+  </div>
+</form>

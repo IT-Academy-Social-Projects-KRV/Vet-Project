@@ -37,9 +37,11 @@ export class UpdateVetComponent implements OnInit {
 			title: form.title,
 			adress: form.adress,
 			phone: form.phone,
-			email: form.email
+			email: form.email,
+			map_link: form.map_link
 		}
-		console.log(form)
+		this.apiServices.putUpdateVet(this.data).subscribe()
+		this.dialogRef.close()
 	}
 
 	closeDialog() {

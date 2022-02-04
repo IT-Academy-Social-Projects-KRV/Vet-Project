@@ -1,4 +1,4 @@
-.main__pet-edit-page {
+.animal-main {
 	margin: 15px 50px;
 }
 .example-form {
@@ -24,4 +24,9 @@ mat-form-field {
 	&:hover {
 		background-color: #4788b6;
 	}
+}
+
+.mat-header-cell {
+	font-weight: bold;
+	color: #d68427;
 }

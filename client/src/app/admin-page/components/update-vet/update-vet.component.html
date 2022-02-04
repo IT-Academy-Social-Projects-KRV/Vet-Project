@@ -1,5 +1,5 @@
 <div class="basic-container">
-  <form class="example-form" (ngSubmit)='onUpdateVet(f.value)' #f='ngForm'>
+  <form class="example-form" (ngSubmit)='onUpdateVet(f.value)' #f="ngForm">
     <mat-form-field>
       <mat-label>Назва клініки</mat-label>
       <input matInput name="title" ngModel required placeholder="title" [(ngModel)]="data.title">
@@ -20,8 +20,15 @@
       <input matInput name="email" ngModel required placeholder="email" [(ngModel)]="data.email">
     </mat-form-field>
 
-    <button type="submit" mat-button>Змінити</button>
-    <button type="button" mat-button (click)="closeDialog()">Закрити</button>
+    <mat-form-field>
+      <mat-label>I-frame google map</mat-label>
+      <input matInput name="map_link" ngModel required placeholder="email" [(ngModel)]="data.map_link">
+    </mat-form-field>
+    <div class="button-wrapper">
+      <button type="submit" mat-button>Змінити</button>
+      <button type="button" mat-button (click)="closeDialog()">Закрити</button>
+    </div>
+
   </form>
 
-  </div>
+</div>
