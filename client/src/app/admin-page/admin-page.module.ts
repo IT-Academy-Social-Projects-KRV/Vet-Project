@@ -18,8 +18,6 @@ import { MatTableModule } from '@angular/material/table'
 import { MatPaginatorModule } from '@angular/material/paginator'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatDialogModule } from '@angular/material/dialog'
-import { LogoutModalComponent } from './components/logout-modal/logout-modal.component'
-
 import { MatTabsModule } from '@angular/material/tabs'
 import { MatTreeModule } from '@angular/material/tree'
 import { MatSortModule } from '@angular/material/sort'
@@ -36,6 +34,8 @@ import { LoginModalComponent } from './components/login-modal/login-modal.compon
 import { PetEditDialogComponent } from './components/pet-edit-dialog/pet-edit-dialog.component'
 import { PetAddDialogComponent } from './components/pet-add-dialog/pet-add-dialog.component'
 import { VetAddDialogComponent } from './components/vet-add-dialog/vet-add-dialog.component'
+import { LogoutModalComponent } from './components/logout-modal/logout-modal.component'
+import { VetDeleteDialogComponent } from './components/vet-delete-dialog/vet-delete-dialog.component'
 import { PetDeleteModalComponent } from './components/pet-delete-modal/pet-delete-modal.component'
 import { VolunteersAddDialogComponent } from './components/volunteers-add-dialog/volunteers-add-dialog.component'
 import { VolunteersDeleteDialogComponent } from './components/volunteers-delete-dialog/volunteers-delete-dialog.component'
@@ -50,10 +50,11 @@ import { VolunteersDeleteDialogComponent } from './components/volunteers-delete-
 		LoginModalComponent,
 		LogoutModalComponent,
 		PetEditDialogComponent,
+		VetAddDialogComponent,
+		VetDeleteDialogComponent,
 		PetAddDialogComponent,
 		VetAddDialogComponent,
 		PetDeleteModalComponent,
-		VetAddDialogComponent,
 		VolunteersAddDialogComponent,
 		VolunteersDeleteDialogComponent
 	],
