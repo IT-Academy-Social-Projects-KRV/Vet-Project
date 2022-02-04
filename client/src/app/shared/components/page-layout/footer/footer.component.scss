@@ -9,7 +9,7 @@ section {
 	display: inline-block;
 	background: #406d8e;
 	height: 30vh;
-  z-index: 2;
+	z-index: 2;
 }
 .conteiner {
 	max-width: 1200px;
@@ -82,7 +82,7 @@ section {
 	font-weight: normal;
 	margin: 0;
 }
-.footer-dialog-trigger{
+.footer-dialog-trigger {
 	cursor: pointer;
 	font-weight: 400;
 }
@@ -183,8 +183,12 @@ section {
 	text-align: center;
 	line-height: 35px;
 
-	margin-right: 3px;
+	margin-right: 10px;
 	margin-bottom: 5px;
+	&:hover {
+		background-color: #d68427;
+		color: #4788b6;
+	}
 }
 
 @media (max-width: 880px) {

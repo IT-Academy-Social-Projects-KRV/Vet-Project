@@ -3,10 +3,10 @@
 }
 
 .animal-list-section__container {
-	padding: 0;
-	margin: auto;
 	display: flex;
 	flex-wrap: wrap;
+	padding: 0;
+	margin: auto;
 }
 
 .animal-list-section__card {
@@ -17,5 +17,4 @@
 .animal-list-section__card:hover {
 	transform: translateY(5px);
 	box-shadow: 2px 2px 26px rgba(0, 0, 0, 0.3);
-
 }
