@@ -77,7 +77,6 @@ export class ApiServices {
 		return this.http.put<{ [key: string]: any }>(builder.baseUrl().volonteers().getUrl(), data)
 	}
 	deleteVolunteer(id) {
-		console.log(builder.baseUrl().volonteers().addId(id).getUrl())
 		return this.http.delete<IVetsInfo>(builder.baseUrl().volonteers().addId(id).getUrl())
 	}
 

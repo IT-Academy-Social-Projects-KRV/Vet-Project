@@ -7,7 +7,7 @@ import { ApiServices } from '@shared/services/api.service'
 import { DialogService } from './dialog.service'
 import { VolunteersService } from './volunteers.service'
 import { VolunteersAddDialogComponent } from '../volunteers-add-dialog/volunteers-add-dialog.component'
-import { MatDialog } from '@angular/material/dialog'
+import { MatDialog, MatDialogRef } from '@angular/material/dialog'
 
 /** Constants used to fill up our data base. */
 
@@ -17,6 +17,7 @@ import { MatDialog } from '@angular/material/dialog'
 	styleUrls: ['./admin-edit-volonteer.component.scss']
 })
 export class AdminEditVolonteerComponent implements OnInit, AfterViewInit {
+	public dialogRef: MatDialogRef<any>
 	displayedColumns: string[] = [
 		'id',
 		'first_name',
@@ -71,7 +72,17 @@ export class AdminEditVolonteerComponent implements OnInit, AfterViewInit {
 			})
 	}
 	openDeleteDialog(id) {
-		this.dialog.openDeleteDialog(id)
+		this.dialog
+			.openDeleteDialog(id)
+			.afterClosed()
+			.subscribe(result => {
+				if (result) {
+					this.apiServices.deleteVolunteer(id).subscribe()
+					const filtered = this.dataSource.data.filter(element => element.id !== id)
+					this.dataSource.data = filtered
+				}
+				this.dialogRef = null
+			})
 	}
 	onEdit(row) {
 		this.service.populateForm(row)
@@ -84,7 +95,6 @@ export class AdminEditVolonteerComponent implements OnInit, AfterViewInit {
 			.subscribe(data => {
 				const arr = this.dataSource.data.concat(data)
 				this.dataSource.data = arr
-				console.log(arr)
 				this.getVolonteers()
 			})
 	}
