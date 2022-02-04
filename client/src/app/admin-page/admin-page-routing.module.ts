@@ -6,12 +6,13 @@ import { AdminEditVetComponent } from './components/admin-edit-vet/admin-edit-ve
 import { LoginGuard } from './components/login-modal/login.quard'
 import { AdminEditVolonteerComponent } from './components/admin-edit-volonteer/admin-edit-volonteer.component'
 import { AdminNavComponent } from './components/admin-nav/admin-nav.component'
+import { AdminLayoutComponent } from './components/admin-layout/admin-layout.component'
 
 const routes: Routes = [
 	{
 		path: '',
 		canActivate: [LoginGuard],
-		component: AdminNavComponent,
+		component: AdminLayoutComponent,
 		children: [
 			{
 				path: 'dashboard',

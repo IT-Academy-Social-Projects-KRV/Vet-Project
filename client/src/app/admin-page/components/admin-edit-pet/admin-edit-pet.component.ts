@@ -73,16 +73,18 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 		this.dialogRef = this.dialog.open(PetAddDialogComponent, {
 			disableClose: true
 		})
-		this.dialogRef.afterClosed().subscribe(() => {
-			const newArr = this.dataSource.data.concat(this.dialogRef.componentInstance.item)
-			this.dataSource.data = newArr
+		this.dialogRef.afterClosed().subscribe(result => {
+			if (result) {
+				const newArr = this.dataSource.data.concat(this.dialogRef.componentInstance.item)
+				this.dataSource.data = newArr
+			}
+			this.dialogRef = null
 		})
 	}
 	openDeleteDialog(id) {
 		this.dialogRef = this.dialog.open(PetDeleteModalComponent, {
 			disableClose: true
 		})
-		this.dialogRef.componentInstance.confirmMessage = 'Are you sure you want to delete?'
 		this.dialogRef.afterClosed().subscribe(result => {
 			if (result) {
 				this.onDelete(id)

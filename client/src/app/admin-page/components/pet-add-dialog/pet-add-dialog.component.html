@@ -1,59 +1,57 @@
 <section>
-   
-    <form class="example-form" (ngSubmit)='onCreateAnimal(f.value)' #f='ngForm'>
-        <div class="modal-wrapper">
-       <div class="modal-left-section">
-            <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Назва(кличка)</mat-label>
-                <input matInput name="name" ngModel required>
-              </mat-form-field>
-              <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Порода</mat-label>
-                <input matInput name="breed" ngModel required>
-              </mat-form-field>
-              <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Стать</mat-label>
-                <mat-select ngModel required name='gender'>
-                  <mat-option *ngFor="let gender of genders" [value]="gender">{{gender}}</mat-option>
-                </mat-select>
-              </mat-form-field>
-              <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Вік</mat-label>
-                <input matInput name="age" ngModel required>
-              </mat-form-field>
-              <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Притулок</mat-label>
-                <input matInput name="shelter_name" ngModel required>
-              </mat-form-field>
-              <mat-form-field appearance="fill">
-                <mat-label>Куратор</mat-label>
-                <mat-select ngModel name='curator'>
-                  <mat-option *ngFor="let curator of curators" [value]="curator">{{curator}}</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-        <div class="modal-right-section">
-              <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Історія</mat-label>
-                <textarea rows="4" matInput name="short_info" ngModel></textarea>
-              </mat-form-field>
-              <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Повадки</mat-label>
-                <textarea rows="4" matInput name="behavioral_features" ngModel></textarea>
-              </mat-form-field>
-              <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Побажання при адопції</mat-label>
-                <textarea rows="4" matInput name="wishes_for_shelter" ngModel></textarea>
-              </mat-form-field>
-            </div>
-        </div>
-              <div class="demo-button-container">
-                <button
-                mat-raised-button color="primary" [disabled]="!f.valid">Підтвердити</button>
-                <button 
-                type="button" mat-raised-button color="warn" [matDialogClose]="true">Скасувати</button>
-              </div>
-      </form>
 
-    </section>
-    
+  <form class="example-form" #f='ngForm'>
+    <div class="modal-wrapper">
+      <div class="modal-left-section">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Назва(кличка)</mat-label>
+          <input matInput name="name" ngModel required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Порода</mat-label>
+          <input matInput name="breed" ngModel required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Стать</mat-label>
+          <mat-select ngModel required name='gender'>
+            <mat-option *ngFor="let gender of genders" [value]="gender">{{gender}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Вік</mat-label>
+          <input matInput name="age" ngModel required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Притулок</mat-label>
+          <input matInput name="shelter_name" ngModel required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Куратор</mat-label>
+          <mat-select ngModel name='curator'>
+            <mat-option *ngFor="let curator of curators" [value]="curator">{{curator}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="modal-right-section">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Історія</mat-label>
+          <textarea rows="4" matInput name="short_info" ngModel></textarea>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Повадки</mat-label>
+          <textarea rows="4" matInput name="behavioral_features" ngModel></textarea>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Побажання при адопції</mat-label>
+          <textarea rows="4" matInput name="wishes_for_shelter" ngModel></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="demo-button-container">
+      <button mat-raised-button color="primary" [disabled]="!f.valid" (click)="onCreateAnimal(f.value)"
+        (click)="dialogRef.close(true)" type="button">Підтвердити</button>
+      <button type="button" mat-raised-button color="warn" (click)="dialogRef.close(false)">Скасувати</button>
+    </div>
+  </form>
+
+</section>

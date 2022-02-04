@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http'
+import { HttpClient } from '@angular/common/http'
 import { Observable, Subject, tap, throwError } from 'rxjs'
 
 import { IAnimalsInfo } from '../interfaces/animals'
@@ -74,7 +74,9 @@ export class ApiServices {
 	getVolonteersInfo() {
 		return this.http.get<IVolonteersInfo[]>(builder.baseUrl().volonteers().getUrl())
 	}
-
+	postNewVolunteer(item) {
+		return this.http.post<{ [key: string]: any }>(builder.baseUrl().volonteers().getUrl(), item)
+	}
 	//////////////LOGIN///////////////////////////////////////
 
 	login(user: ILoginUSer): Observable<{ token: string }> {
