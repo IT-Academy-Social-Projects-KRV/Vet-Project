@@ -8,17 +8,23 @@ export class VolunteersService {
 	constructor() {}
 
 	form: FormGroup = new FormGroup({
-		$key: new FormControl(null),
-		firstName: new FormControl('', [Validators.required, Validators.pattern("^[а-яА-я']+")]),
-		secondName: new FormControl('', [Validators.required, Validators.pattern("^[а-яА-я ']+")]),
+		id: new FormControl(null),
+		first_name: new FormControl('', [
+			Validators.required,
+			Validators.pattern("^[а-яА-я / і / ґ / ї / І / Ї/ Ґ']+")
+		]),
+		last_name: new FormControl('', [
+			Validators.required,
+			Validators.pattern("^[а-яА-я / і / ґ / ї / І / Ї/ Ґ']+")
+		]),
 		email: new FormControl('', Validators.email),
 		number: new FormControl('', [Validators.required, Validators.pattern('[- +()0-9]{10,}')])
 	})
 	initializeFormGroup() {
 		this.form.setValue({
-			$key: null,
-			firstName: '',
-			secondName: '',
+			id: null,
+			first_name: '',
+			last_name: '',
 			email: '',
 			number: ''
 		})

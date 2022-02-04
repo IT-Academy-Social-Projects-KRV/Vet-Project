@@ -3,16 +3,16 @@
   <mat-grid-list cols="2" rowHeight="300px">
     <mat-grid-tile>
       <div class="controles-container">
-        <input type="hidden" formControlName='$key'>
+        <input type="hidden" formControlName='id'>
         <mat-form-field>
-          <input formControlName='firstName' matInput placeholder="Ім'я">
-          <mat-error *ngIf="service.form.controls['firstName'].hasError('pattern')">Допустимі символи а-Я</mat-error>
-          <mat-error *ngIf="service.form.controls['firstName'].hasError('required')">Це поле обов'язкове</mat-error>
+          <input formControlName='first_name' matInput placeholder="Ім'я">
+          <mat-error *ngIf="service.form.controls['first_name'].hasError('pattern')">Допустимі символи а-Я</mat-error>
+          <mat-error *ngIf="service.form.controls['first_name'].hasError('required')">Це поле обов'язкове</mat-error>
         </mat-form-field>
         <mat-form-field>
-          <input formControlName='secondName' matInput placeholder="Прізвище">
-          <mat-error *ngIf="service.form.controls['secondName'].hasError('pattern')">Допустимі символи а-Я</mat-error>
-          <mat-error *ngIf="service.form.controls['secondName'].hasError('required')">Це поле обов'язкове</mat-error>
+          <input formControlName='last_name' matInput placeholder="Прізвище">
+          <mat-error *ngIf="service.form.controls['last_name'].hasError('pattern')">Допустимі символи а-Я</mat-error>
+          <mat-error *ngIf="service.form.controls['last_name'].hasError('required')">Це поле обов'язкове</mat-error>
         </mat-form-field>
       </div>
     </mat-grid-tile>

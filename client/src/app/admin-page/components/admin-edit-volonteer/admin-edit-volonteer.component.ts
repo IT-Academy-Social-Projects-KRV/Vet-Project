@@ -52,7 +52,14 @@ export class AdminEditVolonteerComponent implements OnInit, AfterViewInit {
 		}
 	}
 	openConfirmDialog() {
-		this.dialog.openConfirmDialog()
+		this.dialog
+			.openConfirmDialog()
+			.afterClosed()
+			.subscribe(data => {
+				const arr = this.dataSource.data.concat(data)
+				this.dataSource.data = arr
+				this.getVolonteers()
+			})
 	}
 	openDeleteDialog() {
 		this.dialog.openDeleteDialog()
