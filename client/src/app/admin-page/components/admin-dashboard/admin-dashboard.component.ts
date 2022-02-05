@@ -1,6 +1,5 @@
 import { Component, ViewChild } from '@angular/core'
 import { ApiServices } from '@shared/services/api.service'
-import { DashboardService } from './dashboard.service'
 import { forkJoin } from 'rxjs'
 import { WidgetCardComponent } from '../widget-card/widget-card.component'
 import { WidgetPieComponent } from '../widget-pie/widget-pie.component'

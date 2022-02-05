@@ -100,8 +100,7 @@ import { AdminLayoutComponent } from './components/admin-layout/admin-layout.com
 	providers: [
 		{ provide: HIGHCHARTS_MODULES, useFactory: () => [more, exporting] },
 		ApiServices,
-		VolunteersService,
-		MatTableModule
+		VolunteersService
 	],
 	exports: [LoginModalComponent]
 })
