@@ -6,10 +6,6 @@ import { Injectable } from '@angular/core'
 export class DashboardService {
 	volonteersNumber = 6
 
-	cards() {
-		return [71, 78, 39, 66]
-	}
-
 	pieChart() {
 		return [
 			{

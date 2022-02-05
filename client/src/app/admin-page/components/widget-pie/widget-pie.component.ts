@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core'
+import { Component, Input } from '@angular/core'
 import { Chart } from 'angular-highcharts'
 
 @Component({
@@ -6,14 +6,20 @@ import { Chart } from 'angular-highcharts'
 	templateUrl: './widget-pie.component.html',
 	styleUrls: ['./widget-pie.component.scss']
 })
-export class WidgetPieComponent implements OnInit {
+export class WidgetPieComponent {
 	@Input() data = []
+	@Input() vetsNumber
+	@Input() petsNumber
+	@Input() volonteersNumber
 
 	chart: Chart
-
-	ngOnInit() {
+	getData(vets, pets, volonteers) {
+		this.vetsNumber = vets
+		this.petsNumber = pets
+		this.volonteersNumber = volonteers
 		this.init()
 	}
+
 	init() {
 		let chart = new Chart({
 			chart: {
@@ -42,7 +48,22 @@ export class WidgetPieComponent implements OnInit {
 				{
 					type: undefined,
 					colorByPoint: true,
-					data: this.data
+					data: [
+						{
+							name: 'Тваринки',
+							y: this.petsNumber,
+							sliced: false,
+							selected: false
+						},
+						{
+							name: 'Клініки',
+							y: this.vetsNumber
+						},
+						{
+							name: 'Волонтери',
+							y: this.volonteersNumber
+						}
+					]
 				}
 			]
 		})

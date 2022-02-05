@@ -3,6 +3,7 @@ import { ApiServices } from '@shared/services/api.service'
 import { DashboardService } from './dashboard.service'
 import { forkJoin } from 'rxjs'
 import { WidgetCardComponent } from '../widget-card/widget-card.component'
+import { WidgetPieComponent } from '../widget-pie/widget-pie.component'
 
 @Component({
 	selector: 'app-admin-dashboard',
@@ -13,18 +14,17 @@ export class AdminDashboardComponent {
 	@ViewChild('pets', { static: true }) pets: WidgetCardComponent
 	@ViewChild('vets', { static: true }) vets: WidgetCardComponent
 	@ViewChild('volonteers', { static: true }) volonteers: WidgetCardComponent
-	numberOfPets
-	numberOfVets
-	numberOfVolonteers
-	cards = []
-	pieChart = []
+	@ViewChild('pie', { static: true }) pie: WidgetPieComponent
+	numberOfPets: number
+	numberOfVets: number
+	numberOfVolonteers: number
+	cards: []
+	pieChart: []
 
-	constructor(private dashboardService: DashboardService, private apiservice: ApiServices) {}
+	constructor(private apiservice: ApiServices) {}
 
 	// eslint-disable-next-line @angular-eslint/use-lifecycle-interface
 	ngOnInit() {
-		// this.cards = this.dashboardService.cards()
-		this.pieChart = this.dashboardService.pieChart()
 		forkJoin({
 			vets: this.apiservice.getVetDetails(),
 			animals: this.apiservice.getAnimalsInfo(),
@@ -33,14 +33,10 @@ export class AdminDashboardComponent {
 			this.numberOfVets = res.vets.length
 			this.numberOfPets = res.animals.length
 			this.numberOfVolonteers = res.volonteers.length
-			// this.cards = [this.numberOfVets, ]
-			this.pets.getFoo([this.numberOfVets, this.numberOfPets, this.numberOfVolonteers])
-			this.vets.getFoo([this.numberOfPets, this.numberOfVets, this.numberOfVolonteers])
-			this.volonteers.getFoo([this.numberOfVolonteers, this.numberOfPets, this.numberOfVets])
-			// this.cards = [this.numberOfVets, 2, 3]
-			// console.log(this.cards)
-			// console.log(this.cards)
+			this.pets.getData([this.numberOfVets, this.numberOfPets, this.numberOfVolonteers])
+			this.vets.getData([this.numberOfPets, this.numberOfVets, this.numberOfVolonteers])
+			this.volonteers.getData([this.numberOfVolonteers, this.numberOfPets, this.numberOfPets])
+			this.pie.getData(this.numberOfVets, this.numberOfPets, this.numberOfVolonteers)
 		})
-		// this.cards = [1, 2, 3]
 	}
 }
