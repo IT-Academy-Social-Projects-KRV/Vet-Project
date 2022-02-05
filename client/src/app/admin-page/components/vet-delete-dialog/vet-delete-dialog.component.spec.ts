@@ -1,25 +1,24 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { VetDeleteDialogComponent } from './vet-delete-dialog.component';
+import { VetDeleteDialogComponent } from './vet-delete-dialog.component'
 
 describe('VetDeleteDialogComponent', () => {
-  let component: VetDeleteDialogComponent;
-  let fixture: ComponentFixture<VetDeleteDialogComponent>;
+	let component: VetDeleteDialogComponent
+	let fixture: ComponentFixture<VetDeleteDialogComponent>
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ VetDeleteDialogComponent ]
-    })
-    .compileComponents();
-  });
+	beforeEach(async () => {
+		await TestBed.configureTestingModule({
+			declarations: [VetDeleteDialogComponent]
+		}).compileComponents()
+	})
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(VetDeleteDialogComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	beforeEach(() => {
+		fixture = TestBed.createComponent(VetDeleteDialogComponent)
+		component = fixture.componentInstance
+		fixture.detectChanges()
+	})
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+	it('should create', () => {
+		expect(component).toBeTruthy()
+	})
+})
