@@ -1,0 +1,38 @@
+<div class="basic-container">
+  <form class="example-form" (ngSubmit)='onUpdateVet(f.value)' #f="ngForm">
+    <mat-form-field class="example-full-width id-hide" appearance="fill">
+      <mat-label>No</mat-label>
+      <input matInput name="id" [(ngModel)]="data.id" ngModel type="text" readonly>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Назва клініки</mat-label>
+      <input matInput name="title" ngModel required placeholder="title" [(ngModel)]="data.title">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Адреса клініки</mat-label>
+      <input matInput name="adress" ngModel required placeholder="adress" [(ngModel)]="data.adress">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Телефон клініки</mat-label>
+      <input matInput name="phone" ngModel required placeholder="phone" [(ngModel)]="data.phone">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>E-mail клініки</mat-label>
+      <input matInput name="email" ngModel required placeholder="email" [(ngModel)]="data.email">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>I-frame google map</mat-label>
+      <input matInput name="map_link" ngModel required placeholder="email" [(ngModel)]="data.map_link">
+    </mat-form-field>
+    <div class="button-wrapper">
+      <button type="submit" mat-button>Змінити</button>
+      <button type="button" mat-button (click)="closeDialog()">Закрити</button>
+    </div>
+
+  </form>
+
+</div>

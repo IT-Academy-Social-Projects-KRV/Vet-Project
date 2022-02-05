@@ -85,33 +85,30 @@ router.get(
 )
 
 router.put(
-	'/:id(\\d+)',
+	'/',
 	async function updateVetClinicById(
 		req: Request<
-			{ id: string },
+			{},
 			{},
 			IVetItem
 		>,
 		res
 	) {
 		try {
-			const id = parseInt(
-				req.params.id
-			)
-
 			const {
 				title,
 				adress,
 				phone,
 				email,
-				map_link
+				map_link,
+				id
 			} = req.body
 
 			const updateClinic =
 				await db.query(
 					`
                 UPDATE vetlist 
-                SET title = $1, adress = $2, phone = $3, email = 4, map_link = 5 
+                SET title = $1, adress = $2, phone = $3, email = $4, map_link = $5 
                 WHERE id = $6
                 RETURNING *`,
 					[

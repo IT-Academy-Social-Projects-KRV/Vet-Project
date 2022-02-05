@@ -69,6 +69,10 @@ export class ApiServices {
 	deleteClinic(id) {
 		return this.http.delete<IVetsInfo>(builder.baseUrl().vet().addId(id).getUrl())
 	}
+
+	putUpdateVet(data) {
+		return this.http.put<{ [key: string]: any }>(builder.baseUrl().vet().getUrl(), data)
+	}
 	/////////////////////VOLONTEERS////////////////////////
 	getVolonteersInfo() {
 		return this.http.get<IVolonteersInfo[]>(builder.baseUrl().volonteers().getUrl())
