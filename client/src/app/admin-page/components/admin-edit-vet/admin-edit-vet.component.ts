@@ -19,8 +19,7 @@ import { VetDeleteDialogComponent } from '../vet-delete-dialog/vet-delete-dialog
 export class AdminEditVetComponent implements OnInit, AfterViewInit {
 	selectFormControl = new FormControl('', Validators.required)
 
-	displayedColumns: string[] = ['id', 'title', 'adress', 'details', 'delete']
-	IVetsInfo$: Observable<Array<IVetsUnitInfo>>
+	displayedColumns: string[] = ['id', 'title', 'adress', 'phone', 'details', 'delete']
 
 	dataSource = new MatTableDataSource<IVetsUnitInfo>()
 
@@ -53,13 +52,13 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 		}
 	}
 
-	getVets() {
+	public getVets() {
 		this.apiServices.getVetDetails().subscribe(response => {
 			this.dataSource.data = response
 		})
 	}
 
-	openDialog(row: IVetsUnitInfo) {
+	public openDialog(row: IVetsUnitInfo) {
 		const dialog = this.dialog.open(UpdateVetComponent, {
 			width: '800px',
 			// Can be closed only by clicking the close button
@@ -68,7 +67,7 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 		})
 	}
 
-	applyFilter(event: Event) {
+	public applyFilter(event: Event) {
 		const filterValue = (event.target as HTMLInputElement).value
 		this.dataSource.filter = filterValue.trim().toLowerCase()
 
@@ -77,7 +76,7 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 		}
 	}
 
-	onOpenAddDialog(): void {
+	public onOpenAddDialog(): void {
 		this.dialogRef = this.dialog.open(VetAddDialogComponent, {
 			width: '550px',
 			disableClose: false
@@ -91,7 +90,7 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 		})
 	}
 
-	onOpenDeleteDialog(id: number): void {
+	public onOpenDeleteDialog(id: number): void {
 		this.dialogRef = this.dialog.open(VetDeleteDialogComponent, {
 			disableClose: true
 		})
@@ -104,7 +103,7 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 		})
 	}
 
-	onDeleteClinic(id: number): void {
+	private onDeleteClinic(id: number): void {
 		this.apiServices.deleteClinic(id).subscribe()
 		const filtered = this.dataSource.data.filter(element => element.id !== id)
 		this.dataSource.data = filtered

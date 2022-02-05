@@ -101,7 +101,6 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 			this.dataSource.paginator.firstPage()
 		}
 	}
-	onEdit() {}
 
 	public onDelete(id) {
 		this.apiServices.deleteAnimal(id).subscribe()
