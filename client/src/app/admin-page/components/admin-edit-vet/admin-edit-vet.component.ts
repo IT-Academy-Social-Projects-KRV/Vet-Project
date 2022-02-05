@@ -1,14 +1,13 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core'
+import { Component, ViewChild, OnInit, AfterViewInit } from '@angular/core'
 import { FormControl, Validators } from '@angular/forms'
-
+import { ApiServices } from '@shared/services/api.service'
+import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
 import { MatPaginator } from '@angular/material/paginator'
 import { MatSort } from '@angular/material/sort'
 import { MatTableDataSource } from '@angular/material/table'
+import { Observable } from 'rxjs'
 import { MatDialog, MatDialogRef } from '@angular/material/dialog'
-
-import { ApiServices } from '@shared/services/api.service'
-import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
-import { IVetsInfo } from '@shared/interfaces/vetInfo'
+import { UpdateVetComponent } from '../update-vet/update-vet.component'
 import { VetAddDialogComponent } from '../vet-add-dialog/vet-add-dialog.component'
 import { VetDeleteDialogComponent } from '../vet-delete-dialog/vet-delete-dialog.component'
 
@@ -20,9 +19,9 @@ import { VetDeleteDialogComponent } from '../vet-delete-dialog/vet-delete-dialog
 export class AdminEditVetComponent implements OnInit, AfterViewInit {
 	selectFormControl = new FormControl('', Validators.required)
 
-	displayedColumns: string[] = ['id', 'title', 'adress', 'phone', 'email', 'delete']
+	displayedColumns: string[] = ['id', 'title', 'adress', 'phone', 'details', 'delete']
 
-	dataSource = new MatTableDataSource<IVetsInfo>()
+	dataSource = new MatTableDataSource<IVetsUnitInfo>()
 
 	@ViewChild(MatPaginator, { static: true }) paginator: MatPaginator
 	@ViewChild(MatSort, { static: true }) sort: MatSort
@@ -53,19 +52,28 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 		}
 	}
 
-	applyFilter(event: Event) {
+	public getVets() {
+		this.apiServices.getVetDetails().subscribe(response => {
+			this.dataSource.data = response
+		})
+	}
+
+	public openDialog(row: IVetsUnitInfo) {
+		const dialog = this.dialog.open(UpdateVetComponent, {
+			width: '800px',
+			// Can be closed only by clicking the close button
+			disableClose: true,
+			data: row
+		})
+	}
+
+	public applyFilter(event: Event) {
 		const filterValue = (event.target as HTMLInputElement).value
 		this.dataSource.filter = filterValue.trim().toLowerCase()
 
 		if (this.dataSource.paginator) {
 			this.dataSource.paginator.firstPage()
 		}
-	}
-
-	private getVets() {
-		this.apiServices.getVetDetails().subscribe(response => {
-			this.dataSource.data = response
-		})
 	}
 
 	public onOpenAddDialog(): void {
