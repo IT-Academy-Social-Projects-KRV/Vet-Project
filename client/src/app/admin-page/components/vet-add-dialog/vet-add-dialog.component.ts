@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core'
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
 import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
 import { ApiServices } from '@shared/services/api.service'
+import { NotifierService } from 'src/app/notifier.service'
 
 @Component({
 	selector: 'app-vet-add-dialog',
@@ -11,6 +12,7 @@ import { ApiServices } from '@shared/services/api.service'
 export class VetAddDialogComponent {
 	constructor(
 		private apiServices: ApiServices,
+		private notifierService: NotifierService,
 		public dialogRef: MatDialogRef<IVetsUnitInfo>,
 		@Inject(MAT_DIALOG_DATA) public data: any
 	) {}
@@ -28,5 +30,6 @@ export class VetAddDialogComponent {
 
 		this.dialogRef.close()
 		this.apiServices.postNewClinic(this.item).subscribe()
+		this.notifierService.showSuccessNotification('Клініку успішно додано', 'Ok')
 	}
 }

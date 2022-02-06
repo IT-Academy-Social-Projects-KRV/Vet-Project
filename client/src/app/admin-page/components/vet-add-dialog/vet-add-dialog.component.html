@@ -1,4 +1,7 @@
+<h2 class="form__title"> Додати нову клініку</h2>
+
 <form class="example-form" #f="ngForm">
+
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Назва клініки</mat-label>
     <input matInput value="" name="title" ngModel required />
@@ -9,7 +12,7 @@
   </mat-form-field>
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Номер телефону</mat-label>
-    <input matInput value="" name="phone" ngModel required />
+    <input matInput value="" name="phone" ngModel pattern="[- +()0-9]{10,}" required />
   </mat-form-field>
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Електронна пошта</mat-label>

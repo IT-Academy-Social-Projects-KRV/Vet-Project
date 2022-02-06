@@ -10,6 +10,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog'
 import { UpdateVetComponent } from '../update-vet/update-vet.component'
 import { VetAddDialogComponent } from '../vet-add-dialog/vet-add-dialog.component'
 import { VetDeleteDialogComponent } from '../vet-delete-dialog/vet-delete-dialog.component'
+import { NotifierService } from 'src/app/notifier.service'
 
 @Component({
 	selector: 'app-admin-edit-vet',
@@ -27,7 +28,11 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 	@ViewChild(MatSort, { static: true }) sort: MatSort
 	dialogRef: MatDialogRef<any>
 
-	constructor(private apiServices: ApiServices, public dialog: MatDialog) {}
+	constructor(
+		private apiServices: ApiServices,
+		public dialog: MatDialog,
+		private notifierService: NotifierService
+	) {}
 
 	ngAfterViewInit(): void {
 		this.dataSource.sort = this.sort
@@ -98,6 +103,7 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 			console.log(result)
 			if (result) {
 				this.onDeleteClinic(id)
+				this.notifierService.showSuccessNotification('Клініку успішно видаленo', 'Ok')
 			}
 			this.dialogRef = null
 		})
