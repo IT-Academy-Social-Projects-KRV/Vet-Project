@@ -1,52 +1,52 @@
-@media(max-width: 770px){
-  
-  .veterenarians__cards-set {
-  flex-basis: calc(100% / 2);
-  display: flex;
-  flex-direction: column;
-}
+@import 'variables.scss';
+@media (max-width: 770px) {
+	.veterenarians__cards-set {
+		flex-basis: calc(100% / 2);
+		display: flex;
+		flex-direction: column;
+	}
 }
 .main_veterenarians {
-  text-align: center;
-  padding: 75px 0 65px 0;
-  color: #4788b6;
+	text-align: center;
+	padding: 75px 0 65px 0;
+	color: $main-blue;
 }
 
 .main_veterenarians h2 {
-  font-size: 30px;
-  font-weight: 600;
+	font-size: 30px;
+	font-weight: 600;
 }
 
 .veterenarians__cards-set {
-  padding: 10px;
-  margin: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
+	padding: 10px;
+	margin: 0;
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .veterenarians__cards-set > .item {
-  flex-basis: calc(100% / 4);
-  text-align: center;
+	flex-basis: calc(100% / 4);
+	text-align: center;
 }
 
 .veterenarians__cards-set_photo {
-  background: #4788b6;
-  height: 125px;
-  width: 125px;
-  border-radius: 50%;
-  margin: 20px auto;
+	background: $main-blue;
+	height: 125px;
+	width: 125px;
+	border-radius: 50%;
+	margin: 20px auto;
 }
 .veterenarians__cards-set_name {
-  font-size: 20px;
-  margin-bottom: 7px;
-  color: #f5962a;
+	font-size: 20px;
+	margin-bottom: 7px;
+	color: $main-orange;
 }
 .veterenarians__cards-set_position {
-  font-size: 16px;
-  font-weight: 200;
+	font-size: 16px;
+	font-weight: 200;
 }
 .veterenarians__cards-set_position-about {
-  font-size: 14px;
-  padding-top: 10px;
+	font-size: 14px;
+	padding-top: 10px;
 }

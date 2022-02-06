@@ -1,3 +1,4 @@
+@import 'variables.scss';
 @media (max-width: 800px) {
 	.wrapper {
 		max-width: none;
@@ -18,7 +19,7 @@
 	margin-bottom: 50px;
 	text-align: center;
 	font-size: 36px;
-	color: #4788b6;
+	color: $main-blue;
 	font-weight: 600;
 	padding-top: 25px;
 }
@@ -54,25 +55,25 @@
 	list-style: none;
 }
 .vets-info-section__info_working-hours-blue {
-	color: #4788b6;
+	color: $main-blue;
 }
 .vets-info-section__info_working-hours-red {
-	color: #bd2237;
+	color: $reddish;
 }
 
 .vet-btn1 {
 	padding-top: 30px;
 	margin-left: 420px;
 	font-size: 24px;
-	color: #4788b6;
-	background-color: white;
+	color: $main-blue;
+	background-color: $white;
 	height: 50px;
 	width: 350px;
 	border: 1px solid;
 
 	&:hover {
-		color: #d68427;
-		border-color: #d68427;
+		color: $main-orange;
+		border-color: $main-orange;
 		cursor: pointer;
 	}
 }

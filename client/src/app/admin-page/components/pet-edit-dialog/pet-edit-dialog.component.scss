@@ -1,3 +1,5 @@
+@import 'variables.scss';
+
 .example-form {
 	margin: 40px auto 15px;
 	min-width: 150px;
@@ -20,10 +22,10 @@ mat-form-field {
 	justify-content: space-evenly;
 }
 .pet-edit_dialog-button {
-	background-color: #4788b6;
+	background-color: $main-blue;
 	color: #fff;
 	&:hover {
-		background-color: #d68427;
+		background-color: $main-orange;
 		cursor: pointer;
 	}
 }

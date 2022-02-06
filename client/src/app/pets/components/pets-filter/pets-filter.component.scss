@@ -1,6 +1,7 @@
+@import 'variables.scss';
 .filter-title {
 	text-align: center;
-	color: #4788b6;
+	color: $main-blue;
 	font-weight: 700;
 	font-size: 40px;
 	margin-bottom: 30px;
@@ -21,15 +22,15 @@
 }
 .form-filter__input {
 	height: 40px;
-	border: 2px solid #4788b6;
+	border: 2px solid $main-blue;
 	width: 100%;
 	padding: 0 80px;
-	color: #d68427;
+	color: $main-orange;
 	border-radius: 3px;
 	font-size: 20px;
 	cursor: pointer;
 	&:focus {
-		border-color: 2px solid #d68427;
+		border-color: 2px solid $main-orange;
 		outline: none;
 	}
 	&:focus .form-filter__label {
@@ -39,7 +40,7 @@
 .form-filter__label {
 	position: absolute;
 	transform: translate(20%, 10%);
-	color: #4788b6;
+	color: $main-blue;
 	font-size: 20px;
 	margin-bottom: 15px;
 	transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -60,35 +61,35 @@
 	height: 50px;
 	margin: 0 auto;
 
-	border: 2px solid #4788b6;
+	border: 2px solid $main-blue;
 	border-radius: 3px;
-	color: #4788b6;
+	color: $main-blue;
 	background-color: inherit;
 	font-size: 20px;
 	&:hover {
-		color: #d68427;
-		border-color: #d68427;
+		color: $main-orange;
+		border-color: $main-orange;
 		cursor: pointer;
-		background-color: #60b4f034;
+		background-color: $button-background;
 	}
 }
 
 // filter result
 
-.card-filter-title{
-		text-align: center;
-	color: #4788b6;
+.card-filter-title {
+	text-align: center;
+	color: $main-blue;
 	font-weight: 700;
 	font-size: 40px;
 	margin-bottom: 30px;
 	margin-top: 30px;
 }
-.wrap-filter-result{
+.wrap-filter-result {
 	display: flex;
 	flex-wrap: wrap;
 	width: 1200px;
 	padding: 20px;
 }
-.mat-snack-bar-container{
-    background: none;
+.mat-snack-bar-container {
+	background: none;
 }

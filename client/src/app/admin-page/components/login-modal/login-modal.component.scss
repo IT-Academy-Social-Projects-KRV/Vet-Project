@@ -1,3 +1,5 @@
+@import 'variables.scss';
+
 .example-form {
 	min-width: 150px;
 	max-width: 500px;
@@ -9,17 +11,16 @@
 }
 
 .mat-button {
-	border: 1px solid #4788b6;
+	border: 1px solid $main-blue;
 	border-radius: 3px;
-	color: #4788b6;
+	color: $main-blue;
 }
 
 .close-button {
 	&:hover {
-		color: #d68427;
-		border-color: #d68427;
+		color: $main-orange;
+		border-color: $main-orange;
 		cursor: pointer;
-		background-color: #60b4f034;
+		background-color: $button-background;
 	}
 }
-
