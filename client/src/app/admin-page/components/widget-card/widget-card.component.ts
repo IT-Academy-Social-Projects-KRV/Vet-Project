@@ -47,7 +47,7 @@ export class WidgetCardComponent {
 			exporting: {
 				enabled: false
 			},
-			series: [{ type: undefined, name: 'name I', data: this.data }]
+			series: [{ type: undefined, name: this.label, data: this.data }]
 		})
 		this.chart = chart
 	}
