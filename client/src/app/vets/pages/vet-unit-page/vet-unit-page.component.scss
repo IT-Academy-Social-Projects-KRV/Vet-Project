@@ -16,7 +16,7 @@
 }
 
 .vets-info-section__title {
-	margin-bottom: 50px;
+	padding-bottom: 50px;
 	text-align: center;
 	font-size: 36px;
 	color: $main-blue;
@@ -59,21 +59,4 @@
 }
 .vets-info-section__info_working-hours-red {
 	color: $reddish;
-}
-
-.vet-btn1 {
-	padding-top: 30px;
-	margin-left: 420px;
-	font-size: 24px;
-	color: $main-blue;
-	background-color: $white;
-	height: 50px;
-	width: 350px;
-	border: 1px solid;
-
-	&:hover {
-		color: $main-orange;
-		border-color: $main-orange;
-		cursor: pointer;
-	}
 }
