@@ -5,7 +5,7 @@ import { AdminEditPetComponent } from './components/admin-edit-pet/admin-edit-pe
 import { AdminEditVetComponent } from './components/admin-edit-vet/admin-edit-vet.component'
 import { LoginGuard } from './components/login-modal/login.quard'
 import { AdminEditVolonteerComponent } from './components/admin-edit-volonteer/admin-edit-volonteer.component'
-import { AdminNavComponent } from './components/admin-nav/admin-nav.component'
+import { EditPetPageComponent } from './components/edit-pet-page/edit-pet-page.component'
 import { AdminLayoutComponent } from './components/admin-layout/admin-layout.component'
 
 const routes: Routes = [
@@ -25,6 +25,10 @@ const routes: Routes = [
 			{
 				path: 'editPet',
 				component: AdminEditPetComponent
+			},
+			{
+				path: 'editPet/:id',
+				component: EditPetPageComponent
 			},
 			{
 				path: 'editVolonteer',

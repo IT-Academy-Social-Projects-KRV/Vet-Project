@@ -27,11 +27,5 @@ export class DialogService {
 			autoFocus: true,
 			disableClose: true
 		}))
-		// this.dialogRef.afterClosed().subscribe(result => {
-		// 	if (result) {
-		// 		this.apiService.deleteVolunteer(id).subscribe()
-		// 	}
-		// 	this.dialogRef = null
-		// })
 	}
 }
