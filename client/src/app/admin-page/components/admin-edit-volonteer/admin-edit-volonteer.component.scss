@@ -1,3 +1,5 @@
+@import 'variables.scss';
+
 .main__volonteer-edit-page {
 	margin: 15px 50px;
 }
@@ -13,14 +15,14 @@ table {
 .mat-row {
 	background-color: transparent;
 	&:hover {
-		background-color: #4788b6;
+		background-color: $main-blue;
 		cursor: pointer;
 	}
 }
-[mat-raised-button]:hover{
-background-color: #f5962a;
-margin-left: auto;
+[mat-raised-button]:hover {
+	background-color: $main-orange;
+	margin-left: auto;
 }
-.mat-header-cell{
-	color:  #d68427;
+.mat-header-cell {
+	color: $main-orange;
 }

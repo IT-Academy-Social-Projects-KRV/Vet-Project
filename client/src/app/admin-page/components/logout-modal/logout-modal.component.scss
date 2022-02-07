@@ -1,18 +1,17 @@
+@import 'variables.scss';
 .mat-button {
-    &:hover {
-      color: #d68427;
-      border-color: #d68427;
-      cursor: pointer;
-      background-color: #60b4f034;
-    }
-	border: 1px solid #4788b6;
-    border-radius: 3px;
-	color: #4788b6;
-  }
+	&:hover {
+		color: $main-orange;
+		border-color: $main-orange;
+		cursor: pointer;
+		background-color: $button-background;
+	}
+	border: 1px solid $main-blue;
+	border-radius: 3px;
+	color: $main-blue;
+}
 
-  mat-dialog-content {
-	  min-width: 200px;
-	  min-height: 120px;
-  }
-
-  
+mat-dialog-content {
+	min-width: 200px;
+	min-height: 120px;
+}

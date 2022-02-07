@@ -1,7 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core'
-import { MatPaginator } from '@angular/material/paginator'
-import { DashboardService } from './dashboard.service'
-import { MatTableDataSource } from '@angular/material/table'
+import { Component, ViewChild } from '@angular/core'
+import { ApiServices } from '@shared/services/api.service'
+import { forkJoin } from 'rxjs'
+import { WidgetCardComponent } from '../widget-card/widget-card.component'
+import { WidgetPieComponent } from '../widget-pie/widget-pie.component'
 
 @Component({
 	selector: 'app-admin-dashboard',
@@ -9,14 +10,32 @@ import { MatTableDataSource } from '@angular/material/table'
 	styleUrls: ['./admin-dashboard.component.scss']
 })
 export class AdminDashboardComponent {
-	cards = []
-	pieChart = []
+	@ViewChild('pets', { static: true }) pets: WidgetCardComponent
+	@ViewChild('vets', { static: true }) vets: WidgetCardComponent
+	@ViewChild('volonteers', { static: true }) volonteers: WidgetCardComponent
+	@ViewChild('pie', { static: true }) pie: WidgetPieComponent
+	numberOfPets: number
+	numberOfVets: number
+	numberOfVolonteers: number
+	cards: []
+	pieChart: []
 
-	constructor(private dashboardService: DashboardService) {}
+	constructor(private apiservice: ApiServices) {}
 
 	// eslint-disable-next-line @angular-eslint/use-lifecycle-interface
 	ngOnInit() {
-		this.cards = this.dashboardService.cards()
-		this.pieChart = this.dashboardService.pieChart()
+		forkJoin({
+			vets: this.apiservice.getVetDetails(),
+			animals: this.apiservice.getAnimalsInfo(),
+			volonteers: this.apiservice.getVolonteersInfo()
+		}).subscribe(res => {
+			this.numberOfVets = res.vets.length
+			this.numberOfPets = res.animals.length
+			this.numberOfVolonteers = res.volonteers.length
+			this.pets.getData([this.numberOfVets, this.numberOfPets, this.numberOfVolonteers])
+			this.vets.getData([this.numberOfPets, this.numberOfVets, this.numberOfVolonteers])
+			this.volonteers.getData([this.numberOfVolonteers, this.numberOfPets, this.numberOfPets])
+			this.pie.getData(this.numberOfVets, this.numberOfPets, this.numberOfVolonteers)
+		})
 	}
 }
