@@ -43,6 +43,9 @@ export class ApiServices {
 	putEditAnimal(data) {
 		return this.http.put<{ [key: string]: any }>(builder.baseUrl().animal().getUrl(), data)
 	}
+	getCounts(): Observable<any> {
+		return this.http.get<any>(builder.baseUrl().countElements().getUrl())
+	}
 
 	////////////////////////VET/////////////////////////
 

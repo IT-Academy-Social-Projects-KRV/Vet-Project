@@ -14,9 +14,9 @@ export class AdminDashboardComponent {
 	@ViewChild('vets', { static: true }) vets: WidgetCardComponent
 	@ViewChild('volonteers', { static: true }) volonteers: WidgetCardComponent
 	@ViewChild('pie', { static: true }) pie: WidgetPieComponent
-	numberOfPets: number
-	numberOfVets: number
-	numberOfVolonteers: number
+	numberOfPets: number = 1
+	numberOfVets: number = 1
+	numberOfVolonteers: number = 1
 	cards: []
 	pieChart: []
 
@@ -25,13 +25,15 @@ export class AdminDashboardComponent {
 	// eslint-disable-next-line @angular-eslint/use-lifecycle-interface
 	ngOnInit() {
 		forkJoin({
-			vets: this.apiservice.getVetDetails(),
-			animals: this.apiservice.getAnimalsInfo(),
-			volonteers: this.apiservice.getVolonteersInfo()
+			amount: this.apiservice.getCounts()
 		}).subscribe(res => {
-			this.numberOfVets = res.vets.length
-			this.numberOfPets = res.animals.length
-			this.numberOfVolonteers = res.volonteers.length
+			let getAmount = res.amount.map(numberOfElements => {
+				let { count } = numberOfElements
+				return +count
+			})
+			this.numberOfPets = getAmount[0]
+			this.numberOfVets = getAmount[1]
+			this.numberOfVolonteers = getAmount[2]
 			this.pets.getData([this.numberOfVets, this.numberOfPets, this.numberOfVolonteers])
 			this.vets.getData([this.numberOfPets, this.numberOfVets, this.numberOfVolonteers])
 			this.volonteers.getData([this.numberOfVolonteers, this.numberOfPets, this.numberOfPets])
