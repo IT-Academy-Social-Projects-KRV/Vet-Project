@@ -1,3 +1,4 @@
+@import 'variables.scss';
 .filter-title {
 	text-align: center;
 	color: #4788b6;
@@ -22,15 +23,15 @@
 }
 .form-filter__input {
 	height: 40px;
-	border: 2px solid #4788b6;
+	border: 2px solid $main-blue;
 	width: 100%;
 	padding: 0 15px 0 154px;
-	color: #d68427;
+	color: $main-orange;
 	border-radius: 3px;
 	font-size: 20px;
 	cursor: pointer;
 	&:focus {
-		border-color: 2px solid #d68427;
+		border-color: 2px solid $main-orange;
 		outline: none;
 	}
 	&:focus .form-filter__label {
@@ -61,16 +62,16 @@
 	height: 50px;
 	margin: 0 auto;
 
-	border: 2px solid #4788b6;
+	border: 2px solid $main-blue;
 	border-radius: 3px;
-	color: #4788b6;
+	color: $main-blue;
 	background-color: inherit;
 	font-size: 20px;
 	&:hover {
-		color: #d68427;
-		border-color: #d68427;
+		color: $main-orange;
+		border-color: $main-orange;
 		cursor: pointer;
-		background-color: #60b4f034;
+		background-color: $list-item-background;
 	}
 }
 
@@ -78,7 +79,7 @@
 
 .card-filter-title {
 	text-align: center;
-	color: #4788b6;
+	color: $main-blue;
 	font-weight: 700;
 	font-size: 40px;
 	margin-bottom: 30px;
