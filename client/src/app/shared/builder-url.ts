@@ -12,10 +12,6 @@ export class UrlBuilder {
 		this.url += '/animals'
 		return this
 	}
-	animalAmount() {
-		this.url += '/animalAmount'
-		return this
-	}
 	filter(url) {
 		this.url += `/filter//?${url}`
 		return this
@@ -38,6 +34,10 @@ export class UrlBuilder {
 	}
 	volonteers() {
 		this.url += '/volunteers'
+		return this
+	}
+	countElements() {
+		this.url += '/countElements'
 		return this
 	}
 	getUrl() {

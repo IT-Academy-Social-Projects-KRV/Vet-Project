@@ -25,19 +25,15 @@ export class AdminDashboardComponent {
 	// eslint-disable-next-line @angular-eslint/use-lifecycle-interface
 	ngOnInit() {
 		forkJoin({
-			vets: this.apiservice.getVetDetails(),
-			animals: this.apiservice.getAnimalsCount(),
-			volonteers: this.apiservice.getVolonteersInfo()
+			amount: this.apiservice.getCounts()
 		}).subscribe(res => {
-			this.numberOfVets = res.vets.length
-			let arr = res.animals.map(x => {
+			let getAmount = res.amount.map(x => {
 				let { count } = x
-				console.log(x)
 				return +count
 			})
-			this.numberOfPets = arr[0]
-			console.log(this.numberOfPets)
-			this.numberOfVolonteers = res.volonteers.length
+			this.numberOfPets = getAmount[0]
+			this.numberOfVets = getAmount[1]
+			this.numberOfVolonteers = getAmount[2]
 			this.pets.getData([this.numberOfVets, this.numberOfPets, this.numberOfVolonteers])
 			this.vets.getData([this.numberOfPets, this.numberOfVets, this.numberOfVolonteers])
 			this.volonteers.getData([this.numberOfVolonteers, this.numberOfPets, this.numberOfPets])
