@@ -14,9 +14,9 @@ export class AdminDashboardComponent {
 	@ViewChild('vets', { static: true }) vets: WidgetCardComponent
 	@ViewChild('volonteers', { static: true }) volonteers: WidgetCardComponent
 	@ViewChild('pie', { static: true }) pie: WidgetPieComponent
-	numberOfPets: number
-	numberOfVets: number
-	numberOfVolonteers: number
+	numberOfPets: number = 1
+	numberOfVets: number = 1
+	numberOfVolonteers: number = 1
 	cards: []
 	pieChart: []
 
