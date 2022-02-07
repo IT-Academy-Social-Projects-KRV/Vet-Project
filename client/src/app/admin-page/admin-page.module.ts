@@ -38,7 +38,6 @@ import { LoginModalComponent } from './components/login-modal/login-modal.compon
 import { PetEditDialogComponent } from './components/pet-edit-dialog/pet-edit-dialog.component'
 import { VetAddDialogComponent } from './components/vet-add-dialog/vet-add-dialog.component'
 import { UpdateVetComponent } from './components/update-vet/update-vet.component'
-import { EditPetPageComponent } from './components/edit-pet-page/edit-pet-page.component'
 import { PetAddDialogComponent } from './components/pet-add-dialog/pet-add-dialog.component'
 import { LogoutModalComponent } from './components/logout-modal/logout-modal.component'
 import { VetDeleteDialogComponent } from './components/vet-delete-dialog/vet-delete-dialog.component'
@@ -61,7 +60,6 @@ import { AdminLayoutComponent } from './components/admin-layout/admin-layout.com
 		PetEditDialogComponent,
 		VetAddDialogComponent,
 		UpdateVetComponent,
-		EditPetPageComponent,
 		VetDeleteDialogComponent,
 		PetAddDialogComponent,
 		VetAddDialogComponent,

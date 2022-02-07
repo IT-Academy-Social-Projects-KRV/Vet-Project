@@ -3,7 +3,6 @@ import db from '../db'
 
 import { IBareAnimalItem, IAnimalItem } from "../interfaces/animal-item"
 
-
 const router = Router()
 
 router.post(
@@ -145,8 +144,5 @@ router.delete(
     }
   }
 )
-
-
-
 
 export default router
