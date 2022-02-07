@@ -78,6 +78,87 @@ To run this project via Docker you need to do the following comand:
 
 ---
 
+## Structure of the project
+
+#### Client side
+
+In this project we use the modular architecture. The modular architecture lets manage complexity of app structure, by breaking them down to smaller modules. One important thing that you should always keep in mind, that for every team which work on own feature  of app, should be created own module. All components, services and interfaces which used by several modules must be locate into a special shared module.
+
+##### Here is a modular structure of our project:
+
+```bash
+app/
+|- app.module.ts
+|- app-routing.module.ts
+|- error-http-interseptor.ts
+|- notifyer.service.ts
+
+|- admin-page/
+   |- admin-page.module.ts
+   |- admin-page-routing.module.ts
+   |- components/
+      |- admin-dashboard/
+      |- admin-edit-pet/
+      |- admin-edit-vet/
+      |- admin-edit-volonteer/
+        |- admin-edit-volonteer.component.ts
+        |- ...
+      |- other-admin-page-component
+
+|- home-page/
+   |- home-page.module.ts
+   |- home-page-routing.module.ts
+   |- components/
+      |- home-main/
+      |- pet-services/
+      |- ...
+   |- pages/
+        |- home-page.component.html
+        |- home-page.component.ts
+        |- ...
+
+|- pets/
+    |- pets.module.ts
+    |- pets-routing.module.ts
+    |- components/
+      |- animal-list/
+      |- pets-filter/
+      |- ...
+    |- pages/
+      |- animal-list-page/
+      |- animal-unit-page/
+        |- animal-unit-page.ts
+        |- animal-unit-page.html
+        |- ...
+
+|- othermoduleofpages/
+    |- ...
+
+|- shared/
+    |- components/
+      |- page-layout/
+      |- ...
+    |- services/
+      |- api.service.ts
+      |- notifier.service.ts
+    |- interfeces/
+      |- animals.ts
+      |- vetinfo.ts
+      |- ...
+|- assets/
+    |- someDirWithContent/
+      |- ...
+    |- .../
+```
+
+#### Be sure to follow the structure during development!
+
+##### Conclusion:
+
+In this way, we can guarantee that during One team working on Vets Module and the other team working on Pets module, they will preserve from merge conflict and uncontrolled bugs, because everyone has own isolate workspace.
+
+---
+
 ## Developers
 
 | Name                | GitHub Profile                   |

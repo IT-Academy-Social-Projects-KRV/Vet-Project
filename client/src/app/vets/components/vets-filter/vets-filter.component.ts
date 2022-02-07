@@ -17,9 +17,8 @@ export class VetsFilterComponent implements OnInit {
 
 	public vet: IVetsInfo = {
 		title: '',
-		adress: ''
-		// phone: '',
-		// email: ''
+		adress: '',
+		animal_type: ''
 	}
 	paramsArr = []
 
@@ -33,39 +32,36 @@ export class VetsFilterComponent implements OnInit {
 		this.paramsArr = []
 		this.checkParams()
 		let getUrl = this.paramsArr.join('&')
-		// this.getAnimalsInfo(getUrl)
+		this.getVetsInfo(getUrl)
+		console.log(getUrl)
 	}
 
 	checkParams(): void {
 		if (this.vet.title !== '') {
-			this.paramsArr.push(`gender=${this.vet.title}`)
+			this.paramsArr.push(`title=${this.vet.title}`)
 		}
 		if (this.vet.adress !== '') {
-			this.paramsArr.push(`breed=${this.vet.adress}`)
+			this.paramsArr.push(`adress=${this.vet.adress}`)
 		}
-		// if (this.vet.phone !== '') {
-		// 	this.paramsArr.push(`age=${this.vet.phone}`)
-		// }
-		// if (this.vet.email !== '') {
-		// 	this.paramsArr.push(`curator=${this.vet.email}`)
-		// }
+		if (this.vet.animal_type !== '') {
+			this.paramsArr.push(`animal_type=${this.vet.animal_type}`)
+		}
 	}
 
-	// getAnimalsInfo(url): void {
-	// 	this.vetsFilterInfo$ = this.apiServices.getAnimalsFilterInfo(url)
-
-	// 	this.apiServices.getAnimalsFilterInfo(url).subscribe(item => {
-	// 		if (item.length == 0) {
-	// 			this.notifierService.showInfoNotification(
-	// 				'З такими параметрами, нажаль, нічого немає =(',
-	// 				'Ok'
-	// 			)
-	// 		} else {
-	// 			this.notifierService.showSuccessNotification(
-	// 				`Ми знайшли для Вас ${item.length} тварин =)`,
-	// 				'Ok'
-	// 			)
-	// 		}
-	// 	})
-	// }
+	getVetsInfo(url): void {
+		this.vetsFilterInfo$ = this.apiServices.getVetsFilterInfo(url)
+		this.apiServices.getVetsFilterInfo(url).subscribe(item => {
+			if (item.length == 0) {
+				this.notifierService.showInfoNotification(
+					'Hе знайдено жодної клініки з такими параметрами',
+					'Ok'
+				)
+			} else {
+				this.notifierService.showSuccessNotification(
+					`Ми знайшли для Вас ${item.length} клінік`,
+					'Ok'
+				)
+			}
+		})
+	}
 }

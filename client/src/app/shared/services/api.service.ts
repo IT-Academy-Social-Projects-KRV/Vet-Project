@@ -27,6 +27,10 @@ export class ApiServices {
 		return this.http.get<IAnimalsInfo[]>(builder.baseUrl().animal().filter(url).getUrl())
 	}
 
+	getVetsFilterInfo(url): Observable<IVetsInfo[]> {
+		return this.http.get<IVetsInfo[]>(builder.baseUrl().vet().vetfilter(url).getUrl())
+	}
+
 	////////////////////////PET////////////////////////
 
 	getAnimalsInfo(): Observable<IAnimalsInfo[]> {

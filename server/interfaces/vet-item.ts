@@ -4,6 +4,7 @@ export interface IBareVetItem {
 	phone: string
 	email: string
 	map_link: string
+	animal_type?: string
 } 
 export interface IVetItem extends IBareVetItem {
 	id: number
