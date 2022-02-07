@@ -12,6 +12,10 @@ export class UrlBuilder {
 		this.url += '/animals'
 		return this
 	}
+	animalAmount() {
+		this.url += '/animalAmount'
+		return this
+	}
 	filter(url) {
 		this.url += `/filter//?${url}`
 		return this
