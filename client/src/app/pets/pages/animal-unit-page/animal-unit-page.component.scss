@@ -1,3 +1,4 @@
+@import 'variables.scss';
 .animal-main {
 	display: flex;
 	justify-content: space-between;
@@ -16,15 +17,15 @@
 	.animal-main__photo__btn1 {
 		margin-top: 30px;
 		font-size: 24px;
-		color: #4788b6;
-		background-color: white;
+		color: $main-blue;
+		background-color: $white;
 		height: 50px;
 		width: 250px;
 		border: 1px solid;
 
 		&:hover {
-			color: #d68427;
-			border-color: #d68427;
+			color: $main-orange;
+			border-color: $main-orange;
 			cursor: pointer;
 		}
 	}
@@ -32,26 +33,26 @@
 	.animal-main__photo__btn2 {
 		margin-top: 15px;
 		font-size: 24px;
-		color: #4788b6;
-		background-color: white;
+		color: $main-blue;
+		background-color: $white;
 		height: 50px;
 		width: 250px;
 		border: 1px solid;
 
 		&:hover {
-			color: #d68427;
-			border-color: #d68427;
+			color: $main-orange;
+			border-color: $main-orange;
 			cursor: pointer;
 		}
 	}
 
 	.animal-main__photo__img {
-		border: 2px solid #4788b6;
+		border: 2px solid $main-blue;
 		border-radius: 4px;
 		max-width: 99%;
 
 		&:hover {
-			border-color: #d68427;
+			border-color: $main-orange;
 			cursor: pointer;
 		}
 	}
@@ -63,7 +64,7 @@
 
 	.animal-main__info__title {
 		text-transform: uppercase;
-		color: #4788b6;
+		color: $main-blue;
 		font-weight: 700;
 		font-size: 24px;
 		padding-bottom: 8px;
@@ -71,7 +72,7 @@
 	}
 
 	.animal-main__info__elem {
-		color: #4788b6;
+		color: $main-blue;
 		font-weight: 500;
 		font-size: 18px;
 		padding-bottom: 4px;

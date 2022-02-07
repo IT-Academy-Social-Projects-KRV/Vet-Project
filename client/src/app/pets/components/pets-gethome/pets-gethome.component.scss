@@ -1,14 +1,15 @@
+@import 'variables.scss';
 .pets-gethome-section {
 	display: flex;
 	max-width: 1200px;
 	flex-direction: column;
-	background-color: #4788b60c;
+	background-color: $button-home-background;
 	padding: 20px 0;
 	margin: 40px auto 0;
 }
 .pets-gethome-section__title {
 	text-align: center;
-	color: #4788b6;
+	color: $main-blue;
 	font-weight: 600;
 	font-size: 26px;
 	text-transform: uppercase;
@@ -32,11 +33,11 @@
 		cursor: pointer;
 
 		.pets-gethome-section__item-text {
-			color: #d68427;
+			color: $main-orange;
 		}
 
 		img {
-			border-color: #d68427;
+			border-color: $main-orange;
 			box-shadow: 0px 0px 8px rgba(41, 40, 40, 0.8);
 		}
 	}
@@ -46,7 +47,7 @@ img {
 	width: 150px;
 	height: 150px;
 	background-size: cover;
-	border: 2px solid #4788b6;
+	border: 2px solid $main-blue;
 	border-radius: 50%;
 	margin-bottom: 10px;
 }
@@ -55,5 +56,5 @@ img {
 	font-weight: 400;
 	font-size: 20px;
 	text-align: center;
-	color: #4788b6;
+	color: $main-blue;
 }

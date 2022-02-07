@@ -12,12 +12,13 @@ export class WidgetCardComponent {
 	@Input() percentage: string
 	@Input() data = []
 
-	chart: Chart
-
-	// eslint-disable-next-line @angular-eslint/use-lifecycle-interface
-	ngOnInit() {
+	getData(data) {
+		this.data = data
 		this.init()
 	}
+
+	chart: Chart
+
 	init() {
 		let chart = new Chart({
 			chart: {
@@ -46,7 +47,7 @@ export class WidgetCardComponent {
 			exporting: {
 				enabled: false
 			},
-			series: [{ type: undefined, name: 'name I', data: this.data }]
+			series: [{ type: undefined, name: this.label, data: this.data }]
 		})
 		this.chart = chart
 	}
