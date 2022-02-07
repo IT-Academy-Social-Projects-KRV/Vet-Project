@@ -4,6 +4,14 @@
 	display: flex;
 	gap: 20px;
 }
+.admin-pet-dialog {
+	margin-top: -30px;
+	text-align: center;
+	color: $main-blue;
+	font-weight: 700;
+	font-size: 25px;
+	margin-bottom: 30px;
+}
 .modal-left-part {
 	display: flex;
 	flex-wrap: wrap;
@@ -19,7 +27,7 @@
 }
 .example-form {
 	margin: 40px auto 15px;
-	min-width: 150px;
+	min-width: 450px;
 	max-width: 600px;
 	width: 100%;
 }

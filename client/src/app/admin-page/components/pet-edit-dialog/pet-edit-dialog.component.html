@@ -1,8 +1,10 @@
 <form class="example-form" (ngSubmit)='onUpdate(f.value)' #f='ngForm'>
+  <div class="admin-pet-dialog">Змінити відомості про тварину</div>
   <div class="modal-wrapper">
+
     <div class="modal-left-part">
       <mat-form-field class="example-full-width id-hide" appearance="fill">
-        <mat-label>No</mat-label>
+        <mat-label>ID</mat-label>
         <input matInput name="id" [(ngModel)]="data.id" ngModel type="text" readonly>
       </mat-form-field>
       <mat-form-field class="example-full-width" appearance="fill">

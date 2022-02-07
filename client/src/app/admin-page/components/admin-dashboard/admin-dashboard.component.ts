@@ -27,8 +27,8 @@ export class AdminDashboardComponent {
 		forkJoin({
 			amount: this.apiservice.getCounts()
 		}).subscribe(res => {
-			let getAmount = res.amount.map(x => {
-				let { count } = x
+			let getAmount = res.amount.map(numberOfElements => {
+				let { count } = numberOfElements
 				return +count
 			})
 			this.numberOfPets = getAmount[0]
