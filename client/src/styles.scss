@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+// @import './styles/variables.scss';
+@import 'variables.scss';
 
 html,
 body {
@@ -11,7 +13,7 @@ li,
 a {
 	list-style: none;
 	text-decoration: none;
-	color: black;
+	color: $black;
 }
 
 h1 {
@@ -38,22 +40,21 @@ html {
 }
 
 // / snackbar
-.success.mat-snack-bar-container{
-    background: rgb(0, 206, 0);
-	color: white;
+.success.mat-snack-bar-container {
+	background: $snackbar-success;
+	color: $white;
 }
-.error.mat-snack-bar-container{
-    background: red;
-	color: white;
+.error.mat-snack-bar-container {
+	background: $snackbar-error;
+	color: $white;
 }
-.info.mat-snack-bar-container{
-    background: orange;
-	color: white;
+.info.mat-snack-bar-container {
+	background: $snackbar-info;
+	color: $white;
 }
-.mat-snack-bar-container .mat-button-wrapper{
-color: white;
+.mat-snack-bar-container .mat-button-wrapper {
+	color: $white;
 }
-form.normal-form{
+form.normal-form {
 	margin: 10px;
 }
-

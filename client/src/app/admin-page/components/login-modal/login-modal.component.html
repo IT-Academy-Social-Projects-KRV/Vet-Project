@@ -10,13 +10,13 @@
       <mat-label>Пароль</mat-label>
       <input formControlName="password" [type]="hide ? 'password' : 'text'" matInput>
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-        [attr.aria-pressed]="hide">
+        [attr.aria-pressed]="hide" type="button">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
     </mat-form-field>
   </mat-dialog-content>
   <mat-dialog-actions align="center">
     <button class="close-button" mat-button [mat-dialog-close]="true">Скасувати</button>
-    <button mat-button  type = "submit"[disabled]="loginForm.invalid || loginForm.disabled">Увійти</button>
+    <button mat-button type="submit" [disabled]="loginForm.invalid || loginForm.disabled">Увійти</button>
   </mat-dialog-actions>
 </form>

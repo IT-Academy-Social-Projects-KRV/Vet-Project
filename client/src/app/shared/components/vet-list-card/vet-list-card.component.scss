@@ -1,9 +1,10 @@
+@import 'variables.scss';
 .vet-card {
-	background-color: #f0f5f958;
-	border: 2px solid #4788b6;
+	background-color: $list-item-background;
+	border: 2px solid $main-blue;
 
 	&:hover {
-		border: 2px solid #d68427;
+		border: 2px solid $main-orange;
 	}
 }
 .vet-card__card-header {
@@ -21,7 +22,7 @@
 
 .vet-card__vet-info-item {
 	font-weight: bold;
-	color: black;
+	color: $black;
 	margin-left: 5px;
 }
 .vet-card__button-container {
@@ -29,10 +30,10 @@
 	justify-content: center;
 }
 .vet-card_button {
-	background-color: #4788b6;
-	color: #fff;
+	background-color: $main-blue;
+	color: $white;
 	&:hover {
-		background-color: #d68427;
+		background-color: $main-orange;
 		cursor: pointer;
 	}
 }

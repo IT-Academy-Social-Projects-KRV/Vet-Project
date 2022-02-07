@@ -34,5 +34,3 @@ export interface IBareVetItem {
 export interface IVetItem extends IBareVetItem {
 	id: number
 }
-
-

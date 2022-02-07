@@ -1,0 +1,23 @@
+<div class="wrapper" *ngIf="volonteersInfo$ | async as volonteersInfo">
+  <section class="volonteers-info-section">
+    <div class="title-wrapper">
+      <h2 class="volonteers-info-section__title">{{ volonteersInfo.first_name }} {{ volonteersInfo.last_name }}</h2>
+    </div>
+    <div class="content wrapper">
+      <div class="main-content">
+        <div class="volonteers-card__wrapper">
+          <img class="volonteers-card__img"
+            src="../../../../assets/volonteersPictures/volonteer_01.jpg"
+            alt="image of volonteers"/>
+        </div>
+        <div class="info-wrapper">
+          <p class="volonteer-number">Номер телефону : <span class="number"><a href="tel:{{ volonteersInfo.number }}" class="link">{{ volonteersInfo.number }}</a></span></p>
+          <p class="volonteer-email">E-mail волонтера : <span class="email"><a href="mailto:{{ volonteersInfo.email }}" class="link">{{ volonteersInfo.email }}</a></span></p>
+        </div>
+      </div>
+      <div class="content-text">
+        {{ volonteersInfo.first_name }} 44 роки. І все своє життя вона тісно пов'язана із собаками. Для нього це аж ніяк не хобі – а професія, в якій вона високо підняла планку. Сьогодні її регалії важко перерахувати. Вона – ліцензований інструктор-дресирувальник Українського кінологічного об'єднання, фігурант та суддя з робочих якостей, експерт зі службових випробувань собак, а також власник розплідника німецьких вівчарок.
+      </div>
+    </div>
+  </section>
+</div>

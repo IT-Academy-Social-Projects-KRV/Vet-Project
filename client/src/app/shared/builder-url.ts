@@ -36,6 +36,10 @@ export class UrlBuilder {
 		this.url += '/volunteers'
 		return this
 	}
+	countElements() {
+		this.url += '/countElements'
+		return this
+	}
 	getUrl() {
 		let result = this.url
 		this.reset()

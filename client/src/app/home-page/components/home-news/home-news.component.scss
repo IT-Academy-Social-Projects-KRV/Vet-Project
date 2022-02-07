@@ -1,100 +1,96 @@
-.news__main{
-
+@import 'variables.scss';
+.news__main {
 	margin-bottom: 40px;
-
 }
-.news-main__title{
-		text-align: center;
-	color: #4788b6;
+.news-main__title {
+	text-align: center;
+	color: $main-blue;
 	font-weight: 700;
 	font-size: 40px;
 	margin-bottom: 30px;
 }
 
-
-.news-list{
+.news-list {
 	display: flex;
 	padding: 0;
 	justify-content: center;
 	height: 500px;
 	box-sizing: border-box;
-	
 }
-carousel{
+carousel {
 	display: flex;
 	flex-direction: column;
 }
 
-.news-list__item{
-display: flex;
+.news-list__item {
+	display: flex;
 	padding: 15px;
-		margin: 0 10px;
+	margin: 0 10px;
 	padding: 20px 10px;
-	background-color: #f0f5f958;
-	border: 2px solid #4788b6;
+	background-color: $list-item-background;
+	border: 2px solid $main-blue;
 	border-radius: 3px;
 	max-width: 300px;
 
 	&:hover {
 		cursor: pointer;
-		border: 2px solid #d68427;
-			box-shadow: 7px 7px 7px 5px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+		border: 2px solid $main-orange;
+		box-shadow: 7px 7px 7px 5px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%),
+			0px 1px 3px 0px rgb(0 0 0 / 12%);
 	}
 }
-.news-list_item-title{
+.news-list_item-title {
 	height: 70px;
 }
 
-.news-list_item-subtitle{
+.news-list_item-subtitle {
 	margin-bottom: 20px;
 }
-img{
+img {
 	display: block;
 	width: 100%;
 	margin: 0;
 }
-.img-wrapper{
+.img-wrapper {
 	display: block;
-	outline: 1px solid #4788b6;
+	outline: 1px solid $main-blue;
 	border-radius: 2px;
 	margin-bottom: 20px;
-	
 }
 
 // Defoult styles
-.mat-card{
+.mat-card {
 	padding: 0;
 }
-.mat-card-image:first-child{
+.mat-card-image:first-child {
 	margin: 0;
 }
-ul{
-margin: 0px;
+ul {
+	margin: 0px;
 }
-.filter-btn{
+.filter-btn {
 	align-items: center;
 	width: 150px;
 	height: 50px;
-	border: 1px solid #4788b6;
+	border: 1px solid $main-blue;
 	border-radius: 3px;
-	color: #4788b6;
+	color: $main-blue;
 	background-color: inherit;
 	font-size: 20px;
 	margin-top: 30px;
 
-		&:not(:last-child) {
+	&:not(:last-child) {
 		margin-right: 20px;
 	}
 
 	&:hover {
-		color: #d68427;
-		border-color: #d68427;
+		color: $main-orange;
+		border-color: $main-orange;
 		cursor: pointer;
-		background-color: #60b4f034;
+		background-color: $button-background;
 	}
 }
-.button-wrapper{
-
+.button-wrapper {
 	width: 100%;
 	display: flex;
 	justify-content: center;
