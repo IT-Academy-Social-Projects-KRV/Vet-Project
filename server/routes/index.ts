@@ -6,6 +6,8 @@ import animalsRouter from './animals.router'
 import animalFilterRouter from './filter.services'
 import loginRouter from './login.router'
 import VolunteersRouter from './volunteers.router'
+import countElements from './elementsCount.router'
+
 
 const router = Router()
 
@@ -16,5 +18,6 @@ router.use('/animals/', animalsRouter)
 router.use('/animals/filter/',animalFilterRouter)
 router.use('/login/', loginRouter )
 router.use('/volunteers/', VolunteersRouter)
+router.use('/countElements/', countElements)
 
 export default router
