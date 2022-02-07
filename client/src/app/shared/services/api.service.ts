@@ -77,6 +77,9 @@ export class ApiServices {
 	getVolonteersInfo() {
 		return this.http.get<IVolonteersInfo[]>(builder.baseUrl().volonteers().getUrl())
 	}
+	getVolonteersUnitInfo(id): Observable<IVolonteersInfo> {
+		return this.http.get<IVolonteersInfo>(builder.baseUrl().volonteers().addId(id).getUrl())
+	}
 	putEditVolunteer(data) {
 		return this.http.put<{ [key: string]: any }>(builder.baseUrl().volonteers().getUrl(), data)
 	}

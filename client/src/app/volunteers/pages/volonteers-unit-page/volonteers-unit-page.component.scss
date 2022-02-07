@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.wrapper {
+	max-width: 1200px;
+	margin: 100px auto 0;
+}
+.title-wrapper {
+  text-align: center;
+}
+.volonteers-info-section__title {
+  font-size: 36px;
+  font-weight: 700;
+}
+.main-content {
+  margin: 0 auto 20px;
+  max-width: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.info-wrapper {
+  font-size: 24px;
+}
+.volonteer-number {
+  font-weight: 700;
+}
+.number {
+  font-weight: normal;
+}
+.volonteer-email {
+  font-weight: 700;
+}
+.email {
+  font-weight: normal;
+}
+.content-text {
+  font-size: 20px;
+  margin-bottom: 25px;
+}
