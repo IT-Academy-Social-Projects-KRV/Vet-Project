@@ -17,6 +17,10 @@
 .volonteers-card__volonteers-info-item {
 	font-weight: bold;
 	color: black;
+  :hover {
+    color: #4788b6;
+    text-decoration: underline;
+  }
 }
 .volonteers-card__volonteers-info-name {
   margin-top: 10px;
