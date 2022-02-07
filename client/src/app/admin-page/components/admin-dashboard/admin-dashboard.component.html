@@ -7,18 +7,17 @@
 <div class="stats-cards">
   <mat-card>
     <app-widget-card #pets label="Тварин:" total="{{numberOfPets}}"
-      percentage="{{(numberOfPets*100/(numberOfPets + numberOfVets + numberOfVolonteers)).toFixed(1) }}" [data]="cards">
+      percentage="{{(numberOfPets*100/(numberOfPets + numberOfVets + numberOfVolonteers)).toFixed(1) }}">
     </app-widget-card>
   </mat-card>
   <mat-card>
     <app-widget-card #vets label="Клінік:" total="{{numberOfVets}}"
-      percentage="{{(numberOfVets*100/(numberOfPets + numberOfVets + numberOfVolonteers)).toFixed(1) }}" [data]="cards">
+      percentage="{{(numberOfVets*100/(numberOfPets + numberOfVets + numberOfVolonteers)).toFixed(1) }}">
     </app-widget-card>
   </mat-card>
   <mat-card>
     <app-widget-card #volonteers label="Ветеренарів:" total="{{numberOfVolonteers}}"
-      percentage="{{(numberOfVolonteers*100/(numberOfPets + numberOfVets + numberOfVolonteers)).toFixed(1) }}"
-      [data]="cards">
+      percentage="{{(numberOfVolonteers*100/(numberOfPets + numberOfVets + numberOfVolonteers)).toFixed(1) }}">
     </app-widget-card>
   </mat-card>
 </div>
@@ -30,5 +29,5 @@
 <br>
 
 <div class="stats-pie">
-  <app-widget-pie #pie [data]="pieChart"></app-widget-pie>
+  <app-widget-pie #pie></app-widget-pie>
 </div>

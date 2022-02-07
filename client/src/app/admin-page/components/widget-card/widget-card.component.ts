@@ -10,16 +10,10 @@ export class WidgetCardComponent {
 	@Input() label: string
 	@Input() total: string
 	@Input() percentage: string
-	@Input() data = []
-
-	getData(data) {
-		this.data = data
-		this.init()
-	}
 
 	chart: Chart
 
-	init() {
+	initChart(data) {
 		let chart = new Chart({
 			chart: {
 				type: 'area',
@@ -47,7 +41,7 @@ export class WidgetCardComponent {
 			exporting: {
 				enabled: false
 			},
-			series: [{ type: undefined, name: this.label, data: this.data }]
+			series: [{ type: undefined, name: this.label, data: data }]
 		})
 		this.chart = chart
 	}
