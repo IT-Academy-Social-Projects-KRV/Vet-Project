@@ -7,20 +7,9 @@ import { Chart } from 'angular-highcharts'
 	styleUrls: ['./widget-pie.component.scss']
 })
 export class WidgetPieComponent {
-	@Input() data = []
-	@Input() vetsNumber
-	@Input() petsNumber
-	@Input() volonteersNumber
-
 	chart: Chart
-	getData(vets, pets, volonteers) {
-		this.vetsNumber = vets
-		this.petsNumber = pets
-		this.volonteersNumber = volonteers
-		this.init()
-	}
 
-	init() {
+	initChart(vets, pets, volonteers) {
 		let chart = new Chart({
 			chart: {
 				type: 'pie'
@@ -51,17 +40,17 @@ export class WidgetPieComponent {
 					data: [
 						{
 							name: 'Тваринки',
-							y: this.petsNumber,
+							y: pets,
 							sliced: false,
 							selected: false
 						},
 						{
 							name: 'Клініки',
-							y: this.vetsNumber
+							y: vets
 						},
 						{
 							name: 'Волонтери',
-							y: this.volonteersNumber
+							y: volonteers
 						}
 					]
 				}
