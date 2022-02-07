@@ -7,17 +7,17 @@
 <div class="stats-cards">
   <mat-card>
     <app-widget-card #pets label="Тварин:" total="{{numberOfPets}}"
-      percentage="{{(numberOfPets*100/(numberOfPets + numberOfVets + numberOfVolonteers)).toFixed(2) }}" [data]="cards">
+      percentage="{{(numberOfPets*100/(numberOfPets + numberOfVets + numberOfVolonteers)).toFixed(1) }}" [data]="cards">
     </app-widget-card>
   </mat-card>
   <mat-card>
     <app-widget-card #vets label="Клінік:" total="{{numberOfVets}}"
-      percentage="{{(numberOfVets*100/(numberOfPets + numberOfVets + numberOfVolonteers)).toFixed(2) }}" [data]="cards">
+      percentage="{{(numberOfVets*100/(numberOfPets + numberOfVets + numberOfVolonteers)).toFixed(1) }}" [data]="cards">
     </app-widget-card>
   </mat-card>
   <mat-card>
     <app-widget-card #volonteers label="Ветеренарів:" total="{{numberOfVolonteers}}"
-      percentage="{{(numberOfVolonteers*100/(numberOfPets + numberOfVets + numberOfVolonteers)).toFixed(2) }}"
+      percentage="{{(numberOfVolonteers*100/(numberOfPets + numberOfVets + numberOfVolonteers)).toFixed(1) }}"
       [data]="cards">
     </app-widget-card>
   </mat-card>
