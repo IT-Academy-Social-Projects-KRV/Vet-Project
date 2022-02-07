@@ -10,7 +10,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog'
 import { UpdateVetComponent } from '../update-vet/update-vet.component'
 import { VetAddDialogComponent } from '../vet-add-dialog/vet-add-dialog.component'
 import { VetDeleteDialogComponent } from '../vet-delete-dialog/vet-delete-dialog.component'
-import { NotifierService } from 'src/app/notifier.service'
+import { NotifierService } from '@shared/services/notifier.service'
 
 @Component({
 	selector: 'app-admin-edit-vet',

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { NotifierService } from 'src/app/notifier.service'
+import { NotifierService } from '@shared/services/notifier.service'
 
 @Component({
 	selector: 'app-home-donate',

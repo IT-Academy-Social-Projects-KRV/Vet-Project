@@ -4,7 +4,7 @@ import { Observable } from 'rxjs'
 
 import { ApiServices } from '../../../shared/services/api.service'
 import { IVetsInfo } from '@shared/interfaces/vetInfo'
-import { NotifierService } from 'src/app/notifier.service'
+import { NotifierService } from '@shared/services/notifier.service'
 
 @Component({
 	selector: 'app-vets-filter',

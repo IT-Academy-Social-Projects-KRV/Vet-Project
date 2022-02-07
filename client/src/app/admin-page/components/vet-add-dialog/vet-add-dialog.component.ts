@@ -2,7 +2,7 @@ import { Component, Inject } from '@angular/core'
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
 import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
 import { ApiServices } from '@shared/services/api.service'
-import { NotifierService } from 'src/app/notifier.service'
+import { NotifierService } from '@shared/services/notifier.service'
 
 @Component({
 	selector: 'app-vet-add-dialog',

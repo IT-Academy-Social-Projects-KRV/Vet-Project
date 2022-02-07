@@ -2,7 +2,7 @@ import { Component } from '@angular/core'
 import { MatDialogRef } from '@angular/material/dialog'
 import { ApiServices } from '@shared/services/api.service'
 import { VolunteersService } from '../admin-edit-volonteer/volunteers.service'
-import { NotifierService } from 'src/app/notifier.service'
+import { NotifierService } from '@shared/services/notifier.service'
 @Component({
 	selector: 'app-volunteers-add-dialog',
 	templateUrl: './volunteers-add-dialog.component.html',
