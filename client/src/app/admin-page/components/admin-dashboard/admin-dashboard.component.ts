@@ -25,7 +25,6 @@ export class AdminDashboardComponent {
 	// eslint-disable-next-line @angular-eslint/use-lifecycle-interface
 	ngOnInit() {
 		this.apiservice.getCounts().subscribe(res => {
-			console.log(res)
 			const { pets, vets, volonteers } = res
 			this.numberOfPets = pets
 			this.numberOfVets = vets
