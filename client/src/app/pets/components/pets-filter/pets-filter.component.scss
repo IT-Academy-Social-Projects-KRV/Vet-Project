@@ -87,7 +87,7 @@
 .wrap-filter-result {
 	display: flex;
 	flex-wrap: wrap;
-	width: 1200px;
+	max-width: 1200px;
 	padding: 20px;
 }
 .mat-snack-bar-container {
