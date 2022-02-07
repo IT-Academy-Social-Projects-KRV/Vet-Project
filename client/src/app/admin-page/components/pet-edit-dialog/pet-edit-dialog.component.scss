@@ -1,7 +1,26 @@
+@import 'variables.scss';
+
+.modal-wrapper {
+	display: flex;
+	gap: 20px;
+}
+.modal-left-part {
+	display: flex;
+	flex-wrap: wrap;
+	width: 350px;
+}
+.modal-right-part {
+	display: flex;
+	flex-wrap: wrap;
+	width: 600px;
+}
+.modal-right-part {
+	justify-content: flex-end;
+}
 .example-form {
 	margin: 40px auto 15px;
 	min-width: 150px;
-	max-width: 500px;
+	max-width: 600px;
 	width: 100%;
 }
 
@@ -20,10 +39,10 @@ mat-form-field {
 	justify-content: space-evenly;
 }
 .pet-edit_dialog-button {
-	background-color: #4788b6;
-	color: #fff;
+	background-color: $main-blue;
+	color: $white;
 	&:hover {
-		background-color: #d68427;
+		background-color: $main-orange;
 		cursor: pointer;
 	}
 }

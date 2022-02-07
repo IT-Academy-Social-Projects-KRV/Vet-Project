@@ -1,19 +1,19 @@
+@import 'variables.scss';
 .pet-card {
-	background-color: #f0f5f958;
-	border: 2px solid #4788b6;
+	background-color: $list-item-background;
+	border: 2px solid $main-blue;
 	margin-right: 30px;
 	margin-bottom: 30px;
-	
 
 	&:hover {
-		box-shadow: 7px 7px 7px 5px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
-		border: 2px solid #d68427;
+		box-shadow: 7px 7px 7px 5px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%),
+			0px 1px 3px 0px rgb(0 0 0 / 12%);
+		border: 2px solid $main-orange;
 		cursor: pointer;
 	}
 }
 .pet-card__img {
 	width: 226px;
-	
 }
 .pet-card__card-header {
 	justify-content: center;
@@ -26,15 +26,15 @@
 
 .pet-card__pet-info-item {
 	font-weight: bold;
-	color: black;
+	color: $black;
 	margin-left: 5px;
 }
 .animal-card_button {
 	margin-left: 74px;
-	background-color: #4788b6;
-	color: #fff;
+	background-color: $main-blue;
+	color: $white;
 	&:hover {
-		background-color: #d68427;
+		background-color: $main-orange;
 		cursor: pointer;
 	}
 }

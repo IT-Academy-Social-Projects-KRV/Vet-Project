@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core'
 import { ApiServices } from '@shared/services/api.service'
 import { ActivatedRoute } from '@angular/router'

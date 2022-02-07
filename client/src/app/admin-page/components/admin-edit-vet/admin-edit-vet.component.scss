@@ -1,3 +1,5 @@
+@import 'variables.scss';
+
 .example-form {
 	margin: 40px auto 15px;
 	min-width: 150px;
@@ -5,9 +7,9 @@
 	width: 100%;
 }
 .form-header__wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 .example-full-width {
 	width: 100%;
@@ -34,16 +36,17 @@ mat-form-field {
 .mat-row {
 	background-color: transparent;
 	&:hover {
-		background-color: #4788b6;
+		background-color: $main-blue;
 	}
 }
 
 .mat-header-cell {
 	font-weight: bold;
-	color: #d68427;
+	color: $main-orange;
 }
 .mat-paginator {
-  box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
-  border-color: grey;
-  border-collapse: separate;
+	box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%),
+		0px 3px 14px 2px rgb(0 0 0 / 12%);
+	border-color: $grey;
+	border-collapse: separate;
 }
