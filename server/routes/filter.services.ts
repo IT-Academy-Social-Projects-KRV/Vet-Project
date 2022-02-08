@@ -26,6 +26,28 @@ router.get('/', async function getAllAnimals(req, res) {
 	}
 })
 
+router.get('/vetfilter', async function getAllСlinics(req, res) {
+   
+	const title = req.query.title
+	const adress = req.query.adress
+	const animal_type = req.query.animal_type
+
+	const params = [title, adress, animal_type].filter(Boolean)
+
+	const parametersArr = createParametersArr(req.query);
+	const parametrsStr = createAllStr(parametersArr);
+
+	try {
+		const vetList = await db.query(
+			`SELECT * FROM vetlist WHERE ${parametrsStr}`, params
+		)
+		res.json(vetList.rows)
+	} catch (err) {
+		console.error(err)
+		res.status(500).send(err)
+	}
+})
+
 function createParametersArr(obj) {
 	const parametersArr = [];
 

@@ -5,6 +5,7 @@ export interface IVetsInfo {
 	phone?: string
 	email?: string
 	map_link?: string
+	animal_type?: string
 }
 
 export interface IVetServices {
