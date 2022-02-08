@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditPetPageComponent } from './edit-pet-page.component';
+import { VetsFilterResultComponent } from './vets-filter-result.component';
 
-describe('EditPetPageComponent', () => {
-  let component: EditPetPageComponent;
-  let fixture: ComponentFixture<EditPetPageComponent>;
+describe('VetsFilterResultComponent', () => {
+  let component: VetsFilterResultComponent;
+  let fixture: ComponentFixture<VetsFilterResultComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditPetPageComponent ]
+      declarations: [ VetsFilterResultComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EditPetPageComponent);
+    fixture = TestBed.createComponent(VetsFilterResultComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

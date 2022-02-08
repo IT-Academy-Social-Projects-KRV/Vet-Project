@@ -5,7 +5,7 @@ import { Router } from '@angular/router'
 import { ApiServices } from '@shared/services/api.service'
 import { Subscription } from 'rxjs'
 import { MatDialogRef } from '@angular/material/dialog'
-import { NotifierService } from 'src/app/notifier.service'
+import { NotifierService } from '@shared/services/notifier.service'
 
 @Component({
 	selector: 'app-login-modal',

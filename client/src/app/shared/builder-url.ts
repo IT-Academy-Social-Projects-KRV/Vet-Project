@@ -16,6 +16,10 @@ export class UrlBuilder {
 		this.url += `/filter//?${url}`
 		return this
 	}
+	vetfilter(url) {
+		this.url += `/filter/vetfilter/?${url}`
+		return this
+	}
 	vet() {
 		this.url += '/vet'
 		return this

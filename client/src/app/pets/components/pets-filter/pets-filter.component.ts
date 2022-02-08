@@ -8,7 +8,7 @@ import { IAnimalInfo } from 'src/app/shared/interfaces/animals-filter-info'
 
 import { ApiServices } from '../../../shared/services/api.service'
 import { IAnimalsInfo } from '@shared/interfaces/animals'
-import { NotifierService } from 'src/app/notifier.service'
+import { NotifierService } from '@shared/services/notifier.service'
 
 @Component({
 	selector: 'app-pets-filter',
