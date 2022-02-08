@@ -38,6 +38,7 @@ export class PetsFilterComponent implements OnInit {
 		this.checkParams()
 		let getUrl = this.paramsArr.join('&')
 		this.getAnimalsInfo(getUrl)
+		console.log(getUrl)
 	}
 
 	checkParams(): void {
