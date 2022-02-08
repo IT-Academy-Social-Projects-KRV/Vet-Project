@@ -48,7 +48,7 @@ export class LoginModalComponent implements OnInit, OnDestroy {
 				this.router.navigate(['/admin'])
 				this.notifierService.showSuccessNotification(`Вітаємо в особистому кабінеті`, 'Ok')
 			}
-			setTimeout(() => this.loginForm.reset(), 1000)
 		})
+		setTimeout(() => this.loginForm.reset(), 1000)
 	}
 }
