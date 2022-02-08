@@ -5,7 +5,7 @@ export class UrlBuilder {
 	private url: string
 
 	baseUrl() {
-		this.url += 'http://localhost:3200/api'
+		this.url += 'http://localhost:3200/apі'
 		return this
 	}
 	animal() {
