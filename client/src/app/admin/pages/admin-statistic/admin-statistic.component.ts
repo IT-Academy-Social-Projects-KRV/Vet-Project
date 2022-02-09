@@ -1,15 +1,15 @@
 import { Component, ViewChild } from '@angular/core'
 import { ApiServices } from '@shared/services/api.service'
 import { forkJoin } from 'rxjs'
-import { WidgetCardComponent } from '../widget-card/widget-card.component'
-import { WidgetPieComponent } from '../widget-pie/widget-pie.component'
+import { WidgetCardComponent } from '../../components/widget-card/widget-card.component'
+import { WidgetPieComponent } from '../../components/widget-pie/widget-pie.component'
 
 @Component({
-	selector: 'app-admin-dashboard',
-	templateUrl: './admin-dashboard.component.html',
-	styleUrls: ['./admin-dashboard.component.scss']
+	selector: 'app-admin-statistic',
+	templateUrl: './admin-statistic.component.html',
+	styleUrls: ['./admin-statistic.component.scss']
 })
-export class AdminDashboardComponent {
+export class AdminStatisticComponent {
 	@ViewChild('pets', { static: true }) pets: WidgetCardComponent
 	@ViewChild('vets', { static: true }) vets: WidgetCardComponent
 	@ViewChild('volonteers', { static: true }) volonteers: WidgetCardComponent

@@ -6,18 +6,18 @@ import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
 
 @Component({
-	selector: 'app-update-vet',
-	templateUrl: './update-vet.component.html',
-	styleUrls: ['./update-vet.component.scss']
+	selector: 'app-vet-update-dialog',
+	templateUrl: './vet-update-dialog.component.html',
+	styleUrls: ['./vet-update-dialog.scss']
 })
-export class UpdateVetComponent implements OnInit {
+export class VetUpdateComponent implements OnInit {
 	vetsInfo$: Observable<any>
 	id: string
 	item: IVetsUnitInfo
 	constructor(
 		private Activatedroute: ActivatedRoute,
 		private apiServices: ApiServices,
-		public dialogRef: MatDialogRef<UpdateVetComponent>,
+		public dialogRef: MatDialogRef<VetUpdateComponent>,
 		@Inject(MAT_DIALOG_DATA) public data: any
 	) {}
 
