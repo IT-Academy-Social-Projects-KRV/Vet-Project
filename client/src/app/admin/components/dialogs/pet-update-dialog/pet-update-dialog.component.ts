@@ -4,11 +4,11 @@ import { IAnimalsUnitInfo } from '@shared/interfaces/animals-unit'
 import { ApiServices } from '@shared/services/api.service'
 
 @Component({
-	selector: 'app-pet-edit-dialog',
-	templateUrl: './pet-edit-dialog.component.html',
-	styleUrls: ['./pet-edit-dialog.component.scss']
+	selector: 'app-pet-update-dialog',
+	templateUrl: './pet-update-dialog.component.html',
+	styleUrls: ['./pet-update-dialog.component.scss']
 })
-export class PetEditDialogComponent {
+export class PetUpdateDialogComponent {
 	constructor(
 		private apiServices: ApiServices,
 		public dialogRef: MatDialogRef<IAnimalsUnitInfo>,

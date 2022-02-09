@@ -7,16 +7,16 @@ import { MatGridListModule } from '@angular/material/grid-list'
 import { MatIconModule } from '@angular/material/icon'
 import { MatMenuModule } from '@angular/material/menu'
 
-import { AdminDashboardComponent } from './admin-dashboard.component'
+import { AdminStatisticComponent } from './admin-statistic.component'
 
 describe('AdminDashboardComponent', () => {
-	let component: AdminDashboardComponent
-	let fixture: ComponentFixture<AdminDashboardComponent>
+	let component: AdminStatisticComponent
+	let fixture: ComponentFixture<AdminStatisticComponent>
 
 	beforeEach(
 		waitForAsync(() => {
 			TestBed.configureTestingModule({
-				declarations: [AdminDashboardComponent],
+				declarations: [AdminStatisticComponent],
 				imports: [
 					NoopAnimationsModule,
 					LayoutModule,
@@ -31,7 +31,7 @@ describe('AdminDashboardComponent', () => {
 	)
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(AdminDashboardComponent)
+		fixture = TestBed.createComponent(AdminStatisticComponent)
 		component = fixture.componentInstance
 		fixture.detectChanges()
 	})

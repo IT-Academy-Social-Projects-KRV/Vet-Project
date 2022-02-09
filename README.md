@@ -93,17 +93,25 @@ app/
 |- error-http-interseptor.ts
 |- notifyer.service.ts
 
-|- admin-page/
-   |- admin-page.module.ts
-   |- admin-page-routing.module.ts
+|- admin/
+   |- admin.module.ts
+   |- admin-routing.module.ts
    |- components/
-      |- admin-dashboard/
-      |- admin-edit-pet/
-      |- admin-edit-vet/
-      |- admin-edit-volonteer/
-        |- admin-edit-volonteer.component.ts
+      |- admin-layout/
+      |- admin-nav/
+      |- auth/
+        |-login-modal/
+        |-logout-modal/
+      |- dialogs/
+        |- pet-add-dialog/
+        |- pet-delete-dialog/
+        |- pet-edit-dialog/
         |- ...
-      |- other-admin-page-component
+      |- other-admin-components
+   |- pages/
+      |- admin-edit-pet/
+      |- admin-edit-vet
+      |- ...
 
 |- home-page/
    |- home-page.module.ts
