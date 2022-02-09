@@ -6,9 +6,9 @@ import { MatPaginator } from '@angular/material/paginator'
 import { MatSort } from '@angular/material/sort'
 import { MatTableDataSource } from '@angular/material/table'
 import { MatDialog, MatDialogRef } from '@angular/material/dialog'
-import { PetEditDialogComponent } from '../pet-edit-dialog/pet-edit-dialog.component'
-import { PetAddDialogComponent } from '../pet-add-dialog/pet-add-dialog.component'
-import { PetDeleteModalComponent } from '../pet-delete-modal/pet-delete-modal.component'
+import { PetUpdateDialogComponent } from '../../components/dialogs/pet-update-dialog/pet-update-dialog.component'
+import { PetAddDialogComponent } from '../../components/dialogs/pet-add-dialog/pet-add-dialog.component'
+import { PetDeleteDialogComponent } from '../../components/dialogs/pet-delete-dialog/pet-delete-dialog.component'
 
 @Component({
 	selector: 'app-admin-edit-pet',
@@ -63,7 +63,7 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 	}
 
 	onUpdate(icon: IAnimalsUnitInfo) {
-		this.dialogRef = this.dialog.open(PetEditDialogComponent, {
+		this.dialogRef = this.dialog.open(PetUpdateDialogComponent, {
 			width: '500px',
 			disableClose: true,
 			data: icon
@@ -82,7 +82,7 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 		})
 	}
 	openDeleteDialog(id) {
-		this.dialogRef = this.dialog.open(PetDeleteModalComponent, {
+		this.dialogRef = this.dialog.open(PetDeleteDialogComponent, {
 			disableClose: true
 		})
 		this.dialogRef.afterClosed().subscribe(result => {

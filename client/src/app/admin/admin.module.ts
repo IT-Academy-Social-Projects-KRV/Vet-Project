@@ -27,23 +27,23 @@ import * as more from 'highcharts/highcharts-more.src'
 import * as exporting from 'highcharts/modules/exporting.src'
 
 import { ApiServices } from '@shared/services/api.service'
-import { VolunteersService } from './components/admin-edit-volonteer/volunteers.service'
-import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component'
-import { AdminPageRoutingModule } from './admin-page-routing.module'
+import { VolunteersService } from './pages/admin-edit-volunteer/volunteers.service'
+import { AdminStatisticComponent } from './pages/admin-statistic/admin-statistic.component'
+import { AdminPageRoutingModule } from './admin-routing.module'
 import { AdminNavComponent } from './components/admin-nav/admin-nav.component'
-import { AdminEditPetComponent } from './components/admin-edit-pet/admin-edit-pet.component'
-import { AdminEditVolonteerComponent } from './components/admin-edit-volonteer/admin-edit-volonteer.component'
-import { AdminEditVetComponent } from './components/admin-edit-vet/admin-edit-vet.component'
-import { LoginModalComponent } from './components/login-modal/login-modal.component'
-import { PetEditDialogComponent } from './components/pet-edit-dialog/pet-edit-dialog.component'
-import { VetAddDialogComponent } from './components/vet-add-dialog/vet-add-dialog.component'
-import { UpdateVetComponent } from './components/update-vet/update-vet.component'
-import { PetAddDialogComponent } from './components/pet-add-dialog/pet-add-dialog.component'
-import { LogoutModalComponent } from './components/logout-modal/logout-modal.component'
-import { VetDeleteDialogComponent } from './components/vet-delete-dialog/vet-delete-dialog.component'
-import { PetDeleteModalComponent } from './components/pet-delete-modal/pet-delete-modal.component'
-import { VolunteersAddDialogComponent } from './components/volunteers-add-dialog/volunteers-add-dialog.component'
-import { VolunteersDeleteDialogComponent } from './components/volunteers-delete-dialog/volunteers-delete-dialog.component'
+import { AdminEditPetComponent } from './pages/admin-edit-pet/admin-edit-pet.component'
+import { AdminEditVolunteerComponent } from './pages/admin-edit-volunteer/admin-edit-volunteer.component'
+import { AdminEditVetComponent } from './pages/admin-edit-vet/admin-edit-vet.component'
+import { LoginModalComponent } from './components/auth/login-modal/login-modal.component'
+import { PetUpdateDialogComponent } from './components/dialogs/pet-update-dialog/pet-update-dialog.component'
+import { VetAddDialogComponent } from './components/dialogs/vet-add-dialog/vet-add-dialog.component'
+import { VetUpdateComponent } from './components/dialogs/vet-update-dialog/vet-update-dialog.component'
+import { PetAddDialogComponent } from './components/dialogs/pet-add-dialog/pet-add-dialog.component'
+import { LogoutModalComponent } from './components/auth/logout-modal/logout-modal.component'
+import { VetDeleteDialogComponent } from './components/dialogs/vet-delete-dialog/vet-delete-dialog.component'
+import { PetDeleteDialogComponent } from './components/dialogs/pet-delete-dialog/pet-delete-dialog.component'
+import { VolunteersAddDialogComponent } from './components/dialogs/volunteers-add-dialog/volunteers-add-dialog.component'
+import { VolunteersDeleteDialogComponent } from './components/dialogs/volunteers-delete-dialog/volunteers-delete-dialog.component'
 import { WidgetCardComponent } from './components/widget-card/widget-card.component'
 import { WidgetPieComponent } from './components/widget-pie/widget-pie.component'
 import { AdminLayoutComponent } from './components/admin-layout/admin-layout.component'
@@ -51,19 +51,19 @@ import { AdminLayoutComponent } from './components/admin-layout/admin-layout.com
 @NgModule({
 	declarations: [
 		AdminNavComponent,
-		AdminDashboardComponent,
+		AdminStatisticComponent,
 		AdminEditVetComponent,
 		AdminEditPetComponent,
-		AdminEditVolonteerComponent,
+		AdminEditVolunteerComponent,
 		LoginModalComponent,
 		LogoutModalComponent,
-		PetEditDialogComponent,
+		PetUpdateDialogComponent,
 		VetAddDialogComponent,
-		UpdateVetComponent,
+		VetUpdateComponent,
 		VetDeleteDialogComponent,
 		PetAddDialogComponent,
 		VetAddDialogComponent,
-		PetDeleteModalComponent,
+		PetDeleteDialogComponent,
 		VolunteersAddDialogComponent,
 		VolunteersDeleteDialogComponent,
 		WidgetCardComponent,
@@ -102,4 +102,4 @@ import { AdminLayoutComponent } from './components/admin-layout/admin-layout.com
 	],
 	exports: [LoginModalComponent]
 })
-export class AdminPageModule {}
+export class AdminModule {}
