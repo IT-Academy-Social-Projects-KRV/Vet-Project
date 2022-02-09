@@ -73,9 +73,9 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 		this.dialogRef = this.dialog.open(PetAddDialogComponent, {
 			disableClose: true
 		})
-		this.dialogRef.afterClosed().subscribe(result => {
-			if (result) {
-				const newArr = this.dataSource.data.concat(this.dialogRef.componentInstance.item)
+		this.dialogRef.afterClosed().subscribe(response => {
+			if (response) {
+				const newArr = this.dataSource.data.concat(response)
 				this.dataSource.data = newArr
 			}
 			this.dialogRef = null
@@ -85,8 +85,8 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 		this.dialogRef = this.dialog.open(PetDeleteModalComponent, {
 			disableClose: true
 		})
-		this.dialogRef.afterClosed().subscribe(result => {
-			if (result) {
+		this.dialogRef.afterClosed().subscribe(response => {
+			if (response) {
 				this.onDelete(id)
 			}
 			this.dialogRef = null
@@ -103,8 +103,9 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 	}
 
 	public onDelete(id) {
-		this.apiServices.deleteAnimal(id).subscribe()
-		const filtered = this.dataSource.data.filter(element => element.id !== id)
-		this.dataSource.data = filtered
+		this.apiServices.deleteAnimal(id).subscribe(response => {
+			const filtered = this.dataSource.data.filter(element => element.id !== id)
+			this.dataSource.data = filtered
+		})
 	}
 }

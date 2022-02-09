@@ -32,8 +32,11 @@ export class PetAddDialogComponent {
 			wishes_for_shelter: form.wishes_for_shelter
 		}
 
-		this.apiServices.postNewAnimal(this.item).subscribe()
-		this.dialogRef.close()
-		this.notifierService.showSuccessNotification('Тваринку успішно додано', 'Ok')
+		this.apiServices.postNewAnimal(this.item).subscribe(response => {
+			if (response) {
+				this.dialogRef.close(response)
+				this.notifierService.showSuccessNotification('Тваринку успішно додано', 'Ok')
+			}
+		})
 	}
 }
