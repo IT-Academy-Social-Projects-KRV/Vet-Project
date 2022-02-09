@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 import { MatDialog, MatDialogRef } from '@angular/material/dialog'
-import { VolunteersAddDialogComponent } from '../volunteers-add-dialog/volunteers-add-dialog.component'
-import { VolunteersDeleteDialogComponent } from '../volunteers-delete-dialog/volunteers-delete-dialog.component'
+import { VolunteersAddDialogComponent } from '../../components/dialogs/volunteers-add-dialog/volunteers-add-dialog.component'
+import { VolunteersDeleteDialogComponent } from '../../components/dialogs/volunteers-delete-dialog/volunteers-delete-dialog.component'
 import { VolunteersService } from './volunteers.service'
 import { ApiServices } from '@shared/services/api.service'
 

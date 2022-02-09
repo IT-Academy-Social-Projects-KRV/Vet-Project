@@ -7,9 +7,9 @@ import { MatSort } from '@angular/material/sort'
 import { MatTableDataSource } from '@angular/material/table'
 import { Observable } from 'rxjs'
 import { MatDialog, MatDialogRef } from '@angular/material/dialog'
-import { UpdateVetComponent } from '../update-vet/update-vet.component'
-import { VetAddDialogComponent } from '../vet-add-dialog/vet-add-dialog.component'
-import { VetDeleteDialogComponent } from '../vet-delete-dialog/vet-delete-dialog.component'
+import { VetUpdateComponent } from '../../components/dialogs/vet-update-dialog/vet-update-dialog.component'
+import { VetAddDialogComponent } from '../../components/dialogs/vet-add-dialog/vet-add-dialog.component'
+import { VetDeleteDialogComponent } from '../../components/dialogs/vet-delete-dialog/vet-delete-dialog.component'
 import { NotifierService } from '@shared/services/notifier.service'
 
 @Component({
@@ -64,7 +64,7 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 	}
 
 	public openDialog(row: IVetsUnitInfo) {
-		const dialog = this.dialog.open(UpdateVetComponent, {
+		const dialog = this.dialog.open(VetUpdateComponent, {
 			width: '800px',
 			// Can be closed only by clicking the close button
 			disableClose: true,

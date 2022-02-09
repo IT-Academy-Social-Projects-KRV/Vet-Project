@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
-import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component'
-import { AdminEditPetComponent } from './components/admin-edit-pet/admin-edit-pet.component'
-import { AdminEditVetComponent } from './components/admin-edit-vet/admin-edit-vet.component'
-import { LoginGuard } from './components/login-modal/login.quard'
-import { AdminEditVolonteerComponent } from './components/admin-edit-volonteer/admin-edit-volonteer.component'
+import { AdminStatisticComponent } from './pages/admin-statistic/admin-statistic.component'
+import { AdminEditPetComponent } from './pages/admin-edit-pet/admin-edit-pet.component'
+import { AdminEditVetComponent } from './pages/admin-edit-vet/admin-edit-vet.component'
+import { LoginGuard } from './components/auth/login-modal/login.quard'
+import { AdminEditVolunteerComponent } from './pages/admin-edit-volunteer/admin-edit-volunteer.component'
 import { AdminLayoutComponent } from './components/admin-layout/admin-layout.component'
 
 const routes: Routes = [
@@ -15,7 +15,7 @@ const routes: Routes = [
 		children: [
 			{
 				path: 'dashboard',
-				component: AdminDashboardComponent
+				component: AdminStatisticComponent
 			},
 			{
 				path: 'editVet',
@@ -27,7 +27,7 @@ const routes: Routes = [
 			},
 			{
 				path: 'editVolonteer',
-				component: AdminEditVolonteerComponent
+				component: AdminEditVolunteerComponent
 			},
 			{
 				path: '',

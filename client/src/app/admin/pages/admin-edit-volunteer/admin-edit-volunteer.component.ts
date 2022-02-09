@@ -6,17 +6,17 @@ import { IVolonteersInfo } from '@shared/interfaces/volonteers'
 import { ApiServices } from '@shared/services/api.service'
 import { DialogService } from './dialog.service'
 import { VolunteersService } from './volunteers.service'
-import { VolunteersAddDialogComponent } from '../volunteers-add-dialog/volunteers-add-dialog.component'
+import { VolunteersAddDialogComponent } from '../../components/dialogs/volunteers-add-dialog/volunteers-add-dialog.component'
 import { MatDialog, MatDialogRef } from '@angular/material/dialog'
 
 /** Constants used to fill up our data base. */
 
 @Component({
-	selector: 'app-admin-edit-volonteer',
-	templateUrl: './admin-edit-volonteer.component.html',
-	styleUrls: ['./admin-edit-volonteer.component.scss']
+	selector: 'app-admin-edit-volunteer',
+	templateUrl: './admin-edit-volunteer.component.html',
+	styleUrls: ['./admin-edit-volunteer.component.scss']
 })
-export class AdminEditVolonteerComponent implements OnInit, AfterViewInit {
+export class AdminEditVolunteerComponent implements OnInit, AfterViewInit {
 	public dialogRef: MatDialogRef<any>
 	displayedColumns: string[] = [
 		'id',
