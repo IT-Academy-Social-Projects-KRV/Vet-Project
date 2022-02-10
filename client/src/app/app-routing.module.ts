@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
-import { AdminPageModule } from './admin-page/admin-page.module'
-import { LoginModalComponent } from './admin-page/components/login-modal/login-modal.component'
 
 const routes: Routes = [
 	{
@@ -18,7 +16,7 @@ const routes: Routes = [
 	},
 	{
 		path: 'admin',
-		loadChildren: () => import('./admin-page/admin-page.module').then(m => m.AdminPageModule)
+		loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
 	},
 	{
 		path: '',
