@@ -96,12 +96,12 @@ app/
 |- admin/
    |- admin.module.ts
    |- admin-routing.module.ts
+   |- auth/
+        |-login-modal/
+        |-logout-modal/
    |- components/
       |- admin-layout/
       |- admin-nav/
-      |- auth/
-        |-login-modal/
-        |-logout-modal/
       |- dialogs/
         |- pet-add-dialog/
         |- pet-delete-dialog/
