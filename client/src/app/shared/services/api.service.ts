@@ -47,6 +47,9 @@ export class ApiServices {
 	putEditAnimal(data) {
 		return this.http.put<{ [key: string]: any }>(builder.baseUrl().animal().getUrl(), data)
 	}
+	deleteAnimal(id) {
+		return this.http.delete<IAnimalsUnitInfo>(builder.baseUrl().animal().addId(id).getUrl())
+	}
 	getCounts(): Observable<any> {
 		return this.http.get<any>(builder.baseUrl().countElements().getUrl())
 	}
@@ -67,10 +70,6 @@ export class ApiServices {
 
 	getVetServices(): Observable<IVetServices> {
 		return this.http.get<IVetServices>(builder.baseUrl().services().getUrl())
-	}
-
-	deleteAnimal(id) {
-		return this.http.delete<IAnimalsUnitInfo>(builder.baseUrl().animal().addId(id).getUrl())
 	}
 
 	deleteClinic(id) {

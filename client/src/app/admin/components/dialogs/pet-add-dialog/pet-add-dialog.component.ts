@@ -33,10 +33,8 @@ export class PetAddDialogComponent {
 		}
 
 		this.apiServices.postNewAnimal(this.item).subscribe(response => {
-			if (response) {
-				this.dialogRef.close(response)
-				this.notifierService.showSuccessNotification('Тваринку успішно додано', 'Ok')
-			}
+			this.dialogRef.close(response)
+			this.notifierService.showSuccessNotification('Тваринку успішно додано', 'Ok')
 		})
 	}
 }

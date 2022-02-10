@@ -75,8 +75,7 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 		})
 		this.dialogRef.afterClosed().subscribe(response => {
 			if (response) {
-				const newArr = this.dataSource.data.concat(response)
-				this.dataSource.data = newArr
+				this.dataSource.data = [...this.dataSource.data, response]
 			}
 			this.dialogRef = null
 		})

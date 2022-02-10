@@ -28,8 +28,9 @@ export class VetAddDialogComponent {
 			map_link: form.map_link
 		}
 
-		this.dialogRef.close()
-		this.apiServices.postNewClinic(this.item).subscribe()
-		this.notifierService.showSuccessNotification('Клініку успішно додано', 'Ok')
+		this.apiServices.postNewClinic(this.item).subscribe(response => {
+			this.dialogRef.close(response)
+			this.notifierService.showSuccessNotification('Клініку успішно додано', 'Ok')
+		})
 	}
 }
