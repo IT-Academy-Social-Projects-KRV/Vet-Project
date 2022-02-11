@@ -64,11 +64,20 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 	}
 
 	public openDialog(row: IVetsUnitInfo) {
-		const dialog = this.dialog.open(VetUpdateComponent, {
+		this.dialogRef = this.dialog.open(VetUpdateComponent, {
 			width: '800px',
 			// Can be closed only by clicking the close button
 			disableClose: true,
 			data: row
+		})
+		this.dialogRef.afterClosed().subscribe((response: IVetsUnitInfo) => {
+			if (response) {
+				const index = this.dataSource.data.findIndex(element => element.id === response.id)
+				const data = this.dataSource.data
+				data[index] = response
+				this.dataSource.data = data
+			}
+			this.dialogRef = null
 		})
 	}
 

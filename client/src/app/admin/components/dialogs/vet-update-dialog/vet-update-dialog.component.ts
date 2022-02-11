@@ -4,13 +4,14 @@ import { ApiServices } from '@shared/services/api.service'
 import { ActivatedRoute } from '@angular/router'
 import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
+import { NotifierService } from '@shared/services/notifier.service'
 
 @Component({
 	selector: 'app-vet-update-dialog',
 	templateUrl: './vet-update-dialog.component.html',
 	styleUrls: ['./vet-update-dialog.scss']
 })
-export class VetUpdateComponent implements OnInit {
+export class VetUpdateComponent {
 	vetsInfo$: Observable<any>
 	id: string
 	item: IVetsUnitInfo
@@ -18,12 +19,13 @@ export class VetUpdateComponent implements OnInit {
 		private Activatedroute: ActivatedRoute,
 		private apiServices: ApiServices,
 		public dialogRef: MatDialogRef<VetUpdateComponent>,
+		private notifierService: NotifierService,
 		@Inject(MAT_DIALOG_DATA) public data: any
 	) {}
 
-	ngOnInit() {
-		this.vetsInfo$ = this.apiServices.getVetsUnitInfo(this.id)
-	}
+	// ngOnInit() {
+	// 	 	this.vetsInfo$ = this.apiServices.getVetsUnitInfo(this.id)
+	// }
 
 	onUpdateVet(form: IVetsUnitInfo): void {
 		this.item = {
@@ -34,11 +36,9 @@ export class VetUpdateComponent implements OnInit {
 			email: form.email,
 			map_link: form.map_link
 		}
-		this.apiServices.putUpdateVet(this.data).subscribe()
-		this.dialogRef.close()
-	}
-
-	closeDialog() {
-		this.dialogRef.close()
+		this.apiServices.putUpdateVet(this.item).subscribe(response => {
+			this.dialogRef.close(response)
+			this.notifierService.showSuccessNotification('Клініку успішно оновлено', 'Ok')
+		})
 	}
 }

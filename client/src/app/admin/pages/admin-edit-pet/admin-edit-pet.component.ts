@@ -68,6 +68,15 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 			disableClose: true,
 			data: icon
 		})
+		this.dialogRef.afterClosed().subscribe((response: IAnimalsUnitInfo) => {
+			if (response) {
+				const index = this.dataSource.data.findIndex(element => element.id === response.id)
+				const data = this.dataSource.data
+				data[index] = response
+				this.dataSource.data = data
+			}
+			this.dialogRef = null
+		})
 	}
 	openAddDialog() {
 		this.dialogRef = this.dialog.open(PetAddDialogComponent, {
