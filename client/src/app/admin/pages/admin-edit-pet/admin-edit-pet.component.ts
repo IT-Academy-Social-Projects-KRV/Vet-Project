@@ -9,6 +9,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog'
 import { PetUpdateDialogComponent } from '../../components/dialogs/pet-update-dialog/pet-update-dialog.component'
 import { PetAddDialogComponent } from '../../components/dialogs/pet-add-dialog/pet-add-dialog.component'
 import { PetDeleteDialogComponent } from '../../components/dialogs/pet-delete-dialog/pet-delete-dialog.component'
+import { NotifierService } from '@shared/services/notifier.service'
 
 @Component({
 	selector: 'app-admin-edit-pet',
@@ -31,7 +32,11 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 	@ViewChild(MatPaginator, { static: true }) paginator: MatPaginator
 	@ViewChild(MatSort, { static: true }) sort: MatSort
 	dialogRef: MatDialogRef<any>
-	constructor(private apiServices: ApiServices, public dialog: MatDialog) {}
+	constructor(
+		private apiServices: ApiServices,
+		public dialog: MatDialog,
+		private notifierService: NotifierService
+	) {}
 
 	ngAfterViewInit(): void {
 		this.dataSource.sort = this.sort
@@ -112,8 +117,11 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 
 	public onDelete(id) {
 		this.apiServices.deleteAnimal(id).subscribe(response => {
-			const filtered = this.dataSource.data.filter(element => element.id !== id)
-			this.dataSource.data = filtered
+			if (response) {
+				const filtered = this.dataSource.data.filter(element => element.id !== id)
+				this.dataSource.data = filtered
+				this.notifierService.showSuccessNotification('Тваринку успішно видаленo', 'Ok')
+			}
 		})
 	}
 }

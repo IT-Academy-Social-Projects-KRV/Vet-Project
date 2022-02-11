@@ -137,7 +137,7 @@ router.delete(
                 WHERE id = $1`,
         [id]
       )
-      res.json(`Animal with id-${id} was deleted`)
+      res.json(deletedAnimal.rows)
     } catch (err) {
       res.status(500).send(err)
       console.error(err)
