@@ -2,45 +2,12 @@ import { Injectable } from '@angular/core'
 
 @Injectable({ providedIn: 'root' })
 export class StyleManager {
-	isDark = false
-
-	toggleDarkTheme() {
-		if (this.isDark) {
-			this.removeStyle('dark-theme')
-			document.body.classList.remove('dark-theme')
-			this.isDark = false
-		} else {
-			const href = 'dark-theme.css'
-			getLinkElementForKey('dark-theme').setAttribute('href', href)
-			document.body.classList.add('dark-theme')
-			this.isDark = true
-		}
+	public isDark: boolean
+	detectColorScheme() {
+		let defaultIcon = window.matchMedia('(prefers-color-scheme: dark)').matches
+		if (defaultIcon) this.isDark = defaultIcon
 	}
-
-	removeStyle(key: string) {
-		const existingLinkElement = getExistingLinkElementByKey(key)
-		if (existingLinkElement) {
-			document.head.removeChild(existingLinkElement)
-		}
+	constructor() {
+		this.detectColorScheme()
 	}
-}
-
-function getLinkElementForKey(key: string) {
-	return getExistingLinkElementByKey(key) || createLinkElementWithKey(key)
-}
-
-function getExistingLinkElementByKey(key: string) {
-	return document.head.querySelector(`link[rel="stylesheet"].${getClassNameForKey(key)}`)
-}
-
-function createLinkElementWithKey(key: string) {
-	const linkEl = document.createElement('link')
-	linkEl.setAttribute('rel', 'stylesheet')
-	linkEl.classList.add(getClassNameForKey(key))
-	document.head.appendChild(linkEl)
-	return linkEl
-}
-
-function getClassNameForKey(key: string) {
-	return `style-manager-${key}`
 }

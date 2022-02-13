@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { LoginService } from './admin/auth/login-modal/login.service'
+import { StyleManager } from '@shared/services/style-manager.service'
 
 @Component({
 	selector: 'app-root',
@@ -8,7 +9,12 @@ import { LoginService } from './admin/auth/login-modal/login.service'
 })
 export class AppComponent implements OnInit {
 	title = 'client'
-	constructor(private loginService: LoginService) {}
+	isDark = this.styleManager.isDark
+	constructor(private loginService: LoginService, private styleManager: StyleManager) {}
+	toggleDarkTheme() {
+		this.styleManager.detectColorScheme()
+		this.isDark = !this.isDark
+	}
 	ngOnInit(): void {
 		const potentialToken = localStorage.getItem('token')
 		if (potentialToken !== null) {

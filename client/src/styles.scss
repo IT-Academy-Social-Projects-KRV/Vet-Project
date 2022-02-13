@@ -9,9 +9,9 @@
 @include mat.core-theme(light.$client-light-theme);
 
 @include mat.all-component-themes(light.$client-light-theme);
-@media (prefers-color-scheme: dark) {
-	@include mat.all-component-themes(dark.$client-dark-theme);
-}
+// @media (prefers-color-scheme: dark) {
+@include mat.all-component-themes(dark.$client-dark-theme);
+// }
 
 body {
 	margin: 0;
