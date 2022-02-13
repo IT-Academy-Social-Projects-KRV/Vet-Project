@@ -15,3 +15,7 @@ $client-light-theme: mat.define-light-theme(
 		)
 	)
 );
+.light-theme {
+	@include mat.core-color($client-light-theme);
+	@include mat.all-component-themes($client-light-theme);
+}

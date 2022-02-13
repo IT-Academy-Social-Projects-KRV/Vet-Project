@@ -9,12 +9,8 @@ import { StyleManager } from '@shared/services/style-manager.service'
 })
 export class AppComponent implements OnInit {
 	title = 'client'
-	isDark = this.styleManager.isDark
-	constructor(private loginService: LoginService, private styleManager: StyleManager) {}
-	toggleDarkTheme() {
-		this.styleManager.detectColorScheme()
-		this.isDark = !this.isDark
-	}
+	constructor(private loginService: LoginService) {}
+
 	ngOnInit(): void {
 		const potentialToken = localStorage.getItem('token')
 		if (potentialToken !== null) {

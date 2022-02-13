@@ -17,7 +17,7 @@ $client-dark-theme: mat.define-dark-theme(
 	)
 );
 
-.dark-theme {
-	@include mat.core-color($client-dark-theme);
-	@include mat.all-component-themes($client-dark-theme);
-}
+// .dark-theme {
+// 	@include mat.core-color($client-dark-theme);
+// 	@include mat.all-component-themes($client-dark-theme);
+// }

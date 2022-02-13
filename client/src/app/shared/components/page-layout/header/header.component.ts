@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
-import { Component } from '@angular/core'
+import { Component, Input } from '@angular/core'
+import { StyleManager } from '@shared/services/style-manager.service'
 
 @Component({
 	selector: 'app-header',
@@ -7,7 +8,16 @@ import { Component } from '@angular/core'
 	styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-	constructor() {}
+	iconChange = this.styleManager.iconChange
+	isDark = this.styleManager.isDark
+	constructor(private styleManager: StyleManager) {}
+	toggleDarkTheme() {
+		this.styleManager.detectColorScheme()
+		this.styleManager.toggleDarkTheme()
+		this.iconChange = !this.iconChange
+		this.isDark = !this.isDark
+	}
+
 	active: boolean = false
 
 	clickEvent() {
