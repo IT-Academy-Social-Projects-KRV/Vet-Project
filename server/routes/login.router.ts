@@ -7,14 +7,18 @@ const router = Router()
 
 router.post ('/', async function login(req, res){
 	const tokenKey = 'dev-jwt'
+	
 	try { 
-		const candidate = await db.query (`SELECT * FROM users`)	
-		if (candidate.rows[0].email == req.body.email) {
-			const passwordResult:boolean = bcrypt.compareSync(req.body.password, candidate.rows[0].password)		
+		const candidate = await db.query (`SELECT * FROM users`)
+		const [data] = candidate.rows
+		const {id:id, email:storedEmail, password:storedPassword} = data
+			
+		if (storedEmail == req.body.email) {
+			const passwordResult:boolean = bcrypt.compareSync(req.body.password, storedPassword)		
 			if (passwordResult) {
 				const token = jwt.sign({
-					email: candidate.rows[0].email,
-					id : candidate.rows[0].id
+					email: storedEmail,
+					id : id
 				}, tokenKey, {expiresIn: 60 * 60})
 
 				res.status(200).json({
