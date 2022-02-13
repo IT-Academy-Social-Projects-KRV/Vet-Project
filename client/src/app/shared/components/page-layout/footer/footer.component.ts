@@ -19,8 +19,12 @@ export class FooterComponent {
 	faGithub = faGithub
 	faLinkedin = faLinkedin
 
-	constructor(public dialog: MatDialog, private router: Router) {}
+	constructor(public dialog: MatDialog, public router: Router) {}
 	openDialog() {
 		const dialogRef = this.dialog.open(LoginModalComponent)
+	}
+
+	isAdminRoute() {
+		return this.router.url.includes('/admin')
 	}
 }
