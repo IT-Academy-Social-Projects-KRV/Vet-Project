@@ -10,5 +10,4 @@ if (environment.production) {
 
 platformBrowserDynamic()
 	.bootstrapModule(AppModule)
-	// eslint-disable-next-line no-undef
 	.catch(err => console.error(err))

@@ -15,7 +15,7 @@ import { VeterinariansComponent } from './components/veterinarians/veterinarians
 import { VetServicesComponent } from './components/vet-services/vet-services.component'
 import { VetAnimalsTypeComponent } from './components/vet-animals-type/vet-animals-type.component'
 import { VetListComponent } from './components/vet-list/vet-list.component'
-import { VetsFilterComponent } from './components/vets-filter/vets-filter.component';
+import { VetsFilterComponent } from './components/vets-filter/vets-filter.component'
 import { VetsFilterResultComponent } from './components/vets-filter-result/vets-filter-result.component'
 
 @NgModule({
@@ -28,7 +28,7 @@ import { VetsFilterResultComponent } from './components/vets-filter-result/vets-
 		VetAnimalsTypeComponent,
 		VetListComponent,
 		VetsFilterComponent,
-  VetsFilterResultComponent
+		VetsFilterResultComponent
 	],
 	imports: [
 		CommonModule,
