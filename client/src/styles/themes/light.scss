@@ -1,0 +1,17 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+$client-light-primary: mat.define-palette(mat.$indigo-palette);
+$client-light-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+$client-light-warn: mat.define-palette(mat.$red-palette);
+
+$client-light-theme: mat.define-light-theme(
+	(
+		color: (
+			primary: $client-light-primary,
+			accent: $client-light-accent,
+			warn: $client-light-warn
+		)
+	)
+);
