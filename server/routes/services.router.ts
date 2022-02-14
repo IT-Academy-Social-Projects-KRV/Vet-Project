@@ -21,8 +21,8 @@ router.post(
                 RETURNING *`,
         [title, description]
       )
-
-      res.send(newService.rows[0])
+      const [addedService] = newService.rows
+      res.send(addedService)
     } catch (err) {
       res.status(500).send(err)
       console.error(err)
@@ -87,7 +87,8 @@ router.put(
                 RETURNING *`,
         [title, description, id]
       )
-      res.json(updateClinic.rows[0])
+      const [updatedClinic] = updateClinic.rows
+      res.json(updatedClinic)
     } catch (err) {
       res.status(500).send(err)
       console.error(err)
