@@ -10,6 +10,7 @@
 @include mat.core-theme(light.$client-light-theme);
 
 @include mat.all-component-themes(light.$client-light-theme);
+@include header.theme(light.$client-light-header-theme);
 @media (prefers-color-scheme: dark) {
 	@include mat.all-component-themes(dark.$client-dark-theme);
 	@include header.theme(dark.$client-dark-header-theme);
