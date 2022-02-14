@@ -9,7 +9,7 @@ import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
 import { IVolonteersInfo } from '../interfaces/volonteers'
 
 import { ILoginUSer } from '@shared/interfaces/login'
-import { LoginService } from 'src/app/admin/components/auth/login-modal/login.service'
+import { LoginService } from 'src/app/admin/auth/login-modal/login.service'
 import { UrlBuilder } from '../builder-url'
 
 let builder = new UrlBuilder()
