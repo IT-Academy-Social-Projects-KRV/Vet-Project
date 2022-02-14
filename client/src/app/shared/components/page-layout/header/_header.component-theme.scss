@@ -7,11 +7,8 @@
 
 	// Get the primary color palette from the color-config.
 	$primary-palette: map.get($color-config, 'primary');
-
 	.header {
-		// Read the 500 hue from the primary color palette.
-		// color: mat.get-color-from-palette($primary-palette, 500);
-		border-bottom: 2px solid white;
+		border-bottom: 2px solid mat.get-color-from-palette($primary-palette);
 	}
 }
 @mixin theme($theme) {

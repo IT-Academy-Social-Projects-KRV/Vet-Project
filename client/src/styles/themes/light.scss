@@ -4,9 +4,7 @@
 
 $client-light-primary: mat.define-palette(mat.$indigo-palette);
 $client-light-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
-
 $client-light-warn: mat.define-palette(mat.$red-palette);
-
 $client-light-theme: mat.define-light-theme(
 	(
 		color: (
@@ -16,8 +14,53 @@ $client-light-theme: mat.define-light-theme(
 		)
 	)
 );
+$header-light: (
+	50: #fefefe,
+	100: #fefefe,
+	200: #fdfdfd,
+	300: #fcfcfc,
+	400: #fbfbfb,
+	500: #fafafa,
+	600: #f9f9f9,
+	700: #f9f9f9,
+	800: #f8f8f8,
+	900: #f6f6f6,
+	A100: #ffffff,
+	A200: #ffffff,
+	A400: #ffffff,
+	A700: #ffffff,
+	contrast: (
+		50: #000000,
+		100: #000000,
+		200: #000000,
+		300: #000000,
+		400: #000000,
+		500: #000000,
+		600: #000000,
+		700: #000000,
+		800: #000000,
+		900: #000000,
+		A100: #000000,
+		A200: #000000,
+		A400: #000000,
+		A700: #000000
+	)
+);
+
+$client-light-header-primary: mat.define-palette($header-light);
+$client-light-header-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$client-light-header-warn: mat.define-palette(mat.$red-palette);
+$client-light-header-theme: mat.define-light-theme(
+	(
+		color: (
+			primary: $client-light-header-primary,
+			accent: $client-light-header-accent,
+			warn: $client-light-header-warn
+		)
+	)
+);
 .light-theme {
 	@include mat.core-color($client-light-theme);
 	@include mat.all-component-themes($client-light-theme);
-	@include header.theme($client-light-theme);
+	@include header.theme($client-light-header-theme);
 }
