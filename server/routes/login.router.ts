@@ -10,9 +10,7 @@ router.post ('/', async function login(req, res){
 	
 	try { 
 		const candidate = await db.query (`SELECT * FROM users`)
-		const [data] = candidate.rows
-		const {id:id, email:storedEmail, password:storedPassword} = data
-			
+		const [{id:id, email:storedEmail, password:storedPassword}] = candidate.rows	
 		if (storedEmail == req.body.email) {
 			const passwordResult:boolean = bcrypt.compareSync(req.body.password, storedPassword)		
 			if (passwordResult) {
@@ -20,7 +18,6 @@ router.post ('/', async function login(req, res){
 					email: storedEmail,
 					id : id
 				}, tokenKey, {expiresIn: 60 * 60})
-
 				res.status(200).json({
 					token: `Bearer ${token}`
 				})
@@ -37,7 +34,6 @@ router.post ('/', async function login(req, res){
 	} catch {
 		res.status(500)
 	} 
-	
 })
 
 export default router;
