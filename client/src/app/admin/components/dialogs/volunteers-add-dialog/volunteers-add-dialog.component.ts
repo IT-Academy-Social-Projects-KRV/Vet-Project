@@ -32,27 +32,23 @@ export class VolunteersAddDialogComponent {
 						email: this.service.form.value.email,
 						number: this.service.form.value.number
 					})
-					.subscribe()
+					.subscribe(response => {
+						this.dialogRef.close(response)
+						this.service.initializeFormGroup()
+					})
 
 				this.notifier.showSuccessNotification('Волонтер успішно доданий', 'OK')
-				this.dialogRef.close(this.service.form.value)
 				this.service.form.reset()
 			} else {
-				this.service.updateVolunteer(this.service.form.value)
+				this.service.updateVolunteer(this.service.form.value).subscribe(data => {
+					console.log(data)
+					this.dialogRef.close(data)
+				})
 			}
 			this.service.form.reset()
 			this.service.initializeFormGroup()
 			this.notifier.showSuccessNotification('Дані успішно додані!', 'Чудово!')
-			this.onClose()
 		}
 	}
-	onClose() {
-		this.service.form.reset()
-		this.service.initializeFormGroup()
-		this.dialogRef.close()
-	}
 
-	closeDialog() {
-		this.dialogRef.close()
-	}
 }

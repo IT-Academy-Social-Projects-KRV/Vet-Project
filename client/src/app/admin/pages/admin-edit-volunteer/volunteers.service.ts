@@ -20,7 +20,7 @@ export class VolunteersService {
 			Validators.pattern("^[а-яА-я / і / ґ / ї / І / Ї/ Ґ']+")
 		]),
 		email: new FormControl('', Validators.email),
-		number: new FormControl('', [Validators.required, Validators.pattern('[- +()0-9]{10,}')])
+		number: new FormControl('', [Validators.required, Validators.pattern('[- +()0-9]{10,17}')])
 	})
 	initializeFormGroup() {
 		this.form.setValue({
@@ -31,8 +31,8 @@ export class VolunteersService {
 			number: ''
 		})
 	}
-	updateVolunteer(volunteer: any): void {
-		this.apiService.putEditVolunteer(volunteer).subscribe()
+	updateVolunteer(volunteer: any) {
+		return this.apiService.putEditVolunteer(volunteer)
 	}
 	populateForm(volunteer) {
 		this.form.setValue(volunteer)

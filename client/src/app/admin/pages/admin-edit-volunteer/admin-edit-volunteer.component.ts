@@ -65,10 +65,11 @@ export class AdminEditVolunteerComponent implements OnInit, AfterViewInit {
 			.openConfirmDialog()
 			.afterClosed()
 			.subscribe(data => {
-				const arr = this.dataSource.data.concat(data)
-				this.dataSource.data = arr
-				console.log(arr)
-				this.getVolonteers()
+				// const arr = this.dataSource.data.concat(data)
+				// this.dataSource.data = arr
+				this.dataSource.data = [...this.dataSource.data, data]
+				console.log(data)
+				// this.getVolonteers()
 			})
 	}
 	openDeleteDialog(id) {
@@ -93,9 +94,9 @@ export class AdminEditVolunteerComponent implements OnInit, AfterViewInit {
 			})
 			.afterClosed()
 			.subscribe(data => {
+				console.log(data)
 				const arr = this.dataSource.data.concat(data)
 				this.dataSource.data = arr
-				this.getVolonteers()
 			})
 	}
 }
