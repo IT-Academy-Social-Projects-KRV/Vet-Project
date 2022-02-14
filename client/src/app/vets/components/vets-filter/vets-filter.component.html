@@ -5,7 +5,8 @@
       <div class="input-wrapper">
         <label class="form-filter__label" for="title">Hазва</label>
         <select id="title" name="title" [(ngModel)]="vet.title" class="form-filter__input">
-          <option *ngFor='let item of vetsInfo'>
+          <option></option>
+          <option *ngFor='let item of vetsInfo | uniq:"title"'>
             {{item.title}}
           </option>
         </select>
@@ -17,7 +18,7 @@
         <label class="form-filter__label" for="type">Спеціалізація</label>
         <select id="type" name="type" [(ngModel)]="vet.animal_type" class="form-filter__input">
           <option></option>
-          <option *ngFor='let item of vetsInfo'>
+          <option *ngFor='let item of vetsInfo | uniq:"animal_type"'>
             {{item.animal_type}}
           </option>
         </select>
@@ -29,7 +30,7 @@
     <label class="form-filter__label" for="adress">Aдреса</label>
     <select id="adress" name="adress" [(ngModel)]="vet.adress" class="form-filter__input">
       <option></option>
-      <option *ngFor='let item of vetsInfo'>
+      <option *ngFor='let item of vetsInfo | uniq:"adress"'>
         {{item.adress}}
       </option>
     </select>
