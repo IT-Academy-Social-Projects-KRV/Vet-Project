@@ -1,7 +1,7 @@
 @import 'variables.scss';
 .header {
 	width: 100%;
-	border-bottom: 2px solid $white;
+	border-bottom: 2px solid transparent;
 	z-index: 10;
 	overflow: hidden;
 	position: fixed;
