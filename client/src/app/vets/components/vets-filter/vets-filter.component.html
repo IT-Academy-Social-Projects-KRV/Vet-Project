@@ -39,9 +39,9 @@
   <button class="form-filter-btn" type="submit" (click)="onSubmite()">Знайти</button>
 </form>
 
+<p class="card-filter-title">Клініки, де Вам завжди допоможуть</p>
 <div class="wrap-filter-result">
   <ng-container *ngIf="(vetsFilterInfo$ | async) as vetsFilterInfo">
     <app-vets-filter-result *ngFor="let item of vetsFilterInfo" [data]="item"></app-vets-filter-result>
   </ng-container>
 </div>
-<p class="card-filter-title">Клініки, де Вам завжди допоможуть</p>

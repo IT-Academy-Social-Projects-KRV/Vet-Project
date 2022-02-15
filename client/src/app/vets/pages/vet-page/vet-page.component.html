@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div>
-    <app-vets-filter></app-vets-filter>
-    <app-vet-list></app-vet-list>
+    <app-vets-filter (filterIsPress)="onFilterIsPress()"></app-vets-filter>
+    <app-vet-list *ngIf="!condition"></app-vet-list>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, EventEmitter, OnInit, Output } from '@angular/core'
 
 import { Observable } from 'rxjs'
 
@@ -22,6 +22,8 @@ export class VetsFilterComponent implements OnInit {
 	}
 	paramsArr = []
 
+	@Output() filterIsPress = new EventEmitter()
+
 	constructor(private apiServices: ApiServices, private notifierService: NotifierService) {}
 
 	ngOnInit(): void {
@@ -29,6 +31,7 @@ export class VetsFilterComponent implements OnInit {
 	}
 
 	onSubmite(): void {
+		this.filterIsPress.emit()
 		this.paramsArr = []
 		this.checkParams()
 		let getUrl = this.paramsArr.join('&')
