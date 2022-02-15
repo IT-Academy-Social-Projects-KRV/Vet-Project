@@ -23,10 +23,6 @@ export class VetUpdateComponent {
 		@Inject(MAT_DIALOG_DATA) public data: any
 	) {}
 
-	// ngOnInit() {
-	// 	 	this.vetsInfo$ = this.apiServices.getVetsUnitInfo(this.id)
-	// }
-
 	onUpdateVet(form: IVetsUnitInfo): void {
 		this.item = {
 			id: form.id,
