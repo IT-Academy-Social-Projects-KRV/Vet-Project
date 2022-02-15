@@ -41,8 +41,8 @@ router.post(
           wishes_for_shelter
         ]
       )
-
-      res.send(newAnimal.rows[0])
+      const [addedAnimal] = newAnimal.rows
+      res.json(addedAnimal)
     } catch (err) {
       res.status(500).send(err)
       console.error(err)
@@ -76,7 +76,8 @@ router.get('/:id', async function getAnimalById(req, res) {
       'SELECT * FROM animals where id = $1',
       [id]
     )
-    res.json(animal.rows[0])
+    const[receivedAnimal] = animal.rows
+    res.json(receivedAnimal)
   } catch (err) {
     res.status(500).send(err)
     console.error(err)
@@ -117,7 +118,8 @@ router.put('/', async function updateAnimalInfoById(req: Request<{}, {}, IAnimal
         id
       ]
     )
-    res.json(updateAnimal.rows[0])
+    const [addedAnimal] = updateAnimal.rows
+    res.json(addedAnimal)
   } catch (err) {
     res.status(500).send(err)
     console.error(err)
