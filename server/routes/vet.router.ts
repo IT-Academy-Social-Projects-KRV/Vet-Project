@@ -35,8 +35,8 @@ router.post(
 						map_link
 					]
 				)
-
-			res.send(newVetclinic.rows[0])
+			const [addedClinic] = newVetclinic.rows
+			res.send(addedClinic)
 		} catch (err) {
 			res.status(500).send(err)
 			console.error(err)
@@ -76,6 +76,7 @@ router.get(
 					`SELECT * FROM vetlist WHERE id = $1`,
 					[id]
 				)
+			console.log(rows)
 			res.send(rows)
 		} catch (err) {
 			res.status(500).send(err)
@@ -120,7 +121,8 @@ router.put(
 						id
 					]
 				)
-			res.json(updateClinic.rows[0])
+				const [updatedClinic] = updateClinic.rows
+			res.json(updatedClinic)
 		} catch (err) {
 			res.status(500).send(err)
 			console.error(err)
