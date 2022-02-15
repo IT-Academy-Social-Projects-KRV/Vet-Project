@@ -42,17 +42,17 @@ export class AdminEditVolunteerComponent implements OnInit, AfterViewInit {
 	ngOnInit(): void {
 		this.getVolonteers()
 	}
-	getVolonteers() {
+	private getVolonteers() {
 		this.apiServices.getVolonteersInfo().subscribe(response => {
 			this.dataSource.data = response
 		})
 	}
-	ngAfterViewInit() {
+	public ngAfterViewInit() {
 		this.dataSource.paginator = this.paginator
 		this.dataSource.sort = this.sort
 	}
 
-	applyFilter(event: Event) {
+	public applyFilter(event: Event) {
 		const filterValue = (event.target as HTMLInputElement).value
 		this.dataSource.filter = filterValue.trim().toLowerCase()
 
@@ -60,31 +60,33 @@ export class AdminEditVolunteerComponent implements OnInit, AfterViewInit {
 			this.dataSource.paginator.firstPage()
 		}
 	}
-	openConfirmDialog() {
+	public openConfirmDialog(): void {
 		this.dialog
 			.openConfirmDialog()
 			.afterClosed()
-			.subscribe(data => {
-				const arr = this.dataSource.data.concat(data)
-				this.dataSource.data = arr
-				console.log(arr)
-				this.getVolonteers()
+			.subscribe((data: IVolonteersInfo) => {
+				if (data) {
+					this.dataSource.data = [...this.dataSource.data, data]
+				}
 			})
 	}
-	openDeleteDialog(id) {
+	public openDeleteDialog(id: number): void {
 		this.dialog
 			.openDeleteDialog(id)
 			.afterClosed()
-			.subscribe(result => {
+			.subscribe((result: boolean) => {
 				if (result) {
-					this.apiServices.deleteVolunteer(id).subscribe()
-					const filtered = this.dataSource.data.filter(element => element.id !== id)
-					this.dataSource.data = filtered
+					this.apiServices.deleteVolunteer(id).subscribe(response => {
+						if (response) {
+							const filtered = this.dataSource.data.filter(element => element.id !== id)
+							this.dataSource.data = filtered
+						}
+					})
 				}
 				this.dialogRef = null
 			})
 	}
-	onEdit(row) {
+	public onEdit(row): void {
 		this.service.populateForm(row)
 		this.matDialog
 			.open(VolunteersAddDialogComponent, {
@@ -92,10 +94,11 @@ export class AdminEditVolunteerComponent implements OnInit, AfterViewInit {
 				disableClose: true
 			})
 			.afterClosed()
-			.subscribe(data => {
-				const arr = this.dataSource.data.concat(data)
-				this.dataSource.data = arr
-				this.getVolonteers()
+			.subscribe(response => {
+				const index = this.dataSource.data.findIndex(element => element.id === response.id)
+				const data = this.dataSource.data
+				data[index] = response
+				this.dataSource.data = data
 			})
 	}
 }

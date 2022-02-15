@@ -28,4 +28,10 @@ export class DialogService {
 			disableClose: true
 		}))
 	}
+	// openEditDialog(row) {
+	// 	return this.dialog.open(VolunteersAddDialogComponent, {
+	// 		width: '500px',
+	// 		disableClose: true
+	// 	})
+	// }
 }
