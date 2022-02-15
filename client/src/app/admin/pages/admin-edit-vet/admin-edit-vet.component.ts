@@ -100,7 +100,6 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 			disableClose: true
 		})
 		this.dialogRef.afterClosed().subscribe(result => {
-			console.log(result)
 			if (result) {
 				this.onDeleteClinic(id)
 				this.notifierService.showSuccessNotification('Клініку успішно видаленo', 'Ok')
