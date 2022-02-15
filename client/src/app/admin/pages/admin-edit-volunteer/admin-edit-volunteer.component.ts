@@ -8,6 +8,7 @@ import { DialogService } from './dialog.service'
 import { VolunteersService } from './volunteers.service'
 import { VolunteersAddDialogComponent } from '../../components/dialogs/volunteers-add-dialog/volunteers-add-dialog.component'
 import { MatDialog, MatDialogRef } from '@angular/material/dialog'
+import { NotifierService } from '@shared/services/notifier.service'
 
 /** Constants used to fill up our data base. */
 
@@ -36,7 +37,8 @@ export class AdminEditVolunteerComponent implements OnInit, AfterViewInit {
 		private apiServices: ApiServices,
 		private dialog: DialogService,
 		public service: VolunteersService,
-		public matDialog: MatDialog
+		public matDialog: MatDialog,
+		private notifierService: NotifierService
 	) {}
 
 	ngOnInit(): void {
@@ -80,6 +82,7 @@ export class AdminEditVolunteerComponent implements OnInit, AfterViewInit {
 						if (response) {
 							const filtered = this.dataSource.data.filter(element => element.id !== id)
 							this.dataSource.data = filtered
+							this.notifierService.showSuccessNotification('Волонтера успішно видаленo', 'Ok')
 						}
 					})
 				}
