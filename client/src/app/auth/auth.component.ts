@@ -1,26 +1,25 @@
-/* eslint-disable no-empty */
 import { Component, OnDestroy, OnInit } from '@angular/core'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
+import { MatDialogRef } from '@angular/material/dialog'
 import { Router } from '@angular/router'
 import { ApiServices } from '@shared/services/api.service'
-import { Subscription } from 'rxjs'
-import { MatDialogRef } from '@angular/material/dialog'
 import { NotifierService } from '@shared/services/notifier.service'
+import { Subscription } from 'rxjs'
+import { ErrorHttpInterseptor } from '../error-http-interseptor'
+import { LoginService } from './login.service'
 
 @Component({
-	selector: 'app-login-modal',
-	templateUrl: './login-modal.component.html',
-	styleUrls: ['./login-modal.component.scss']
+	selector: 'app-auth',
+	templateUrl: './auth.component.html',
+	styleUrls: ['./auth.component.scss']
 })
-export class LoginModalComponent implements OnInit, OnDestroy {
-	hide: boolean = true
+export class AuthComponent implements OnInit, OnDestroy {
+	hide = true
 	loginForm: FormGroup
 	aSUb: Subscription
-
 	constructor(
-		private login: ApiServices,
+		private loginService: ApiServices,
 		private router: Router,
-		public dialogRef: MatDialogRef<LoginModalComponent>,
 		private notifierService: NotifierService
 	) {}
 
@@ -30,25 +29,26 @@ export class LoginModalComponent implements OnInit, OnDestroy {
 			email: new FormControl('', [Validators.required, Validators.email])
 		})
 	}
-
 	ngOnDestroy(): void {
 		if (this.aSUb) {
-			this.aSUb.unsubscribe
+			this.aSUb.unsubscribe()
 		}
 	}
-	onSubmit() {
+	resetDialog(): void {
+		this.loginForm.reset()
+	}
+	onSubmit(): void {
 		const user = {
 			email: this.loginForm.value.email,
 			password: this.loginForm.value.password
 		}
 
-		this.aSUb = this.login.login(user).subscribe(item => {
-			if (item.token) {
-				this.dialogRef.close()
+		this.aSUb = this.loginService.login(user).subscribe(item => {
+			if (item) {
 				this.router.navigate(['/admin'])
 				this.notifierService.showSuccessNotification(`Вітаємо в особистому кабінеті`, 'Ok')
 			}
 		})
-		setTimeout(() => this.loginForm.reset(), 1000)
+		setTimeout(() => this.loginForm.reset(), 500)
 	}
 }

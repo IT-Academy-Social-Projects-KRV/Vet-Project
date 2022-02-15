@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
 import { MatDialog } from '@angular/material/dialog'
-import { LogoutModalComponent } from '../../auth/logout-modal/logout-modal.component'
+import { LogoutModalComponent } from '../../../auth/logout-modal/logout-modal.component'
 
 @Component({
 	selector: 'app-admin-nav',
