@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router'
 import { AdminStatisticComponent } from './pages/admin-statistic/admin-statistic.component'
 import { AdminEditPetComponent } from './pages/admin-edit-pet/admin-edit-pet.component'
 import { AdminEditVetComponent } from './pages/admin-edit-vet/admin-edit-vet.component'
-import { LoginGuard } from '../auth/login.guard'
+import { LoginGuard } from '../auth/login/login.guard'
 import { AdminEditVolunteerComponent } from './pages/admin-edit-volunteer/admin-edit-volunteer.component'
 import { AdminLayoutComponent } from './components/admin-layout/admin-layout.component'
 

@@ -5,13 +5,13 @@ import { Router } from '@angular/router'
 import { ApiServices } from '@shared/services/api.service'
 import { NotifierService } from '@shared/services/notifier.service'
 import { Subscription } from 'rxjs'
-import { ErrorHttpInterseptor } from '../error-http-interseptor'
+import { ErrorHttpInterseptor } from '../../error-http-interseptor'
 import { LoginService } from './login.service'
 
 @Component({
 	selector: 'app-auth',
-	templateUrl: './auth.component.html',
-	styleUrls: ['./auth.component.scss']
+	templateUrl: './login.component.html',
+	styleUrls: ['./login.component.scss']
 })
 export class AuthComponent implements OnInit, OnDestroy {
 	hide = true
