@@ -12,7 +12,7 @@ export class VolunteersAddDialogComponent {
 	constructor(
 		public service: VolunteersService,
 		private apiService: ApiServices,
-		private dialogRef: MatDialogRef<VolunteersAddDialogComponent>,
+		public dialogRef: MatDialogRef<VolunteersAddDialogComponent>,
 		private notifier: NotifierService
 	) {}
 
@@ -32,27 +32,16 @@ export class VolunteersAddDialogComponent {
 						email: this.service.form.value.email,
 						number: this.service.form.value.number
 					})
-					.subscribe()
-
-				this.notifier.showSuccessNotification('Волонтер успішно доданий', 'OK')
-				this.dialogRef.close(this.service.form.value)
-				this.service.form.reset()
+					.subscribe(response => {
+						this.dialogRef.close(response)
+						this.notifier.showSuccessNotification('Волонтер успішно доданий', 'OK')
+					})
 			} else {
-				this.service.updateVolunteer(this.service.form.value)
+				this.service.updateVolunteer(this.service.form.value).subscribe(response => {
+					this.dialogRef.close(response)
+					this.notifier.showSuccessNotification('Дані успішно додані!', 'Чудово!')
+				})
 			}
-			this.service.form.reset()
-			this.service.initializeFormGroup()
-			this.notifier.showSuccessNotification('Дані успішно додані!', 'Чудово!')
-			this.onClose()
 		}
-	}
-	onClose() {
-		this.service.form.reset()
-		this.service.initializeFormGroup()
-		this.dialogRef.close()
-	}
-
-	closeDialog() {
-		this.dialogRef.close()
 	}
 }

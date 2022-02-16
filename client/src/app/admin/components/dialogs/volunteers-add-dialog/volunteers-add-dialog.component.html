@@ -35,6 +35,6 @@
     <button mat-raised-button color="primary"  type="submit" class="addVolunteerBtn" 
       [disabled]="service.form.invalid">{{service.form.controls['id'].value?"Змінити волонтера":"Додати волонтера"}}</button>
     <button mat-raised-button color="warn" type="reset" (click)="onClear()">Очитити</button>
-    <button mat-raised-button color="basic" type ="button" (click)="closeDialog()">Cкасувати</button>
+    <button mat-raised-button color="basic" type ="button"(click)="dialogRef.close(false)">Cкасувати</button>
   </div>
 </form>

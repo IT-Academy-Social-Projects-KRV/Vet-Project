@@ -31,8 +31,8 @@ export class VolunteersService {
 			number: ''
 		})
 	}
-	updateVolunteer(volunteer: any): void {
-		this.apiService.putEditVolunteer(volunteer).subscribe()
+	updateVolunteer(volunteer: any) {
+		return this.apiService.putEditVolunteer(volunteer)
 	}
 	populateForm(volunteer) {
 		this.form.setValue(volunteer)
