@@ -55,6 +55,10 @@ html {
 .mat-snack-bar-container .mat-button-wrapper {
 	color: $white;
 }
+.mat-form-field-appearance-fill .mat-form-field-flex {
+	background-color: #ffff;
+}
 form.normal-form {
 	margin: 10px;
 }
+
