@@ -2,6 +2,9 @@
 @use '@angular/material' as mat;
 @use '../../app/shared/components/page-layout/header/header.component-theme' as header;
 @use '../../app/vets/pages/vet-unit-page/vet-unit-page.component.scss' as textColor;
+@use '../../app/vets/components/vet-services/vet-services.component.scss' as textServiceColor;
+@use '../../app/vets/components/veterinarians/veterinarians.component.scss' as textVetColor;
+@use '../../app/pets/pages/animal-unit-page/animal-unit-page.component.scss' as petColor;
 
 @import 'variables.scss';
 
@@ -35,4 +38,6 @@ $client-light-header-theme: mat.define-light-theme(
 	@include mat.all-component-themes($client-light-theme);
 	@include header.theme($client-light-header-theme);
 	@include textColor.theme($client-light-header-theme);
+	@include textVetColor.theme($client-light-header-theme);
+	@include petColor.theme($client-light-header-theme);
 }

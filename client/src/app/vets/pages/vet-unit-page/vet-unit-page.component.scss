@@ -7,8 +7,8 @@
 
 	// Get the primary color palette from the color-config.
 	$primary-palette: map.get($color-config, 'primary');
-	.vets-info-section__info-wrapper {
-		color: mat.get-color-from-palette($primary-palette, 500-contrast);
+	.text-color-theme {
+		color: mat.get-color-from-palette($primary-palette, 400-contrast);
 	}
 }
 @mixin theme($theme) {

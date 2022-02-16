@@ -2,6 +2,9 @@
 @use '@angular/material' as mat;
 @use '../themes/light.scss' as typography;
 @use '../../app/vets/pages/vet-unit-page/vet-unit-page.component.scss' as textColor;
+@use '../../app/vets/components/vet-services/vet-services.component.scss' as textServiceColor;
+@use '../../app/vets/components/veterinarians/veterinarians.component.scss' as textVetColor;
+@use '../../app/pets/pages/animal-unit-page/animal-unit-page.component.scss' as petColor;
 
 @import 'variables.scss';
 
@@ -30,3 +33,6 @@ $client-dark-header-theme: mat.define-dark-theme(
 	)
 );
 @include textColor.theme($client-dark-header-theme);
+@include textServiceColor.theme($client-dark-header-theme);
+@include textVetColor.theme($client-dark-header-theme);
+@include petColor.theme($client-dark-header-theme);
