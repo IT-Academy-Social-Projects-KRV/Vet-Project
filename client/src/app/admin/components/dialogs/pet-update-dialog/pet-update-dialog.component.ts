@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core'
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
 import { IAnimalsUnitInfo } from '@shared/interfaces/animals-unit'
 import { ApiServices } from '@shared/services/api.service'
+import { NotifierService } from '@shared/services/notifier.service'
 
 @Component({
 	selector: 'app-pet-update-dialog',
@@ -11,13 +12,10 @@ import { ApiServices } from '@shared/services/api.service'
 export class PetUpdateDialogComponent {
 	constructor(
 		private apiServices: ApiServices,
+		private notifierService: NotifierService,
 		public dialogRef: MatDialogRef<IAnimalsUnitInfo>,
 		@Inject(MAT_DIALOG_DATA) public data: any
 	) {}
-
-	closeDialog() {
-		this.dialogRef.close()
-	}
 
 	onUpdate(form: IAnimalsUnitInfo): void {
 		this.data = {
@@ -33,7 +31,9 @@ export class PetUpdateDialogComponent {
 			wishes_for_shelter: form.wishes_for_shelter
 		}
 
-		this.apiServices.putEditAnimal(this.data).subscribe()
-		this.dialogRef.close()
+		this.apiServices.putEditAnimal(this.data).subscribe(response => {
+			this.dialogRef.close(response)
+			this.notifierService.showSuccessNotification('Тваринку успішно оновлено', 'Ok')
+		})
 	}
 }

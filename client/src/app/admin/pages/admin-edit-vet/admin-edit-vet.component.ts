@@ -5,7 +5,6 @@ import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
 import { MatPaginator } from '@angular/material/paginator'
 import { MatSort } from '@angular/material/sort'
 import { MatTableDataSource } from '@angular/material/table'
-import { Observable } from 'rxjs'
 import { MatDialog, MatDialogRef } from '@angular/material/dialog'
 import { VetUpdateComponent } from '../../components/dialogs/vet-update-dialog/vet-update-dialog.component'
 import { VetAddDialogComponent } from '../../components/dialogs/vet-add-dialog/vet-add-dialog.component'
@@ -64,11 +63,20 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 	}
 
 	public openDialog(row: IVetsUnitInfo) {
-		const dialog = this.dialog.open(VetUpdateComponent, {
+		this.dialogRef = this.dialog.open(VetUpdateComponent, {
 			width: '800px',
 			// Can be closed only by clicking the close button
 			disableClose: true,
 			data: row
+		})
+		this.dialogRef.afterClosed().subscribe((response: IVetsUnitInfo) => {
+			if (response) {
+				const index = this.dataSource.data.findIndex(element => element.id === response.id)
+				const data = this.dataSource.data
+				data[index] = response
+				this.dataSource.data = data
+			}
+			this.dialogRef = null
 		})
 	}
 
@@ -86,10 +94,9 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 			width: '550px',
 			disableClose: false
 		})
-		this.dialogRef.afterClosed().subscribe(result => {
-			if (result) {
-				const newDataArr = this.dataSource.data.concat(this.dialogRef.componentInstance.item)
-				this.dataSource.data = newDataArr
+		this.dialogRef.afterClosed().subscribe(response => {
+			if (response) {
+				this.dataSource.data = [...this.dataSource.data, response]
 			}
 			this.dialogRef = null
 		})
@@ -102,15 +109,18 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 		this.dialogRef.afterClosed().subscribe(result => {
 			if (result) {
 				this.onDeleteClinic(id)
-				this.notifierService.showSuccessNotification('Клініку успішно видаленo', 'Ok')
 			}
 			this.dialogRef = null
 		})
 	}
 
 	private onDeleteClinic(id: number): void {
-		this.apiServices.deleteClinic(id).subscribe()
-		const filtered = this.dataSource.data.filter(element => element.id !== id)
-		this.dataSource.data = filtered
+		this.apiServices.deleteClinic(id).subscribe(response => {
+			if (response) {
+				const filtered = this.dataSource.data.filter(element => element.id !== id)
+				this.dataSource.data = filtered
+				this.notifierService.showSuccessNotification('Клініку успішно видаленo', 'Ok')
+			}
+		})
 	}
 }
