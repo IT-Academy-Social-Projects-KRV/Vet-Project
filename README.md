@@ -96,9 +96,6 @@ app/
 |- admin/
    |- admin.module.ts
    |- admin-routing.module.ts
-   |- auth/
-        |-login-modal/
-        |-logout-modal/
    |- components/
       |- admin-layout/
       |- admin-nav/
@@ -112,6 +109,12 @@ app/
       |- admin-edit-pet/
       |- admin-edit-vet
       |- ...
+|- auth/
+    |- auth-routing.module.ts
+    |- auth.module.ts
+    |- login/
+    |- logout-modal/
+    
 
 |- home-page/
    |- home-page.module.ts

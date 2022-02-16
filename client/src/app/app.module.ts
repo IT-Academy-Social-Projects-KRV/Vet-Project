@@ -15,7 +15,7 @@ import { MatCardModule } from '@angular/material/card'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
-import { LoginInterceptor } from './admin/auth/login-modal/login.interceptor'
+import { LoginInterceptor } from './auth/login/login.interceptor'
 import { ErrorHttpInterseptor } from './error-http-interseptor'
 import { LoadingInterceptor } from '@shared/services/loading.interceptor'
 

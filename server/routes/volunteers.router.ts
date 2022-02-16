@@ -124,8 +124,8 @@ router.delete(
 		const deletedVolunteer = await db.query (
 			`DELETE  FROM volonteers WHERE id = $1`, [id]
 		)
-		const [volunteer] = deletedVolunteer.rows
-		res.json(volunteer)
+		
+		res.json(deletedVolunteer.rows)
 
 	} catch (err) { 
 		res.status(500).send(err)
