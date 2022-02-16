@@ -12,10 +12,13 @@ import { FooterComponent } from '@shared/components/page-layout/footer/footer.co
 import { MatButtonModule } from '@angular/material/button'
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatCardModule } from '@angular/material/card'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
+
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { LoginInterceptor } from './admin/auth/login-modal/login.interceptor'
 import { ErrorHttpInterseptor } from './error-http-interseptor'
-import { MatSnackBarModule } from '@angular/material/snack-bar'
+import { LoadingInterceptor } from '@shared/services/loading.interceptor'
+
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 
 @NgModule({
@@ -42,6 +45,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 			provide: HTTP_INTERCEPTORS,
 			multi: true,
 			useClass: ErrorHttpInterseptor
+		},
+		{
+			provide: HTTP_INTERCEPTORS,
+			multi: true,
+			useClass: LoadingInterceptor
 		}
 	],
 	bootstrap: [AppComponent]

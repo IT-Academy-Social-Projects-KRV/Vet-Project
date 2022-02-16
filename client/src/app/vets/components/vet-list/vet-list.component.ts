@@ -1,8 +1,6 @@
-/* eslint-disable @angular-eslint/use-lifecycle-interface */
-/* eslint-disable no-unused-vars */
 import { Component, OnInit } from '@angular/core'
 import { ApiServices } from '@shared/services/api.service'
-import { Observable, map } from 'rxjs'
+import { Observable } from 'rxjs'
 import { IVetsInfo } from '@shared/interfaces/vetInfo'
 
 @Component({

@@ -11,7 +11,6 @@ export class VetPageComponent {
 	condition = false
 
 	onFilterIsPress() {
-		console.log('hi there')
 		this.condition = true
 		console.log(this.condition)
 	}
