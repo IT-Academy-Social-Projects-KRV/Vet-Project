@@ -1,11 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
-// @import './styles/variables.scss';
-@import 'variables.scss';
+@use '@angular/material' as mat;
 
-html,
-body {
-	height: 100%;
+@use './styles/themes/light';
+@use './styles/themes/dark';
+@use './styles/typography/config' as typography;
+@use './app/shared/components/page-layout/header/header.component-theme' as header;
+@use './app/vets/pages/vet-unit-page/vet-unit-page.component.scss' as textColor;
+@use './app/vets/components/vet-services/vet-services.component.scss' as textServiceColor;
+@use './app/vets/components/veterinarians/veterinarians.component.scss' as textVetColor;
+@use './app/pets/pages/animal-unit-page/animal-unit-page.component.scss' as petColor;
+
+@import './styles/variables.scss';
+@include mat.core(light.$client-light-theme);
+@include mat.core-theme(light.$client-light-theme);
+
+@include mat.all-component-themes(light.$client-light-theme);
+@include header.theme(light.$client-light-header-theme);
+
+@media (prefers-color-scheme: dark) {
+	@include mat.all-component-themes(dark.$client-dark-theme);
+	@include header.theme(dark.$client-dark-header-theme);
+	@include textColor.theme(dark.$client-dark-header-theme);
+	@include textServiceColor.theme(dark.$client-dark-header-theme);
+	@include textVetColor.theme(dark.$client-dark-header-theme);
+	@include petColor.theme(dark.$client-dark-header-theme);
 }
+
 body {
 	margin: 0;
 }
@@ -61,4 +81,3 @@ html {
 form.normal-form {
 	margin: 10px;
 }
-
