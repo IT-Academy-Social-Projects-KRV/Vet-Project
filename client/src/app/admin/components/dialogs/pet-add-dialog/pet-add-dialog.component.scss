@@ -1,31 +1,33 @@
+@import 'variables.scss';
+
+.admin-pets-dialog {
+	text-align: center;
+	color: $main-blue;
+	font-weight: 700;
+	font-size: 30px;
+	margin-bottom: 30px;
+}
+
 .modal-wrapper{
   display: flex;
+  gap: 20px;
+  
 }
 .modal-right-section,
 .modal-left-section{
   display: flex;
   flex-wrap: wrap;
-  width: 400px;
+  max-width: 250px;
+  align-content: space-between;
 }
-.modal-right-section{
-  justify-content: flex-end;
-}
-
 
 .example-full-width {
-    width: 90%;
+    width: 100%;
 }
 .demo-button-container {
-  padding: 8px 0;
+   padding: 8px 0;
+   align-items: center;
+  justify-content: space-evenly;
   display: flex;
-  flex-wrap: wrap;
-  min-height: 52px;
-  align-items: center;
-  box-sizing: content-box;
-  margin-bottom: -24px;
-  justify-content: center;
-  
 }
-.mat-raised-button{
-  margin-left: 8px;
-}
+
