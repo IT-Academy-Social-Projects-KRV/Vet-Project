@@ -1,6 +1,8 @@
 @use 'sass:map';
 @use '@angular/material' as mat;
 @use '../../app/shared/components/page-layout/header/header.component-theme' as header;
+@use '../../app/vets/pages/vet-unit-page/vet-unit-page.component.scss' as textColor;
+
 @import 'variables.scss';
 
 $client-light-primary: mat.define-palette(mat.$indigo-palette);
@@ -32,4 +34,5 @@ $client-light-header-theme: mat.define-light-theme(
 	@include mat.core-color($client-light-theme);
 	@include mat.all-component-themes($client-light-theme);
 	@include header.theme($client-light-header-theme);
+	@include textColor.theme($client-light-header-theme);
 }

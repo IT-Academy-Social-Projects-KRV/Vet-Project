@@ -1,9 +1,9 @@
 @use 'sass:map';
 @use '@angular/material' as mat;
 @use '../themes/light.scss' as typography;
+@use '../../app/vets/pages/vet-unit-page/vet-unit-page.component.scss' as textColor;
 
 @import 'variables.scss';
-// @use '../components';
 
 $client-dark-primary: mat.define-palette(mat.$blue-grey-palette);
 $client-dark-accent: mat.define-palette(mat.$amber-palette, A200, A100, A400);
@@ -29,3 +29,4 @@ $client-dark-header-theme: mat.define-dark-theme(
 		)
 	)
 );
+@include textColor.theme($client-dark-header-theme);

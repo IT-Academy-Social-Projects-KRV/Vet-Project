@@ -26,7 +26,8 @@ router.post('/', async function addVolunteer (
 					number			
 				]
 				)
-				res.json(newVolunteer.rows[0])
+				const [addedVolunteer] = newVolunteer.rows
+				res.json(addedVolunteer)
 		} catch( err){ 
 			res.status(500).send(err)
       		console.error(err)
@@ -60,7 +61,8 @@ router.get('/:id', async function getVolunteerById(req,res) {
 		const volunteer = await db.query (
 			`SELECT * FROM volonteers WHERE id = $1`, [id]
 		)
-		res.json(volunteer.rows[0])
+		const [receivedVolunteer] = volunteer.rows
+		res.json(receivedVolunteer)
 
 	} catch (err) { 
 		res.status(500).send(err)
@@ -96,7 +98,8 @@ router.put('/', async function updateVolunteers (
 				  id				  	
 			  ]
 			  )
-			  res.json(updatedVolunteer.rows[0])
+			 const [newVolunteer] = updatedVolunteer.rows
+			  res.json(newVolunteer)
 
 	} catch (err)
 	{
@@ -121,7 +124,8 @@ router.delete(
 		const deletedVolunteer = await db.query (
 			`DELETE  FROM volonteers WHERE id = $1`, [id]
 		)
-		res.json(deletedVolunteer.rows[0])
+		
+		res.json(deletedVolunteer.rows)
 
 	} catch (err) { 
 		res.status(500).send(err)

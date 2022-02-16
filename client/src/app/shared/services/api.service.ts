@@ -9,7 +9,7 @@ import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
 import { IVolonteersInfo } from '../interfaces/volonteers'
 
 import { ILoginUSer } from '@shared/interfaces/login'
-import { LoginService } from 'src/app/admin/auth/login-modal/login.service'
+import { LoginService } from 'src/app/auth/login/login.service'
 import { UrlBuilder } from '../builder-url'
 
 let builder = new UrlBuilder()
@@ -47,6 +47,9 @@ export class ApiServices {
 	putEditAnimal(data) {
 		return this.http.put<{ [key: string]: any }>(builder.baseUrl().animal().getUrl(), data)
 	}
+	deleteAnimal(id) {
+		return this.http.delete<IAnimalsUnitInfo>(builder.baseUrl().animal().addId(id).getUrl())
+	}
 	getCounts(): Observable<any> {
 		return this.http.get<any>(builder.baseUrl().countElements().getUrl())
 	}
@@ -67,10 +70,6 @@ export class ApiServices {
 
 	getVetServices(): Observable<IVetServices> {
 		return this.http.get<IVetServices>(builder.baseUrl().services().getUrl())
-	}
-
-	deleteAnimal(id) {
-		return this.http.delete<IAnimalsUnitInfo>(builder.baseUrl().animal().addId(id).getUrl())
 	}
 
 	deleteClinic(id) {

@@ -9,6 +9,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog'
 import { PetUpdateDialogComponent } from '../../components/dialogs/pet-update-dialog/pet-update-dialog.component'
 import { PetAddDialogComponent } from '../../components/dialogs/pet-add-dialog/pet-add-dialog.component'
 import { PetDeleteDialogComponent } from '../../components/dialogs/pet-delete-dialog/pet-delete-dialog.component'
+import { NotifierService } from '@shared/services/notifier.service'
 
 @Component({
 	selector: 'app-admin-edit-pet',
@@ -31,7 +32,11 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 	@ViewChild(MatPaginator, { static: true }) paginator: MatPaginator
 	@ViewChild(MatSort, { static: true }) sort: MatSort
 	dialogRef: MatDialogRef<any>
-	constructor(private apiServices: ApiServices, public dialog: MatDialog) {}
+	constructor(
+		private apiServices: ApiServices,
+		public dialog: MatDialog,
+		private notifierService: NotifierService
+	) {}
 
 	ngAfterViewInit(): void {
 		this.dataSource.sort = this.sort
@@ -68,15 +73,23 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 			disableClose: true,
 			data: icon
 		})
+		this.dialogRef.afterClosed().subscribe((response: IAnimalsUnitInfo) => {
+			if (response) {
+				const index = this.dataSource.data.findIndex(element => element.id === response.id)
+				const data = this.dataSource.data
+				data[index] = response
+				this.dataSource.data = data
+			}
+			this.dialogRef = null
+		})
 	}
 	openAddDialog() {
 		this.dialogRef = this.dialog.open(PetAddDialogComponent, {
 			disableClose: true
 		})
-		this.dialogRef.afterClosed().subscribe(result => {
-			if (result) {
-				const newArr = this.dataSource.data.concat(this.dialogRef.componentInstance.item)
-				this.dataSource.data = newArr
+		this.dialogRef.afterClosed().subscribe(response => {
+			if (response) {
+				this.dataSource.data = [...this.dataSource.data, response]
 			}
 			this.dialogRef = null
 		})
@@ -85,8 +98,8 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 		this.dialogRef = this.dialog.open(PetDeleteDialogComponent, {
 			disableClose: true
 		})
-		this.dialogRef.afterClosed().subscribe(result => {
-			if (result) {
+		this.dialogRef.afterClosed().subscribe(response => {
+			if (response) {
 				this.onDelete(id)
 			}
 			this.dialogRef = null
@@ -103,8 +116,12 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 	}
 
 	public onDelete(id) {
-		this.apiServices.deleteAnimal(id).subscribe()
-		const filtered = this.dataSource.data.filter(element => element.id !== id)
-		this.dataSource.data = filtered
+		this.apiServices.deleteAnimal(id).subscribe(response => {
+			if (response) {
+				const filtered = this.dataSource.data.filter(element => element.id !== id)
+				this.dataSource.data = filtered
+				this.notifierService.showSuccessNotification('Тваринку успішно видаленo', 'Ok')
+			}
+		})
 	}
 }

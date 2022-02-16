@@ -18,8 +18,8 @@ router.post('/', async function addServiceToVet(req, res) {
                 RETURNING *`,
 				[vet_id, service_id]
 			)
-
-		res.send(newServiceToClinic.rows[0])
+		const [addedService] = newServiceToClinic.rows
+		res.send(addedService)
 	} catch (err) {
 		res.status(500).send(err)
 		console.error(err)

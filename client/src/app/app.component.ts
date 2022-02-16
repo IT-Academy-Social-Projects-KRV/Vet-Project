@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { LoginService } from './admin/auth/login-modal/login.service'
-import { StyleManager } from '@shared/services/style-manager.service'
+import { LoginService } from './auth/login/login.service'
 
 @Component({
 	selector: 'app-root',

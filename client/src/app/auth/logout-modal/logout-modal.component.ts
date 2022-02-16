@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
 import { Router } from '@angular/router'
-import { LoginService } from '../login-modal/login.service'
+import { LoginService } from '../login/login.service'
 
 @Component({
 	selector: 'app-logout-modal',
