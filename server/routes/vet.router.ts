@@ -76,7 +76,6 @@ router.get(
 					`SELECT * FROM vetlist WHERE id = $1`,
 					[id]
 				)
-			console.log(rows)
 			res.send(rows)
 		} catch (err) {
 			res.status(500).send(err)
