@@ -5,6 +5,7 @@ import { Observable } from 'rxjs'
 import { ApiServices } from '../../../shared/services/api.service'
 import { IVetsInfo } from '@shared/interfaces/vetInfo'
 import { NotifierService } from '@shared/services/notifier.service'
+import { TransferDataService } from '../../transfer-data.service'
 
 @Component({
 	selector: 'app-vets-filter',
@@ -24,7 +25,11 @@ export class VetsFilterComponent implements OnInit {
 
 	@Output() filterIsPress = new EventEmitter()
 
-	constructor(private apiServices: ApiServices, private notifierService: NotifierService) {}
+	constructor(
+		private apiServices: ApiServices,
+		private notifierService: NotifierService,
+		private transferData: TransferDataService
+	) {}
 
 	ngOnInit(): void {
 		this.vetsInfo$ = this.apiServices.getVetDetails()
@@ -52,7 +57,9 @@ export class VetsFilterComponent implements OnInit {
 	}
 
 	getVetsInfo(url): void {
-		this.vetsFilterInfo$ = this.apiServices.getVetsFilterInfo(url)
+		// this.vetsFilterInfo$ = this.apiServices.getVetsFilterInfo(url)
+		this.transferData.getFilterData(url)
+		this.vetsFilterInfo$ = this.transferData.returnData()
 		this.apiServices.getVetsFilterInfo(url).subscribe(item => {
 			if (item.length == 0) {
 				this.notifierService.showInfoNotification(
