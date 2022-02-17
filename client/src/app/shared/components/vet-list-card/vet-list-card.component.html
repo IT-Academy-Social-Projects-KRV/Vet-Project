@@ -1,8 +1,7 @@
 <mat-card class=" vet-card">
   <div class="vet-card__wrapper" [routerLink]="['/vets-list', vetsInfo.id]">
-    <img class="pet-card__img"
-      src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.reidmiddleton.com%2Fwp-content%2Fuploads%2F2016%2F09%2FProject-HeroImage01-DoctorsClinic1.jpg&f=1&nofb=1"
-      alt="image of vet" />
+    <img class="pet-card__img" src="../../../assets/vetsPhoto/vet_0{{ vetsInfo.id }}.jpg"
+      alt="image of {{ vetsInfo.title }}" />
   </div>
   <mat-card-header class="vet-card__card-header">
     <mat-card-title class="vet-card__card-title">{{vetsInfo.title}}</mat-card-title>

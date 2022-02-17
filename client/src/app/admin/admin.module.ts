@@ -34,12 +34,11 @@ import { AdminNavComponent } from './components/admin-nav/admin-nav.component'
 import { AdminEditPetComponent } from './pages/admin-edit-pet/admin-edit-pet.component'
 import { AdminEditVolunteerComponent } from './pages/admin-edit-volunteer/admin-edit-volunteer.component'
 import { AdminEditVetComponent } from './pages/admin-edit-vet/admin-edit-vet.component'
-import { LoginModalComponent } from './auth/login-modal/login-modal.component'
 import { PetUpdateDialogComponent } from './components/dialogs/pet-update-dialog/pet-update-dialog.component'
 import { VetAddDialogComponent } from './components/dialogs/vet-add-dialog/vet-add-dialog.component'
 import { VetUpdateComponent } from './components/dialogs/vet-update-dialog/vet-update-dialog.component'
 import { PetAddDialogComponent } from './components/dialogs/pet-add-dialog/pet-add-dialog.component'
-import { LogoutModalComponent } from './auth/logout-modal/logout-modal.component'
+import { LogoutModalComponent } from '../auth/logout-modal/logout-modal.component'
 import { VetDeleteDialogComponent } from './components/dialogs/vet-delete-dialog/vet-delete-dialog.component'
 import { PetDeleteDialogComponent } from './components/dialogs/pet-delete-dialog/pet-delete-dialog.component'
 import { VolunteersAddDialogComponent } from './components/dialogs/volunteers-add-dialog/volunteers-add-dialog.component'
@@ -55,7 +54,6 @@ import { AdminLayoutComponent } from './components/admin-layout/admin-layout.com
 		AdminEditVetComponent,
 		AdminEditPetComponent,
 		AdminEditVolunteerComponent,
-		LoginModalComponent,
 		LogoutModalComponent,
 		PetUpdateDialogComponent,
 		VetAddDialogComponent,
@@ -100,6 +98,6 @@ import { AdminLayoutComponent } from './components/admin-layout/admin-layout.com
 		ApiServices,
 		VolunteersService
 	],
-	exports: [LoginModalComponent]
+	exports: []
 })
 export class AdminModule {}
