@@ -14,24 +14,24 @@ const routes: Routes = [
 		component: AdminLayoutComponent,
 		children: [
 			{
-				path: 'dashboard',
+				path: 'statistic',
 				component: AdminStatisticComponent
 			},
 			{
-				path: 'editVet',
+				path: 'edit-vet',
 				component: AdminEditVetComponent
 			},
 			{
-				path: 'editPet',
+				path: 'edit-pet',
 				component: AdminEditPetComponent
 			},
 			{
-				path: 'editVolonteer',
+				path: 'edit-volonteer',
 				component: AdminEditVolunteerComponent
 			},
 			{
 				path: '',
-				redirectTo: 'dashboard',
+				redirectTo: 'statistic',
 				pathMatch: 'full'
 			}
 		]
