@@ -1,12 +1,13 @@
 <mat-card class=" volonteers-card">
   <div class="volonteers-card__wrapper" [routerLink]="['/volonteers-list', volonteersInfo.id]">
-    <img class="volonteers-card__img"
-      src="../../../../assets/volonteersPictures/volonteer_01.jpg"
+    <img class="volonteers-card__img" src="../../../../assets/volonteersPictures/volonteer_0{{ volonteersInfo.id }}.jpg"
       alt="image of volonteers" />
   </div>
   <mat-card-content class="volonteers-card__volonteers-info-container">
-    <mat-card-subtitle><span class="volonteers-card__volonteers-info-name">{{volonteersInfo.first_name}} {{volonteersInfo.last_name}}</span>
+    <mat-card-subtitle><span class="volonteers-card__volonteers-info-name">{{volonteersInfo.first_name}}
+        {{volonteersInfo.last_name}}</span>
     </mat-card-subtitle>
-    <mat-card-subtitle><span class="volonteers-card__volonteers-info-item">E-mail : <a href="{{volonteersInfo.email}}" class="volonteers-info-section__info-wrapper">{{volonteersInfo.email}}</a></span></mat-card-subtitle>
+    <mat-card-subtitle><span class="volonteers-card__volonteers-info-item">E-mail : <a href="{{volonteersInfo.email}}"
+          class="volonteers-info-section__info-wrapper">{{volonteersInfo.email}}</a></span></mat-card-subtitle>
   </mat-card-content>
 </mat-card>
