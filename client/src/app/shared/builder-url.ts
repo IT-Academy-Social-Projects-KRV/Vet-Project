@@ -1,3 +1,4 @@
+import { environment } from '../../environments/environment'
 export class UrlBuilder {
 	constructor() {
 		this.reset()
@@ -5,7 +6,8 @@ export class UrlBuilder {
 	private url: string
 
 	baseUrl() {
-		this.url += 'http://localhost:3200/api'
+		this.url += environment.apiUrl
+		console.log(environment.apiUrl)
 		return this
 	}
 	animal() {
