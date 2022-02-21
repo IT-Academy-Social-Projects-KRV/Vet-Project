@@ -16,7 +16,7 @@
 	},
 	"name": "server",
 	"version": "1.0.0",
-	"main": "server.js",
+	"main": "server.ts",
 	"devDependencies": {
 		"@types/bcryptjs": "^2.4.2",
 		"@types/node": "^16.11.13",
@@ -25,6 +25,7 @@
 		"typescript": "4.4.2"
 	},
 	"scripts": {
+		"serve": "ts-node-dev server.ts",
 		"start": "node server.js",
     "gcp-build": "tsc -p .",
     "deploy": "gcloud app deploy"

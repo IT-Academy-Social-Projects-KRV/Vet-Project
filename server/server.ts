@@ -1,12 +1,12 @@
-// import dotenv from 'dotenv'
-// dotenv.config()
+import dotenv from 'dotenv'
+dotenv.config()
 
 import express from 'express'
 import cors from 'cors'
 
 import routes from './routes/index'
 
-const port = Number(process.env.PORT) || 8080
+const port = Number(process.env.PORT) || 3200
 const app = express()
 
 app.use(cors())
