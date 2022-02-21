@@ -1,5 +1,4 @@
 <section class="vet-list-section">
-  <app-loading></app-loading>
   <ul class="vet-list-section__container">
     <ng-container *ngIf="(vetsDetailInfo$ | async) as vetsDetailInfo">
       <li class="vet-list-section__card" *ngFor="let vet of vetsDetailInfo">

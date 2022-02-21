@@ -21,9 +21,11 @@ import { LoadingInterceptor } from '@shared/services/loading.interceptor'
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { MatIconModule } from '@angular/material/icon'
+import { LoadingComponent } from '@shared/components/loading/loading.component'
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 
 @NgModule({
-	declarations: [AppComponent, HeaderComponent, FooterComponent],
+	declarations: [AppComponent, HeaderComponent, FooterComponent, LoadingComponent],
 	imports: [
 		BrowserModule,
 		MatButtonModule,
@@ -35,7 +37,8 @@ import { MatIconModule } from '@angular/material/icon'
 		MatCardModule,
 		MatSnackBarModule,
 		MatIconModule,
-		FontAwesomeModule
+		FontAwesomeModule,
+		MatProgressSpinnerModule
 	],
 	providers: [
 		{

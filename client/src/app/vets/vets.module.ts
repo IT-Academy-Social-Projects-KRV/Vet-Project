@@ -6,7 +6,6 @@ import { MatCardModule } from '@angular/material/card'
 import { MatDividerModule } from '@angular/material/divider'
 import { MatListModule } from '@angular/material/list'
 import { MatButtonModule } from '@angular/material/button'
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 
 import { VetsRoutingModule } from './vets-routing.module'
 import { VetPageComponent } from './pages/vet-page/vet-page.component'
@@ -19,7 +18,6 @@ import { VetListComponent } from './components/vet-list/vet-list.component'
 import { VetsFilterComponent } from './components/vets-filter/vets-filter.component'
 import { VetsFilterResultComponent } from './components/vets-filter-result/vets-filter-result.component'
 import { UniqPipe } from '@shared/pipes/uniq.pipe'
-import { LoadingComponent } from '@shared/components/loading/loading.component'
 
 @NgModule({
 	declarations: [
@@ -32,8 +30,7 @@ import { LoadingComponent } from '@shared/components/loading/loading.component'
 		VetListComponent,
 		VetsFilterComponent,
 		VetsFilterResultComponent,
-		UniqPipe,
-		LoadingComponent
+		UniqPipe
 	],
 	imports: [
 		CommonModule,
@@ -42,9 +39,8 @@ import { LoadingComponent } from '@shared/components/loading/loading.component'
 		MatListModule,
 		VetsRoutingModule,
 		MatButtonModule,
-		FormsModule,
-		MatProgressSpinnerModule
+		FormsModule
 	],
-	exports: [VetListCardComponent, LoadingComponent]
+	exports: [VetListCardComponent]
 })
 export class VetsModule {}
