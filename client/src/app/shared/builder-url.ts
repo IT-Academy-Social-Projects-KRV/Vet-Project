@@ -7,7 +7,6 @@ export class UrlBuilder {
 
 	baseUrl() {
 		this.url += environment.apiUrl
-		console.log(environment.apiUrl)
 		return this
 	}
 	animal() {
