@@ -1,3 +1,23 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin color($theme) {
+	// Get the color config from the theme.
+	$color-config: mat.get-color-config($theme);
+
+	// Get the primary color palette from the color-config.
+	$primary-palette: map.get($color-config, 'primary');
+	.animal-main__info span {
+		color: mat.get-color-from-palette($primary-palette, 400-contrast);
+	}
+}
+@mixin theme($theme) {
+	$color-config: mat.get-color-config($theme);
+	@if $color-config != null {
+		@include color($theme);
+	}
+}
+
 @import 'variables.scss';
 .animal-main {
 	display: flex;
@@ -79,7 +99,7 @@
 	}
 
 	span {
-		color: black;
+		// color: black;
 		font-weight: 300;
 		font-size: 16px;
 	}

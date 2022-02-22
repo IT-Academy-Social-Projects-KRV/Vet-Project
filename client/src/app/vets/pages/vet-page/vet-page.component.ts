@@ -7,4 +7,11 @@ import { Component } from '@angular/core'
 })
 export class VetPageComponent {
 	constructor() {}
+
+	condition = false
+
+	onFilterIsPress() {
+		this.condition = true
+		console.log(this.condition)
+	}
 }

@@ -9,6 +9,7 @@ import { LoginService } from './auth/login/login.service'
 export class AppComponent implements OnInit {
 	title = 'client'
 	constructor(private loginService: LoginService) {}
+
 	ngOnInit(): void {
 		const potentialToken = localStorage.getItem('token')
 		if (potentialToken !== null) {

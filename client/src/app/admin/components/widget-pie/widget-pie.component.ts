@@ -12,7 +12,8 @@ export class WidgetPieComponent {
 	initChart(vets, pets, volonteers) {
 		let chart = new Chart({
 			chart: {
-				type: 'pie'
+				type: 'pie',
+				backgroundColor: null
 			},
 			title: {
 				text: 'Статистика'

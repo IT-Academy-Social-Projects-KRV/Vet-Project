@@ -10,5 +10,11 @@ export class VolonteersListCardComponent {
 	@Input()
 	volonteersInfo: IVolonteersInfo
 
+	photos: [
+		{
+			url: 'https://gdb.rferl.org/0201428D-208D-4141-86B8-73C89AF68BD0.jpg'
+		}
+	]
+
 	constructor() {}
 }
