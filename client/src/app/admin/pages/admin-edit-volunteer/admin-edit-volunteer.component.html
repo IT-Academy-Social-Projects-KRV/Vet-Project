@@ -1,11 +1,12 @@
 <section class="main__volonteer-edit-page">
-    <button mat-raised-button color="primary" class="volunteers_btn" (click)="openConfirmDialog()">Додати
-        волонтера</button>
-    <mat-form-field appearance="standard">
-        <mat-label>Пошук</mat-label>
-        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
-    </mat-form-field>
-
+    <div class="form-header__wrapper">
+        <mat-form-field appearance="standard">
+            <mat-label>Пошук</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+        </mat-form-field>
+        <button mat-raised-button color="primary" class="volunteers_btn" (click)="openConfirmDialog()">Додати
+            волонтера</button>
+    </div>
     <div class="mat-elevation-z8">
         <table mat-table [dataSource]="dataSource" matSort>
 
