@@ -7,6 +7,12 @@
 		border: 2px solid $main-orange;
 	}
 }
+.vet-card {
+  height: 400px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
 .vet-card__card-header {
 	justify-content: center;
 }
@@ -28,6 +34,7 @@
 .vet-card__button-container {
 	display: flex;
 	justify-content: center;
+  align-items: center;
 }
 .vet-card_button {
 	background-color: $main-blue;
