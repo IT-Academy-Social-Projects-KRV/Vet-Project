@@ -1,0 +1,17 @@
+@import 'variables.scss';
+.init {
+	height: 100vh;
+	max-width: 1200px;
+}
+
+mat-progress-spinner {
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 10;
+}
+
+.mat-progress-spinner::ng-deep circle {
+	stroke: $main-orange;
+}

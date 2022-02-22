@@ -5,7 +5,8 @@
       <div class="input-wrapper">
         <label class="form-filter__label" for="title">Hазва</label>
         <select id="title" name="title" [(ngModel)]="vet.title" class="form-filter__input">
-          <option *ngFor='let item of vetsInfo'>
+          <option></option>
+          <option *ngFor='let item of vetsInfo | uniq:"title"'>
             {{item.title}}
           </option>
         </select>
@@ -17,7 +18,7 @@
         <label class="form-filter__label" for="type">Спеціалізація</label>
         <select id="type" name="type" [(ngModel)]="vet.animal_type" class="form-filter__input">
           <option></option>
-          <option *ngFor='let item of vetsInfo'>
+          <option *ngFor='let item of vetsInfo | uniq:"animal_type"'>
             {{item.animal_type}}
           </option>
         </select>
@@ -29,7 +30,7 @@
     <label class="form-filter__label" for="adress">Aдреса</label>
     <select id="adress" name="adress" [(ngModel)]="vet.adress" class="form-filter__input">
       <option></option>
-      <option *ngFor='let item of vetsInfo'>
+      <option *ngFor='let item of vetsInfo | uniq:"adress"'>
         {{item.adress}}
       </option>
     </select>
@@ -38,9 +39,12 @@
   <button class="form-filter-btn" type="submit" (click)="onSubmite()">Знайти</button>
 </form>
 
+<p class="card-filter-title">Клініки, де Вам завжди допоможуть</p>
+
 <div class="wrap-filter-result">
+
   <ng-container *ngIf="(vetsFilterInfo$ | async) as vetsFilterInfo">
     <app-vets-filter-result *ngFor="let item of vetsFilterInfo" [data]="item"></app-vets-filter-result>
   </ng-container>
+
 </div>
-<p class="card-filter-title">Клініки, де Вам завжди допоможуть</p>
