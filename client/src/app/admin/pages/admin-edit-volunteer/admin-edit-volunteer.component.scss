@@ -9,7 +9,11 @@ table {
 
 .mat-form-field {
 	font-size: 14px;
-	width: 100%;
+}
+.form-header__wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items:center
 }
 
 .mat-row {
@@ -19,9 +23,10 @@ table {
 		cursor: pointer;
 	}
 }
-[mat-raised-button]:hover {
-	background-color: $main-orange;
-	margin-left: auto;
+.volunteers_btn	{
+	width: 170px;
+	height: 40px;
+	text-transform: uppercase;
 }
 .mat-header-cell {
 	color: $main-orange;

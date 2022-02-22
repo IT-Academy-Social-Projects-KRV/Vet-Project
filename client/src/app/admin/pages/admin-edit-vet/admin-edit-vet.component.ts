@@ -65,7 +65,7 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 
 	public openDialog(row: IVetsUnitInfo) {
 		this.dialogRef = this.dialog.open(VetUpdateComponent, {
-			width: '800px',
+			width: '550px',
 			// Can be closed only by clicking the close button
 			disableClose: true,
 			data: row

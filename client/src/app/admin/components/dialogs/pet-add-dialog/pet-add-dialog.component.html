@@ -36,23 +36,22 @@
         <div class="modal-right-section">
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Історія</mat-label>
-            <textarea rows="4" matInput name="short_info" ngModel></textarea>
+            <textarea  matInput name="short_info" rows="4" ngModel></textarea>
           </mat-form-field>
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Повадки</mat-label>
-            <textarea rows="4" matInput name="behavioral_features" ngModel></textarea>
+            <textarea  matInput name="behavioral_features" rows="4" ngModel></textarea>
           </mat-form-field>
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Побажання при адопції</mat-label>
-            <textarea rows="4" matInput name="wishes_for_shelter" ngModel></textarea>
+            <textarea  matInput name="wishes_for_shelter" rows="4" ngModel></textarea>
           </mat-form-field>
         </div>
       </div>
       <div class="demo-button-container">
-        <button mat-raised-button color="primary"  [disabled]="!f.valid" (click)="onCreateAnimal(f.value)"
-         type="button">Підтвердити</button>
-         <button type="button" mat-raised-button color="warn">Очистити</button>
-        <button type="button" mat-raised-button  (click)="dialogRef.close(false)">Скасувати</button>
+        <button mat-raised-button [disabled]="!f.valid" (click)="onCreateAnimal(f.value)"
+         type="button" color="primary">Підтвердити</button>
+        <button type="button" mat-raised-button  (click)="dialogRef.close(false)" color="warn">Скасувати</button>
       </div>
   </form>
 

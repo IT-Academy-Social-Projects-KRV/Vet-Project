@@ -2,35 +2,22 @@
 
 .modal-wrapper {
 	display: flex;
-	gap: 20px;
+	gap: 30px;
 }
 .admin-pet-dialog {
-	//margin-top: -30px;
 	text-align: center;
 	color: $main-blue;
 	font-weight: 700;
 	font-size: 25px;
 	margin-bottom: 30px;
 }
-.modal-left-part {
-	display: flex;
-	flex-wrap: wrap;
-	width: 350px;
+.modal-right-part,
+.modal-left-part{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 250px;
+  align-content: space-between;
 }
-.modal-right-part {
-	display: flex;
-	flex-wrap: wrap;
-	width: 600px;
-}
-.modal-right-part {
-	justify-content: flex-end;
-}
-// .example-form {
-// 	margin: 40px auto 15px;
-// 	min-width: 450px;
-// 	max-width: 600px;
-// 	width: 100%;
-// }
 
 .example-full-width {
 	width: 100%;
@@ -39,18 +26,14 @@
 mat-form-field {
 	margin-left: 5px;
 }
+
 .id-hide {
 	display: none;
 }
+
 .demo-button-container {
 	display: flex;
 	justify-content: space-evenly;
+	padding: 8px 0;
 }
-.pet-edit_dialog-button {
-	background-color: $main-blue;
-	color: $white;
-	&:hover {
-		background-color: $main-orange;
-		cursor: pointer;
-	}
-}
+
