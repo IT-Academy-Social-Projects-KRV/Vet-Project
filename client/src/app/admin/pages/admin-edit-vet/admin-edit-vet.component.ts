@@ -5,7 +5,6 @@ import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
 import { MatPaginator } from '@angular/material/paginator'
 import { MatSort } from '@angular/material/sort'
 import { MatTableDataSource } from '@angular/material/table'
-import { Observable } from 'rxjs'
 import { MatDialog, MatDialogRef } from '@angular/material/dialog'
 import { VetUpdateComponent } from '../../components/dialogs/vet-update-dialog/vet-update-dialog.component'
 import { VetAddDialogComponent } from '../../components/dialogs/vet-add-dialog/vet-add-dialog.component'
@@ -65,7 +64,7 @@ export class AdminEditVetComponent implements OnInit, AfterViewInit {
 
 	public openDialog(row: IVetsUnitInfo) {
 		this.dialogRef = this.dialog.open(VetUpdateComponent, {
-			width: '800px',
+			width: '550px',
 			// Can be closed only by clicking the close button
 			disableClose: true,
 			data: row

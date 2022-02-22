@@ -1,9 +1,8 @@
-/* eslint-disable @angular-eslint/use-lifecycle-interface */
-/* eslint-disable no-unused-vars */
 import { Component, OnInit } from '@angular/core'
 import { ApiServices } from '@shared/services/api.service'
-import { Observable, map } from 'rxjs'
+import { Observable } from 'rxjs'
 import { IVetsInfo } from '@shared/interfaces/vetInfo'
+import { TransferDataService } from '../../transfer-data.service'
 
 @Component({
 	selector: 'app-vet-list',
@@ -13,8 +12,10 @@ import { IVetsInfo } from '@shared/interfaces/vetInfo'
 export class VetListComponent implements OnInit {
 	vetsDetailInfo$: Observable<IVetsInfo[]>
 
-	constructor(private apiServices: ApiServices) {}
+	constructor(private apiServices: ApiServices, private transferData: TransferDataService) {}
 	ngOnInit(): void {
-		this.vetsDetailInfo$ = this.apiServices.getVetDetails()
+		// this.vetsDetailInfo$ = this.apiServices.getVetDetails()
+		this.transferData.getData()
+		this.vetsDetailInfo$ = this.transferData.returnData()
 	}
 }

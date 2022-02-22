@@ -9,36 +9,32 @@
 	max-width: 500px;
 	width: 100%;
 }
-
 .example-full-width {
 	width: 100%;
 }
-
 mat-form-field {
 	margin-left: 5px;
 }
 .demo-table {
 	width: 100%;
 }
-
 .mat-row {
 	background-color: transparent;
 	&:hover {
 		background-color: $main-blue;
 	}
 }
-
 .mat-header-cell {
 	font-weight: bold;
 	color: $main-orange;
 }
-.add-modal-trigger {
+.form-header__wrapper {
 	display: flex;
 	justify-content: space-between;
+	align-items:center
 }
 .mat-raised-button {
 	width: 160px;
 	height: 40px;
 	text-transform: uppercase;
-	margin-top: 20px;
 }

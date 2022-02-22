@@ -69,7 +69,6 @@ export class AdminEditPetComponent implements OnInit, AfterViewInit {
 
 	onUpdate(icon: IAnimalsUnitInfo) {
 		this.dialogRef = this.dialog.open(PetUpdateDialogComponent, {
-			width: '500px',
 			disableClose: true,
 			data: icon
 		})
