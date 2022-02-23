@@ -35,7 +35,7 @@ $client-light-header-theme: mat.define-light-theme(
 );
 .light-theme {
 	@include mat.core-color($client-light-theme);
-	@include mat.all-component-themes($client-light-theme);
+	@include mat.all-component-colors($client-light-theme);
 	@include header.theme($client-light-header-theme);
 	@include textColor.theme($client-light-header-theme);
 	@include textVetColor.theme($client-light-header-theme);

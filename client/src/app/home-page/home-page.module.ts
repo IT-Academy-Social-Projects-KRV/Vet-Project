@@ -15,7 +15,7 @@ import { PetSliderComponent } from './components/pet-slider/pet-slider.component
 import { VetSliderComponent } from './components/vet-slider/vet-slider.component'
 import { HomeDonateComponent } from './components/home-donate/home-donate.component'
 import { HomeAboutComponent } from './components/home-about/home-about.component'
-import { HomeNewsComponent } from './components/home-news/home-news.component'
+// import { HomeNewsComponent } from './components/home-news/home-news.component'
 import { FormsModule } from '@angular/forms'
 
 import { HomePageComponent } from './pages/home-page.component'
@@ -31,7 +31,7 @@ import { VetsModule } from '../vets/vets.module'
 		VetSliderComponent,
 		HomeDonateComponent,
 		HomeAboutComponent,
-		HomeNewsComponent,
+		// HomeNewsComponent,
 		HomePageComponent,
 		PetServicesComponent
 	],

@@ -1,5 +1,7 @@
 <form [formGroup]="service.form" class="normal-form" (ngSubmit)='onSubmit()'>
-  <span class="admin-voluntiers-dialog">{{service.form.controls['id'].value?"Змінити волонтера":"Додати волонтера"}}</span>
+  <div class="modal-header">
+    <span class="admin-voluntiers-dialog">{{service.form.controls['id'].value?"Змінити волонтера":"Додати волонтера"}}</span>
+  </div>
   <mat-grid-list cols="2" rowHeight="300px">
     <mat-grid-tile>
       <div class="controles-container">

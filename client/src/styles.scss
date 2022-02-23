@@ -1,9 +1,6 @@
-
 @use '@angular/material' as mat;
-
 @use './styles/themes/light';
 @use './styles/themes/dark';
-@use './styles/typography/config' as typography;
 @use './app/shared/components/page-layout/header/header.component-theme' as header;
 @use './app/vets/pages/vet-unit-page/vet-unit-page.component.scss' as textColor;
 @use './app/vets/components/vet-services/vet-services.component.scss' as textServiceColor;
@@ -14,11 +11,11 @@
 @include mat.core(light.$client-light-theme);
 @include mat.core-theme(light.$client-light-theme);
 
-@include mat.all-component-themes(light.$client-light-theme);
+@include mat.all-component-colors(light.$client-light-theme);
 @include header.theme(light.$client-light-header-theme);
 
 @media (prefers-color-scheme: dark) {
-	@include mat.all-component-themes(dark.$client-dark-theme);
+	@include mat.all-component-colors(dark.$client-dark-theme);
 	@include header.theme(dark.$client-dark-header-theme);
 	@include textColor.theme(dark.$client-dark-header-theme);
 	@include textServiceColor.theme(dark.$client-dark-header-theme);
@@ -58,7 +55,6 @@ button {
 html {
 	scroll-behavior: smooth;
 }
-
 
 .success.mat-snack-bar-container {
 	background: $snackbar-success;

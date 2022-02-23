@@ -6,7 +6,7 @@ import cors from 'cors'
 
 import routes from './routes/index'
 
-const port = 3200
+const port = Number(process.env.PORT) || 3200
 const app = express()
 
 app.use(cors())
