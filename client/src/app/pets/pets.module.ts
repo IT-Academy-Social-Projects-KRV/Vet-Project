@@ -16,6 +16,7 @@ import { PetsGethomeComponent } from './components/pets-gethome/pets-gethome.com
 import { AnimalListComponent } from './components/animal-list/animal-list.component'
 import { FilterResultComponent } from './components/filter-result/filter-result.component'
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
+import { SharedModule } from '@shared/shared.module'
 
 @NgModule({
 	declarations: [
@@ -35,7 +36,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 		MatSelectModule,
 		FormsModule,
 		MatSnackBarModule,
-		MatProgressSpinnerModule
+		MatProgressSpinnerModule,
+		SharedModule
 	],
 	exports: [AnimalListCardComponent]
 })

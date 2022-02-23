@@ -17,7 +17,7 @@ import { VetAnimalsTypeComponent } from './components/vet-animals-type/vet-anima
 import { VetListComponent } from './components/vet-list/vet-list.component'
 import { VetsFilterComponent } from './components/vets-filter/vets-filter.component'
 import { VetsFilterResultComponent } from './components/vets-filter-result/vets-filter-result.component'
-import { UniqPipe } from '@shared/pipes/uniq.pipe'
+import { SharedModule } from '@shared/shared.module'
 
 @NgModule({
 	declarations: [
@@ -29,8 +29,7 @@ import { UniqPipe } from '@shared/pipes/uniq.pipe'
 		VetAnimalsTypeComponent,
 		VetListComponent,
 		VetsFilterComponent,
-		VetsFilterResultComponent,
-		UniqPipe
+		VetsFilterResultComponent
 	],
 	imports: [
 		CommonModule,
@@ -39,7 +38,8 @@ import { UniqPipe } from '@shared/pipes/uniq.pipe'
 		MatListModule,
 		VetsRoutingModule,
 		MatButtonModule,
-		FormsModule
+		FormsModule,
+		SharedModule
 	],
 	exports: [VetListCardComponent]
 })
