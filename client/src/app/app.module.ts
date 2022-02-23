@@ -12,17 +12,20 @@ import { FooterComponent } from '@shared/components/page-layout/footer/footer.co
 import { MatButtonModule } from '@angular/material/button'
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatCardModule } from '@angular/material/card'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
+
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { LoginInterceptor } from './auth/login/login.interceptor'
 import { ErrorHttpInterseptor } from './error-http-interseptor'
-import { MatSnackBarModule } from '@angular/material/snack-bar'
+import { LoadingInterceptor } from '@shared/services/loading.interceptor'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { MatIconModule } from '@angular/material/icon'
-import { DropzoneDirective } from './dropzone.directive'
 import { AngularFireModule } from '@angular/fire/compat'
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore'
 import { AngularFireStorageModule } from '@angular/fire/compat/storage'
 import { AngularFireAuthModule } from '@angular/fire/compat/auth'
+import { LoadingComponent } from '@shared/components/loading/loading.component'
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 
 const config = {
 	apiKey: 'AIzaSyC2kjnvpOr_PiDNqopYV6HfF1Upd58jD_o',
@@ -36,7 +39,8 @@ const config = {
 }
 
 @NgModule({
-	declarations: [AppComponent, HeaderComponent, FooterComponent, DropzoneDirective],
+	declarations: [AppComponent, HeaderComponent, FooterComponent, LoadingComponent],
+
 	imports: [
 		BrowserModule,
 		MatButtonModule,
@@ -52,7 +56,8 @@ const config = {
 		AngularFireModule.initializeApp(config),
 		AngularFirestoreModule,
 		AngularFireAuthModule,
-		AngularFireStorageModule
+		AngularFireStorageModule,
+		MatProgressSpinnerModule
 	],
 	providers: [
 		{
@@ -64,6 +69,11 @@ const config = {
 			provide: HTTP_INTERCEPTORS,
 			multi: true,
 			useClass: ErrorHttpInterseptor
+		},
+		{
+			provide: HTTP_INTERCEPTORS,
+			multi: true,
+			useClass: LoadingInterceptor
 		}
 	],
 	bootstrap: [AppComponent]

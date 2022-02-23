@@ -48,6 +48,7 @@ import { WidgetPieComponent } from './components/widget-pie/widget-pie.component
 import { AdminLayoutComponent } from './components/admin-layout/admin-layout.component'
 import { UploaderComponent } from './components/dialogs/uploader/uploader.component'
 import { UploadTaskComponent } from './components/dialogs/upload-task/upload-task.component'
+import { DropzoneDirective } from './dropzone.directive'
 
 @NgModule({
 	declarations: [
@@ -70,7 +71,8 @@ import { UploadTaskComponent } from './components/dialogs/upload-task/upload-tas
 		WidgetPieComponent,
 		AdminLayoutComponent,
 		UploaderComponent,
-		UploadTaskComponent
+		UploadTaskComponent,
+		DropzoneDirective
 	],
 	imports: [
 		CommonModule,
