@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 import { AnimalPageComponent } from './pages/animal-list-page/animal-page.component'
-import { AnimalListCardComponent } from '@shared/components/animal-list-card/animal-list-card.component'
 import { AnimalUnitPageComponent } from './pages/animal-unit-page/animal-unit-page.component'
 
 import { PetsFilterComponent } from './components/pets-filter/pets-filter.component'
@@ -21,7 +20,6 @@ import { SharedModule } from '@shared/shared.module'
 @NgModule({
 	declarations: [
 		AnimalPageComponent,
-		AnimalListCardComponent,
 		AnimalUnitPageComponent,
 		PetsFilterComponent,
 		PetsGethomeComponent,
@@ -38,7 +36,6 @@ import { SharedModule } from '@shared/shared.module'
 		MatSnackBarModule,
 		MatProgressSpinnerModule,
 		SharedModule
-	],
-	exports: [AnimalListCardComponent]
+	]
 })
 export class PetsModule {}
