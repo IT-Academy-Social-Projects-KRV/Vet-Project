@@ -1,0 +1,6 @@
+runtime: nodejs16
+env_variables:
+  DB_USER: user
+  DB_PASS: vetspets
+  DB_NAME: Vet
+  DB_HOST: 35.192.62.96

@@ -27,7 +27,9 @@
 	},
 	"scripts": {
 		"serve": "ts-node-dev server.ts",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"start": "node server.js",
+    "gcp-build": "tsc -p .",
+    "deploy": "gcloud app deploy"
 	},
 	"keywords": [],
 	"author": "",

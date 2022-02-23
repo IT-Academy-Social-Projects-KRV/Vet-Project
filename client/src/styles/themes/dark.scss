@@ -1,6 +1,5 @@
 @use 'sass:map';
 @use '@angular/material' as mat;
-@use '../themes/light.scss' as typography;
 @use '../../app/vets/pages/vet-unit-page/vet-unit-page.component.scss' as textColor;
 @use '../../app/vets/components/vet-services/vet-services.component.scss' as textServiceColor;
 @use '../../app/vets/components/veterinarians/veterinarians.component.scss' as textVetColor;
