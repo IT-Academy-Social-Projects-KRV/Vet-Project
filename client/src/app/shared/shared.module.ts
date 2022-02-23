@@ -9,9 +9,16 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { MatButtonModule } from '@angular/material/button'
 import { VetsRoutingModule } from '../vets/vets-routing.module'
 import { PetsRoutingModule } from '../pets/pets-routing.module'
+import { VolonteersListCardComponent } from './components/volonteers-list-card/volonteers-list-card.component'
 
 @NgModule({
-	declarations: [UniqPipe, LoadingComponent, VetListCardComponent, AnimalListCardComponent],
+	declarations: [
+		UniqPipe,
+		LoadingComponent,
+		VetListCardComponent,
+		AnimalListCardComponent,
+		VolonteersListCardComponent
+	],
 	imports: [
 		CommonModule,
 		MatCardModule,
@@ -20,6 +27,12 @@ import { PetsRoutingModule } from '../pets/pets-routing.module'
 		VetsRoutingModule,
 		PetsRoutingModule
 	],
-	exports: [UniqPipe, LoadingComponent, VetListCardComponent, AnimalListCardComponent]
+	exports: [
+		UniqPipe,
+		LoadingComponent,
+		VetListCardComponent,
+		AnimalListCardComponent,
+		VolonteersListCardComponent
+	]
 })
 export class SharedModule {}

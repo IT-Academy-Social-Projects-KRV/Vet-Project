@@ -8,24 +8,19 @@ import { MatButtonModule } from '@angular/material/button'
 import { VolonteersPageComponent } from './pages/volonteers-page/volonteers-page.component'
 import { VolonteersListComponent } from './components/volonteers-list/volonteers-list.component'
 import { VolonteersRoutingModule } from './volonteers-routing.module'
-import { VolonteersListCardComponent } from '@shared/components/volonteers-list-card/volonteers-list-card.component'
 import { VolonteersUnitPageComponent } from './pages/volonteers-unit-page/volonteers-unit-page.component'
+import { SharedModule } from '@shared/shared.module'
 
 @NgModule({
-	declarations: [
-		VolonteersPageComponent,
-		VolonteersListComponent,
-		VolonteersListCardComponent,
-		VolonteersUnitPageComponent
-	],
+	declarations: [VolonteersPageComponent, VolonteersListComponent, VolonteersUnitPageComponent],
 	imports: [
 		CommonModule,
 		VolonteersRoutingModule,
 		MatCardModule,
 		MatDividerModule,
 		MatListModule,
-		MatButtonModule
-	],
-	exports: [VolonteersListCardComponent]
+		MatButtonModule,
+		SharedModule
+	]
 })
 export class VolonteersModule {}

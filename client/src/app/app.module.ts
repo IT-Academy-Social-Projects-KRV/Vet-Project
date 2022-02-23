@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
-import { FormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
@@ -10,8 +9,6 @@ import { HeaderComponent } from '@shared/components/page-layout/header/header.co
 import { FooterComponent } from '@shared/components/page-layout/footer/footer.component'
 
 import { MatButtonModule } from '@angular/material/button'
-import { MatDialogModule } from '@angular/material/dialog'
-import { MatCardModule } from '@angular/material/card'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
@@ -21,8 +18,8 @@ import { LoadingInterceptor } from '@shared/services/loading.interceptor'
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { MatIconModule } from '@angular/material/icon'
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { SharedModule } from '@shared/shared.module'
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
 	declarations: [AppComponent, HeaderComponent, FooterComponent],
@@ -32,12 +29,10 @@ import { SharedModule } from '@shared/shared.module'
 		AppRoutingModule,
 		BrowserAnimationsModule,
 		HttpClientModule,
-		MatDialogModule,
-		MatCardModule,
 		MatSnackBarModule,
 		MatIconModule,
 		FontAwesomeModule,
-		MatProgressSpinnerModule,
+		FormsModule,
 		SharedModule
 	],
 	providers: [
