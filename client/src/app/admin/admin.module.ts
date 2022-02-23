@@ -46,6 +46,8 @@ import { VolunteersDeleteDialogComponent } from './components/dialogs/volunteers
 import { WidgetCardComponent } from './components/widget-card/widget-card.component'
 import { WidgetPieComponent } from './components/widget-pie/widget-pie.component'
 import { AdminLayoutComponent } from './components/admin-layout/admin-layout.component'
+import { UploaderComponent } from './components/dialogs/uploader/uploader.component'
+import { UploadTaskComponent } from './components/dialogs/upload-task/upload-task.component'
 
 @NgModule({
 	declarations: [
@@ -66,7 +68,9 @@ import { AdminLayoutComponent } from './components/admin-layout/admin-layout.com
 		VolunteersDeleteDialogComponent,
 		WidgetCardComponent,
 		WidgetPieComponent,
-		AdminLayoutComponent
+		AdminLayoutComponent,
+		UploaderComponent,
+		UploadTaskComponent
 	],
 	imports: [
 		CommonModule,
