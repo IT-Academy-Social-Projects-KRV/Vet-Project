@@ -82,7 +82,6 @@
 	color: $main-blue;
 	font-weight: 700;
 	font-size: 40px;
-	margin-bottom: 30px;
 	margin-top: 30px;
 }
 .wrap-filter-result {
@@ -90,6 +89,7 @@
 	flex-wrap: wrap;
 	max-width: 1200px;
 	padding: 10px;
+	margin-top: 30px;
 }
 .mat-snack-bar-container {
 	background: none;
