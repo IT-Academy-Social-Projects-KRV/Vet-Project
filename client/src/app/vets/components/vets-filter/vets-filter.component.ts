@@ -57,7 +57,6 @@ export class VetsFilterComponent implements OnInit {
 	}
 
 	getVetsInfo(url): void {
-		// this.vetsFilterInfo$ = this.apiServices.getVetsFilterInfo(url)
 		this.transferData.getFilterData(url)
 		this.vetsFilterInfo$ = this.transferData.returnData()
 		this.apiServices.getVetsFilterInfo(url).subscribe(item => {

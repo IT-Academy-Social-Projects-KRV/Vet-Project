@@ -9,7 +9,6 @@ import { MatButtonModule } from '@angular/material/button'
 
 import { VetsRoutingModule } from './vets-routing.module'
 import { VetPageComponent } from './pages/vet-page/vet-page.component'
-import { VetListCardComponent } from '@shared/components/vet-list-card/vet-list-card.component'
 import { VetUnitPageComponent } from './pages/vet-unit-page/vet-unit-page.component'
 import { VeterinariansComponent } from './components/veterinarians/veterinarians.component'
 import { VetServicesComponent } from './components/vet-services/vet-services.component'
@@ -17,20 +16,18 @@ import { VetAnimalsTypeComponent } from './components/vet-animals-type/vet-anima
 import { VetListComponent } from './components/vet-list/vet-list.component'
 import { VetsFilterComponent } from './components/vets-filter/vets-filter.component'
 import { VetsFilterResultComponent } from './components/vets-filter-result/vets-filter-result.component'
-import { UniqPipe } from '@shared/pipes/uniq.pipe'
+import { SharedModule } from '@shared/shared.module'
 
 @NgModule({
 	declarations: [
 		VetPageComponent,
-		VetListCardComponent,
 		VetUnitPageComponent,
 		VeterinariansComponent,
 		VetServicesComponent,
 		VetAnimalsTypeComponent,
 		VetListComponent,
 		VetsFilterComponent,
-		VetsFilterResultComponent,
-		UniqPipe
+		VetsFilterResultComponent
 	],
 	imports: [
 		CommonModule,
@@ -39,8 +36,8 @@ import { UniqPipe } from '@shared/pipes/uniq.pipe'
 		MatListModule,
 		VetsRoutingModule,
 		MatButtonModule,
-		FormsModule
-	],
-	exports: [VetListCardComponent]
+		FormsModule,
+		SharedModule
+	]
 })
 export class VetsModule {}
