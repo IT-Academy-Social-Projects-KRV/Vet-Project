@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button'
 import { VetsRoutingModule } from '../vets/vets-routing.module'
 import { PetsRoutingModule } from '../pets/pets-routing.module'
 import { VolonteersListCardComponent } from './components/volonteers-list-card/volonteers-list-card.component'
+import { MatDialogModule } from '@angular/material/dialog'
 
 @NgModule({
 	declarations: [
@@ -25,7 +26,8 @@ import { VolonteersListCardComponent } from './components/volonteers-list-card/v
 		MatProgressSpinnerModule,
 		MatButtonModule,
 		VetsRoutingModule,
-		PetsRoutingModule
+		PetsRoutingModule,
+		MatDialogModule
 	],
 	exports: [
 		UniqPipe,
