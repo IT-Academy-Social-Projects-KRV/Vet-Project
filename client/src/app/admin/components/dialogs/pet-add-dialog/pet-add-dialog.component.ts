@@ -27,6 +27,7 @@ export class PetAddDialogComponent implements OnInit {
 
 	onCreateAnimal(form: IAnimalsUnitInfo): void {
 		this.item = {
+			image: form.image,
 			name: form.name,
 			shelter_name: form.shelter_name,
 			curator: form.curator,

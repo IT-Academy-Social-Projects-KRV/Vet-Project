@@ -49,6 +49,21 @@ import { AdminLayoutComponent } from './components/admin-layout/admin-layout.com
 import { UploaderComponent } from './components/dialogs/uploader/uploader.component'
 import { UploadTaskComponent } from './components/dialogs/upload-task/upload-task.component'
 import { DropzoneDirective } from './dropzone.directive'
+import { AngularFireModule } from '@angular/fire/compat'
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore'
+import { AngularFireStorageModule } from '@angular/fire/compat/storage'
+import { AngularFireAuthModule } from '@angular/fire/compat/auth'
+
+const config = {
+	apiKey: 'AIzaSyC2kjnvpOr_PiDNqopYV6HfF1Upd58jD_o',
+	authDomain: 'vetspets-c64ea.firebaseapp.com',
+	databaseURL: 'https://vetspets-c64ea-default-rtdb.firebaseio.com',
+	projectId: 'vetspets-c64ea',
+	storageBucket: 'vetspets-c64ea.appspot.com',
+	messagingSenderId: '48146368460',
+	appId: '1:48146368460:web:0d4821d9fbb0ccad75ff69',
+	measurementId: 'G-QMG0KCSWF9'
+}
 
 @NgModule({
 	declarations: [
@@ -97,7 +112,11 @@ import { DropzoneDirective } from './dropzone.directive'
 		MatTabsModule,
 		MatTreeModule,
 		MatSortModule,
-		ChartModule
+		ChartModule,
+		AngularFireModule.initializeApp(config),
+		AngularFirestoreModule,
+		AngularFireAuthModule,
+		AngularFireStorageModule
 	],
 	providers: [
 		{ provide: HIGHCHARTS_MODULES, useFactory: () => [more, exporting] },
