@@ -1,6 +1,7 @@
 <mat-card class="pet-card">
   <div class="pet-card__wrapper" [routerLink]="['/animals-list', animalsInfo.id]">
-    <img class="pet-card__img" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*"
+    <img class="pet-card__img"
+      src="https://firebasestorage.googleapis.com/v0/b/vetspets-c64ea.appspot.com/o/assets%2FanimalsPictures%2Fanimal_0{{ animalsInfo.id }}.jpg?alt=media&token=bd571317-6ff0-4f7f-b5e1-f73fdc9190c7"
       alt="image of {{ animalsInfo.name }}" />
   </div>
   <mat-card-header class="pet-card__card-header">

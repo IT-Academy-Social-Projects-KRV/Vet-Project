@@ -21,8 +21,7 @@ import { FormsModule } from '@angular/forms'
 import { HomePageComponent } from './pages/home-page.component'
 import { PetServicesComponent } from './components/pet-services/pet-services.component'
 import { IvyCarouselModule } from 'angular-responsive-carousel'
-import { PetsModule } from '../pets/pets.module'
-import { VetsModule } from '../vets/vets.module'
+import { SharedModule } from '@shared/shared.module'
 
 @NgModule({
 	declarations: [
@@ -46,9 +45,8 @@ import { VetsModule } from '../vets/vets.module'
 		MatInputModule,
 		FormsModule,
 		IvyCarouselModule,
-		PetsModule,
-		VetsModule,
-		MatSnackBarModule
+		MatSnackBarModule,
+		SharedModule
 	]
 })
 export class HomePageModule {}
