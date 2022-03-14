@@ -1,6 +1,6 @@
 /* eslint-disable @angular-eslint/use-lifecycle-interface */
 /* eslint-disable no-unused-vars */
-import { Component, OnInit } from '@angular/core'
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
 
 import { Observable } from 'rxjs'
 
@@ -15,9 +15,11 @@ import { NotifierService } from '@shared/services/notifier.service'
 	templateUrl: './pets-filter.component.html',
 	styleUrls: ['./pets-filter.component.scss']
 })
-export class PetsFilterComponent implements OnInit {
-	public petsInfo$: Observable<IAnimalsInfo[]>
+export class PetsFilterComponent {
 	public animalFilterInfo$: Observable<IAnimalsInfo[]>
+
+	@Output() newItemEvent = new EventEmitter<any>()
+	@Input() petsInfo$: Observable<IAnimalsInfo[]>
 
 	public animal: IAnimalInfo = {
 		gender: '',
@@ -29,16 +31,11 @@ export class PetsFilterComponent implements OnInit {
 
 	constructor(private apiServices: ApiServices, private notifierService: NotifierService) {}
 
-	ngOnInit(): void {
-		this.petsInfo$ = this.apiServices.getAnimalsInfo()
-	}
-
 	onSubmite(): void {
 		this.paramsArr = []
 		this.checkParams()
 		let getUrl = this.paramsArr.join('&')
 		this.getAnimalsInfo(getUrl)
-		console.log(getUrl)
 	}
 
 	checkParams(): void {
@@ -57,8 +54,8 @@ export class PetsFilterComponent implements OnInit {
 	}
 
 	getAnimalsInfo(url): void {
-		this.animalFilterInfo$ = this.apiServices.getAnimalsFilterInfo(url)
-
+		// this.animalFilterInfo$ = this.apiServices.getAnimalsFilterInfo(url)
+		this.newItemEvent.emit(this.apiServices.getAnimalsFilterInfo(url))
 		this.apiServices.getAnimalsFilterInfo(url).subscribe(item => {
 			if (item.length == 0) {
 				this.notifierService.showInfoNotification(

@@ -1,4 +1,5 @@
 <div class="wrapper">
-	<app-pets-filter></app-pets-filter>
-	<app-animal-list></app-animal-list>
+	<app-pets-filter (newItemEvent) = 'updateListInfo($event)' [petsInfo$] = 'animalsInfo$'></app-pets-filter>
+
+	<app-animal-list [animalsInfo$] = 'animalsInfo$' ></app-animal-list>
 </div>
