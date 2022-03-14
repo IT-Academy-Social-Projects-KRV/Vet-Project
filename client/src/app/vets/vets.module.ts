@@ -15,7 +15,6 @@ import { VetServicesComponent } from './components/vet-services/vet-services.com
 import { VetAnimalsTypeComponent } from './components/vet-animals-type/vet-animals-type.component'
 import { VetListComponent } from './components/vet-list/vet-list.component'
 import { VetsFilterComponent } from './components/vets-filter/vets-filter.component'
-import { VetsFilterResultComponent } from './components/vets-filter-result/vets-filter-result.component'
 import { SharedModule } from '@shared/shared.module'
 
 @NgModule({
@@ -26,8 +25,7 @@ import { SharedModule } from '@shared/shared.module'
 		VetServicesComponent,
 		VetAnimalsTypeComponent,
 		VetListComponent,
-		VetsFilterComponent,
-		VetsFilterResultComponent
+		VetsFilterComponent
 	],
 	imports: [
 		CommonModule,

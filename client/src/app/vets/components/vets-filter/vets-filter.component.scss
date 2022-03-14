@@ -74,23 +74,3 @@
 		background-color: $list-item-background;
 	}
 }
-
-// filter result
-
-.card-filter-title {
-	text-align: center;
-	color: $main-blue;
-	font-weight: 700;
-	font-size: 40px;
-	margin-top: 30px;
-}
-.wrap-filter-result {
-	display: flex;
-	flex-wrap: wrap;
-	max-width: 1200px;
-	padding: 10px;
-	margin-top: 30px;
-}
-.mat-snack-bar-container {
-	background: none;
-}
