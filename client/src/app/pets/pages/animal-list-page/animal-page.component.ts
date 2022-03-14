@@ -18,7 +18,6 @@ export class AnimalPageComponent implements OnInit {
 	}
 
 	updateListInfo(event) {
-		console.log(event)
 		this.animalsInfo$ = event
 	}
 }
