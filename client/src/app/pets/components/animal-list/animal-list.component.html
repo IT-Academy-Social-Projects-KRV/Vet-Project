@@ -1,4 +1,5 @@
 <section class="animal-list-section">
+	<h2 class="card-filter-title">Тваринки, які чекають саме Вас</h2>
 	<ul class="animal-list-section__container">
 		<ng-container *ngIf="(animalsInfo$ | async) as animalsInfo">
 			<li class="animal-list-section__card" *ngFor="let animal of animalsInfo" >

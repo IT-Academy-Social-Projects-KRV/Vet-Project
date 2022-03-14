@@ -13,7 +13,6 @@ import { AnimalUnitPageComponent } from './pages/animal-unit-page/animal-unit-pa
 import { PetsFilterComponent } from './components/pets-filter/pets-filter.component'
 import { PetsGethomeComponent } from './components/pets-gethome/pets-gethome.component'
 import { AnimalListComponent } from './components/animal-list/animal-list.component'
-import { FilterResultComponent } from './components/filter-result/filter-result.component'
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { SharedModule } from '@shared/shared.module'
 
@@ -23,8 +22,7 @@ import { SharedModule } from '@shared/shared.module'
 		AnimalUnitPageComponent,
 		PetsFilterComponent,
 		PetsGethomeComponent,
-		AnimalListComponent,
-		FilterResultComponent
+		AnimalListComponent
 	],
 	imports: [
 		CommonModule,

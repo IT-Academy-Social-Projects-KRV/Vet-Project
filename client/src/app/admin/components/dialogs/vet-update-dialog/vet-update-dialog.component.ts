@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core'
+import { Component, Inject} from '@angular/core'
 import { Observable } from 'rxjs'
 import { ApiServices } from '@shared/services/api.service'
 import { ActivatedRoute } from '@angular/router'

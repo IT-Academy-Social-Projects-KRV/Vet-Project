@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, Input, OnInit } from '@angular/core'
 import { Observable } from 'rxjs'
 import { ApiServices } from '../../../shared/services/api.service'
 import { IAnimalsInfo } from '@shared/interfaces/animals'
@@ -7,11 +7,8 @@ import { IAnimalsInfo } from '@shared/interfaces/animals'
 	templateUrl: './animal-list.component.html',
 	styleUrls: ['./animal-list.component.scss']
 })
-export class AnimalListComponent implements OnInit {
+export class AnimalListComponent {
+	@Input()
 	animalsInfo$: Observable<IAnimalsInfo[]>
 	constructor(private apiServices: ApiServices) {}
-
-	ngOnInit(): void {
-		this.animalsInfo$ = this.apiServices.getAnimalsInfo()
-	}
 }

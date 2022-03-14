@@ -14,7 +14,7 @@ export class UrlBuilder {
 		return this
 	}
 	filter(url) {
-		this.url += `/filter//?${url}`
+		this.url += `/filter/animalfilter/?${url}`
 		return this
 	}
 	vetfilter(url) {
