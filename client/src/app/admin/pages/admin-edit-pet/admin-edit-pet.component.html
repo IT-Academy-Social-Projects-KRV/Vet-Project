@@ -16,6 +16,11 @@
         <td mat-cell *matCellDef="let element">{{element.id}}</td>
       </ng-container>
 
+      <ng-container matColumnDef="image">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Фото</th>
+        <td mat-cell *matCellDef="let element"><img src="{{element.image}}" alt="animal-img" class="animal-img"></td>
+      </ng-container>
+
       <!-- Name Column -->
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Ім'я</th>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core'
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core'
 import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/compat/storage'
 import { AngularFirestore } from '@angular/fire/compat/firestore'
 import { Observable } from 'rxjs'
@@ -11,6 +11,7 @@ import { finalize, tap } from 'rxjs/operators'
 })
 export class UploadTaskComponent implements OnInit {
 	@Input() file: File
+	@Output() photo = new EventEmitter<string>()
 
 	task: AngularFireUploadTask
 
@@ -43,10 +44,15 @@ export class UploadTaskComponent implements OnInit {
 			// The file's download URL
 			finalize(async () => {
 				this.downloadURL = await ref.getDownloadURL().toPromise()
+				this.sentFirstComponent()
+				// this.photo.emit('test')
 
 				this.db.collection('files').add({ downloadURL: this.downloadURL, path })
 			})
 		)
+	}
+	sentFirstComponent() {
+		this.photo.emit(this.downloadURL)
 	}
 
 	isActive(snapshot) {

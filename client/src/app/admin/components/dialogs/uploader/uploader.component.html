@@ -6,9 +6,8 @@
 
      <p>Перенесіть картинку</p>
 </div>
-
-<h3>Завантажено</h3>
+<!-- <button (click)="sentValue()">sent</button> -->
 
 <div *ngFor="let file of files">
-  <app-upload-task [file]="file"></app-upload-task>
+  <app-upload-task [file]="file" (photo)="addImage($event)"></app-upload-task>
 </div>

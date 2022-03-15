@@ -7,6 +7,9 @@
 
 <div *ngIf="snapshot | async as snap">
 
+
+  <!-- <button (click)='sentFirstComponent()'>firt component</button> -->
+
   {{ snap.bytesTransferred }} of {{ snap.totalBytes }}
 
   <div *ngIf="downloadURL as url">

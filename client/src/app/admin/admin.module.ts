@@ -57,6 +57,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth'
 const config = {
 	apiKey: 'AIzaSyAUFTnQgrubVLr8znSDf13S6VBdaF7hHs8',
 	authDomain: 'vetspets.firebaseapp.com',
+	databaseURL: 'gs://vetspets.appspot.com/',
 	projectId: 'vetspets',
 	storageBucket: 'vetspets.appspot.com',
 	messagingSenderId: '742536551070',

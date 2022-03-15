@@ -1,35 +1,33 @@
 <h2 class="form__title"> Змінити відомості про клініку</h2>
 
-  <form class="example-form" (ngSubmit)='onUpdateVet(f.value)' #f="ngForm">
+<form class="example-form" (ngSubmit)='onUpdateVet(f.value)' #f="ngForm">
 
-    <mat-form-field class="example-full-width"  appearance="fill">
-      <mat-label>Назва клініки</mat-label>
-      <input matInput name="title" ngModel required placeholder="title" [ngModel]="data.title">
-    </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Назва клініки</mat-label>
+    <input matInput name="title" ngModel required placeholder="title" [ngModel]="data.title">
+  </mat-form-field>
 
-    <mat-form-field class="example-full-width"  appearance="fill">
-      <mat-label>Адреса клініки</mat-label>
-      <input matInput name="adress" ngModel required placeholder="adress" [ngModel]="data.adress">
-    </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Адреса клініки</mat-label>
+    <input matInput name="adress" ngModel required placeholder="adress" [ngModel]="data.adress">
+  </mat-form-field>
 
-    <mat-form-field class="example-full-width"  appearance="fill">
-      <mat-label>Телефон клініки</mat-label>
-      <input matInput name="phone" ngModel required placeholder="phone" [ngModel]="data.phone">
-    </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Телефон клініки</mat-label>
+    <input matInput name="phone" ngModel required placeholder="phone" [ngModel]="data.phone">
+  </mat-form-field>
 
-    <mat-form-field class="example-full-width"  appearance="fill">
-      <mat-label>E-mail клініки</mat-label>
-      <input matInput name="email" ngModel required placeholder="email" [ngModel]="data.email">
-    </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>E-mail клініки</mat-label>
+    <input matInput name="email" ngModel required placeholder="email" [ngModel]="data.email">
+  </mat-form-field>
 
-    <mat-form-field class="example-full-width"  appearance="fill">
-      <mat-label>I-frame google map</mat-label>
-      <input matInput name="map_link" ngModel required placeholder="email" [ngModel]="data.map_link">
-    </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>I-frame google map</mat-label>
+    <input matInput name="map_link" ngModel required placeholder="email" [ngModel]="data.map_link">
+  </mat-form-field>
   <mat-dialog-actions align="center">
     <button type="submit" mat-raised-button color="primary">Змінити</button>
     <button type="button" mat-raised-button color="warn" (click)="dialogRef.close(false)">Скасувати</button>
   </mat-dialog-actions>
-  </form>
-
-
+</form>

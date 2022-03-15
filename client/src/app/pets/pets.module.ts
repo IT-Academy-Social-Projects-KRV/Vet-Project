@@ -8,24 +8,21 @@ import { FormsModule } from '@angular/forms'
 import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 import { AnimalPageComponent } from './pages/animal-list-page/animal-page.component'
-import { AnimalListCardComponent } from '@shared/components/animal-list-card/animal-list-card.component'
 import { AnimalUnitPageComponent } from './pages/animal-unit-page/animal-unit-page.component'
 
 import { PetsFilterComponent } from './components/pets-filter/pets-filter.component'
 import { PetsGethomeComponent } from './components/pets-gethome/pets-gethome.component'
 import { AnimalListComponent } from './components/animal-list/animal-list.component'
-import { FilterResultComponent } from './components/filter-result/filter-result.component'
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
+import { SharedModule } from '@shared/shared.module'
 
 @NgModule({
 	declarations: [
 		AnimalPageComponent,
-		AnimalListCardComponent,
 		AnimalUnitPageComponent,
 		PetsFilterComponent,
 		PetsGethomeComponent,
-		AnimalListComponent,
-		FilterResultComponent
+		AnimalListComponent
 	],
 	imports: [
 		CommonModule,
@@ -35,8 +32,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 		MatSelectModule,
 		FormsModule,
 		MatSnackBarModule,
-		MatProgressSpinnerModule
-	],
-	exports: [AnimalListCardComponent]
+		MatProgressSpinnerModule,
+		SharedModule
+	]
 })
 export class PetsModule {}
