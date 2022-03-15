@@ -55,14 +55,13 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage'
 import { AngularFireAuthModule } from '@angular/fire/compat/auth'
 
 const config = {
-	apiKey: 'AIzaSyC2kjnvpOr_PiDNqopYV6HfF1Upd58jD_o',
-	authDomain: 'vetspets-c64ea.firebaseapp.com',
-	databaseURL: 'https://vetspets-c64ea-default-rtdb.firebaseio.com',
-	projectId: 'vetspets-c64ea',
-	storageBucket: 'vetspets-c64ea.appspot.com',
-	messagingSenderId: '48146368460',
-	appId: '1:48146368460:web:0d4821d9fbb0ccad75ff69',
-	measurementId: 'G-QMG0KCSWF9'
+	apiKey: 'AIzaSyAUFTnQgrubVLr8znSDf13S6VBdaF7hHs8',
+	authDomain: 'vetspets.firebaseapp.com',
+	projectId: 'vetspets',
+	storageBucket: 'vetspets.appspot.com',
+	messagingSenderId: '742536551070',
+	appId: '1:742536551070:web:0ecc6c241f4b37deb8b98f',
+	measurementId: 'G-PZ8DRF4ECJ'
 }
 
 @NgModule({

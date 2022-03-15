@@ -18,6 +18,8 @@ export class UploadTaskComponent implements OnInit {
 	snapshot: Observable<any>
 	downloadURL: string
 
+	animals = 'assets/animalsPictures'
+
 	constructor(private storage: AngularFireStorage, private db: AngularFirestore) {}
 
 	ngOnInit() {
@@ -26,7 +28,7 @@ export class UploadTaskComponent implements OnInit {
 
 	startUpload() {
 		// The storage path
-		const path = `test/${Date.now()}_${this.file.name}`
+		const path = `${this.animals}/${Date.now()}_${this.file.name}`
 
 		// Reference to storage bucket
 		const ref = this.storage.ref(path)
@@ -38,11 +40,9 @@ export class UploadTaskComponent implements OnInit {
 		this.percentage = this.task.percentageChanges()
 
 		this.snapshot = this.task.snapshotChanges().pipe(
-			tap(console.log),
 			// The file's download URL
 			finalize(async () => {
 				this.downloadURL = await ref.getDownloadURL().toPromise()
-				console.log(this.downloadURL)
 
 				this.db.collection('files').add({ downloadURL: this.downloadURL, path })
 			})

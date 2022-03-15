@@ -3,10 +3,13 @@
   <form class="example-form" #f='ngForm' *ngIf="(petsInfo$ | async) as petsInfo">
     <div class="admin-pets-dialog">Додати тваринку</div>
       <div class="modal-wrapper">
+        <div class="modal-upload-section">
+          <app-uploader></app-uploader>
+        </div>
         <div class="modal-left-section">
           <mat-form-field class="example-full-width">
             <mat-label>Фото</mat-label>
-            <input matInput name="image" ngModel> <app-uploader></app-uploader>
+            <input matInput name="image" ngModel>
           </mat-form-field>
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Назва(кличка)</mat-label>
