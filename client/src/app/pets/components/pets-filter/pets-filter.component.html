@@ -15,7 +15,7 @@
         <label class="form-filter__label" for="breed">Порода</label>
         <select id="breed" name="breed" [(ngModel)]="animal.breed" class="form-filter__input">
           <option></option>
-          <option *ngFor='let item of petsInfo'>
+          <option *ngFor='let item of petsInfo | uniq:"breed"'>
             {{item.breed}}
           </option>
 
@@ -28,7 +28,7 @@
         <label class="form-filter__label" for="age">Вік</label>
         <select id="age" name="age" [(ngModel)]="animal.age" class="form-filter__input">
           <option></option>
-          <option *ngFor='let item of petsInfo'>
+          <option *ngFor='let item of petsInfo | uniq:"age"'>
             {{item.age}}
           </option>
 
