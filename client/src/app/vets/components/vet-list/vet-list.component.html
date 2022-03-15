@@ -1,6 +1,7 @@
 <section class="vet-list-section">
+  <h2 class="card-filter-title">Клініки, де Вам завжди допоможуть</h2>
   <ul class="vet-list-section__container">
-    <ng-container *ngIf="(vetsDetailInfo$ | async) as vetsDetailInfo">
+    <ng-container *ngIf="(clinicsInfo$ | async) as vetsDetailInfo">
       <li class="vet-list-section__card" *ngFor="let vet of vetsDetailInfo">
         <app-vet-list-card [vetsInfo]="vet"></app-vet-list-card>
       </li>
