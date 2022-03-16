@@ -2,6 +2,10 @@
   <div class="admin-pet-dialog">Змінити відомості про тварину</div>
   <div class="modal-wrapper">
 
+    <div class="modal-upload-section">
+      <app-uploader (test)="addValue($event)"></app-uploader>
+    </div>
+
     <div class="modal-left-part">
       <mat-form-field class="example-full-width id-hide">
         <mat-label>ID</mat-label>

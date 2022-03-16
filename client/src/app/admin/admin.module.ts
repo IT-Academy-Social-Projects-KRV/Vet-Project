@@ -53,6 +53,7 @@ import { AngularFireModule } from '@angular/fire/compat'
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore'
 import { AngularFireStorageModule } from '@angular/fire/compat/storage'
 import { AngularFireAuthModule } from '@angular/fire/compat/auth'
+import { UploaderService } from './components/dialogs/uploader/uploader.service'
 
 const config = {
 	apiKey: 'AIzaSyAUFTnQgrubVLr8znSDf13S6VBdaF7hHs8',
@@ -121,7 +122,8 @@ const config = {
 	providers: [
 		{ provide: HIGHCHARTS_MODULES, useFactory: () => [more, exporting] },
 		ApiServices,
-		VolunteersService
+		VolunteersService,
+		UploaderService
 	],
 	exports: []
 })

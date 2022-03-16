@@ -5,8 +5,6 @@ import { IAnimalsUnitInfo } from '@shared/interfaces/animals-unit'
 import { ApiServices } from '@shared/services/api.service'
 import { MatDialogRef } from '@angular/material/dialog'
 import { NotifierService } from '@shared/services/notifier.service'
-import { UploaderComponent } from '../uploader/uploader.component'
-import { UploadTaskComponent } from '../upload-task/upload-task.component'
 
 @Component({
 	selector: 'app-pet-add-dialog',
@@ -19,7 +17,6 @@ export class PetAddDialogComponent implements OnInit {
 		public dialogRef: MatDialogRef<IAnimalsUnitInfo>,
 		private notifierService: NotifierService
 	) {}
-	@ViewChild('photo', { static: true }) photo: UploadTaskComponent
 	item: IAnimalsUnitInfo
 	testLink = ''
 	public petsInfo$: Observable<IAnimalsInfo[]>
@@ -27,8 +24,6 @@ export class PetAddDialogComponent implements OnInit {
 	// genders = ['M', 'F']
 	ngOnInit(): void {
 		this.petsInfo$ = this.apiServices.getAnimalsInfo()
-		this.testLink = this.photo.downloadURL
-		console.log(this.testLink)
 	}
 
 	onCreateAnimal(form: IAnimalsUnitInfo): void {
@@ -52,6 +47,5 @@ export class PetAddDialogComponent implements OnInit {
 	}
 	addValue(event) {
 		this.testLink = event
-		console.log(event)
 	}
 }

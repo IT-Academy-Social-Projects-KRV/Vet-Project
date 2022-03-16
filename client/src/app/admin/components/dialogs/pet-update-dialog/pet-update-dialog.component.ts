@@ -16,10 +16,12 @@ export class PetUpdateDialogComponent {
 		public dialogRef: MatDialogRef<IAnimalsUnitInfo>,
 		@Inject(MAT_DIALOG_DATA) public data: any
 	) {}
+	testLink = ''
 
 	onUpdate(form: IAnimalsUnitInfo): void {
 		this.data = {
 			id: form.id,
+			image: this.testLink,
 			name: form.name,
 			shelter_name: form.shelter_name,
 			curator: form.curator,
@@ -35,5 +37,8 @@ export class PetUpdateDialogComponent {
 			this.dialogRef.close(response)
 			this.notifierService.showSuccessNotification('Тваринку успішно оновлено', 'Ok')
 		})
+	}
+	addValue(event) {
+		this.testLink = event
 	}
 }

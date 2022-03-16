@@ -1,5 +1,8 @@
+/* eslint-disable no-debugger */
 import { Component, Output } from '@angular/core'
 import { EventEmitter } from '@angular/core'
+import { Router } from '@angular/router'
+import { UploaderService } from './uploader.service'
 
 @Component({
 	selector: 'app-uploader',
@@ -9,8 +12,14 @@ import { EventEmitter } from '@angular/core'
 export class UploaderComponent {
 	isHovering: boolean
 
+	public data: string = this.router.url
+
 	files: File[] = []
 	@Output() test = new EventEmitter<string>()
+
+	constructor(private router: Router, private UploaderService: UploaderService) {
+		this.UploaderService.getUrl(this.data)
+	}
 
 	toggleHover(event: boolean) {
 		this.isHovering = event

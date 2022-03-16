@@ -1,7 +1,7 @@
 <mat-card class=" volonteers-card">
   <div class="volonteers-card__wrapper" [routerLink]="['/volonteers-list', volonteersInfo.id]">
     <img class="volonteers-card__img"
-      src="https://firebasestorage.googleapis.com/v0/b/vetspets-c64ea.appspot.com/o/assets%2FvolotneersPictures%2Fvolonteer_0{{ volonteersInfo.id }}.jpg?alt=media&token=9dd5f958-2b9d-40a1-af9f-22bfb5e2035d"
+      src="{{ volonteersInfo.image }}"
       alt="image of volonteers" />
   </div>
 
