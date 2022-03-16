@@ -1,5 +1,8 @@
 /* eslint-disable no-undef */
+import { Overlay } from '@angular/cdk/overlay'
+import { HttpClient, HttpHandler } from '@angular/common/http'
 import { ComponentFixture, TestBed } from '@angular/core/testing'
+import { MatSnackBar } from '@angular/material/snack-bar'
 
 import { PetsFilterComponent } from './pets-filter.component'
 
@@ -9,7 +12,8 @@ describe('PetsFilterComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [PetsFilterComponent]
+			declarations: [PetsFilterComponent],
+			providers: [HttpClient, HttpHandler, MatSnackBar, Overlay]
 		}).compileComponents()
 	})
 

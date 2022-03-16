@@ -1,5 +1,7 @@
 /* eslint-disable no-undef */
+import { HttpClient, HttpHandler } from '@angular/common/http'
 import { ComponentFixture, TestBed } from '@angular/core/testing'
+import { CarouselComponent, IvyCarouselModule } from 'angular-responsive-carousel'
 
 import { PetSliderComponent } from './pet-slider.component'
 
@@ -9,7 +11,8 @@ describe('PetSliderComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [PetSliderComponent]
+			declarations: [PetSliderComponent],
+			providers: [HttpClient, HttpHandler, IvyCarouselModule]
 		}).compileComponents()
 	})
 
