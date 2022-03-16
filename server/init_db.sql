@@ -14,7 +14,8 @@ CREATE TABLE vetlist (
 	adress VARCHAR(240) NOT NULL,
 	phone VARCHAR(240) NOT NULL,
 	email VARCHAR(240) NOT NULL,
-	map_link TEXT NOT NULL
+	map_link TEXT NOT NULL,
+	animal_types VARCHAR(240), NOT NULL
 );
 
 CREATE TABLE vetlist_services (
