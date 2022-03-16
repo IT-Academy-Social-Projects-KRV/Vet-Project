@@ -8,9 +8,8 @@ import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatToolbarModule } from '@angular/material/toolbar'
 
 import { AdminNavComponent } from './admin-nav.component'
-import { MatDialog } from '@angular/material/dialog'
+import { MatDialog, MAT_DIALOG_SCROLL_STRATEGY } from '@angular/material/dialog'
 import { Overlay } from '@angular/cdk/overlay'
-import { InjectionToken } from '@angular/core'
 
 describe('AdminNavComponent', () => {
 	let component: AdminNavComponent
@@ -29,7 +28,7 @@ describe('AdminNavComponent', () => {
 					MatSidenavModule,
 					MatToolbarModule
 				],
-				providers: [MatDialog, Overlay, InjectionToken]
+				providers: [MatDialog, Overlay, { provide: MAT_DIALOG_SCROLL_STRATEGY, useValue: {} }]
 			}).compileComponents()
 		})
 	)

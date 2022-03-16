@@ -6,6 +6,7 @@ import { MatCardModule } from '@angular/material/card'
 import { MatGridListModule } from '@angular/material/grid-list'
 import { MatIconModule } from '@angular/material/icon'
 import { MatMenuModule } from '@angular/material/menu'
+import { HttpClient, HttpHandler } from '@angular/common/http'
 
 import { AdminStatisticComponent } from './admin-statistic.component'
 
@@ -25,7 +26,8 @@ describe('AdminDashboardComponent', () => {
 					MatGridListModule,
 					MatIconModule,
 					MatMenuModule
-				]
+				],
+				providers: [HttpClient, HttpHandler]
 			}).compileComponents()
 		})
 	)

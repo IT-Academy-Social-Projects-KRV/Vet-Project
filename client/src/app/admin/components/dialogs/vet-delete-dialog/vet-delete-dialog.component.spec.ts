@@ -1,6 +1,12 @@
 import { HttpClient, HttpHandler } from '@angular/common/http'
 import { ComponentFixture, TestBed } from '@angular/core/testing'
-import { MatDialog, MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
+import {
+	MatDialog,
+	MatDialogActions,
+	MatDialogModule,
+	MatDialogRef,
+	MAT_DIALOG_DATA
+} from '@angular/material/dialog'
 
 import { VetDeleteDialogComponent } from './vet-delete-dialog.component'
 
@@ -15,6 +21,7 @@ describe('VetDeleteDialogComponent', () => {
 				HttpClient,
 				HttpHandler,
 				MatDialog,
+				MatDialogActions,
 				{
 					provide: MatDialogRef,
 					useValue: {}
