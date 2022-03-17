@@ -4,7 +4,6 @@ import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/compat/
 import { AngularFirestore } from '@angular/fire/compat/firestore'
 import { Observable } from 'rxjs'
 import { finalize } from 'rxjs/operators'
-import { UploaderService } from '../uploader/uploader.service'
 @Component({
 	selector: 'app-upload-task',
 	templateUrl: './upload-task.component.html',
@@ -16,7 +15,7 @@ export class UploadTaskComponent implements OnInit {
 
 	task: AngularFireUploadTask
 
-	public pageUrl = ''
+	public pageUrl: string = ''
 	folderWay = ''
 
 	percentage: Observable<number>
@@ -27,19 +26,9 @@ export class UploadTaskComponent implements OnInit {
 	vets = 'assets/vetsPhoto'
 	volonteers = 'assets/volonteersPictures'
 
-	constructor(
-		private storage: AngularFireStorage,
-		private db: AngularFirestore,
-		private UploaderService: UploaderService
-	) {
-		this.UploaderService.getUrl$.subscribe(data => {
-			console.log(data)
-			this.pageUrl = data // And he have data here too!
-		})
-	}
+	constructor(private storage: AngularFireStorage, private db: AngularFirestore) {}
 
 	ngOnInit() {
-		this.chooseUrl()
 		this.startUpload()
 	}
 
@@ -55,6 +44,8 @@ export class UploadTaskComponent implements OnInit {
 
 	startUpload() {
 		// The storage path
+		this.chooseUrl()
+
 		const path = `${this.folderWay}/${Date.now()}_${this.file.name}`
 
 		// Reference to storage bucket

@@ -11,15 +11,17 @@ router.post('/', async function addVolunteer (
 	) { 
 		try{
 		const {
+			image,
 			  first_name,
 			  last_name,
 			  email,
 			  number
 			} = req.body
 			const newVolunteer = await db.query<IVolunteer> (
-				`INSERT INTO volonteers (first_name, last_name, email, number)
-				VALUES ($1,$2,$3,$4) RETURNING *`, 
+				`INSERT INTO volonteers (image, first_name, last_name, email, number)
+				VALUES ($1,$2,$3,$4,$5) RETURNING *`, 
 				[
+					image,
 					first_name,
 					last_name,
 					email,
@@ -76,6 +78,7 @@ router.put('/', async function updateVolunteers (
 	try {
 		
 		const {
+			image,
 			first_name,
 			last_name,
 			email,
@@ -84,13 +87,15 @@ router.put('/', async function updateVolunteers (
 		} = req.body
 		  const updatedVolunteer = await db.query<IVolunteer> (
 			  `UPDATE volonteers
-			   set first_name = $1,
-			   last_name = $2,
-			   email = $3,
-			   number = $4
-			   WHERE id = $5
+			   set image = $1,
+			   first_name = $2,
+			   last_name = $3,
+			   email = $4,
+			   number = $5
+			   WHERE id = $6
 			   RETURNING *`, 
 			  [
+				  image,
 				  first_name,
 				  last_name,
 				  email,
