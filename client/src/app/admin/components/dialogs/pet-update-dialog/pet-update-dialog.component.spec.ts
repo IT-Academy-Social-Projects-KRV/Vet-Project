@@ -1,10 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
-import { HttpClient, HttpHandler } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http'
 import { PetUpdateDialogComponent } from './pet-update-dialog.component'
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
-import { MatSnackBar } from '@angular/material/snack-bar'
-import { Overlay } from '@angular/cdk/overlay'
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 import { FormsModule } from '@angular/forms'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatInputModule } from '@angular/material/input'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 describe('PetUpdateDialogComponent', () => {
 	let component: PetUpdateDialogComponent
@@ -14,11 +16,6 @@ describe('PetUpdateDialogComponent', () => {
 		await TestBed.configureTestingModule({
 			declarations: [PetUpdateDialogComponent],
 			providers: [
-				HttpClient,
-				HttpHandler,
-				MatDialog,
-				MatSnackBar,
-				Overlay,
 				{
 					provide: MatDialogRef,
 					useValue: {}
@@ -28,7 +25,15 @@ describe('PetUpdateDialogComponent', () => {
 					useValue: {}
 				}
 			],
-			imports: [FormsModule]
+			imports: [
+				FormsModule,
+				MatDialogModule,
+				HttpClientModule,
+				MatSnackBarModule,
+				MatFormFieldModule,
+				MatInputModule,
+				BrowserAnimationsModule
+			]
 		}).compileComponents()
 	})
 

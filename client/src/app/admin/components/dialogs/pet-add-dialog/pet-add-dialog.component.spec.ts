@@ -1,11 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
-import { MatSnackBar } from '@angular/material/snack-bar'
-import { Overlay } from '@angular/cdk/overlay'
-import { InjectionToken } from '@angular/core'
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 import { FormsModule } from '@angular/forms'
 import { PetAddDialogComponent } from './pet-add-dialog.component'
-import { HttpClient, HttpHandler } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http'
 
 describe('PetAddDialogComponent', () => {
 	let component: PetAddDialogComponent
@@ -15,22 +13,21 @@ describe('PetAddDialogComponent', () => {
 		await TestBed.configureTestingModule({
 			declarations: [PetAddDialogComponent],
 			providers: [
-				HttpClient,
-				HttpHandler,
-				MatDialog,
-				MatSnackBar,
-				Overlay,
+				// HttpClient,
+				// HttpHandler,
+				// MatSnackBar,
+				// Overlay,
 				{
 					provide: MatDialogRef,
 					useValue: {}
-				},
-				{ provide: InjectionToken, useValue: {} },
-				{
-					provide: MAT_DIALOG_DATA,
-					useValue: {}
 				}
+				// { provide: InjectionToken, useValue: {} },
+				// {
+				// 	provide: MAT_DIALOG_DATA,
+				// 	useValue: {}
+				// }
 			],
-			imports: [FormsModule]
+			imports: [FormsModule, MatDialogModule, HttpClientModule, MatSnackBarModule]
 		}).compileComponents()
 	})
 

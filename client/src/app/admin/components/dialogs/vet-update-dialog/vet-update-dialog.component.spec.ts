@@ -1,15 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
-import { HttpClient, HttpHandler } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http'
 import { VetUpdateComponent } from './vet-update-dialog.component'
-import {
-	MatDialog,
-	MatDialogActions,
-	MatDialogRef,
-	MAT_DIALOG_DATA
-} from '@angular/material/dialog'
-import { MatSnackBar } from '@angular/material/snack-bar'
-import { Overlay } from '@angular/cdk/overlay'
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
+
 import { FormsModule } from '@angular/forms'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatInputModule } from '@angular/material/input'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 describe('UpdateVetComponent', () => {
 	let component: VetUpdateComponent
@@ -19,12 +17,6 @@ describe('UpdateVetComponent', () => {
 		await TestBed.configureTestingModule({
 			declarations: [VetUpdateComponent],
 			providers: [
-				HttpClient,
-				HttpHandler,
-				MatDialog,
-				MatSnackBar,
-				Overlay,
-				MatDialogActions,
 				{
 					provide: MatDialogRef,
 					useValue: {}
@@ -34,7 +26,16 @@ describe('UpdateVetComponent', () => {
 					useValue: {}
 				}
 			],
-			imports: [FormsModule]
+			imports: [
+				FormsModule,
+				MatDialogModule,
+				HttpClientModule,
+				MatSnackBarModule,
+				MatFormFieldModule,
+				MatFormFieldModule,
+				MatInputModule,
+				BrowserAnimationsModule
+			]
 		}).compileComponents()
 	})
 

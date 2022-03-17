@@ -1,9 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
-import { HttpClient, HttpHandler } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http'
 import { AdminEditVetComponent } from './admin-edit-vet.component'
-import { MatDialog, MAT_DIALOG_SCROLL_STRATEGY } from '@angular/material/dialog'
-import { Overlay } from '@angular/cdk/overlay'
-import { MatSnackBar } from '@angular/material/snack-bar'
+import { MatDialogModule } from '@angular/material/dialog'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
+import { MatPaginatorModule } from '@angular/material/paginator'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatInputModule } from '@angular/material/input'
+import { MatTableModule } from '@angular/material/table'
 
 describe('AdminEditVetComponent', () => {
 	let component: AdminEditVetComponent
@@ -12,13 +16,15 @@ describe('AdminEditVetComponent', () => {
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
 			declarations: [AdminEditVetComponent],
-			providers: [
-				HttpClient,
-				HttpHandler,
-				MatDialog,
-				Overlay,
-				MatSnackBar,
-				{ provide: MAT_DIALOG_SCROLL_STRATEGY, useValue: {} }
+			imports: [
+				MatDialogModule,
+				HttpClientModule,
+				MatPaginatorModule,
+				MatSnackBarModule,
+				BrowserAnimationsModule,
+				MatFormFieldModule,
+				MatInputModule,
+				MatTableModule
 			]
 		}).compileComponents()
 	})

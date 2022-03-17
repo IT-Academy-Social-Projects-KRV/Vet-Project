@@ -9,6 +9,10 @@ import { MatMenuModule } from '@angular/material/menu'
 import { HttpClient, HttpHandler } from '@angular/common/http'
 
 import { AdminStatisticComponent } from './admin-statistic.component'
+import { MatDividerModule } from '@angular/material/divider'
+import { WidgetCardComponent } from '../../components/widget-card/widget-card.component'
+import { WidgetPieComponent } from '../../components/widget-pie/widget-pie.component'
+import { ChartModule } from 'angular-highcharts'
 
 describe('AdminDashboardComponent', () => {
 	let component: AdminStatisticComponent
@@ -17,7 +21,7 @@ describe('AdminDashboardComponent', () => {
 	beforeEach(
 		waitForAsync(() => {
 			TestBed.configureTestingModule({
-				declarations: [AdminStatisticComponent],
+				declarations: [AdminStatisticComponent, WidgetCardComponent, WidgetPieComponent],
 				imports: [
 					NoopAnimationsModule,
 					LayoutModule,
@@ -25,7 +29,9 @@ describe('AdminDashboardComponent', () => {
 					MatCardModule,
 					MatGridListModule,
 					MatIconModule,
-					MatMenuModule
+					MatMenuModule,
+					MatDividerModule,
+					ChartModule
 				],
 				providers: [HttpClient, HttpHandler]
 			}).compileComponents()

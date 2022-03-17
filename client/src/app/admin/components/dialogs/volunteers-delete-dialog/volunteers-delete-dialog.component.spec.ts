@@ -1,7 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
-import { MatDialog, MatDialogRef } from '@angular/material/dialog'
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog'
 import { VolunteersDeleteDialogComponent } from './volunteers-delete-dialog.component'
-import { HttpClient, HttpHandler } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http'
+import { MatIconModule } from '@angular/material/icon'
 
 describe('VolunteersDeleteDialogComponent', () => {
 	let component: VolunteersDeleteDialogComponent
@@ -11,14 +12,12 @@ describe('VolunteersDeleteDialogComponent', () => {
 		await TestBed.configureTestingModule({
 			declarations: [VolunteersDeleteDialogComponent],
 			providers: [
-				HttpClient,
-				HttpHandler,
-				MatDialog,
 				{
 					provide: MatDialogRef,
 					useValue: {}
 				}
-			]
+			],
+			imports: [HttpClientModule, MatDialogModule, MatIconModule]
 		}).compileComponents()
 	})
 

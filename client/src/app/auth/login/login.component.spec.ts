@@ -1,11 +1,20 @@
 import { Overlay } from '@angular/cdk/overlay'
-import { HttpClient, HttpHandler } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http'
 import { ComponentFixture, TestBed } from '@angular/core/testing'
-import { MatCard, MatCardActions, MatCardContent, MatCardTitle } from '@angular/material/card'
-import { MatDialogContent } from '@angular/material/dialog'
-import { MatError, MatFormField, MatFormFieldControl, MatLabel } from '@angular/material/form-field'
-import { MatIcon } from '@angular/material/icon'
-import { MatSnackBar } from '@angular/material/snack-bar'
+import { ReactiveFormsModule } from '@angular/forms'
+import {
+	MatCard,
+	MatCardActions,
+	MatCardContent,
+	MatCardModule,
+	MatCardTitle
+} from '@angular/material/card'
+import { MatDialogModule } from '@angular/material/dialog'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatIconModule } from '@angular/material/icon'
+import { MatInputModule } from '@angular/material/input'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { Router } from '@angular/router'
 
 import { AuthComponent } from './login.component'
@@ -16,18 +25,19 @@ describe('AuthComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [
-				AuthComponent,
-				MatCard,
-				MatDialogContent,
-				MatCardTitle,
-				MatCardContent,
-				MatLabel,
-				MatIcon,
-				MatCardActions,
-				MatError
-			],
-			providers: [HttpClient, HttpHandler, MatSnackBar, Overlay, { provide: Router, useValue: {} }]
+			declarations: [AuthComponent],
+			providers: [{ provide: Router, useValue: {} }],
+			imports: [
+				HttpClientModule,
+				MatSnackBarModule,
+				MatCardModule,
+				MatDialogModule,
+				MatIconModule,
+				MatFormFieldModule,
+				MatInputModule,
+				BrowserAnimationsModule,
+				ReactiveFormsModule
+			]
 		}).compileComponents()
 	})
 
