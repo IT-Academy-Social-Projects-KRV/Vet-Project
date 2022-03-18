@@ -21,6 +21,7 @@ import { MatDialogModule } from '@angular/material/dialog'
 import { MatTabsModule } from '@angular/material/tabs'
 import { MatTreeModule } from '@angular/material/tree'
 import { MatSortModule } from '@angular/material/sort'
+import { SharedModule } from '@shared/shared.module'
 
 import { ChartModule, HIGHCHARTS_MODULES } from 'angular-highcharts'
 import * as more from 'highcharts/highcharts-more.src'
@@ -91,7 +92,8 @@ import { AdminLayoutComponent } from './components/admin-layout/admin-layout.com
 		MatTabsModule,
 		MatTreeModule,
 		MatSortModule,
-		ChartModule
+		ChartModule,
+		SharedModule
 	],
 	providers: [
 		{ provide: HIGHCHARTS_MODULES, useFactory: () => [more, exporting] },

@@ -15,7 +15,7 @@
         <mat-form-field class="example-full-width">
           <mat-label>Стать</mat-label>
           <mat-select ngModel required name='gender'>
-            <mat-option *ngFor="let item of petsInfo" [value]="item.gender">{{item.gender}}</mat-option>
+            <mat-option *ngFor="let item of petsInfo|uniq: 'gender'" [value]="item.gender">{{item.gender}}</mat-option>
           </mat-select>
         </mat-form-field>
         <mat-form-field class="example-full-width">
@@ -29,7 +29,7 @@
         <mat-form-field class="example-full-width">
           <mat-label>Куратор</mat-label>
           <mat-select ngModel name='curator'>
-            <mat-option *ngFor="let item of petsInfo" [value]="item.curator">{{item.curator}}</mat-option>
+            <mat-option *ngFor="let item of petsInfo|uniq: 'curator'" [value]="item.curator">{{item.curator}}</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
