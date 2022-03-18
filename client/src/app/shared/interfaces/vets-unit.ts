@@ -6,4 +6,5 @@ export interface IVetsUnitInfo {
 	phone?: string
 	email?: string
 	map_link?: string
+	animal_type?: string
 }

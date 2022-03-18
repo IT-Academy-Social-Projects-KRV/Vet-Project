@@ -3,13 +3,17 @@
   <div class="modal-wrapper">
 
     <div class="modal-upload-section">
-      <app-uploader (test)="addValue($event)"></app-uploader>
+      <app-uploader></app-uploader>
     </div>
 
     <div class="modal-left-part">
       <mat-form-field class="example-full-width id-hide">
         <mat-label>ID</mat-label>
         <input matInput name="id" [ngModel]="data.id" ngModel type="text" readonly>
+      </mat-form-field>
+      <mat-form-field class="example-full-width id-hide">
+        <mat-label>Фото</mat-label>
+        <input matInput name="image" [ngModel]="data.image" ngModel>
       </mat-form-field>
       <mat-form-field class="example-full-width">
         <mat-label>Назва(кличка)</mat-label>
