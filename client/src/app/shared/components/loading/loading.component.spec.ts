@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
+import { MatProgressSpinner } from '@angular/material/progress-spinner'
 
 import { LoadingComponent } from './loading.component'
 
