@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import { HttpClient, HttpHandler } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http'
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 
 import { AnimalListComponent } from './animal-list.component'
@@ -11,7 +11,7 @@ describe('AnimalListComponent', () => {
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
 			declarations: [AnimalListComponent],
-			providers: [HttpClient, HttpHandler]
+			imports: [HttpClientModule]
 		}).compileComponents()
 	})
 

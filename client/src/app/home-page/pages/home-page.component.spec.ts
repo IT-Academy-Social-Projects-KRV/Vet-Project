@@ -1,8 +1,11 @@
 /* eslint-disable no-undef */
-import { Overlay } from '@angular/cdk/overlay'
-import { HttpClient, HttpHandler } from '@angular/common/http'
+
+import { HttpClientModule } from '@angular/common/http'
 import { ComponentFixture, TestBed } from '@angular/core/testing'
-import { MatSnackBar } from '@angular/material/snack-bar'
+import { FormsModule } from '@angular/forms'
+import { MatCardModule } from '@angular/material/card'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
+import { IvyCarouselModule } from 'angular-responsive-carousel'
 import { HomeAboutComponent } from '../components/home-about/home-about.component'
 import { HomeDonateComponent } from '../components/home-donate/home-donate.component'
 import { HomeMainComponent } from '../components/home-main/home-main.component'
@@ -29,7 +32,7 @@ describe('HomePageComponent', () => {
 				HomeAboutComponent,
 				HomeNewsComponent
 			],
-			providers: [HttpClient, HttpHandler, MatSnackBar, Overlay]
+			imports: [HttpClientModule, MatSnackBarModule, MatCardModule, IvyCarouselModule, FormsModule]
 		}).compileComponents()
 	})
 

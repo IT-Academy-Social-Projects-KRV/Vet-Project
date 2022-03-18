@@ -1,14 +1,7 @@
-import { Overlay } from '@angular/cdk/overlay'
 import { HttpClientModule } from '@angular/common/http'
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 import { ReactiveFormsModule } from '@angular/forms'
-import {
-	MatCard,
-	MatCardActions,
-	MatCardContent,
-	MatCardModule,
-	MatCardTitle
-} from '@angular/material/card'
+import { MatCardModule } from '@angular/material/card'
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatIconModule } from '@angular/material/icon'

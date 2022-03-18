@@ -1,8 +1,9 @@
 /* eslint-disable no-undef */
-import { Overlay } from '@angular/cdk/overlay'
+
 import { ComponentFixture, TestBed } from '@angular/core/testing'
+import { FormsModule } from '@angular/forms'
 import { MatCard, MatCardActions } from '@angular/material/card'
-import { MatSnackBar } from '@angular/material/snack-bar'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 import { HomeDonateComponent } from './home-donate.component'
 
@@ -13,7 +14,8 @@ describe('HomeDonateComponent', () => {
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
 			declarations: [HomeDonateComponent, MatCard, MatCardActions],
-			providers: [MatSnackBar, Overlay]
+
+			imports: [MatSnackBarModule, FormsModule]
 		}).compileComponents()
 	})
 
