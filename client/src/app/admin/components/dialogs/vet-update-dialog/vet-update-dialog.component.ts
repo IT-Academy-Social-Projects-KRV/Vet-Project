@@ -1,5 +1,4 @@
-import { Component, Inject} from '@angular/core'
-import { Observable } from 'rxjs'
+import { Component, Inject } from '@angular/core'
 import { ApiServices } from '@shared/services/api.service'
 import { ActivatedRoute } from '@angular/router'
 import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
@@ -12,19 +11,16 @@ import { NotifierService } from '@shared/services/notifier.service'
 	styleUrls: ['./vet-update-dialog.scss']
 })
 export class VetUpdateComponent {
-	vetsInfo$: Observable<any>
-	id: string
-	item: IVetsUnitInfo
 	constructor(
 		private Activatedroute: ActivatedRoute,
 		private apiServices: ApiServices,
-		public dialogRef: MatDialogRef<VetUpdateComponent>,
+		public dialogRef: MatDialogRef<IVetsUnitInfo>,
 		private notifierService: NotifierService,
 		@Inject(MAT_DIALOG_DATA) public data: any
 	) {}
 
 	onUpdateVet(form: IVetsUnitInfo): void {
-		this.item = {
+		this.data = {
 			id: form.id,
 			title: form.title,
 			adress: form.adress,
@@ -32,7 +28,8 @@ export class VetUpdateComponent {
 			email: form.email,
 			map_link: form.map_link
 		}
-		this.apiServices.putUpdateVet(this.item).subscribe(response => {
+		console.log(this.data)
+		this.apiServices.putUpdateVet(this.data).subscribe(response => {
 			this.dialogRef.close(response)
 			this.notifierService.showSuccessNotification('Клініку успішно оновлено', 'Ok')
 		})
