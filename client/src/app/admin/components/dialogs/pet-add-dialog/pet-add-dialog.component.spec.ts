@@ -13,19 +13,10 @@ describe('PetAddDialogComponent', () => {
 		await TestBed.configureTestingModule({
 			declarations: [PetAddDialogComponent],
 			providers: [
-				// HttpClient,
-				// HttpHandler,
-				// MatSnackBar,
-				// Overlay,
 				{
 					provide: MatDialogRef,
 					useValue: {}
 				}
-				// { provide: InjectionToken, useValue: {} },
-				// {
-				// 	provide: MAT_DIALOG_DATA,
-				// 	useValue: {}
-				// }
 			],
 			imports: [FormsModule, MatDialogModule, HttpClientModule, MatSnackBarModule]
 		}).compileComponents()

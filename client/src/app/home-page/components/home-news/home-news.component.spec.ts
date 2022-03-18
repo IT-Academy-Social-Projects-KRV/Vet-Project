@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 import { HttpClient, HttpHandler } from '@angular/common/http'
 import { ComponentFixture, TestBed } from '@angular/core/testing'
-
 import { HomeNewsComponent } from './home-news.component'
 
 describe('HomeNewsComponent', () => {

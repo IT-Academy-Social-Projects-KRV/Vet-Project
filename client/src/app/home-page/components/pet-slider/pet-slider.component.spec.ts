@@ -2,7 +2,6 @@
 import { HttpClientModule } from '@angular/common/http'
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 import { IvyCarouselModule } from 'angular-responsive-carousel'
-
 import { PetSliderComponent } from './pet-slider.component'
 
 describe('PetSliderComponent', () => {
