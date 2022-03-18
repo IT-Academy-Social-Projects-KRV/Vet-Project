@@ -1,6 +1,5 @@
 import { Component, Inject } from '@angular/core'
 import { ApiServices } from '@shared/services/api.service'
-import { ActivatedRoute } from '@angular/router'
 import { IVetsUnitInfo } from '@shared/interfaces/vets-unit'
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
 import { NotifierService } from '@shared/services/notifier.service'
@@ -12,7 +11,6 @@ import { NotifierService } from '@shared/services/notifier.service'
 })
 export class VetUpdateComponent {
 	constructor(
-		private Activatedroute: ActivatedRoute,
 		private apiServices: ApiServices,
 		public dialogRef: MatDialogRef<IVetsUnitInfo>,
 		private notifierService: NotifierService,

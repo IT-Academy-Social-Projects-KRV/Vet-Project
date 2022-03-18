@@ -8,6 +8,8 @@ import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatToolbarModule } from '@angular/material/toolbar'
 
 import { AdminNavComponent } from './admin-nav.component'
+import { MatDialog, MatDialogModule, MAT_DIALOG_SCROLL_STRATEGY } from '@angular/material/dialog'
+import { Overlay } from '@angular/cdk/overlay'
 
 describe('AdminNavComponent', () => {
 	let component: AdminNavComponent
@@ -24,7 +26,8 @@ describe('AdminNavComponent', () => {
 					MatIconModule,
 					MatListModule,
 					MatSidenavModule,
-					MatToolbarModule
+					MatToolbarModule,
+					MatDialogModule
 				]
 			}).compileComponents()
 		})
