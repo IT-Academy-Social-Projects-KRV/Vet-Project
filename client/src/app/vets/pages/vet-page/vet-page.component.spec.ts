@@ -1,5 +1,10 @@
 /* eslint-disable no-undef */
+import { Overlay } from '@angular/cdk/overlay'
+import { HttpClient, HttpHandler } from '@angular/common/http'
 import { ComponentFixture, TestBed } from '@angular/core/testing'
+import { MatSnackBar } from '@angular/material/snack-bar'
+import { VetListComponent } from '../../components/vet-list/vet-list.component'
+import { VetsFilterComponent } from '../../components/vets-filter/vets-filter.component'
 
 import { VetPageComponent } from './vet-page.component'
 
@@ -9,7 +14,8 @@ describe('VetPageComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [VetPageComponent]
+			declarations: [VetPageComponent, VetsFilterComponent, VetListComponent],
+			providers: [HttpClient, HttpHandler, MatSnackBar, Overlay]
 		}).compileComponents()
 	})
 

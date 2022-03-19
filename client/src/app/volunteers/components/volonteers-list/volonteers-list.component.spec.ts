@@ -1,4 +1,5 @@
 /* eslint-disable no-undef */
+import { HttpClient, HttpHandler } from '@angular/common/http'
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 
 import { VolonteersListComponent } from './volonteers-list.component'
@@ -9,7 +10,8 @@ describe('VolonteersListComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [VolonteersListComponent]
+			declarations: [VolonteersListComponent],
+			providers: [HttpClient, HttpHandler]
 		}).compileComponents()
 	})
 
