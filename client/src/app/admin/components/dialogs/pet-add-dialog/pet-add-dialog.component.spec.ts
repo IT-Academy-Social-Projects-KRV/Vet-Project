@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
-
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
+import { FormsModule } from '@angular/forms'
 import { PetAddDialogComponent } from './pet-add-dialog.component'
+import { HttpClientModule } from '@angular/common/http'
 
 describe('PetAddDialogComponent', () => {
 	let component: PetAddDialogComponent
@@ -8,7 +11,14 @@ describe('PetAddDialogComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [PetAddDialogComponent]
+			declarations: [PetAddDialogComponent],
+			providers: [
+				{
+					provide: MatDialogRef,
+					useValue: {}
+				}
+			],
+			imports: [FormsModule, MatDialogModule, HttpClientModule, MatSnackBarModule]
 		}).compileComponents()
 	})
 
