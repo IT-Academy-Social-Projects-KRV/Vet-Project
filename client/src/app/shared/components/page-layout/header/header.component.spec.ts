@@ -1,5 +1,7 @@
 /* eslint-disable no-undef */
 import { ComponentFixture, TestBed } from '@angular/core/testing'
+import { MatIcon } from '@angular/material/icon'
+import { RouterLink } from '@angular/router'
 import { HeaderComponent } from './header.component'
 
 describe('HeaderComponent', () => {
@@ -8,7 +10,7 @@ describe('HeaderComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [HeaderComponent]
+			declarations: [HeaderComponent, MatIcon]
 		}).compileComponents()
 	})
 
