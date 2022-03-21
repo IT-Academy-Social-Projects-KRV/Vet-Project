@@ -21,13 +21,13 @@ jobs:
         working-directory: ./client
         run: npm install --legacy-peer-deps && npm run build && cp docs/index.html docs/404.html
 
-      # - name: Test
-      #   working-directory: ./client
-      #   run: npm run test
+      - name: Test
+        working-directory: ./client
+        run: npm run test
 
       - name: Build
         working-directory: ./client
-        # if: success()
+        if: success()
         run: npm run build && cp docs/index.html docs/404.html
 
       - name: Deploy
