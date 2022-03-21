@@ -28,7 +28,7 @@ export class VetAddDialogComponent {
 			phone: form.phone,
 			email: form.email,
 			map_link: form.map_link,
-			animal_type: form.animal_type
+			animal_type: 'test'
 		}
 		console.log(this.item)
 
