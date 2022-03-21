@@ -1,6 +1,8 @@
 /* eslint-disable no-undef */
+import { HttpClient, HttpHandler } from '@angular/common/http'
 import { ComponentFixture, TestBed } from '@angular/core/testing'
-
+import { ActivatedRoute } from '@angular/router'
+import { of } from 'rxjs'
 import { VetUnitPageComponent } from './vet-unit-page.component'
 
 describe('VetUnitPageComponent', () => {
@@ -9,7 +11,15 @@ describe('VetUnitPageComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [VetUnitPageComponent]
+			declarations: [VetUnitPageComponent],
+			providers: [
+				HttpClient,
+				HttpHandler,
+				{
+					provide: ActivatedRoute,
+					useValue: { paramMap: of({ id: 1 }) }
+				}
+			]
 		}).compileComponents()
 	})
 

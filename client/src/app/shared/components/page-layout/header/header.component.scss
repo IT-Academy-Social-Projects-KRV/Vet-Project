@@ -224,3 +224,12 @@ a {
 		margin-top: 30px;
 	}
 }
+.wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.theme-toggle{
+	@media screen and (max-width:767px) {
+		display: none;
+	}
+}

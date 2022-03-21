@@ -1,4 +1,7 @@
+import { Overlay } from '@angular/cdk/overlay'
+import { HttpClient, HttpHandler } from '@angular/common/http'
 import { ComponentFixture, TestBed } from '@angular/core/testing'
+import { MatSnackBar } from '@angular/material/snack-bar'
 
 import { VetsFilterComponent } from './vets-filter.component'
 
@@ -8,7 +11,8 @@ describe('VetsFilterComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [VetsFilterComponent]
+			declarations: [VetsFilterComponent],
+			providers: [HttpClient, HttpHandler, MatSnackBar, Overlay]
 		}).compileComponents()
 	})
 

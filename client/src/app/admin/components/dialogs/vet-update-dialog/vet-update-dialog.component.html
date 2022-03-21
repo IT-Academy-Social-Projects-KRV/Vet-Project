@@ -2,6 +2,11 @@
 
 <form class="example-form" (ngSubmit)='onUpdateVet(f.value)' #f="ngForm">
 
+  <mat-form-field class="example-full-width id-hide">
+    <mat-label>ID</mat-label>
+    <input matInput name="id" [ngModel]="data.id" ngModel type="text" readonly>
+  </mat-form-field>
+
   <mat-form-field class="example-full-width">
     <mat-label>Назва клініки</mat-label>
     <input matInput name="title" ngModel required placeholder="title" [ngModel]="data.title">
