@@ -38,7 +38,7 @@ export class PetAddDialogComponent implements OnInit {
 			behavioral_features: form.behavioral_features,
 			wishes_for_shelter: form.wishes_for_shelter
 		}
-		console.log(this.item.image)
+
 		this.apiServices.postNewAnimal(this.item).subscribe(response => {
 			this.dialogRef.close(response)
 			this.notifierService.showSuccessNotification('Тваринку успішно додано', 'Ok')
@@ -46,5 +46,6 @@ export class PetAddDialogComponent implements OnInit {
 	}
 	addValue(event) {
 		this.testLink = event
+		console.log(event)
 	}
 }
