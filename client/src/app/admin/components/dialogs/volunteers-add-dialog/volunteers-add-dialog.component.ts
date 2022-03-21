@@ -30,7 +30,8 @@ export class VolunteersAddDialogComponent {
 						first_name: this.service.form.value.first_name,
 						last_name: this.service.form.value.last_name,
 						email: this.service.form.value.email,
-						number: this.service.form.value.number
+						number: this.service.form.value.number,
+						image: this.service.form.value.image
 					})
 					.subscribe(response => {
 						this.dialogRef.close(response)
