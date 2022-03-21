@@ -11,7 +11,7 @@ import { Router } from '@angular/router'
 export class UploaderComponent {
 	isHovering: boolean
 
-	link: string = this.router.url
+	pageUrl: string = this.router.url
 
 	files: File[] = []
 	@Output() test = new EventEmitter<string>()
@@ -32,5 +32,10 @@ export class UploaderComponent {
 	}
 	addImage(e) {
 		this.test.emit(e)
+	}
+
+	pageCurrentUrl(e) {
+		this.pageUrl = e
+		console.log(e)
 	}
 }

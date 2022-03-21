@@ -17,20 +17,27 @@ export class VetAddDialogComponent {
 		@Inject(MAT_DIALOG_DATA) public data: any
 	) {}
 
+	testLink = ''
 	item: IVetsUnitInfo
 
 	public onCreateClinic(form: IVetsUnitInfo): void {
 		this.item = {
+			image: this.testLink,
 			title: form.title,
 			adress: form.adress,
 			phone: form.phone,
 			email: form.email,
-			map_link: form.map_link
+			map_link: form.map_link,
+			animal_type: form.animal_type
 		}
+		console.log(this.item)
 
 		this.apiServices.postNewClinic(this.item).subscribe(response => {
 			this.dialogRef.close(response)
 			this.notifierService.showSuccessNotification('Клініку успішно додано', 'Ok')
 		})
+	}
+	addValue(event) {
+		this.testLink = event
 	}
 }

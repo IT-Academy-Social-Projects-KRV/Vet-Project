@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { Observable } from 'rxjs'
 import { IAnimalsInfo } from '@shared/interfaces/animals'
 import { IAnimalsUnitInfo } from '@shared/interfaces/animals-unit'

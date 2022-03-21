@@ -9,5 +9,5 @@
 <!-- <button (click)="sentValue()">sent</button> -->
 
 <div *ngFor="let file of files">
-  <app-upload-task [file]="file" (photo)="addImage($event)" (link)="link"></app-upload-task>
+  <app-upload-task [file]="file" (photo)="addImage($event)" (pageUrl)="pageCurrentUrl($event)"></app-upload-task>
 </div>

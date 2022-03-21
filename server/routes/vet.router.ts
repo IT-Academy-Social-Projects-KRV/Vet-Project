@@ -19,14 +19,15 @@ router.post(
 				adress,
 				phone,
 				email,
-				map_link
+				map_link,
+				animal_type
 			} = req.body
 
 			const newVetclinic =
 				await db.query<IVetItem>(
 					`
-                INSERT INTO vetlist (iamge, title, adress, phone, email, map_link) 
-                VALUES ($1, $2, $3, $4, $5, $6) 
+                INSERT INTO vetlist (image, title, adress, phone, email, map_link, animal_type) 
+                VALUES ($1, $2, $3, $4, $5, $6, $7) 
                 RETURNING *`,
 					[
 						image,
@@ -34,7 +35,8 @@ router.post(
 						adress,
 						phone,
 						email,
-						map_link
+						map_link,
+						animal_type
 					]
 				)
 			const [addedClinic] = newVetclinic.rows
@@ -104,6 +106,7 @@ router.put(
 				phone,
 				email,
 				map_link,
+				animal_type,
 				id
 			} = req.body
 
@@ -111,16 +114,17 @@ router.put(
 				await db.query(
 					`
                 UPDATE vetlist 
-                SET image = $1, title = $2, adress = $3, phone = $4, email = $5, map_link = $6 
-                WHERE id = $7
+                SET image = $1, title = $2, adress = $3, phone = $4, email = $5, map_link = $6, animal_type = $7
+                WHERE id = $8
                 RETURNING *`,
 					[
 						image,
-						title,
+						title, 
 						adress,
 						phone,
 						email,
 						map_link,
+						animal_type,
 						id
 					]
 				)

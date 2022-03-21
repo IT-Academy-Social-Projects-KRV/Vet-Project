@@ -53,17 +53,8 @@ import { AngularFireModule } from '@angular/fire/compat'
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore'
 import { AngularFireStorageModule } from '@angular/fire/compat/storage'
 import { AngularFireAuthModule } from '@angular/fire/compat/auth'
-
-const config = {
-	apiKey: 'AIzaSyAUFTnQgrubVLr8znSDf13S6VBdaF7hHs8',
-	authDomain: 'vetspets.firebaseapp.com',
-	databaseURL: 'gs://vetspets.appspot.com/',
-	projectId: 'vetspets',
-	storageBucket: 'vetspets.appspot.com',
-	messagingSenderId: '742536551070',
-	appId: '1:742536551070:web:0ecc6c241f4b37deb8b98f',
-	measurementId: 'G-PZ8DRF4ECJ'
-}
+import { environment } from 'src/environments/environment'
+import { FIREBASE_OPTIONS } from '@angular/fire/compat'
 
 @NgModule({
 	declarations: [
@@ -113,13 +104,18 @@ const config = {
 		MatTreeModule,
 		MatSortModule,
 		ChartModule,
-		AngularFireModule.initializeApp(config),
+		AngularFireModule.initializeApp(environment.firebase),
 		AngularFirestoreModule,
 		AngularFireAuthModule,
 		AngularFireStorageModule
 	],
 	providers: [
-		{ provide: HIGHCHARTS_MODULES, useFactory: () => [more, exporting] },
+		{
+			provide: HIGHCHARTS_MODULES,
+			useFactory: () => [more, exporting]
+			// FIREBASE_OPTIONS,
+			// useValue: environment.firebase
+		},
 		ApiServices,
 		VolunteersService
 	],

@@ -4,7 +4,17 @@
 
 export const environment = {
 	production: false,
-	apiUrl: 'https://vetspetsserver.azurewebsites.net/api'
+	apiUrl: 'https://vetspetsserver.azurewebsites.net/api',
+	firebase: {
+		apiKey: 'AIzaSyAUFTnQgrubVLr8znSDf13S6VBdaF7hHs8',
+		authDomain: 'vetspets.firebaseapp.com',
+		databaseURL: 'gs://vetspets.appspot.com/',
+		projectId: 'vetspets',
+		storageBucket: 'vetspets.appspot.com',
+		messagingSenderId: '742536551070',
+		appId: '1:742536551070:web:0ecc6c241f4b37deb8b98f',
+		measurementId: 'G-PZ8DRF4ECJ'
+	}
 }
 
 /*

@@ -19,7 +19,7 @@ import { NotifierService } from '@shared/services/notifier.service'
 export class AdminEditVetComponent implements OnInit, AfterViewInit {
 	selectFormControl = new FormControl('', Validators.required)
 
-	displayedColumns: string[] = ['id', 'title', 'adress', 'phone', 'details', 'delete']
+	displayedColumns: string[] = ['id', 'image', 'title', 'adress', 'phone', 'details', 'delete']
 
 	dataSource = new MatTableDataSource<IVetsUnitInfo>()
 

@@ -11,12 +11,12 @@ import { finalize } from 'rxjs/operators'
 })
 export class UploadTaskComponent implements OnInit {
 	@Input() file: File
+	@Input() pageUrl: string
 	@Output() photo = new EventEmitter<string>()
 
 	task: AngularFireUploadTask
 
-	public pageUrl: string = ''
-	folderWay = ''
+	// folderWay = ''
 
 	percentage: Observable<number>
 	snapshot: Observable<any>
@@ -25,6 +25,7 @@ export class UploadTaskComponent implements OnInit {
 	animals = 'assets/animalsPictures'
 	vets = 'assets/vetsPhoto'
 	volonteers = 'assets/volonteersPictures'
+	folder = 'assets/allPictures'
 
 	constructor(private storage: AngularFireStorage, private db: AngularFirestore) {}
 
@@ -32,21 +33,21 @@ export class UploadTaskComponent implements OnInit {
 		this.startUpload()
 	}
 
-	chooseUrl() {
-		if (this.pageUrl === '/admin/edit-pet') {
-			this.folderWay = this.animals
-		} else if (this.pageUrl === '/admin/edit-vet') {
-			this.folderWay = this.vets
-		} else if (this.pageUrl === '/admin/edit-volonteer') {
-			this.folderWay = this.volonteers
-		}
-	}
+	// chooseUrl() {
+	// 	if (this.pageUrl === '/admin/edit-pet') {
+	// 		this.folderWay = this.animals
+	// 	} else if (this.pageUrl === '/admin/edit-vet') {
+	// 		this.folderWay = this.vets
+	// 	} else if (this.pageUrl === '/admin/edit-volonteer') {
+	// 		this.folderWay = this.volonteers
+	// 	}
+	// }
 
 	startUpload() {
 		// The storage path
-		this.chooseUrl()
+		// this.chooseUrl()
 
-		const path = `${this.folderWay}/${Date.now()}_${this.file.name}`
+		const path = `${this.folder}/${Date.now()}_${this.file.name}`
 
 		// Reference to storage bucket
 		const ref = this.storage.ref(path)

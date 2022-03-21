@@ -1,7 +1,13 @@
+
 <form [formGroup]="service.form" class="normal-form" (ngSubmit)='onSubmit()'>
   <div class="modal-header">
     <span class="admin-voluntiers-dialog">{{service.form.controls['id'].value?"Змінити волонтера":"Додати волонтера"}}</span>
   </div>
+
+  <div class="modal-upload-section">
+    <app-uploader (test)="addValue($event)"></app-uploader>
+  </div>
+
   <mat-grid-list cols="2" rowHeight="300px">
     <mat-grid-tile>
       <div class="controles-container">
@@ -25,6 +31,10 @@
           <mat-error>Невірно вказаний email</mat-error>
         </mat-form-field>
         <mat-form-field>
+          <input formControlName='image' matInput placeholder="Email" type="email" >
+          <mat-error>Невірно вказаний email</mat-error>
+        </mat-form-field>
+        <mat-form-field>
           <input formControlName='number' matInput placeholder="Номер телефону">
           <mat-error *ngIf="service.form.controls['number'].hasError('pattern')">Невірний формат</mat-error>
           <mat-error *ngIf="service.form.controls['number'].hasError('required')">Це поле обов'язкове</mat-error>
@@ -34,7 +44,7 @@
     </mat-grid-tile>
   </mat-grid-list>
   <div class="button-row">
-    <button mat-raised-button color="primary"  type="submit" class="addVolunteerBtn" 
+    <button mat-raised-button color="primary"  type="submit" class="addVolunteerBtn"
       [disabled]="service.form.invalid">{{service.form.controls['id'].value?"Змінити волонтера":"Додати волонтера"}}</button>
     <button mat-raised-button color="warn" type="reset" (click)="onClear()">Очитити</button>
     <button mat-raised-button color="basic" type ="button"(click)="dialogRef.close(false)">Cкасувати</button>

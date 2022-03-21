@@ -16,6 +16,8 @@ export class VolunteersAddDialogComponent {
 		private notifier: NotifierService
 	) {}
 
+	testLink = ''
+
 	onClear() {
 		this.service.form.reset()
 		this.service.initializeFormGroup()
@@ -43,5 +45,9 @@ export class VolunteersAddDialogComponent {
 				})
 			}
 		}
+	}
+	addValue(event) {
+		this.testLink = event
+		console.log(`this is event` + event)
 	}
 }

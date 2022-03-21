@@ -90,6 +90,7 @@ export class AdminEditVolunteerComponent implements OnInit, AfterViewInit {
 			})
 	}
 	public onEdit(row): void {
+		console.log(row)
 		this.service.populateForm(row)
 		this.matDialog
 			.open(VolunteersAddDialogComponent, {
