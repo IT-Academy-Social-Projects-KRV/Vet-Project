@@ -11,36 +11,48 @@
 }
 
 #myVideo {
-	position: absolute;
-	max-width: 100%;
-	min-height: 100%;
-	z-index: 0;
+display: block;
+max-width: 100%;
+height: auto;
 }
 
 .about__text {
 	border-radius: 4px;
-	margin-top: 60px;
 	position: absolute;
-	right: 0;
+	right: 50px;
 	z-index: 5;
+	font-size: 12px;
 	background: rgba(48, 60, 75, 0.694);
-	width: 40%;
+	max-width: 40%;
 	h1 {
 		padding-left: 10px;
 		margin: 20px 0;
-		font-size: 40px;
+		font-size: 25px;
 		font-style: bold;
 	}
 	p {
 		text-align: justify;
 		padding: 0px 10px;
-		font-size: 22px;
 		line-height: 1.5;
+
+	
 	}
+
+	
+}
+p, h1{
+			@media  screen and (min-width:740px) {
+			font-size: 15px;
+		}
+		@media screen and (min-width:1020px){
+			font-size: 20px;
+		}
 }
 
-@media (max-width: 768px) {
-	.about__text p {
-		font-size: 20px;
-	}
-}
+	// @media screen and (min-width:740px) {
+	// 	h1 ,p {font-size: 15px;}
+	// }
+	// @media screen and (min-width:1020px){
+	// 		h1 ,p {font-size: 20px;}
+	// 	}
+

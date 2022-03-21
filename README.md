@@ -169,6 +169,17 @@ app/
 In this way, we can guarantee that during One team working on Vets Module and the other team working on Pets module, they will preserve from merge conflict and uncontrolled bugs, because everyone has own isolate workspace.
 
 ---
+## Annotation
+
+#### Problem to solve:
+
+1. There are problems with loading components on the admin page after reload 😱.
+
+#### Bonus+:
+
+In this repository we have a branch - 'branch-with-news-section' which makes fatch to news public API, but this API dosn`t work on production. Thats why we don't use it in develop branch. Maybe it's will help you :).
+
+---
 
 ## Developers
 
