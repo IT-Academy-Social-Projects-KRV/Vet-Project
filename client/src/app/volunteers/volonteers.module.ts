@@ -8,11 +8,10 @@ import { MatButtonModule } from '@angular/material/button'
 import { VolonteersPageComponent } from './pages/volonteers-page/volonteers-page.component'
 import { VolonteersListComponent } from './components/volonteers-list/volonteers-list.component'
 import { VolonteersRoutingModule } from './volonteers-routing.module'
-import { VolonteersUnitPageComponent } from './pages/volonteers-unit-page/volonteers-unit-page.component'
 import { SharedModule } from '@shared/shared.module'
 
 @NgModule({
-	declarations: [VolonteersPageComponent, VolonteersListComponent, VolonteersUnitPageComponent],
+	declarations: [VolonteersPageComponent, VolonteersListComponent],
 	imports: [
 		CommonModule,
 		VolonteersRoutingModule,

@@ -1,6 +1,6 @@
 <section class="animal-main" *ngIf="(petsInfo$ | async) as petsInfo">
   <div class="animal-main__photo">
-    <img class="animal-main__photo__img" src="../../../../assets//animalsPictures/animal_0{{ petsInfo.id }}.jpg"
+    <img class="animal-main__photo__img" src="{{ petsInfo.image }}"
       alt="image of pet" />
 
     <button class="animal-main__photo__btn1" mat-raised-button>Забрати додому</button>

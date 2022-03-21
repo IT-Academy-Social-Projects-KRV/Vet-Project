@@ -1,7 +1,7 @@
 <mat-card class="vet-card">
   <div class="vet-card__wrapper" [routerLink]="['/vets-list', vetsInfo.id]">
     <img class="pet-card__img"
-      src="https://firebasestorage.googleapis.com/v0/b/vetspets-c64ea.appspot.com/o/assets%2FvetsPhoto%2Fvet_0{{ vetsInfo.id }}.jpg?alt=media&token=8a9ab02f-37c9-41d1-8fad-79aed0b584f1"
+      src="{{ vetsInfo.image }}"
       alt="image of {{ vetsInfo.title }}" />
   </div>
   <mat-card-header class="vet-card__card-header">

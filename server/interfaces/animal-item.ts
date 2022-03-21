@@ -1,4 +1,5 @@
 export interface IBareAnimalItem {
+  image: string
   name: string
   gender: string
   breed: string

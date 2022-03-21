@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, ViewChild } from '@angular/core'
 import { Observable } from 'rxjs'
 import { IAnimalsInfo } from '@shared/interfaces/animals'
 import { IAnimalsUnitInfo } from '@shared/interfaces/animals-unit'
@@ -18,6 +18,7 @@ export class PetAddDialogComponent implements OnInit {
 		private notifierService: NotifierService
 	) {}
 	item: IAnimalsUnitInfo
+	testLink = ''
 	public petsInfo$: Observable<IAnimalsInfo[]>
 
 	ngOnInit(): void {
@@ -26,6 +27,7 @@ export class PetAddDialogComponent implements OnInit {
 
 	onCreateAnimal(form: IAnimalsUnitInfo): void {
 		this.item = {
+			image: this.testLink,
 			name: form.name,
 			shelter_name: form.shelter_name,
 			curator: form.curator,
@@ -41,5 +43,9 @@ export class PetAddDialogComponent implements OnInit {
 			this.dialogRef.close(response)
 			this.notifierService.showSuccessNotification('Тваринку успішно додано', 'Ok')
 		})
+	}
+	addValue(event) {
+		this.testLink = event
+		console.log(event)
 	}
 }

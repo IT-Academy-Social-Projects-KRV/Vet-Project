@@ -1,4 +1,5 @@
 export interface IBareVetItem {
+	image: string
 	title: string
 	adress: string
 	phone: string

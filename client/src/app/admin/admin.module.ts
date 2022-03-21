@@ -47,6 +47,24 @@ import { VolunteersDeleteDialogComponent } from './components/dialogs/volunteers
 import { WidgetCardComponent } from './components/widget-card/widget-card.component'
 import { WidgetPieComponent } from './components/widget-pie/widget-pie.component'
 import { AdminLayoutComponent } from './components/admin-layout/admin-layout.component'
+import { UploaderComponent } from './components/dialogs/uploader/uploader.component'
+import { UploadTaskComponent } from './components/dialogs/upload-task/upload-task.component'
+import { DropzoneDirective } from './dropzone.directive'
+import { AngularFireModule } from '@angular/fire/compat'
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore'
+import { AngularFireStorageModule } from '@angular/fire/compat/storage'
+import { AngularFireAuthModule } from '@angular/fire/compat/auth'
+
+const config = {
+	apiKey: 'AIzaSyAUFTnQgrubVLr8znSDf13S6VBdaF7hHs8',
+	authDomain: 'vetspets.firebaseapp.com',
+	databaseURL: 'gs://vetspets.appspot.com/',
+	projectId: 'vetspets',
+	storageBucket: 'vetspets.appspot.com',
+	messagingSenderId: '742536551070',
+	appId: '1:742536551070:web:0ecc6c241f4b37deb8b98f',
+	measurementId: 'G-PZ8DRF4ECJ'
+}
 
 @NgModule({
 	declarations: [
@@ -67,7 +85,10 @@ import { AdminLayoutComponent } from './components/admin-layout/admin-layout.com
 		VolunteersDeleteDialogComponent,
 		WidgetCardComponent,
 		WidgetPieComponent,
-		AdminLayoutComponent
+		AdminLayoutComponent,
+		UploaderComponent,
+		UploadTaskComponent,
+		DropzoneDirective
 	],
 	imports: [
 		CommonModule,
@@ -93,6 +114,10 @@ import { AdminLayoutComponent } from './components/admin-layout/admin-layout.com
 		MatTreeModule,
 		MatSortModule,
 		ChartModule,
+		AngularFireModule.initializeApp(config),
+		AngularFirestoreModule,
+		AngularFireAuthModule,
+		AngularFireStorageModule,
 		SharedModule
 	],
 	providers: [

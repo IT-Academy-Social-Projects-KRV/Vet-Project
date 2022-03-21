@@ -19,6 +19,7 @@ import { NotifierService } from '@shared/services/notifier.service'
 export class AdminEditPetComponent implements OnInit, AfterViewInit {
 	displayedColumns: string[] = [
 		'id',
+		'image',
 		'name',
 		'gender',
 		'breed',

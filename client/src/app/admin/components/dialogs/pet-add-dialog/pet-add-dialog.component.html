@@ -3,6 +3,9 @@
   <form class="example-form" #f='ngForm' *ngIf="(petsInfo$ | async) as petsInfo">
     <div class="admin-pets-dialog">Додати тваринку</div>
     <div class="modal-wrapper">
+      <div class="modal-upload-section">
+        <app-uploader (test)="addValue($event)">  </app-uploader>
+      </div>
       <div class="modal-left-section">
         <mat-form-field class="example-full-width">
           <mat-label>Назва(кличка)</mat-label>

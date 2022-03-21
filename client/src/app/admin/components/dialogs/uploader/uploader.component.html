@@ -1,0 +1,13 @@
+<div class="dropzone"
+     app-dropzone
+     (hovered)="toggleHover($event)"
+     (dropped)="onDrop($event)"
+     [class.hovering]="isHovering">
+
+     <p>Перенесіть картинку</p>
+</div>
+<!-- <button (click)="sentValue()">sent</button> -->
+
+<div *ngFor="let file of files">
+  <app-upload-task [file]="file" (photo)="addImage($event)" (link)="link"></app-upload-task>
+</div>

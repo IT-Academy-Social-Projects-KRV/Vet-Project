@@ -10,10 +10,11 @@
 .modal-wrapper{
   display: flex;
   gap: 30px;
-  
+
 }
 .modal-right-section,
-.modal-left-section{
+.modal-left-section,
+.modal-upload-section{
   display: flex;
   flex-wrap: wrap;
   max-width: 250px;

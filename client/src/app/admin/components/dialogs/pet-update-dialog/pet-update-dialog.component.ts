@@ -20,6 +20,7 @@ export class PetUpdateDialogComponent {
 	onUpdate(form: IAnimalsUnitInfo): void {
 		this.data = {
 			id: form.id,
+			image: form.image,
 			name: form.name,
 			shelter_name: form.shelter_name,
 			curator: form.curator,

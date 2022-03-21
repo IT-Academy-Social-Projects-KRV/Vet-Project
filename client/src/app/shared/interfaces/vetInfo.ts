@@ -1,4 +1,5 @@
 export interface IVetsInfo {
+	image?: string
 	id?: number
 	title?: string
 	adress?: string

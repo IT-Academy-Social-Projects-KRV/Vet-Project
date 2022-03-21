@@ -15,7 +15,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { LoginInterceptor } from './auth/login/login.interceptor'
 import { ErrorHttpInterseptor } from './error-http-interseptor'
 import { LoadingInterceptor } from '@shared/services/loading.interceptor'
-
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { MatIconModule } from '@angular/material/icon'
 import { SharedModule } from '@shared/shared.module'
@@ -23,6 +22,7 @@ import { FormsModule } from '@angular/forms'
 
 @NgModule({
 	declarations: [AppComponent, HeaderComponent, FooterComponent],
+
 	imports: [
 		BrowserModule,
 		MatButtonModule,

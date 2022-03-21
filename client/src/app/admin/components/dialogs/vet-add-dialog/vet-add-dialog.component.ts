@@ -25,7 +25,8 @@ export class VetAddDialogComponent {
 			adress: form.adress,
 			phone: form.phone,
 			email: form.email,
-			map_link: form.map_link
+			map_link: form.map_link,
+			animal_type: 'test'
 		}
 
 		this.apiServices.postNewClinic(this.item).subscribe(response => {
