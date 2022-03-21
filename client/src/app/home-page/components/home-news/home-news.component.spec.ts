@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
+import { HttpClient, HttpHandler } from '@angular/common/http'
 import { ComponentFixture, TestBed } from '@angular/core/testing'
-
 import { HomeNewsComponent } from './home-news.component'
 
 describe('HomeNewsComponent', () => {
@@ -9,7 +9,8 @@ describe('HomeNewsComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [HomeNewsComponent]
+			declarations: [HomeNewsComponent],
+			providers: [HttpClient, HttpHandler]
 		}).compileComponents()
 	})
 

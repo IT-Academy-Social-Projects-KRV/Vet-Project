@@ -21,6 +21,7 @@ import { MatDialogModule } from '@angular/material/dialog'
 import { MatTabsModule } from '@angular/material/tabs'
 import { MatTreeModule } from '@angular/material/tree'
 import { MatSortModule } from '@angular/material/sort'
+import { SharedModule } from '@shared/shared.module'
 
 import { ChartModule, HIGHCHARTS_MODULES } from 'angular-highcharts'
 import * as more from 'highcharts/highcharts-more.src'
@@ -107,7 +108,8 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat'
 		AngularFireModule.initializeApp(environment.firebase),
 		AngularFirestoreModule,
 		AngularFireAuthModule,
-		AngularFireStorageModule
+		AngularFireStorageModule,
+		SharedModule
 	],
 	providers: [
 		{

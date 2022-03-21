@@ -1,19 +1,22 @@
 @import 'variables.scss';
 
 .main__vet_slider {
-	width: 1200px;
+	max-width: 1200px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-bottom: 40px;
-	margin-top: 70px;
-	.main__vet_slider__title {
+   	padding: 20px;
+	&__title {
 		margin-bottom: 40px;
 		font-size: 40px;
 		font-weight: 600;
 		font-style: bold;
 		color: $main-blue;
 	}
+		@media (max-width:768px) {
+		display: none;
+	}
+
 }
 .vet__slider_cards {
 	display: flex;

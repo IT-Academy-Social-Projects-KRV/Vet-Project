@@ -23,22 +23,18 @@
 	@include petColor.theme(dark.$client-dark-header-theme);
 }
 
-body {
-	margin: 0;
-}
 li,
 a {
 	list-style: none;
 	text-decoration: none;
-	color: $black;
+	// color: $black;
 }
 
 h1 {
 	font-size: 30px;
 }
 
-html,
-body {
+html{
 	height: 100%;
 }
 body {
@@ -54,6 +50,9 @@ button {
 }
 html {
 	scroll-behavior: smooth;
+}
+ul{
+	padding: 0;
 }
 
 .success.mat-snack-bar-container {

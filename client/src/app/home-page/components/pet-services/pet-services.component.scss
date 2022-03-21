@@ -5,7 +5,6 @@
 	flex-direction: column;
 	background-color: $button-background;
 	padding: 20px 0;
-	margin-bottom: 40px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -18,9 +17,8 @@
 }
 .pet-services-section__list {
 	display: flex;
-	@media screen and (min-width: 800px) {
-		margin: 0 auto;
-	}
+	justify-content: center;
+	padding: 20px;
 }
 
 .pet-services-section__list-item {
@@ -30,6 +28,7 @@
 	border-radius: 3px;
 	overflow: hidden;
 	background-color: $white;
+	max-width: 200px;
 
 	&:not(:last-child) {
 		margin-right: 50px;
@@ -47,7 +46,9 @@
 }
 
 img {
-	max-width: 200px;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 .pet-services-section__item-text {
 	display: block;

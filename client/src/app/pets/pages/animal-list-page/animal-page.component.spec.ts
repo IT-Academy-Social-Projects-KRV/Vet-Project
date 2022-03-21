@@ -1,6 +1,9 @@
 /* eslint-disable no-undef */
+import { HttpClientModule } from '@angular/common/http'
 import { ComponentFixture, TestBed } from '@angular/core/testing'
-
+import { MatSnackBarModule } from '@angular/material/snack-bar'
+import { AnimalListComponent } from '../../components/animal-list/animal-list.component'
+import { PetsFilterComponent } from '../../components/pets-filter/pets-filter.component'
 import { AnimalPageComponent } from './animal-page.component'
 
 describe('AnimalListPageComponent', () => {
@@ -9,7 +12,9 @@ describe('AnimalListPageComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [AnimalPageComponent]
+			declarations: [AnimalPageComponent, PetsFilterComponent, AnimalListComponent],
+
+			imports: [HttpClientModule, MatSnackBarModule]
 		}).compileComponents()
 	})
 

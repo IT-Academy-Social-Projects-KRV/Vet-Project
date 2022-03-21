@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
-
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog'
 import { PetDeleteDialogComponent } from './pet-delete-dialog.component'
+import { HttpClientModule } from '@angular/common/http'
 
 describe('PetDeleteDialogComponent', () => {
 	let component: PetDeleteDialogComponent
@@ -8,7 +9,14 @@ describe('PetDeleteDialogComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [PetDeleteDialogComponent]
+			declarations: [PetDeleteDialogComponent],
+			providers: [
+				{
+					provide: MatDialogRef,
+					useValue: {}
+				}
+			],
+			imports: [MatDialogModule, HttpClientModule]
 		}).compileComponents()
 	})
 

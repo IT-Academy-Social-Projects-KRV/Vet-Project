@@ -4,8 +4,6 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-bottom: 40px;
-	margin-top: 70px;
 
 	.main__pet_slider__title {
 		margin-bottom: 40px;
@@ -25,4 +23,9 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	width: 90%;
+	padding: 20px;
+	margin: 0;
+	@media (max-width:768px) {
+		display: none;
+	}
 }

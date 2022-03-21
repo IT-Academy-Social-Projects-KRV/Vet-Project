@@ -20,8 +20,7 @@ export class PetAddDialogComponent implements OnInit {
 	item: IAnimalsUnitInfo
 	testLink = ''
 	public petsInfo$: Observable<IAnimalsInfo[]>
-	// curators: any[] = ['Куратор 1', 'Куратор 2']
-	// genders = ['M', 'F']
+
 	ngOnInit(): void {
 		this.petsInfo$ = this.apiServices.getAnimalsInfo()
 	}
